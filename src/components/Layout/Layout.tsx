@@ -33,6 +33,30 @@ export class Layout extends React.Component<LayoutProps> {
 
         const nodeData = Object.assign({}, this.props.node.data);
         nodeData.children = !nodeData.children ? undefined : nodeData.children.filter(child => this.props.parentState?.selected || !child.content)
+        
+        for(let i = 0; i<1; i++) {
+            nodeData.children?.push({
+                label : "_",
+                type : 'data',
+            })
+        }
+
+        if (this.props.parentState?.selected) {
+
+            if (this.props.parent) {
+                nodeData.children?.push({
+                    label : this.props.parent.data.label,
+                    type : 'data',
+                    content: ["<<<"],
+                    weight: 0.5
+                })
+                nodeData.children?.push({
+                    label : "_",
+                    type : 'data',
+                    weight: 0.5
+                })
+            }
+        }
 
         this.layout = treemap(nodeData, window.innerWidth, window.innerHeight);
         // this.layout = treemap(this.props.node.data, window.innerWidth, window.innerHeight);

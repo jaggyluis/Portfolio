@@ -10,7 +10,7 @@ export class LayoutContent extends React.Component<LayoutProps> {
 
     getChildStyle() : React.CSSProperties {
         return {
-            padding : '10px',
+
         }
     }
 
@@ -30,7 +30,6 @@ export class LayoutContent extends React.Component<LayoutProps> {
 
     getLabelStyle() : React.CSSProperties {
         return {
-            padding : '10px',
             textTransform: 'uppercase',
             fontWeight : 'bold'
             // borderBottom : '1px solid white',
@@ -51,24 +50,21 @@ export class LayoutContent extends React.Component<LayoutProps> {
 
     getStyle() : React.CSSProperties {
 
-        const padding = 1;
+        const padding = 0;
 
         return {
             width: 'calc(100% - ' + (2*padding) + 'px)',
             height: 'calc(100% - ' + (2*padding) + 'px)',
             margin : padding + 'px' ,
             position: 'absolute',
-            // border : '1px solid white',
-            // margin : '-1px',
+            border : '0.1px solid grey',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundImage: 'url("' + this.getImage() + '")',
+            // filter: 'grayscale(50%)',
             backgroundRepeat: 'no-repeat',
             overflowY : 'auto',
             overflowX : 'hidden',
-            color : 'white',
-            backgroundColor : '#2e2e2e',
-            boxShadow: '0px 0px 8px 0px rgba(0,0,0,0.2)'
         }
     }
     

@@ -35,9 +35,45 @@
                             "label": "field", 
                             "src": "data/root/computation/rx.spatial/field.PNG", 
                             "type": "data"
+                        }, 
+                        {
+                            "label": "rex_matrix", 
+                            "src": "data/root/computation/rx.spatial/rex_matrix.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "rex_matrix_zoomed_lrg", 
+                            "src": "data/root/computation/rx.spatial/rex_matrix_zoomed_lrg.jpg", 
+                            "type": "data"
                         }
                     ], 
                     "label": "rx.spatial", 
+                    "type": "dir"
+                }, 
+                {
+                    "children": [
+                        {
+                            "label": "density_select_alll", 
+                            "src": "data/root/computation/tx.aviation/density_select_alll.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "out", 
+                            "src": "data/root/computation/tx.aviation/out.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "out3", 
+                            "src": "data/root/computation/tx.aviation/out3.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "VisibilityStatisticsAreaPointsandEdges", 
+                            "src": "data/root/computation/tx.aviation/VisibilityStatisticsAreaPointsandEdges.png", 
+                            "type": "data"
+                        }
+                    ], 
+                    "label": "tx.aviation", 
                     "type": "dir"
                 }, 
                 {

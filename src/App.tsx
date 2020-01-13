@@ -32,10 +32,9 @@ class App extends React.Component<AppProps> {
             <div
                 className="App"
                 style={{
-                    height: 'calc(100% - 10px)',
-                    width: 'calc(100% - 10px)',
-                    border: '5px solid white',
-                    backgroundColor: 'white',
+                    height: '100%',
+                    width: '100%',
+                    background: 'lightgrey',
                     position: 'absolute'
                 }}
             >

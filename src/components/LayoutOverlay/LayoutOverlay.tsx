@@ -26,15 +26,14 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getStyle(): React.CSSProperties {
 
-        const padding = 1;
+        const padding = 0;
 
         return {
             width: 'calc(100% - ' + (2*padding) + 'px)',
             height: 'calc(100% - ' + (2*padding) + 'px)',
             margin : padding + 'px' ,
             position: 'absolute',
-            display: this.state.hidden ? 'none' : '',
-            boxShadow: '0px 0px 8px 0px rgba(0,0,0,0.2)'
+            display: this.state.hidden ? 'none' : ''
         }
     }
 
@@ -62,7 +61,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             height: '100%',
             position: 'absolute',
             opacity: !this.state.hovered ? 0 : 0.8,
-            background: 'black',
+            // background: 'black',
             transition: 2 * this.getTransitionDuration() + 'ms'
         }
     }
@@ -72,9 +71,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             bottom: 0,
             right: 0,
-            marginLeft: '-1px',
-            textAlign: 'right',
-            borderLeft: '1px solid white',
+            // textAlign: 'right',
+            borderLeft: '0.1px solid grey',
             height: '100%',
             width: this.state.hovered ? '80%' : '100%',
             transition: this.getTransitionDuration() + 'ms'
@@ -86,9 +84,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             bottom: 0,
             left: 0,
-            textAlign: 'right',
-            borderTop: '1px solid white',
-            marginTop: '-1px',
+            // textAlign: 'right',
+            borderTop: '0.1px solid grey',
             height: this.state.hovered ? '70%' : '100%',
             width: '100%',
             // background: this.state.hovered ? 'white' : 'transparent',
@@ -100,9 +97,15 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
         return {
-            background: 'white',
-            position: 'absolute',
-            padding: '10px',
+            position: 'relative',
+            fontWeight: 'bolder',
+            fontSize: '20px',
+            lineHeight: '20px',
+            textTransform: 'uppercase',
+            borderBottom: '0.1px solid grey',
+            borderTop: '0.1px solid grey',
+            backgroundColor: 'lightgrey',
+            // mixBlendMode: 'multiply',
             left: 0,
             top: 0,
             opacity: this.props.parentState == null || this.props.parentState.selected ? 1 : 0,
