@@ -1,0 +1,97 @@
+{
+    "children": [
+        {
+            "children": [
+                {
+                    "content": [
+                        "5106107414", 
+                        "luis.jaggy@gmail.com"
+                    ], 
+                    "label": "contact", 
+                    "type": "data"
+                }, 
+                {
+                    "content": [
+                        "Hello World!"
+                    ], 
+                    "label": "info", 
+                    "type": "data"
+                }, 
+                {
+                    "label": "profile", 
+                    "src": "data/root/about/profile.png", 
+                    "type": "data"
+                }
+            ], 
+            "label": "about", 
+            "src": "data/root/about/about.jpg", 
+            "type": "dir"
+        }, 
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "label": "field", 
+                            "src": "data/root/computation/rx.spatial/field.PNG", 
+                            "type": "data"
+                        }
+                    ], 
+                    "label": "rx.spatial", 
+                    "type": "dir"
+                }, 
+                {
+                    "children": [
+                        {
+                            "label": "c1", 
+                            "src": "data/root/computation/ux.view/c1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "c2", 
+                            "src": "data/root/computation/ux.view/c2.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "c3", 
+                            "src": "data/root/computation/ux.view/c3.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "label": "c4", 
+                            "src": "data/root/computation/ux.view/c4.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "content": [
+                                "Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. ", 
+                                "Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to."
+                            ], 
+                            "label": "t1", 
+                            "type": "data"
+                        }, 
+                        {
+                            "content": [
+                                "Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits."
+                            ], 
+                            "label": "t2", 
+                            "type": "data"
+                        }
+                    ], 
+                    "label": "ux.view", 
+                    "type": "dir"
+                }
+            ], 
+            "label": "computation", 
+            "src": "data/root/computation/computation.jpg", 
+            "type": "dir"
+        }, 
+        {
+            "label": "design", 
+            "src": "data/root/design/design.png", 
+            "type": "dir"
+        }
+    ], 
+    "label": "root", 
+    "type": "dir"
+}
