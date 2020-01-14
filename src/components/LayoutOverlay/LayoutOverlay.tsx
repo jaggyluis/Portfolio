@@ -27,13 +27,18 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
     getStyle(): React.CSSProperties {
 
         const padding = 0;
+        const v = Math.floor(Math.random() * 30) + 225;
 
         return {
             width: 'calc(100% - ' + (2*padding) + 'px)',
             height: 'calc(100% - ' + (2*padding) + 'px)',
+            // background: 'rgba(' + v + ',' + v + ',' + v + ',' + 1 + ')',
             margin : padding + 'px' ,
             position: 'absolute',
-            display: this.state.hidden ? 'none' : ''
+            // filter: 'saturate(0.5)',
+            opacity: this.state.hovered ? 0 : 1,
+            display: this.state.hidden ? 'none' : '',
+            transition: 2 * this.getTransitionDuration() + 'ms'
         }
     }
 
@@ -60,8 +65,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             width: '100%',
             height: '100%',
             position: 'absolute',
-            opacity: !this.state.hovered ? 0 : 0.8,
-            // background: 'black',
             transition: 2 * this.getTransitionDuration() + 'ms'
         }
     }
@@ -71,10 +74,9 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             bottom: 0,
             right: 0,
-            // textAlign: 'right',
-            borderLeft: '0.1px solid grey',
             height: '100%',
-            width: this.state.hovered ? '80%' : '100%',
+            background: 'rgba(255,255,255,0.5)',
+            width: !this.state.hovered ? '80%' : '100%',
             transition: this.getTransitionDuration() + 'ms'
         }
     }
@@ -84,12 +86,9 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             bottom: 0,
             left: 0,
-            // textAlign: 'right',
-            borderTop: '0.1px solid grey',
-            height: this.state.hovered ? '70%' : '100%',
+            background: 'rgba(255,255,255,0.5)',
+            height: !this.state.hovered ? '70%' : '100%',
             width: '100%',
-            // background: this.state.hovered ? 'white' : 'transparent',
-            // opacity: this.state.hovered ? 0.8 : 1,
             transition: this.getTransitionDuration() + 'ms',
             transitionDelay : this.getTransitionDuration() + 'ms'
         }
@@ -97,15 +96,12 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
         return {
-            position: 'relative',
+            position: 'absolute',
             fontWeight: 'bolder',
-            fontSize: '20px',
-            lineHeight: '20px',
+            fontSize: '40px',
+            lineHeight: '32px',
             textTransform: 'uppercase',
-            borderBottom: '0.1px solid grey',
-            borderTop: '0.1px solid grey',
-            backgroundColor: 'lightgrey',
-            // mixBlendMode: 'multiply',
+            marginLeft: '-2px',
             left: 0,
             top: 0,
             opacity: this.props.parentState == null || this.props.parentState.selected ? 1 : 0,

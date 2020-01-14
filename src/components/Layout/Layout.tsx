@@ -33,29 +33,45 @@ export class Layout extends React.Component<LayoutProps> {
 
         const nodeData = Object.assign({}, this.props.node.data);
         nodeData.children = !nodeData.children ? undefined : nodeData.children.filter(child => this.props.parentState?.selected || !child.content)
-        
-        for(let i = 0; i<1; i++) {
-            nodeData.children?.push({
-                label : "_",
-                type : 'data',
-            })
+
+        // for (let i = 0; i < 1; i++) {
+        //     nodeData.children?.push({
+        //         label: "_",
+        //         type: 'data',
+        //     })
+        // }
+
+        shuffle(nodeData.children || []);
+
+        /**
+         * Shuffles array in place.
+         * @param {Array} a items An array containing the items.
+         */
+        function shuffle(a: any) {
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a;
         }
 
         if (this.props.parentState?.selected) {
 
-            if (this.props.parent) {
-                nodeData.children?.push({
-                    label : this.props.parent.data.label,
-                    type : 'data',
-                    content: ["<<<"],
-                    weight: 0.5
-                })
-                nodeData.children?.push({
-                    label : "_",
-                    type : 'data',
-                    weight: 0.5
-                })
-            }
+            nodeData.children?.push({
+                label: this.props.node.data.label,
+                type: 'data',
+                content: [], //this.props.parent ? ["<<< " + this.props.parent.data.label] : [],
+                weight: 0.5
+            })
+
+            nodeData.children?.push({
+                label: '_',
+                type: 'data',
+                weight: 0.5
+            })
         }
 
         this.layout = treemap(nodeData, window.innerWidth, window.innerHeight);
@@ -67,13 +83,20 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getStyle(): React.CSSProperties {
+
+        const v = Math.floor(Math.random() * 30) + 225;
+        // const v = Math.floor(Math.random() * 20);
+
         return {
             position: 'absolute',
             top: 0,
             left: 0,
             height: '100%',
             width: '100%',
+            background: 'rgba(' + v + ',' + v + ',' + v + ',' + 0.5 + ')',
+            // border : '0.5px solid rgba(0,0,0,0.05)',
             zIndex: 1,
+            // display: this.props.parentState && !this.props.parentState.selected ? 'none' : ''
         }
     }
 

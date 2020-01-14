@@ -3,14 +3,15 @@ import { LayoutProps } from '../Layout/Layout';
 
 export class LayoutContent extends React.Component<LayoutProps> {
     
-
     getImage() {
         return this.props.node.data.src || '';
     }
 
     getChildStyle() : React.CSSProperties {
         return {
-
+            margin: "32px 30% 0 0",
+            borderBottom : '2px solid black',
+            paddingBottom : '10px'
         }
     }
 
@@ -31,10 +32,10 @@ export class LayoutContent extends React.Component<LayoutProps> {
     getLabelStyle() : React.CSSProperties {
         return {
             textTransform: 'uppercase',
-            fontWeight : 'bold'
-            // borderBottom : '1px solid white',
-            // color : 'white',
-            // backgroundColor : 'darkgrey'
+            fontWeight : 'bold',
+            fontSize : '40px',
+            marginLeft: '-2px',
+            lineHeight: '31px',
         }
     }
 
@@ -51,17 +52,18 @@ export class LayoutContent extends React.Component<LayoutProps> {
     getStyle() : React.CSSProperties {
 
         const padding = 0;
+        const v = Math.floor(Math.random() * 30) + 225;
 
         return {
             width: 'calc(100% - ' + (2*padding) + 'px)',
             height: 'calc(100% - ' + (2*padding) + 'px)',
+            background: this.props.node.data.src ? '' : 'rgba(' + v + ',' + v + ',' + v + ',' + 0.3 + ')',
             margin : padding + 'px' ,
             position: 'absolute',
-            border : '0.1px solid grey',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundImage: 'url("' + this.getImage() + '")',
-            // filter: 'grayscale(50%)',
+            // filter: 'grayscale(0.5)',
             backgroundRepeat: 'no-repeat',
             overflowY : 'auto',
             overflowX : 'hidden',

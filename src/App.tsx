@@ -33,8 +33,7 @@ class App extends React.Component<AppProps> {
                 className="App"
                 style={{
                     height: '100%',
-                    width: '100%',
-                    background: 'lightgrey',
+                    width: '95%',
                     position: 'absolute'
                 }}
             >
