@@ -38,7 +38,8 @@ class App extends React.Component<AppProps> {
                     height: '100%',
                     width: '95%',
                     position: 'absolute',
-                    marginLeft : '2.5%'
+                    marginLeft : '2.5%',
+                    overflow: 'hidden'
                 }}
             >
                 <Layout

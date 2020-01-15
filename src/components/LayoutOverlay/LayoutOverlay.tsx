@@ -24,29 +24,21 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         this.setState({ hidden: true });
     }
 
-    getStyle(): React.CSSProperties {
-
-        const padding = 0;
-        const v = Math.floor(Math.random() * 30) + 225;
-
-        return {
-            width: 'calc(100% - ' + (2 * padding) + 'px)',
-            height: 'calc(100% - ' + (2 * padding) + 'px)',
-            // background: 'rgba(' + v + ',' + v + ',' + v + ',' + 1 + ')',
-            margin: padding + 'px',
-            position: 'absolute',
-            // filter: 'saturate(0.5)',
-            // opacity: this.state.hovered ? 0 : 1,
-            display: this.state.hidden ? 'none' : '',
-            transition: 2 * this.getTransitionDuration() + 'ms'
-        }
-    }
-
     getSplashImage(): string {
-        return this.props.node.data.src || '';
+        if (this.props.node.data.src) {
+            const paths = this.props.node.data.src.split(".");
+            const path = paths[0] + "_s." + paths[1];
+            return path;
+        } else {
+            return '';
+        }
+        // return this.props.node.data.src || '';
     }
 
     getSplashStyle(): React.CSSProperties {
+
+        const v = Math.floor(Math.random() * 30) + 225;
+
         return {
             width: '100%',
             height: '100%',
@@ -55,9 +47,10 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             backgroundPosition: 'center',
             backgroundImage: 'url("' + this.getSplashImage() + '")',
             backgroundRepeat: 'no-repeat',
-            opacity: this.state.hovered ? 0 : 1,
-            filter: 'grayscale(50%)',
-            transition: 2 * this.getTransitionDuration() + 'ms'
+            // opacity: this.state.hovered ? 0 : 1,
+            // filter:  'blur(5px)', //'grayscale(50%)',
+            transition: 2 * this.getTransitionDuration() + 'ms',
+            willChange: 'opacity'
         }
     }
 
@@ -68,7 +61,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             background: 'rgba(255,255,255,0.2)',
             opacity: this.state.hovered ? 0 : 1,
-            transition: 2 * this.getTransitionDuration() + 'ms'
+            transition: 2 * this.getTransitionDuration() + 'ms',
+            willChange: 'opacity'
         }
     }
 
@@ -78,8 +72,10 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             bottom: 0,
             right: 0,
             height: '100%',
+            // display: this.props.parentState == null || this.props.parentState.selected ? '' : 'none',
             width: !this.state.hovered ? '80%' : '100%',
-            transition: this.getTransitionDuration() + 'ms'
+            transition: this.getTransitionDuration() + 'ms',
+            willChange: 'width'
         }
     }
 
@@ -91,7 +87,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             height: !this.state.hovered ? '70%' : '100%',
             width: '100%',
             transition: this.getTransitionDuration() + 'ms',
-            transitionDelay: this.getTransitionDuration() + 'ms'
+            transitionDelay: this.getTransitionDuration() + 'ms',
+            willChange: 'height'
         }
     }
 
@@ -103,7 +100,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             background: 'rgba(255,255,255,0.5)',
             opacity: this.state.hovered ? 0 : 1,
             transition: this.getTransitionDuration() + 'ms',
-            transitionDelay: this.getTransitionDuration() + 'ms'
+            transitionDelay: this.getTransitionDuration() + 'ms',
+            willChange: 'opacity'
         }
     }
 
@@ -115,13 +113,27 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             lineHeight: '32px',
             textTransform: 'uppercase',
             marginLeft: '-2px',
-            // color: 'white',
-            // background: 'rgba(255,255,255,0.5)',
             mixBlendMode: 'overlay',
             left: 0,
             top: 0,
+        }
+    }
+
+    getStyle(): React.CSSProperties {
+
+        const padding = 0;
+        const v = Math.floor(Math.random() * 30) + 225;
+
+        return {
+            width: 'calc(100% - ' + (2 * padding) + 'px)',
+            height: 'calc(100% - ' + (2 * padding) + 'px)',
+            // background: 'rgba(' + v + ',' + v + ',' + v + ',' + 1 + ')',
+            margin: padding + 'px',
+            overflow: 'hidden',
+            position: 'absolute',
+            display: this.state.hidden ? 'none' : '',
             opacity: this.props.parentState == null || this.props.parentState.selected ? 1 : 0,
-            transition: this.getTransitionDuration() + 'ms'
+            transition: 2 * this.getTransitionDuration() + 'ms'
         }
     }
 

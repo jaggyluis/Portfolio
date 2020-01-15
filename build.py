@@ -11,6 +11,9 @@ source_path = "src\\data\\root\\"
 target_path = "public/data/"    
 target_src = "data/"
 
+file_image_pixel_target = 2000000
+file_image_pixel_target_sm = 500000
+
 def format_path_src(path) :   
     # return path.replace("\\", "/").replace(source_path, target_path)
     return path.replace(source_path, target_src).replace("\\", "/")
@@ -21,27 +24,22 @@ def format_path(path) :
 def load_image(path):
     return Image.open(path)
 
-def compress_image(im, factor) :
+def compress_image(im, target_pixel_count) :
 
     im_size = im.size
     print im_size
 
     im_pixel_count = im_size[0] * im_size[1]
-    im_pixel_target = 2000000
-    im_pixel_factor =  im_pixel_count / im_pixel_target
+    im_pixel_factor =  im_pixel_count / target_pixel_count
 
-    print(im_pixel_count, im_pixel_target, im_pixel_factor)
+    print(im_pixel_count, target_pixel_count, im_pixel_factor)
 
 
-    if (im_pixel_count > im_pixel_target) :
+    if (im_pixel_count > target_pixel_count) :
         im = im.resize((im_size[0]/im_pixel_factor,im_size[1]/im_pixel_factor),Image.ANTIALIAS)
-
-    # im = im.resize((im_size[0]/factor,im_size[1]/factor),Image.ANTIALIAS)
 
     print "--> " , im.size
     return im
-    
-    #im.save("path\\to\\save\\image_scaled_opt.jpg",optimize=True,quality=95)
 
 def load(path):
 
@@ -93,16 +91,20 @@ def build_dir(directory, target):
                 elif file_.endswith(".jpg") or file_.endswith(".png"):
 
                     file_image_target_path = format_path(file_path)
-                    file_image_target_src = format_path_src(file_path)
+                    file_image_targed_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
 
+                    file_image_target_src = format_path_src(file_path)
+                    
                     file_image = load_image(file_path)
                     file_image_aspect = float(file_image.size[0]) / float(file_image.size[1])
                     file_image_size = round(file_image_aspect)
-                    
-                    file_image_compressed = compress_image(file_image, 3)
+
+                    file_image_compressed = compress_image(file_image, file_image_pixel_target)
+                    file_image_compressed_sm = compress_image(file_image, file_image_pixel_target_sm)
                     print(file_image_compressed)
 
                     file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
+                    file_image_compressed_sm.save(file_image_targed_path_sm, optimize=True, quality=95)
 
                     # write this to the tree ---
                     data["src"] = file_image_target_src
@@ -123,16 +125,20 @@ def build_dir(directory, target):
                 elif file_.lower().endswith(".jpg") or file_.lower().endswith(".png"):
 
                     file_image_target_path = format_path(file_path)
-                    file_image_target_src = format_path_src(file_path)
+                    file_image_targed_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
 
+                    file_image_target_src = format_path_src(file_path)
+                    
                     file_image = load_image(file_path)
                     file_image_aspect = float(file_image.size[0]) / float(file_image.size[1])
                     file_image_size = round(file_image_aspect)
-                    
-                    file_image_compressed = compress_image(file_image, 3)
+
+                    file_image_compressed = compress_image(file_image, file_image_pixel_target)
+                    file_image_compressed_sm = compress_image(file_image, file_image_pixel_target_sm)
                     print(file_image_compressed)
 
                     file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
+                    file_image_compressed_sm.save(file_image_targed_path_sm, optimize=True, quality=95)
 
                     # write this to the tree ---
                     file_data["src"] = file_image_target_src   

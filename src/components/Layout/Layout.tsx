@@ -50,7 +50,7 @@ export class Layout extends React.Component<LayoutProps> {
         width : window.innerWidth,
         height: window.innerHeight,
         selectedChildId: null,
-        transitionDuration: 500
+        transitionDuration: 600
     }
 
     componentWillMount() {
@@ -128,7 +128,7 @@ export class Layout extends React.Component<LayoutProps> {
             // background: 'rgba(' + v + ',' + v + ',' + v + ',' + 0.5 + ')',
             // border : '0.5px solid rgba(0,0,0,0.05)',
             zIndex: 1,
-            display: this.props.nodeState.hidden ? 'none' : ''
+            display: this.props.nodeState.hidden ? 'none' : '',
         }
     }
 
@@ -140,8 +140,10 @@ export class Layout extends React.Component<LayoutProps> {
             height: this.getChildHeight(child),
             width: this.getChildWidth(child),
             display: this.getChildDisplay(child),
+            zIndex: -1,
             transition: this.getTransitionDuration() + 'ms',
-            zIndex: -1
+            // opacity: this.getChildOpacity(child),
+            willChange: 'top, left, height, width, display, opacity'
         }
     }
 
@@ -165,6 +167,10 @@ export class Layout extends React.Component<LayoutProps> {
         return (100 * (child.y1 - child.y0)) + "%";
     }
 
+    getChildOpacity(child:Node) {
+        return this.isChildSelected(child) || this.areNoChildrenSelected() ? 1 : 0;
+    }
+
     getChildDisplay(child: Node) {
         if (this.isChildSelected(child) || this.areNoChildrenSelected()) return 'visible';
         return 'none';
@@ -174,6 +180,7 @@ export class Layout extends React.Component<LayoutProps> {
         return {
             selected: this.isChildSelected(child),
             // hidden : this.props.parentState !== null && !this.props.parentState.selected
+            hidden: this.props.parent !== null && !this.props.nodeState.selected
         }
     }
 
@@ -224,7 +231,6 @@ export class Layout extends React.Component<LayoutProps> {
                 style={this.getStyle()}
             >
                 {
-                    this.props.nodeState.hidden ? undefined :
                     this.props.node.data.type === 'dir' ?
                         <LayoutOverlay
                             node={this.props.node}
@@ -239,7 +245,6 @@ export class Layout extends React.Component<LayoutProps> {
                             parent={this.props.parent}
                             parentState={this.props.parentState}
                         />
-
                 }
                 {this.getChildren()}
             </div>
