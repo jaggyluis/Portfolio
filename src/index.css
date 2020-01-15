@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(170deg, #ffffff 0%,#cdcdcd 100%);
+  background: linear-gradient(170deg, #ffffff 0%, #eeeeee 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

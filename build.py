@@ -1,12 +1,47 @@
 
 import json
 from pprint import pprint
-import os
+import os, shutil
 from PIL import Image  # uses pillow
 from random import randint
+import uuid
+import math
 
-def format_path(path) :   
-    return path.replace("\\", "/").replace("public/", '')
+source_path = "src\\data\\root\\"
+target_path = "public/data/"    
+target_src = "data/"
+
+def format_path_src(path) :   
+    # return path.replace("\\", "/").replace(source_path, target_path)
+    return path.replace(source_path, target_src).replace("\\", "/")
+
+def format_path(path) :
+    return path.replace(source_path, target_path).replace("\\", "/")
+
+def load_image(path):
+    return Image.open(path)
+
+def compress_image(im, factor) :
+
+    im_size = im.size
+    print im_size
+
+    im_pixel_count = im_size[0] * im_size[1]
+    im_pixel_target = 2000000
+    im_pixel_factor =  im_pixel_count / im_pixel_target
+
+    print(im_pixel_count, im_pixel_target, im_pixel_factor)
+
+
+    if (im_pixel_count > im_pixel_target) :
+        im = im.resize((im_size[0]/im_pixel_factor,im_size[1]/im_pixel_factor),Image.ANTIALIAS)
+
+    # im = im.resize((im_size[0]/factor,im_size[1]/factor),Image.ANTIALIAS)
+
+    print "--> " , im.size
+    return im
+    
+    #im.save("path\\to\\save\\image_scaled_opt.jpg",optimize=True,quality=95)
 
 def load(path):
 
@@ -17,9 +52,13 @@ def load(path):
     
     return data
 
-def build_dir(directory):
+def build_dir(directory, target):
 
     directory_path, directory_name = os.path.split(directory)
+
+    if not os.path.exists(target):
+        print("directory does not exist - building : " + target)
+        os.makedirs(target)
 
     data = {}
     children = []
@@ -27,13 +66,16 @@ def build_dir(directory):
     #iterate through the directory files ---
     for file_ in os.listdir(directory):
 
+        print(directory, file_)
+
         file_name = os.path.splitext(file_)[0]
         file_path = os.path.join(directory, file_)
 
         # if the file is a directory ---
         if os.path.isdir(file_path) :
                 
-            dir_data = build_dir(file_path)
+            dir_path_target = target + "/" + file_
+            dir_data = build_dir(file_path, dir_path_target)
 
             if dir_data :
                 children.append(dir_data)
@@ -41,13 +83,29 @@ def build_dir(directory):
         #if the file is not a directory ---
         else :
 
+            file_extension = file_.split(".")[-1]
+
             if (file_name == directory_name) :
 
                 if file_.endswith(".json"): 
                     pass # do nothing here - maybe later ---
 
                 elif file_.endswith(".jpg") or file_.endswith(".png"):
-                    data["src"] = format_path(file_path)       
+
+                    file_image_target_path = format_path(file_path)
+                    file_image_target_src = format_path_src(file_path)
+
+                    file_image = load_image(file_path)
+                    file_image_aspect = float(file_image.size[0]) / float(file_image.size[1])
+                    file_image_size = round(file_image_aspect)
+                    
+                    file_image_compressed = compress_image(file_image, 3)
+                    print(file_image_compressed)
+
+                    file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
+
+                    # write this to the tree ---
+                    data["src"] = file_image_target_src
 
                 elif file_.endswith(".txt") :
                     data["content"] = [line.rstrip('\n') for line in open(file_path)]
@@ -57,35 +115,62 @@ def build_dir(directory):
                 file_data = {}
                 file_data["label"] = file_name
                 file_data["type"] = 'data'
+                file_data["id"] = str(uuid.uuid1())
 
                 if file_.endswith(".json"): 
                     pass # do nothing here - maybe later ---
 
                 elif file_.lower().endswith(".jpg") or file_.lower().endswith(".png"):
-                    file_data["src"] = format_path(file_path)       
+
+                    file_image_target_path = format_path(file_path)
+                    file_image_target_src = format_path_src(file_path)
+
+                    file_image = load_image(file_path)
+                    file_image_aspect = float(file_image.size[0]) / float(file_image.size[1])
+                    file_image_size = round(file_image_aspect)
+                    
+                    file_image_compressed = compress_image(file_image, 3)
+                    print(file_image_compressed)
+
+                    file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
+
+                    # write this to the tree ---
+                    file_data["src"] = file_image_target_src   
 
                 elif file_.endswith(".txt") :
                     file_data["content"] = [line.rstrip('\n') for line in open(file_path)]
                 
                 children.append(file_data)
 
-
     #set all outputs ---
 
     data["label"] = directory_name
     data["type"] = "dir"
+    data["id"] = str(uuid.uuid1())
 
     if len(children) :
         data["children"] = children
         
     return data
 
-    
-out = build_dir("public\\data\\luis jaggy")
+# remove the existing build at start ---
+for filename in os.listdir(target_path):
+    file_path = os.path.join(target_path, filename)
+    try:
+        if os.path.isfile(file_path) or os.path.islink(file_path):
+            os.unlink(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+    except Exception as e:
+        print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+# build the new directory output ---
+out = build_dir(source_path, target_path)
 
 #pprint(out)
 
-with open('public/data/data.json', 'w') as out_file:
+# save the tree ---
+with open('public/data.json', 'w') as out_file:
     json.dump(out, out_file, indent=4, sort_keys=True)
 
             

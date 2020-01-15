@@ -5,19 +5,51 @@ import { Node } from './../../model/Node';
 import { treemap } from './../../utils/treemap';
 import { LayoutContent } from '../LayoutContent/LayoutContent';
 
+function debounce(func: any) {
+    var timer: any;
+    return function (event: any) {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(func, 500, event);
+    };
+}
+
+/**
+ * Shuffles array in place.
+ * @param {Array} a items An array containing the items.
+ */
+function shuffle(a: any) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
 export interface LayoutProps {
     node: Node;
     nodeState: NodeState;
     parent: Node | null;
     parentState: NodeState | null;
+    onChildClick?: (child: Node) => void;
+}
+export interface LayoutState {
+    selectedChildId: string | null;
+    transitionDuration: number;
+    width : number;
+    height : number;
 }
 export class Layout extends React.Component<LayoutProps> {
 
     container: HTMLElement | null = null;
-    layout: Node = treemap({ label: '_', type: 'dir' }, 100, 100);
+    layout: Node = treemap({ label: '_', type: 'dir', id: '_' }, 100, 100);
 
-    state = {
-        selectedChild: null,
+    state: LayoutState = {
+        width : window.innerWidth,
+        height: window.innerHeight,
+        selectedChildId: null,
         transitionDuration: 500
     }
 
@@ -29,53 +61,53 @@ export class Layout extends React.Component<LayoutProps> {
         this.update();
     }
 
+    componentDidMount() {
+        window.addEventListener("resize", debounce(() => {
+            if (this.props.nodeState.selected) {
+                this.setState({width : window.innerWidth, height : window.innerHeight})
+            }
+        }));
+    }
+
     update() {
 
-        const nodeData = Object.assign({}, this.props.node.data);
-        nodeData.children = !nodeData.children ? undefined : nodeData.children.filter(child => this.props.parentState?.selected || !child.content)
-
-        // for (let i = 0; i < 1; i++) {
-        //     nodeData.children?.push({
-        //         label: "_",
-        //         type: 'data',
-        //     })
-        // }
-
-        shuffle(nodeData.children || []);
-
-        /**
-         * Shuffles array in place.
-         * @param {Array} a items An array containing the items.
-         */
-        function shuffle(a: any) {
-            var j, x, i;
-            for (i = a.length - 1; i > 0; i--) {
-                j = Math.floor(Math.random() * (i + 1));
-                x = a[i];
-                a[i] = a[j];
-                a[j] = x;
+        if (this.props.nodeState.hidden) {
+            this.layout = treemap({ label: '_', type: 'dir', id: '_' }, 100, 100);
+            this.state.selectedChildId = null;
+        } else {
+            const nodeData = Object.assign({}, this.props.node.data);
+            nodeData.children = !nodeData.children ? undefined : nodeData.children.filter(child => this.props.parentState?.selected || !child.content)
+    
+            // for (let i = 0; i < 1; i++) {
+            //     nodeData.children?.push({
+            //         label: "_",
+            //         type: 'data',
+            //     })
+            // }
+    
+            // shuffle(nodeData.children || []);
+     
+            if (this.props.parentState && this.props.parentState.selected && nodeData.children) {
+    
+                nodeData.children.push({
+                    label: this.props.node.data.label,
+                    id: '__label__',
+                    type: 'data',
+                    content: [], //this.props.parent ? ["<<< " + this.props.parent.data.label] : [],
+                    weight: 0.5
+                })
+    
+                nodeData.children?.push({
+                    label: '_',
+                    id: '__filler__',
+                    type: 'data',
+                    weight: 0.5
+                })
             }
-            return a;
+    
+            this.layout = treemap(nodeData, this.state.width, this.state.height);
+            this.state.selectedChildId = null;
         }
-
-        if (this.props.parentState?.selected) {
-
-            nodeData.children?.push({
-                label: this.props.node.data.label,
-                type: 'data',
-                content: [], //this.props.parent ? ["<<< " + this.props.parent.data.label] : [],
-                weight: 0.5
-            })
-
-            nodeData.children?.push({
-                label: '_',
-                type: 'data',
-                weight: 0.5
-            })
-        }
-
-        this.layout = treemap(nodeData, window.innerWidth, window.innerHeight);
-        // this.layout = treemap(this.props.node.data, window.innerWidth, window.innerHeight);
     }
 
     getTransitionDuration() {
@@ -93,10 +125,10 @@ export class Layout extends React.Component<LayoutProps> {
             left: 0,
             height: '100%',
             width: '100%',
-            background: 'rgba(' + v + ',' + v + ',' + v + ',' + 0.5 + ')',
+            // background: 'rgba(' + v + ',' + v + ',' + v + ',' + 0.5 + ')',
             // border : '0.5px solid rgba(0,0,0,0.05)',
             zIndex: 1,
-            // display: this.props.parentState && !this.props.parentState.selected ? 'none' : ''
+            display: this.props.nodeState.hidden ? 'none' : ''
         }
     }
 
@@ -138,52 +170,53 @@ export class Layout extends React.Component<LayoutProps> {
         return 'none';
     }
 
-    getChildIndex(child: Node) { // NOTE - this can probably be a property of the child ---
-        return this.layout.children?.indexOf(child);
-    }
-
     getChildState(child: Node): NodeState {
         return {
-            selected: this.isChildSelected(child)
+            selected: this.isChildSelected(child),
+            // hidden : this.props.parentState !== null && !this.props.parentState.selected
         }
     }
 
     isChildSelected(child: Node) {
-        return this.getChildIndex(child) === this.state.selectedChild;
+        return this.state.selectedChildId === child.data.id;
     }
 
     setChildSelected(child: Node) {
-        this.setState({ selectedChild: this.getChildIndex(child) })
+        this.setState({ selectedChildId: child.data.id })
     }
 
     areNoChildrenSelected() {
-        return this.state.selectedChild === null;
+        return this.state.selectedChildId === null;
     }
 
     onChildClick(child: Node) {
-        this.setChildSelected(child);
+        if (!child.data.content) {
+            this.setChildSelected(child);
+        }
     }
 
-    render() {
-        const children = this.layout.children ? this.layout.children.map((child, index) => {
+    getChildren() {
+        return this.layout.children ? this.layout.children.map((child) => {
             return (
                 <div
-                    key={index}
+                    key={child.data.id}
                     className='layout-child'
                     onClick={() => { this.onChildClick(child); }}
                     style={this.getChildStyle(child)}
                 >
                     <Layout
-                        node={child}
-                        nodeState={this.getChildState(child)}
                         parent={this.props.node}
                         parentState={this.props.nodeState}
+                        node={child}
+                        nodeState={this.getChildState(child)}
                     />
                 </div>
             )
         })
             : [];
+    }
 
+    render() {
         return (
             <div
                 className='layout'
@@ -191,6 +224,7 @@ export class Layout extends React.Component<LayoutProps> {
                 style={this.getStyle()}
             >
                 {
+                    this.props.nodeState.hidden ? undefined :
                     this.props.node.data.type === 'dir' ?
                         <LayoutOverlay
                             node={this.props.node}
@@ -207,7 +241,7 @@ export class Layout extends React.Component<LayoutProps> {
                         />
 
                 }
-                {children}
+                {this.getChildren()}
             </div>
         )
     }

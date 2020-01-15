@@ -8,7 +8,7 @@ function debounce(func: any) {
     var timer: any;
     return function (event: any) {
         if (timer) clearTimeout(timer);
-        timer = setTimeout(func, 1000, event);
+        timer = setTimeout(func, 500, event);
     };
 }
 
@@ -17,29 +17,33 @@ export interface AppProps {
 }
 class App extends React.Component<AppProps> {
 
-    componentDidMount() {
-        window.addEventListener("resize", debounce(() => {
-            this.forceUpdate();
-        }));
+    state={
+        selected : false,
+    }
+
+    onNodeClick() {
+        this.setState({selected : true});
     }
 
     render() {
 
         const node = treemap(this.props.data, window.innerWidth, window.innerHeight);
-        const nodeState = { selected: true }
+        node.data.label = "Luis Jaggy";
 
         return (
             <div
                 className="App"
+                onClick={this.onNodeClick.bind(this)}
                 style={{
                     height: '100%',
                     width: '95%',
-                    position: 'absolute'
+                    position: 'absolute',
+                    marginLeft : '2.5%'
                 }}
             >
                 <Layout
                     node={node}
-                    nodeState={nodeState}
+                    nodeState={{selected : this.state.selected }}
                     parent={null}
                     parentState={null}
                 />

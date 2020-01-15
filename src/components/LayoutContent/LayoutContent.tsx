@@ -11,7 +11,9 @@ export class LayoutContent extends React.Component<LayoutProps> {
         return {
             margin: "32px 30% 0 0",
             borderBottom : '2px solid black',
-            paddingBottom : '10px'
+            paddingBottom : '10px',
+            textAlign: 'right',
+            paddingRight: '10px'
         }
     }
 
@@ -36,6 +38,7 @@ export class LayoutContent extends React.Component<LayoutProps> {
             fontSize : '40px',
             marginLeft: '-2px',
             lineHeight: '31px',
+            position: 'fixed',
         }
     }
 
@@ -60,13 +63,14 @@ export class LayoutContent extends React.Component<LayoutProps> {
             background: this.props.node.data.src ? '' : 'rgba(' + v + ',' + v + ',' + v + ',' + 0.3 + ')',
             margin : padding + 'px' ,
             position: 'absolute',
-            backgroundSize: 'cover',
+            backgroundSize:  this.props.nodeState.selected ? 'contain' :'cover',
             backgroundPosition: 'center',
             backgroundImage: 'url("' + this.getImage() + '")',
-            // filter: 'grayscale(0.5)',
+            // filter: this.props.parentState?.selected ? '' : 'contrast(0.3)',
+            // opacity: this.props.parentState?.selected ? 1 : 0.8,
             backgroundRepeat: 'no-repeat',
             overflowY : 'auto',
-            overflowX : 'hidden',
+            overflowX : 'hidden'
         }
     }
     
