@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { LayoutProps } from '../Layout/Layout';
+import { LayoutImage } from '../LayoutImage/LayoutImage';
 
 export class LayoutOverlay extends React.Component<LayoutProps> {
 
@@ -24,7 +25,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         this.setState({ hidden: true });
     }
 
-    getSplashImage(): string {
+    getSplashImagePlaceholderPath(): string {
         if (this.props.node.data.src) {
             const paths = this.props.node.data.src.split(".");
             const path = paths[0] + "_s." + paths[1];
@@ -32,7 +33,10 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         } else {
             return '';
         }
-        // return this.props.node.data.src || '';
+    }
+
+    getSplashImagePath(): string {
+        return this.props.node.data.src || '';
     }
 
     getSplashStyle(): React.CSSProperties {
@@ -45,7 +49,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: 'url("' + this.getSplashImage() + '")',
+            backgroundImage: 'url("' + this.getSplashImagePath() + '")',
             backgroundRepeat: 'no-repeat',
             // opacity: this.state.hovered ? 0 : 1,
             // filter:  'blur(5px)', //'grayscale(50%)',
@@ -106,13 +110,15 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
     }
 
     getLabelStyle(): React.CSSProperties {
+
+        const d = this.props.nodeDepth * 10
+        const h = 40 - d;
+
         return {
             position: 'relative',
             fontWeight: 'bolder',
-            fontSize: '40px',
-            lineHeight: '32px',
+            fontSize: h + 'px',
             textTransform: 'uppercase',
-            marginLeft: '-2px',
             mixBlendMode: 'overlay',
             left: 0,
             top: 0,
@@ -150,7 +156,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
                 onMouseLeave={this.onMouseLeave.bind(this)}
                 style={this.getStyle()}
             >
-                <div className='layout-splash' style={this.getSplashStyle()}></div>
+                <LayoutImage src={this.getSplashImagePath()} placeholder={this.getSplashImagePlaceholderPath()}/>
+                {/* <div className='layout-splash' style={this.getSplashStyle()}></div> */}
                 <div className='layout-color' style={this.getColorStyle()}></div>
                 <div className='layout-lslider' style={this.getLSliderStyle()}>
                     <div style={this.getSliderColorStyle()}></div>

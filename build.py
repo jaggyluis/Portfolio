@@ -12,7 +12,7 @@ target_path = "public/data/"
 target_src = "data/"
 
 file_image_pixel_target = 2000000
-file_image_pixel_target_sm = 500000
+file_image_pixel_target_sm = 100000
 
 def format_path_src(path) :   
     # return path.replace("\\", "/").replace(source_path, target_path)
@@ -60,6 +60,7 @@ def build_dir(directory, target):
 
     data = {}
     children = []
+    images = []
 
     #iterate through the directory files ---
     for file_ in os.listdir(directory):
@@ -68,7 +69,7 @@ def build_dir(directory, target):
 
         file_name = os.path.splitext(file_)[0]
         file_path = os.path.join(directory, file_)
-
+        
         # if the file is a directory ---
         if os.path.isdir(file_path) :
                 
@@ -142,6 +143,7 @@ def build_dir(directory, target):
 
                     # write this to the tree ---
                     file_data["src"] = file_image_target_src   
+                    images.append(file_image_target_src)
 
                 elif file_.endswith(".txt") :
                     file_data["content"] = [line.rstrip('\n') for line in open(file_path)]
@@ -153,6 +155,9 @@ def build_dir(directory, target):
     data["label"] = directory_name
     data["type"] = "dir"
     data["id"] = str(uuid.uuid1())
+
+    if not "src" in data.keys() and len(images):
+        data["src"] = images[0]
 
     if len(children) :
         data["children"] = children

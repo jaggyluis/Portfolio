@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { LayoutProps } from '../Layout/Layout';
+import { color } from 'd3';
+import { LayoutImage } from '../LayoutImage/LayoutImage';
 
 export class LayoutContent extends React.Component<LayoutProps> {
     
-    getImagePath() : string {
+    getImagePlaceholderPath()  : string {
         if (this.props.node.data.src) {
             const paths = this.props.node.data.src.split(".");
             const path = paths[0] + "_s." + paths[1];
@@ -11,7 +13,10 @@ export class LayoutContent extends React.Component<LayoutProps> {
         } else {
             return '';
         }
-        // return this.props.node.data.src || '';
+    }
+
+    getImagePath() : string {
+        return this.props.node.data.src || '';
     }
 
     getImageStyle() : React.CSSProperties {
@@ -22,25 +27,26 @@ export class LayoutContent extends React.Component<LayoutProps> {
             backgroundSize:  this.props.nodeState.selected ? 'contain' :'cover',
             backgroundPosition: 'center',
             backgroundImage: 'url("' + this.getImagePath() + '")',
-            // filter: this.props.parentState?.selected ? '' : 'contrast(0.3)',
-            // opacity: this.props.parentState?.selected ? 1 : 0.8,
             backgroundRepeat: 'no-repeat',
         }
     }
 
     getImage() {
         return (
-            <div className='layout-content-image' style={this.getImageStyle()}></div>
+            <LayoutImage src={this.getImagePath()} placeholder={this.getImagePlaceholderPath()}/>
+            // <div className='layout-content-image' style={this.getImageStyle()}></div>
         )
     }
 
     getContentStyle() : React.CSSProperties {
         return {
-            margin: "32px 30% 0 0",
-            borderBottom : '2px solid black',
-            paddingBottom : '10px',
-            textAlign: 'right',
-            paddingRight: '10px'
+            // margin: "32px 10% 0 0",
+            borderBottom : '1px solid rgba(100,100,100,0.05)',
+            // paddingBottom : '10px',
+            // textAlign: 'right',
+            // paddingRight: '10px',
+            color : 'dimgrey',
+            maxWidth : '500px'
         }
     }
 
@@ -63,9 +69,10 @@ export class LayoutContent extends React.Component<LayoutProps> {
             textTransform: 'uppercase',
             fontWeight : 'bold',
             fontSize : '40px',
-            marginLeft: '-2px',
-            lineHeight: '31px',
-            position: 'relative',
+            position: 'sticky',
+            top : 0,
+            color : 'lightgrey',
+            mixBlendMode : 'multiply'
         }
     }
 

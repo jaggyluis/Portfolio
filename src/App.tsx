@@ -35,16 +35,18 @@ class App extends React.Component<AppProps> {
                 className="App"
                 onClick={this.onNodeClick.bind(this)}
                 style={{
-                    height: '100%',
+                    height: '95%',
                     width: '95%',
                     position: 'absolute',
                     marginLeft : '2.5%',
-                    overflow: 'hidden'
+                    // overflow: 'hidden'
                 }}
             >
                 <Layout
                     node={node}
                     nodeState={{selected : this.state.selected }}
+                    nodeDepth={0}
+                    nodeSiblings={[]}
                     parent={null}
                     parentState={null}
                 />
