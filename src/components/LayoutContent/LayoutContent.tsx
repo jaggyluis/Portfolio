@@ -5,46 +5,22 @@ import { LayoutImage } from '../LayoutImage/LayoutImage';
 
 export class LayoutContent extends React.Component<LayoutProps> {
     
-    getImagePlaceholderPath()  : string {
-        if (this.props.node.data.src) {
-            const paths = this.props.node.data.src.split(".");
-            const path = paths[0] + "_s." + paths[1];
-            return path;
-        } else {
-            return '';
-        }
-    }
-
     getImagePath() : string {
         return this.props.node.data.src || '';
     }
 
-    getImageStyle() : React.CSSProperties {
-        return {
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            backgroundSize:  this.props.nodeState.selected ? 'contain' :'cover',
-            backgroundPosition: 'center',
-            backgroundImage: 'url("' + this.getImagePath() + '")',
-            backgroundRepeat: 'no-repeat',
-        }
-    }
-
     getImage() {
         return (
-            <LayoutImage src={this.getImagePath()} placeholder={this.getImagePlaceholderPath()}/>
-            // <div className='layout-content-image' style={this.getImageStyle()}></div>
+            <LayoutImage 
+                src={this.getImagePath()} 
+                contain={this.props.nodeState.selected}
+            />
         )
     }
 
     getContentStyle() : React.CSSProperties {
         return {
-            // margin: "32px 10% 0 0",
             borderBottom : '1px solid rgba(100,100,100,0.05)',
-            // paddingBottom : '10px',
-            // textAlign: 'right',
-            // paddingRight: '10px',
             color : 'dimgrey',
             maxWidth : '500px'
         }

@@ -9,7 +9,7 @@ function debounce(func: any) {
     var timer: any;
     return function (event: any) {
         if (timer) clearTimeout(timer);
-        timer = setTimeout(func, 500, event);
+        timer = setTimeout(func, 100, event);
     };
 }
 
@@ -182,8 +182,10 @@ export class Layout extends React.Component<LayoutProps> {
 
     getHeaderNodeStyle(isSibling: boolean = false): React.CSSProperties {
 
-        const d = this.props.nodeDepth * 10
-        const h = 40 - d;
+        const s = this.state.width < 600 ? 30 : 40;
+        const c = Math.ceil(s / 5)
+        const d = this.props.nodeDepth * c
+        const h = s - d;
 
         return {
             position: 'relative',
@@ -299,7 +301,8 @@ export class Layout extends React.Component<LayoutProps> {
                         width : window.innerWidth * 2 + 'px',
                         height : '1px',
                         left: 0,
-                        background : 'rgba(100,100,100,0.1)'
+                        pointerEvents: 'none',
+                        background : 'rgba(100,100,100,0.05)'
                     }}
                 >
                 </div>
@@ -310,7 +313,9 @@ export class Layout extends React.Component<LayoutProps> {
                         height : '1px',
                         left: 0,
                         bottom : '5%',
-                        background : 'rgba(100,100,100,0.1)'
+                        margin: '-1px',
+                        pointerEvents: 'none',
+                        background : 'rgba(100,100,100,0.05)'
                     }}
                 >
                 </div>

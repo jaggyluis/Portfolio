@@ -3,19 +3,35 @@ import * as React from 'react'
 export class LayoutImage extends React.Component {
     state = { src: null, placeholder : null };
 
+    getPlaceholderPath(path) {
+        if (path) {
+            const paths = path.split(".");
+            const placeholder = paths[0] + "_s." + paths[1];
+            return placeholder;
+        } else {
+            return '';
+        }
+    }
+
+    getMobilePath(path) {
+        if (path) {
+            const paths = path.split(".");
+            const placeholder = paths[0] + "_m." + paths[1];
+            return placeholder;
+        } else {
+            return '';
+        }
+    }
+
     componentDidMount() {
-        const { src, placeholder } = this.props;
+        let { src } = this.props;
+
+        if (window.innerWidth < 600) src = this.getMobilePath(src);
 
         const srcImageLoader = new Image();
         srcImageLoader.src = src;
         srcImageLoader.onload = () => {
             this.setState({ src });
-        };
-
-        const placeholderImageLoader = new Image();
-        placeholderImageLoader.src = placeholder;
-        placeholderImageLoader.onload = () => {
-            this.setState({ placeholder });
         };
     }
 
@@ -23,15 +39,14 @@ export class LayoutImage extends React.Component {
         return { 
             width: '100%', 
             height: '100%', 
-            objectFit: 'cover', 
+            objectFit:  this.props.contain ? 'contain' : 'cover', 
             position: 'absolute',
-            filter: this.state.placeholder && !this.state.src ? 'blur(5px)' : ''
         }
     }
 
     render() {
         // console.log(this.state.src, this.state.placeholder)
-        return <img src={this.state.src || this.props.placeholder} alt='' style={this.getStyle()}/>;
+        return <img src={this.state.src || this.getPlaceholderPath(this.props.src)} alt='' style={this.getStyle()}/>;
 
         // const url = this.state.src ? this.state.src : this.state.placeholder ? this.state.placeholder : ''
 

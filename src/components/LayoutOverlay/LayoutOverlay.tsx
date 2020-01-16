@@ -25,16 +25,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         this.setState({ hidden: true });
     }
 
-    getSplashImagePlaceholderPath(): string {
-        if (this.props.node.data.src) {
-            const paths = this.props.node.data.src.split(".");
-            const path = paths[0] + "_s." + paths[1];
-            return path;
-        } else {
-            return '';
-        }
-    }
-
     getSplashImagePath(): string {
         return this.props.node.data.src || '';
     }
@@ -76,6 +66,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             bottom: 0,
             right: 0,
             height: '100%',
+            borderLeft : '1px solid rgba(100,100,100,0.1)',
             // display: this.props.parentState == null || this.props.parentState.selected ? '' : 'none',
             width: !this.state.hovered ? '80%' : '100%',
             transition: this.getTransitionDuration() + 'ms',
@@ -89,7 +80,10 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             bottom: 0,
             left: 0,
             height: !this.state.hovered ? '70%' : '100%',
+            borderTop : '1px solid rgba(100,100,100,0.1)',
             width: '100%',
+            marginLeft : '-25%',
+            paddingLeft : '25%',
             transition: this.getTransitionDuration() + 'ms',
             transitionDelay: this.getTransitionDuration() + 'ms',
             willChange: 'height'
@@ -111,8 +105,10 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
 
-        const d = this.props.nodeDepth * 10
-        const h = 40 - d;
+        const s = window.innerWidth < 600 ? 30 : 40;
+        const c = Math.ceil(s / 5)
+        const d = this.props.nodeDepth * c
+        const h = s - d;
 
         return {
             position: 'relative',
@@ -156,8 +152,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
                 onMouseLeave={this.onMouseLeave.bind(this)}
                 style={this.getStyle()}
             >
-                <LayoutImage src={this.getSplashImagePath()} placeholder={this.getSplashImagePlaceholderPath()}/>
-                {/* <div className='layout-splash' style={this.getSplashStyle()}></div> */}
+                <LayoutImage src={this.getSplashImagePath()} />
                 <div className='layout-color' style={this.getColorStyle()}></div>
                 <div className='layout-lslider' style={this.getLSliderStyle()}>
                     <div style={this.getSliderColorStyle()}></div>
