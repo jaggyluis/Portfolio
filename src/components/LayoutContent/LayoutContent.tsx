@@ -45,6 +45,7 @@ export class LayoutContent extends React.Component<LayoutProps> {
             textTransform: 'uppercase',
             fontWeight : 'bold',
             fontSize : '40px',
+            lineHeight: 0.8,
             position: 'sticky',
             top : 0,
             color : 'lightgrey',

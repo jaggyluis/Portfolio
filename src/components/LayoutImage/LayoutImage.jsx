@@ -26,7 +26,7 @@ export class LayoutImage extends React.Component {
     componentDidMount() {
         let { src } = this.props;
 
-        if (window.innerWidth < 600) src = this.getMobilePath(src);
+        if (window.innerWidth < 1200) src = this.getMobilePath(src);
 
         const srcImageLoader = new Image();
         srcImageLoader.src = src;
@@ -45,6 +45,7 @@ export class LayoutImage extends React.Component {
     }
 
     render() {
+        // return <div></div>
         // console.log(this.state.src, this.state.placeholder)
         return <img src={this.state.src || this.getPlaceholderPath(this.props.src)} alt='' style={this.getStyle()}/>;
 

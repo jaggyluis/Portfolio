@@ -22,7 +22,9 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
     }
 
     onClick() {
-        this.setState({ hidden: true });
+        // setTimeout(() => {
+            this.setState({ hidden: true });
+        // }, this.state.transitionDuration * 3);   
     }
 
     getSplashImagePath(): string {
@@ -37,12 +39,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             width: '100%',
             height: '100%',
             position: 'absolute',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: 'url("' + this.getSplashImagePath() + '")',
-            backgroundRepeat: 'no-repeat',
-            // opacity: this.state.hovered ? 0 : 1,
-            // filter:  'blur(5px)', //'grayscale(50%)',
+            opacity : this.state.hovered ? 0 : 1,
             transition: 2 * this.getTransitionDuration() + 'ms',
             willChange: 'opacity'
         }
@@ -67,7 +64,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             right: 0,
             height: '100%',
             borderLeft : '1px solid rgba(100,100,100,0.1)',
-            // display: this.props.parentState == null || this.props.parentState.selected ? '' : 'none',
             width: !this.state.hovered ? '80%' : '100%',
             transition: this.getTransitionDuration() + 'ms',
             willChange: 'width'
@@ -114,6 +110,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'relative',
             fontWeight: 'bolder',
             fontSize: h + 'px',
+            lineHeight: 0.8,
             textTransform: 'uppercase',
             mixBlendMode: 'overlay',
             left: 0,
@@ -133,6 +130,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             margin: padding + 'px',
             overflow: 'hidden',
             position: 'absolute',
+            zIndex: 2,
             display: this.state.hidden ? 'none' : '',
             opacity: this.props.parentState == null || this.props.parentState.selected ? 1 : 0,
             transition: 2 * this.getTransitionDuration() + 'ms'

@@ -7,7 +7,7 @@
                         "5106107414", 
                         "luis.jaggy@gmail.com"
                     ], 
-                    "id": "7cda4e40-388c-11ea-8060-8e6746f68c05", 
+                    "id": "80d28870-3966-11ea-b5c4-8e6746f68c05", 
                     "label": "contact", 
                     "type": "data"
                 }, 
@@ -15,18 +15,18 @@
                     "content": [
                         "I am a full-stack computational geometry specialist and software developer, focused on solving problems and building tools for the automation, optimization, analysis and visualization of data-driven architectural design solutions."
                     ], 
-                    "id": "7cdb86c0-388c-11ea-9dda-8e6746f68c05", 
+                    "id": "80d3e800-3966-11ea-b714-8e6746f68c05", 
                     "label": "hello", 
                     "type": "data"
                 }, 
                 {
-                    "id": "7cdbfbf0-388c-11ea-8bed-8e6746f68c05", 
+                    "id": "80d45d30-3966-11ea-93dc-8e6746f68c05", 
                     "label": "profile", 
                     "src": "data/about/profile.png", 
                     "type": "data"
                 }
             ], 
-            "id": "7d0dba51-388c-11ea-b2af-8e6746f68c05", 
+            "id": "81011280-3966-11ea-be2d-8e6746f68c05", 
             "label": "about", 
             "src": "data/about/about.jpg", 
             "type": "dir"
@@ -36,19 +36,215 @@
                 {
                     "children": [
                         {
-                            "id": "7d367800-388c-11ea-938a-8e6746f68c05", 
+                            "id": "8131e680-3966-11ea-8cdc-8e6746f68c05", 
+                            "label": "01", 
+                            "src": "data/computation/lx_stack/01.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "81387630-3966-11ea-a55d-8e6746f68c05", 
+                            "label": "cluster", 
+                            "src": "data/computation/lx_stack/cluster.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "81ed9561-3966-11ea-91d9-8e6746f68c05", 
+                            "label": "diagram_01", 
+                            "src": "data/computation/lx_stack/diagram_01.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "828b5c00-3966-11ea-bbfa-8e6746f68c05", 
+                            "label": "diagram_02_cropped", 
+                            "src": "data/computation/lx_stack/diagram_02_cropped.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "8477e9c0-3966-11ea-b126-8e6746f68c05", 
+                            "label": "floor_01", 
+                            "src": "data/computation/lx_stack/floor_01.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "84a53b4f-3966-11ea-8275-8e6746f68c05", 
+                            "label": "generations", 
+                            "src": "data/computation/lx_stack/generations.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "85446180-3966-11ea-8f00-8e6746f68c05", 
+                            "label": "legend", 
+                            "src": "data/computation/lx_stack/legend.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "862a54b0-3966-11ea-82cf-8e6746f68c05", 
+                            "label": "NEO_Limassol_Report_Final_V2", 
+                            "src": "data/computation/lx_stack/NEO_Limassol_Report_Final_V2.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "86bd9400-3966-11ea-b59f-8e6746f68c05", 
+                            "label": "NEO_Limassol_Report_Final_V2_02", 
+                            "src": "data/computation/lx_stack/NEO_Limassol_Report_Final_V2_02.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "86ef5261-3966-11ea-b55e-8e6746f68c05", 
+                            "label": "solar_01", 
+                            "src": "data/computation/lx_stack/solar_01.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "86f7dde1-3966-11ea-be1b-8e6746f68c05", 
+                            "label": "unitCost_m2", 
+                            "src": "data/computation/lx_stack/unitCost_m2.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "879ef351-3966-11ea-8ec4-8e6746f68c05", 
+                            "label": "unitDelta_m2", 
+                            "src": "data/computation/lx_stack/unitDelta_m2.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "885bdab0-3966-11ea-9611-8e6746f68c05", 
+                            "label": "unitValeu", 
+                            "src": "data/computation/lx_stack/unitValeu.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "8904c4de-3966-11ea-9052-8e6746f68c05", 
+                            "label": "unitValue_m2", 
+                            "src": "data/computation/lx_stack/unitValue_m2.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "89fb0bc0-3966-11ea-b829-8e6746f68c05", 
+                            "label": "unitValue_total", 
+                            "src": "data/computation/lx_stack/unitValue_total.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "8ad4069e-3966-11ea-a183-8e6746f68c05", 
+                            "label": "unitVisibility_totalPoints", 
+                            "src": "data/computation/lx_stack/unitVisibility_totalPoints.png", 
+                            "type": "data"
+                        }
+                    ], 
+                    "id": "8bb4f0c0-3966-11ea-beb0-8e6746f68c05", 
+                    "label": "lx_stack", 
+                    "src": "data/computation/lx_stack/lx_stack.PNG", 
+                    "type": "dir"
+                }, 
+                {
+                    "children": [
+                        {
+                            "id": "8bbdf16e-3966-11ea-8d8c-8e6746f68c05", 
+                            "label": "01", 
+                            "src": "data/computation/projection_routing/01.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "8cadcfb0-3966-11ea-b9ee-8e6746f68c05", 
+                            "label": "02", 
+                            "src": "data/computation/projection_routing/02.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "8e3755de-3966-11ea-9159-8e6746f68c05", 
+                            "label": "03", 
+                            "src": "data/computation/projection_routing/03.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "8f768c9e-3966-11ea-a618-8e6746f68c05", 
+                            "label": "05", 
+                            "src": "data/computation/projection_routing/05.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "90e14030-3966-11ea-a05a-8e6746f68c05", 
+                            "label": "06", 
+                            "src": "data/computation/projection_routing/06.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "923b7900-3966-11ea-9d67-8e6746f68c05", 
+                            "label": "fix", 
+                            "src": "data/computation/projection_routing/fix.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "939d7a00-3966-11ea-8db2-8e6746f68c05", 
+                            "label": "iso", 
+                            "src": "data/computation/projection_routing/iso.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "96f41f11-3966-11ea-8dc7-8e6746f68c05", 
+                            "label": "routing", 
+                            "src": "data/computation/projection_routing/routing.PNG", 
+                            "type": "data"
+                        }
+                    ], 
+                    "id": "983acfde-3966-11ea-b7e2-8e6746f68c05", 
+                    "label": "projection_routing", 
+                    "src": "data/computation/projection_routing/projection_routing.PNG", 
+                    "type": "dir"
+                }, 
+                {
+                    "children": [
+                        {
+                            "id": "985b7740-3966-11ea-8411-8e6746f68c05", 
+                            "label": "Capture", 
+                            "src": "data/computation/rx_spatial/Capture.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "99ff8a4f-3966-11ea-a674-8e6746f68c05", 
+                            "label": "Capture2", 
+                            "src": "data/computation/rx_spatial/Capture2.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "9bd7ccc0-3966-11ea-af67-8e6746f68c05", 
+                            "label": "cofco_circuation_2", 
+                            "src": "data/computation/rx_spatial/cofco_circuation_2.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "9c315e70-3966-11ea-aaa6-8e6746f68c05", 
+                            "label": "density-map-combined-with-legend-and-fruin-los-legend-0", 
+                            "src": "data/computation/rx_spatial/density-map-combined-with-legend-and-fruin-los-legend-0.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "9d9e34e1-3966-11ea-a8fd-8e6746f68c05", 
+                            "label": "frontage_vis", 
+                            "src": "data/computation/rx_spatial/frontage_vis.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "9fd1ddc0-3966-11ea-a4e4-8e6746f68c05", 
+                            "label": "ReX-1800x620", 
+                            "src": "data/computation/rx_spatial/ReX-1800x620.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "a00e718f-3966-11ea-8e30-8e6746f68c05", 
                             "label": "rex_matrix", 
                             "src": "data/computation/rx_spatial/rex_matrix.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7d6e02c0-388c-11ea-83bd-8e6746f68c05", 
+                            "id": "a038b5de-3966-11ea-a84d-8e6746f68c05", 
                             "label": "rex_matrix_zoomed_lrg", 
                             "src": "data/computation/rx_spatial/rex_matrix_zoomed_lrg.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "7ec4b91e-388c-11ea-bab3-8e6746f68c05", 
+                    "id": "a15a0461-3966-11ea-aaca-8e6746f68c05", 
                     "label": "rx_spatial", 
                     "src": "data/computation/rx_spatial/rx_spatial.png", 
                     "type": "dir"
@@ -56,25 +252,49 @@
                 {
                     "children": [
                         {
-                            "id": "7ed90470-388c-11ea-8d66-8e6746f68c05", 
+                            "id": "a177505e-3966-11ea-878c-8e6746f68c05", 
+                            "label": "1", 
+                            "src": "data/computation/tx_aviation/1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "a2f00db0-3966-11ea-b6e4-8e6746f68c05", 
+                            "label": "2", 
+                            "src": "data/computation/tx_aviation/2.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "a5ee80a1-3966-11ea-ba78-8e6746f68c05", 
+                            "label": "Capture", 
+                            "src": "data/computation/tx_aviation/Capture.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "a6b7c40f-3966-11ea-8a85-8e6746f68c05", 
                             "label": "density_select_alll", 
                             "src": "data/computation/tx_aviation/density_select_alll.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7f8aa130-388c-11ea-a398-8e6746f68c05", 
+                            "id": "a77c2580-3966-11ea-8fff-8e6746f68c05", 
                             "label": "out", 
                             "src": "data/computation/tx_aviation/out.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7ff1794f-388c-11ea-9ec6-8e6746f68c05", 
+                            "id": "a7be85ae-3966-11ea-8e09-8e6746f68c05", 
                             "label": "out3", 
                             "src": "data/computation/tx_aviation/out3.jpg", 
                             "type": "data"
+                        }, 
+                        {
+                            "id": "a84a23de-3966-11ea-a6ef-8e6746f68c05", 
+                            "label": "PassengerProfilesInterpolated", 
+                            "src": "data/computation/tx_aviation/PassengerProfilesInterpolated.png", 
+                            "type": "data"
                         }
                     ], 
-                    "id": "81aff230-388c-11ea-9746-8e6746f68c05", 
+                    "id": "aa385f4f-3966-11ea-ab0c-8e6746f68c05", 
                     "label": "tx_aviation", 
                     "src": "data/computation/tx_aviation/tx_aviation.png", 
                     "type": "dir"
@@ -82,21 +302,93 @@
                 {
                     "children": [
                         {
-                            "id": "8232b6c0-388c-11ea-a011-8e6746f68c05", 
+                            "id": "aa570ade-3966-11ea-bd31-8e6746f68c05", 
+                            "label": "001", 
+                            "src": "data/computation/ux_view/001.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "ad178a70-3966-11ea-bce4-8e6746f68c05", 
+                            "label": "03", 
+                            "src": "data/computation/ux_view/03.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "b0cd3f70-3966-11ea-a482-8e6746f68c05", 
+                            "label": "04", 
+                            "src": "data/computation/ux_view/04.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "b48676e1-3966-11ea-9586-8e6746f68c05", 
+                            "label": "07", 
+                            "src": "data/computation/ux_view/07.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "b85c3700-3966-11ea-bb76-8e6746f68c05", 
+                            "label": "181115_LACoMotion_survey", 
+                            "src": "data/computation/ux_view/181115_LACoMotion_survey.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "ba571ca1-3966-11ea-9172-8e6746f68c05", 
+                            "label": "buildings_far1", 
+                            "src": "data/computation/ux_view/buildings_far1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "be4df951-3966-11ea-a39c-8e6746f68c05", 
                             "label": "c1", 
                             "src": "data/computation/ux_view/c1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "84e4904f-388c-11ea-9576-8e6746f68c05", 
+                            "id": "c04e0f0f-3966-11ea-a31d-8e6746f68c05", 
                             "label": "c3", 
                             "src": "data/computation/ux_view/c3.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "88825080-388c-11ea-ba9c-8e6746f68c05", 
+                            "id": "c3132280-3966-11ea-80ed-8e6746f68c05", 
                             "label": "c4", 
                             "src": "data/computation/ux_view/c4.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "c747f28f-3966-11ea-8a8e-8e6746f68c05", 
+                            "label": "Capture", 
+                            "src": "data/computation/ux_view/Capture.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "cc30f76e-3966-11ea-84c8-8e6746f68c05", 
+                            "label": "landsec1", 
+                            "src": "data/computation/ux_view/landsec1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "cf163d0f-3966-11ea-97bf-8e6746f68c05", 
+                            "label": "nbds", 
+                            "src": "data/computation/ux_view/nbds.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "d53f630f-3966-11ea-93bf-8e6746f68c05", 
+                            "label": "pts_amenity1", 
+                            "src": "data/computation/ux_view/pts_amenity1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "db4fd0f0-3966-11ea-aaf2-8e6746f68c05", 
+                            "label": "public_transport_access_levels1", 
+                            "src": "data/computation/ux_view/public_transport_access_levels1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "e0e8c4de-3966-11ea-9db8-8e6746f68c05", 
+                            "label": "radialToggle2", 
+                            "src": "data/computation/ux_view/radialToggle2.png", 
                             "type": "data"
                         }, 
                         {
@@ -104,7 +396,7 @@
                                 "Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. ", 
                                 "Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to."
                             ], 
-                            "id": "8c382c91-388c-11ea-b6d9-8e6746f68c05", 
+                            "id": "e2ede3b0-3966-11ea-bf6b-8e6746f68c05", 
                             "label": "t1", 
                             "type": "data"
                         }, 
@@ -112,18 +404,166 @@
                             "content": [
                                 "Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits."
                             ], 
-                            "id": "8c3bd60f-388c-11ea-8c7e-8e6746f68c05", 
+                            "id": "e2f00691-3966-11ea-9dd8-8e6746f68c05", 
                             "label": "t2", 
                             "type": "data"
                         }
                     ], 
-                    "id": "91ff355e-388c-11ea-b23c-8e6746f68c05", 
+                    "id": "e9cdaf80-3966-11ea-99f4-8e6746f68c05", 
                     "label": "ux_view", 
                     "src": "data/computation/ux_view/ux_view.png", 
                     "type": "dir"
+                }, 
+                {
+                    "children": [
+                        {
+                            "id": "e9dcf1c0-3966-11ea-9a96-8e6746f68c05", 
+                            "label": "01", 
+                            "src": "data/computation/wx_fit/01.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "eb0d8280-3966-11ea-9f24-8e6746f68c05", 
+                            "label": "1", 
+                            "src": "data/computation/wx_fit/1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "ec8ad3b0-3966-11ea-8e52-8e6746f68c05", 
+                            "label": "190117_UnileverDublin_001_Average Walking Distance from All Desks to All Desks (m)_Between All Desks and All Desks_L0.0_plan", 
+                            "src": "data/computation/wx_fit/190117_UnileverDublin_001_Average Walking Distance from All Desks to All Desks (m)_Between All Desks and All Desks_L0.0_plan.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "ecbb3280-3966-11ea-b7fa-8e6746f68c05", 
+                            "label": "190117_UnileverDublin_001_Betweenness Centrality at All Floor Points Between All Desks, All Amenities and All Desks, All Amenities (%)_Be", 
+                            "src": "data/computation/wx_fit/190117_UnileverDublin_001_Betweenness Centrality at All Floor Points Between All Desks, All Amenities and All Desks, All Amenities (%)_Be.jpg", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "ecf63fb0-3966-11ea-a9e3-8e6746f68c05", 
+                            "label": "2", 
+                            "src": "data/computation/wx_fit/2.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "ee1a4d4f-3966-11ea-991c-8e6746f68c05", 
+                            "label": "3", 
+                            "src": "data/computation/wx_fit/3.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "efb75b80-3966-11ea-af5d-8e6746f68c05", 
+                            "label": "4", 
+                            "src": "data/computation/wx_fit/4.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f085f621-3966-11ea-a75d-8e6746f68c05", 
+                            "label": "5", 
+                            "src": "data/computation/wx_fit/5.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f211c640-3966-11ea-bf40-8e6746f68c05", 
+                            "label": "bhp", 
+                            "src": "data/computation/wx_fit/bhp.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f2eda74f-3966-11ea-a19a-8e6746f68c05", 
+                            "label": "dublin_sliceAnalysis_01", 
+                            "src": "data/computation/wx_fit/dublin_sliceAnalysis_01.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f4554da1-3966-11ea-9ba0-8e6746f68c05", 
+                            "label": "dublin_wxPartition_interface_03", 
+                            "src": "data/computation/wx_fit/dublin_wxPartition_interface_03.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f4d7eb21-3966-11ea-8f08-8e6746f68c05", 
+                            "label": "sheet", 
+                            "src": "data/computation/wx_fit/sheet.PNG", 
+                            "type": "data"
+                        }
+                    ], 
+                    "id": "f57bcc40-3966-11ea-9f72-8e6746f68c05", 
+                    "label": "wx_fit", 
+                    "src": "data/computation/wx_fit/wx_fit.PNG", 
+                    "type": "dir"
+                }, 
+                {
+                    "children": [
+                        {
+                            "id": "f596a740-3966-11ea-9aa2-8e6746f68c05", 
+                            "label": "1", 
+                            "src": "data/computation/wx_floorplate/1.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f664306e-3966-11ea-839f-8e6746f68c05", 
+                            "label": "2", 
+                            "src": "data/computation/wx_floorplate/2.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f721b40f-3966-11ea-b6e1-8e6746f68c05", 
+                            "label": "3", 
+                            "src": "data/computation/wx_floorplate/3.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f7e6ffde-3966-11ea-9697-8e6746f68c05", 
+                            "label": "4", 
+                            "src": "data/computation/wx_floorplate/4.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f8f1e030-3966-11ea-a416-8e6746f68c05", 
+                            "label": "5", 
+                            "src": "data/computation/wx_floorplate/5.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "f9bc8330-3966-11ea-947e-8e6746f68c05", 
+                            "label": "6", 
+                            "src": "data/computation/wx_floorplate/6.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "fad6f3de-3966-11ea-beb9-8e6746f68c05", 
+                            "label": "7", 
+                            "src": "data/computation/wx_floorplate/7.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "fbe09bae-3966-11ea-9464-8e6746f68c05", 
+                            "label": "8", 
+                            "src": "data/computation/wx_floorplate/8.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "fce672f0-3966-11ea-8484-8e6746f68c05", 
+                            "label": "9", 
+                            "src": "data/computation/wx_floorplate/9.PNG", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "fdfd3a21-3966-11ea-bff8-8e6746f68c05", 
+                            "label": "visibility_raw", 
+                            "src": "data/computation/wx_floorplate/visibility_raw.png", 
+                            "type": "data"
+                        }
+                    ], 
+                    "id": "01023cc0-3967-11ea-b8b4-8e6746f68c05", 
+                    "label": "wx_floorplate", 
+                    "src": "data/computation/wx_floorplate/wx_floorplate.PNG", 
+                    "type": "dir"
                 }
             ], 
-            "id": "91ff8380-388c-11ea-bc99-8e6746f68c05", 
+            "id": "010263cf-3967-11ea-b7ae-8e6746f68c05", 
             "label": "computation", 
             "src": "data/computation/computation.jpg", 
             "type": "dir"
@@ -133,31 +573,31 @@
                 {
                     "children": [
                         {
-                            "id": "92110fb0-388c-11ea-ab3f-8e6746f68c05", 
+                            "id": "012f6740-3967-11ea-9d12-8e6746f68c05", 
                             "label": "BAUHAUS-BOARD-PRINT-2015-0412-01", 
                             "src": "data/design/bauhaus/BAUHAUS-BOARD-PRINT-2015-0412-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "944be480-388c-11ea-a7a5-8e6746f68c05", 
+                            "id": "0443d32e-3967-11ea-8b2e-8e6746f68c05", 
                             "label": "plan_03", 
                             "src": "data/design/bauhaus/plan_03.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "94a32c40-388c-11ea-b58e-8e6746f68c05", 
+                            "id": "04d47a70-3967-11ea-a762-8e6746f68c05", 
                             "label": "render_01bis", 
                             "src": "data/design/bauhaus/render_01bis.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "951bdeae-388c-11ea-9736-8e6746f68c05", 
+                            "id": "0571cbe1-3967-11ea-a6b5-8e6746f68c05", 
                             "label": "render_02bis3", 
                             "src": "data/design/bauhaus/render_02bis3.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "9593cdcf-388c-11ea-831e-8e6746f68c05", 
+                    "id": "062e6521-3967-11ea-a59c-8e6746f68c05", 
                     "label": "bauhaus", 
                     "src": "data/design/bauhaus/bauhaus.jpg", 
                     "type": "dir"
@@ -165,25 +605,25 @@
                 {
                     "children": [
                         {
-                            "id": "a398d2e1-388c-11ea-a6e0-8e6746f68c05", 
+                            "id": "14aeb4b0-3967-11ea-8201-8e6746f68c05", 
                             "label": "190111_GNE_Exterior_parrallel", 
                             "src": "data/design/genentech/190111_GNE_Exterior_parrallel.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a4634ecf-388c-11ea-96bf-8e6746f68c05", 
+                            "id": "158bf551-3967-11ea-aae0-8e6746f68c05", 
                             "label": "IMG_6645", 
                             "src": "data/design/genentech/IMG_6645.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a50eaa00-388c-11ea-9a03-8e6746f68c05", 
+                            "id": "1663698f-3967-11ea-9905-8e6746f68c05", 
                             "label": "IMG_9423", 
                             "src": "data/design/genentech/IMG_9423.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "a5b37580-388c-11ea-87cf-8e6746f68c05", 
+                    "id": "173c164f-3967-11ea-942d-8e6746f68c05", 
                     "label": "genentech", 
                     "src": "data/design/genentech/190111_GNE_Exterior_parrallel.jpg", 
                     "type": "dir"
@@ -191,103 +631,103 @@
                 {
                     "children": [
                         {
-                            "id": "a5c32cf0-388c-11ea-b603-8e6746f68c05", 
+                            "id": "1744c8e1-3967-11ea-9784-8e6746f68c05", 
                             "label": "axon_exploded-01", 
                             "src": "data/design/glen_park/axon_exploded-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a6fd5a9e-388c-11ea-9e92-8e6746f68c05", 
+                            "id": "18bc4db0-3967-11ea-8ac6-8e6746f68c05", 
                             "label": "banner", 
                             "src": "data/design/glen_park/banner.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a73bc330-388c-11ea-8e30-8e6746f68c05", 
+                            "id": "195929ee-3967-11ea-abf8-8e6746f68c05", 
                             "label": "diagram-01", 
                             "src": "data/design/glen_park/diagram-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a955a280-388c-11ea-be1b-8e6746f68c05", 
+                            "id": "1bf77b80-3967-11ea-ba7c-8e6746f68c05", 
                             "label": "IMG_0309", 
                             "src": "data/design/glen_park/IMG_0309.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a9cea30f-388c-11ea-9c19-8e6746f68c05", 
+                            "id": "1c9bf8e1-3967-11ea-9139-8e6746f68c05", 
                             "label": "IMG_0313", 
                             "src": "data/design/glen_park/IMG_0313.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "aa3ad261-388c-11ea-84fd-8e6746f68c05", 
+                            "id": "1d3eef9e-3967-11ea-9af2-8e6746f68c05", 
                             "label": "IMG_0325", 
                             "src": "data/design/glen_park/IMG_0325.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "aa9f608f-388c-11ea-be24-8e6746f68c05", 
+                            "id": "1dfb13b0-3967-11ea-a444-8e6746f68c05", 
                             "label": "IMG_0326", 
                             "src": "data/design/glen_park/IMG_0326.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ab302ee1-388c-11ea-a010-8e6746f68c05", 
+                            "id": "1e9753ae-3967-11ea-b666-8e6746f68c05", 
                             "label": "oldPlan-01", 
                             "src": "data/design/glen_park/oldPlan-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "abee9ce1-388c-11ea-a9ed-8e6746f68c05", 
+                            "id": "1f87800f-3967-11ea-a77c-8e6746f68c05", 
                             "label": "plan_1-02", 
                             "src": "data/design/glen_park/plan_1-02.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ad47eb4f-388c-11ea-9562-8e6746f68c05", 
+                            "id": "21771b0f-3967-11ea-a329-8e6746f68c05", 
                             "label": "plan_2-01", 
                             "src": "data/design/glen_park/plan_2-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ae6912c0-388c-11ea-8407-8e6746f68c05", 
+                            "id": "22f50880-3967-11ea-a141-8e6746f68c05", 
                             "label": "plan_3-01", 
                             "src": "data/design/glen_park/plan_3-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "af779c8f-388c-11ea-b6b2-8e6746f68c05", 
+                            "id": "246ba2f0-3967-11ea-9fa5-8e6746f68c05", 
                             "label": "render_back", 
                             "src": "data/design/glen_park/render_back.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b0352030-388c-11ea-a7e7-8e6746f68c05", 
+                            "id": "25467291-3967-11ea-b275-8e6746f68c05", 
                             "label": "render_diagram_after", 
                             "src": "data/design/glen_park/render_diagram_after.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b07cb080-388c-11ea-9133-8e6746f68c05", 
+                            "id": "25be3a9e-3967-11ea-8a6d-8e6746f68c05", 
                             "label": "render_diagram_before", 
                             "src": "data/design/glen_park/render_diagram_before.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b0c9bf11-388c-11ea-9cc0-8e6746f68c05", 
+                            "id": "26345500-3967-11ea-a802-8e6746f68c05", 
                             "label": "render_front", 
                             "src": "data/design/glen_park/render_front.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b185e31e-388c-11ea-beb9-8e6746f68c05", 
+                            "id": "27086de1-3967-11ea-b854-8e6746f68c05", 
                             "label": "sections_crop", 
                             "src": "data/design/glen_park/sections_crop.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "b406e8b0-388c-11ea-a800-8e6746f68c05", 
+                    "id": "29b7af5e-3967-11ea-a6e1-8e6746f68c05", 
                     "label": "glen_park", 
                     "src": "data/design/glen_park/glen_park.jpg", 
                     "type": "dir"
@@ -295,67 +735,67 @@
                 {
                     "children": [
                         {
-                            "id": "b49bd5b0-388c-11ea-b5be-8e6746f68c05", 
+                            "id": "2a585c2e-3967-11ea-aa10-8e6746f68c05", 
                             "label": "innovatrium_diagram_final", 
                             "src": "data/design/innovatrium/innovatrium_diagram_final.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b5740d40-388c-11ea-8e44-8e6746f68c05", 
+                            "id": "2b742c70-3967-11ea-bfa5-8e6746f68c05", 
                             "label": "innovatrium_diagram_mutation", 
                             "src": "data/design/innovatrium/innovatrium_diagram_mutation.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b73b38b0-388c-11ea-b9b0-8e6746f68c05", 
+                            "id": "2de0988f-3967-11ea-b906-8e6746f68c05", 
                             "label": "innovatrium_diagram_process", 
                             "src": "data/design/innovatrium/innovatrium_diagram_process.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b82cc49e-388c-11ea-8b1c-8e6746f68c05", 
+                            "id": "2f21f230-3967-11ea-ad66-8e6746f68c05", 
                             "label": "innovatrium_diagram_strain", 
                             "src": "data/design/innovatrium/innovatrium_diagram_strain.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b94bc930-388c-11ea-a4df-8e6746f68c05", 
+                            "id": "3079ba00-3967-11ea-9bcd-8e6746f68c05", 
                             "label": "innovatrium_plan", 
                             "src": "data/design/innovatrium/innovatrium_plan.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ba14be80-388c-11ea-818b-8e6746f68c05", 
+                            "id": "316ec85e-3967-11ea-a3e2-8e6746f68c05", 
                             "label": "innovatrium_s_long", 
                             "src": "data/design/innovatrium/innovatrium_s_long.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bb5be480-388c-11ea-a1dd-8e6746f68c05", 
+                            "id": "3361e5d1-3967-11ea-9137-8e6746f68c05", 
                             "label": "plant-12", 
                             "src": "data/design/innovatrium/plant-12.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bc4c37f0-388c-11ea-a465-8e6746f68c05", 
+                            "id": "3481d4c0-3967-11ea-8be1-8e6746f68c05", 
                             "label": "render_02-03", 
                             "src": "data/design/innovatrium/render_02-03.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bdb1944f-388c-11ea-9912-8e6746f68c05", 
+                            "id": "3605b5a1-3967-11ea-91ae-8e6746f68c05", 
                             "label": "render_04", 
                             "src": "data/design/innovatrium/render_04.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "be45be00-388c-11ea-a929-8e6746f68c05", 
+                            "id": "369e2511-3967-11ea-8f06-8e6746f68c05", 
                             "label": "serial-09", 
                             "src": "data/design/innovatrium/serial-09.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "bf555940-388c-11ea-9bc7-8e6746f68c05", 
+                    "id": "37d6f330-3967-11ea-ac6e-8e6746f68c05", 
                     "label": "innovatrium", 
                     "src": "data/design/innovatrium/innovatrium.jpg", 
                     "type": "dir"
@@ -363,31 +803,55 @@
                 {
                     "children": [
                         {
-                            "id": "bf5b4cb0-388c-11ea-b483-8e6746f68c05", 
+                            "id": "37eac94f-3967-11ea-a68e-8e6746f68c05", 
                             "label": "191018_LIMASSOL_CROP_2", 
                             "src": "data/design/pafilia/191018_LIMASSOL_CROP_2.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bfdf97e1-388c-11ea-b3b7-8e6746f68c05", 
+                            "id": "388e3540-3967-11ea-94f4-8e6746f68c05", 
                             "label": "191018_LIMASSOL_CROP_4", 
                             "src": "data/design/pafilia/191018_LIMASSOL_CROP_4.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c059f800-388c-11ea-adaa-8e6746f68c05", 
+                            "id": "3936832e-3967-11ea-93be-8e6746f68c05", 
                             "label": "191018_LIMASSOL_EXTERIORS_AERIAL_BALCONY_WB", 
                             "src": "data/design/pafilia/191018_LIMASSOL_EXTERIORS_AERIAL_BALCONY_WB.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c0f96c4f-388c-11ea-bf64-8e6746f68c05", 
+                            "id": "3a0014c0-3967-11ea-857a-8e6746f68c05", 
                             "label": "191018_LIMASSOL_EXTERIORS_PODIUM_POOL_WB", 
                             "src": "data/design/pafilia/191018_LIMASSOL_EXTERIORS_PODIUM_POOL_WB.jpg", 
                             "type": "data"
+                        }, 
+                        {
+                            "id": "3ac623de-3967-11ea-9161-8e6746f68c05", 
+                            "label": "Image_010", 
+                            "src": "data/design/pafilia/Image_010.png", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "40d05030-3967-11ea-b60d-8e6746f68c05", 
+                            "label": "NEO_Limassol_Report_Final_V2_01", 
+                            "src": "data/design/pafilia/NEO_Limassol_Report_Final_V2_01.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "4108290f-3967-11ea-90ec-8e6746f68c05", 
+                            "label": "NEO_Limassol_Report_Final_V2_03", 
+                            "src": "data/design/pafilia/NEO_Limassol_Report_Final_V2_03.bmp", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "414cd330-3967-11ea-8975-8e6746f68c05", 
+                            "label": "NEO_Limassol_Report_Final_V2_04", 
+                            "src": "data/design/pafilia/NEO_Limassol_Report_Final_V2_04.bmp", 
+                            "type": "data"
                         }
                     ], 
-                    "id": "c1a5b1de-388c-11ea-80ea-8e6746f68c05", 
+                    "id": "4167600f-3967-11ea-afcd-8e6746f68c05", 
                     "label": "pafilia", 
                     "src": "data/design/pafilia/191018_LIMASSOL_CROP_2.jpg", 
                     "type": "dir"
@@ -395,19 +859,19 @@
                 {
                     "children": [
                         {
-                            "id": "c1af75e1-388c-11ea-a927-8e6746f68c05", 
+                            "id": "417ff121-3967-11ea-9f23-8e6746f68c05", 
                             "label": "55c0ee1c4d9148281475102b10a74e39", 
                             "src": "data/design/sahmri2/55c0ee1c4d9148281475102b10a74e39.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c1db19c0-388c-11ea-9d32-8e6746f68c05", 
+                            "id": "41eae7f0-3967-11ea-a87a-8e6746f68c05", 
                             "label": "ba04657e4c9cc0d83261d91892f15387", 
                             "src": "data/design/sahmri2/ba04657e4c9cc0d83261d91892f15387.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "c208925e-388c-11ea-8e43-8e6746f68c05", 
+                    "id": "42204fcf-3967-11ea-828f-8e6746f68c05", 
                     "label": "sahmri2", 
                     "src": "data/design/sahmri2/55c0ee1c4d9148281475102b10a74e39.jpg", 
                     "type": "dir"
@@ -415,73 +879,73 @@
                 {
                     "children": [
                         {
-                            "id": "c21319b0-388c-11ea-af2f-8e6746f68c05", 
+                            "id": "425c4761-3967-11ea-92d5-8e6746f68c05", 
                             "label": "axon-01", 
                             "src": "data/design/the_feed/axon-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c2f3b5b0-388c-11ea-8ffb-8e6746f68c05", 
+                            "id": "430e0b30-3967-11ea-b168-8e6746f68c05", 
                             "label": "axon_02-01", 
                             "src": "data/design/the_feed/axon_02-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c449cfcf-388c-11ea-b101-8e6746f68c05", 
+                            "id": "444ec88f-3967-11ea-a8cd-8e6746f68c05", 
                             "label": "board5-08", 
                             "src": "data/design/the_feed/board5-08.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c503d100-388c-11ea-8baa-8e6746f68c05", 
+                            "id": "45123f9e-3967-11ea-9f74-8e6746f68c05", 
                             "label": "CA-01", 
                             "src": "data/design/the_feed/CA-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c661652e-388c-11ea-82e5-8e6746f68c05", 
+                            "id": "46ce2070-3967-11ea-9a7d-8e6746f68c05", 
                             "label": "flow-01", 
                             "src": "data/design/the_feed/flow-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c6d339cf-388c-11ea-9f8d-8e6746f68c05", 
+                            "id": "4780325e-3967-11ea-bd88-8e6746f68c05", 
                             "label": "full-01", 
                             "src": "data/design/the_feed/full-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c86376c0-388c-11ea-90a8-8e6746f68c05", 
+                            "id": "49355c6e-3967-11ea-b2d1-8e6746f68c05", 
                             "label": "matrix-01", 
                             "src": "data/design/the_feed/matrix-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c9398b70-388c-11ea-ac8d-8e6746f68c05", 
+                            "id": "4a18dea1-3967-11ea-ad55-8e6746f68c05", 
                             "label": "PLAN-01-01", 
                             "src": "data/design/the_feed/PLAN-01-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ca4ea4f0-388c-11ea-8750-8e6746f68c05", 
+                            "id": "4b13924f-3967-11ea-a1d3-8e6746f68c05", 
                             "label": "process-01-01", 
                             "src": "data/design/the_feed/process-01-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "cb49318f-388c-11ea-ba7d-8e6746f68c05", 
+                            "id": "4c1cec00-3967-11ea-9327-8e6746f68c05", 
                             "label": "render_01bis", 
                             "src": "data/design/the_feed/render_01bis.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "cc884140-388c-11ea-b55d-8e6746f68c05", 
+                            "id": "4d3057d1-3967-11ea-88fa-8e6746f68c05", 
                             "label": "section-01", 
                             "src": "data/design/the_feed/section-01.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "d04214f0-388c-11ea-9e46-8e6746f68c05", 
+                    "id": "5286012e-3967-11ea-927b-8e6746f68c05", 
                     "label": "the_feed", 
                     "src": "data/design/the_feed/the_feed.jpg", 
                     "type": "dir"
@@ -489,145 +953,145 @@
                 {
                     "children": [
                         {
-                            "id": "d04c4e21-388c-11ea-8328-8e6746f68c05", 
+                            "id": "52a3c261-3967-11ea-a800-8e6746f68c05", 
                             "label": "DISTRICT_SMALL", 
                             "src": "data/design/vertical_cities/DISTRICT_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d07f1df0-388c-11ea-b987-8e6746f68c05", 
+                            "id": "530f7c80-3967-11ea-870b-8e6746f68c05", 
                             "label": "Food Forest_i", 
                             "src": "data/design/vertical_cities/Food Forest_i.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d1675b11-388c-11ea-9a17-8e6746f68c05", 
+                            "id": "5444ef40-3967-11ea-90cd-8e6746f68c05", 
                             "label": "highrise-rendering_small-copy", 
                             "src": "data/design/vertical_cities/highrise-rendering_small-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d1e42c30-388c-11ea-bfcb-8e6746f68c05", 
+                            "id": "54a29f9e-3967-11ea-96a7-8e6746f68c05", 
                             "label": "Innovation line-01", 
                             "src": "data/design/vertical_cities/Innovation line-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d2f219c0-388c-11ea-bdc3-8e6746f68c05", 
+                            "id": "559da170-3967-11ea-a4f4-8e6746f68c05", 
                             "label": "lungBase4", 
                             "src": "data/design/vertical_cities/lungBase4.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d3efb39e-388c-11ea-be40-8e6746f68c05", 
+                            "id": "5681e6ee-3967-11ea-9c74-8e6746f68c05", 
                             "label": "lung_axon", 
                             "src": "data/design/vertical_cities/lung_axon.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d6af6fde-388c-11ea-b858-8e6746f68c05", 
+                            "id": "59920d21-3967-11ea-9f00-8e6746f68c05", 
                             "label": "LUNG_uppercatwalk_desaturated_tiltshift", 
                             "src": "data/design/vertical_cities/LUNG_uppercatwalk_desaturated_tiltshift.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d6ee74b0-388c-11ea-820d-8e6746f68c05", 
+                            "id": "59d97661-3967-11ea-8ba1-8e6746f68c05", 
                             "label": "master-plan3_SMALL", 
                             "src": "data/design/vertical_cities/master-plan3_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d75c78c0-388c-11ea-911e-8e6746f68c05", 
+                            "id": "5a49eb70-3967-11ea-b64b-8e6746f68c05", 
                             "label": "persp_02", 
                             "src": "data/design/vertical_cities/persp_02.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d8618cb0-388c-11ea-9155-8e6746f68c05", 
+                            "id": "5b7dd78f-3967-11ea-99d0-8e6746f68c05", 
                             "label": "ppt-to-board-graphics2_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics2_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d87aba00-388c-11ea-8fbf-8e6746f68c05", 
+                            "id": "5b9fb770-3967-11ea-9a17-8e6746f68c05", 
                             "label": "ppt-to-board-graphics3_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics3_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d88fc89e-388c-11ea-a3e2-8e6746f68c05", 
+                            "id": "5bbae08f-3967-11ea-8da6-8e6746f68c05", 
                             "label": "ppt-to-board-graphics4_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics4_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d8adb0e1-388c-11ea-8eb0-8e6746f68c05", 
+                            "id": "5bfaf6d1-3967-11ea-aeb2-8e6746f68c05", 
                             "label": "ppt-to-board-graphics5_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics5_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d8d3132e-388c-11ea-a522-8e6746f68c05", 
+                            "id": "5c144b30-3967-11ea-aa02-8e6746f68c05", 
                             "label": "Section_finadfsl", 
                             "src": "data/design/vertical_cities/Section_finadfsl.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d8ff7a61-388c-11ea-a442-8e6746f68c05", 
+                            "id": "5c37ffcf-3967-11ea-a5e9-8e6746f68c05", 
                             "label": "Section_Food-System-copy", 
                             "src": "data/design/vertical_cities/Section_Food-System-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "da1445c0-388c-11ea-b283-8e6746f68c05", 
+                            "id": "5cea5fe1-3967-11ea-8c15-8e6746f68c05", 
                             "label": "Section_Sun-System-copy", 
                             "src": "data/design/vertical_cities/Section_Sun-System-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dadfd321-388c-11ea-b669-8e6746f68c05", 
+                            "id": "5d9a27e1-3967-11ea-a627-8e6746f68c05", 
                             "label": "Section_Water SystemFLOOD", 
                             "src": "data/design/vertical_cities/Section_Water SystemFLOOD.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dbc8374f-388c-11ea-b620-8e6746f68c05", 
+                            "id": "5eb052cf-3967-11ea-9133-8e6746f68c05", 
                             "label": "Section_Water SystemNOFLOOD-01", 
                             "src": "data/design/vertical_cities/Section_Water SystemNOFLOOD-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dcc5f840-388c-11ea-b250-8e6746f68c05", 
+                            "id": "6006bb0f-3967-11ea-920a-8e6746f68c05", 
                             "label": "Section_Water-System-copy", 
                             "src": "data/design/vertical_cities/Section_Water-System-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dd62112e-388c-11ea-b227-8e6746f68c05", 
+                            "id": "60df40c0-3967-11ea-a57e-8e6746f68c05", 
                             "label": "VAC 2.0_logo", 
                             "src": "data/design/vertical_cities/VAC 2.0_logo.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ddca48e1-388c-11ea-8855-8e6746f68c05", 
+                            "id": "616fc0ee-3967-11ea-9ff9-8e6746f68c05", 
                             "label": "VAC 2.0_logo_garden to aquaponics", 
                             "src": "data/design/vertical_cities/VAC 2.0_logo_garden to aquaponics.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "dee79fc0-388c-11ea-ba8a-8e6746f68c05", 
+                    "id": "62f24240-3967-11ea-9273-8e6746f68c05", 
                     "label": "vertical_cities", 
                     "src": "data/design/vertical_cities/vertical_cities.jpg", 
                     "type": "dir"
                 }
             ], 
-            "id": "dee88a1e-388c-11ea-a334-8e6746f68c05", 
+            "id": "62f639de-3967-11ea-9a15-8e6746f68c05", 
             "label": "design", 
             "src": "data/design/design.png", 
             "type": "dir"
         }
     ], 
-    "id": "dee8b130-388c-11ea-873d-8e6746f68c05", 
+    "id": "62f660f0-3967-11ea-b91b-8e6746f68c05", 
     "label": "", 
     "type": "dir"
 }
