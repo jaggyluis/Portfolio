@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { LayoutProps } from '../Layout/Layout';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
+import { LayoutProps } from '../Layout/Layout';
 
 export class LayoutOverlay extends React.Component<LayoutProps> {
 
@@ -50,7 +50,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             width: '100%',
             height: '100%',
             position: 'absolute',
-            background: 'rgba(255,255,255,0.2)',
+             background: 'rgba(255,255,255,0.2)',
             opacity: this.state.hovered ? 0 : 1,
             transition: 2 * this.getTransitionDuration() + 'ms',
             willChange: 'opacity'
@@ -63,10 +63,12 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             bottom: 0,
             right: 0,
             height: '100%',
+            width : '100%',
             borderLeft : '1px solid rgba(100,100,100,0.1)',
-            width: !this.state.hovered ? '80%' : '100%',
+            transform : !this.state.hovered ? 'translate(20%, 0)' : '',
+            WebkitTransform: !this.state.hovered ? 'translate(20%, 0)' : '',
             transition: this.getTransitionDuration() + 'ms',
-            willChange: 'width'
+            willChange: 'transform'
         }
     }
 
@@ -75,14 +77,16 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             bottom: 0,
             left: 0,
-            height: !this.state.hovered ? '70%' : '100%',
-            borderTop : '1px solid rgba(100,100,100,0.1)',
+            height : '100%',
             width: '100%',
             marginLeft : '-25%',
             paddingLeft : '25%',
+            borderTop : '1px solid rgba(100,100,100,0.1)',
+            transform : !this.state.hovered ? 'translate(0, 30%)' : '',
+            WebkitTransform : !this.state.hovered ? 'translate(0, 30%)' : '',
             transition: this.getTransitionDuration() + 'ms',
             transitionDelay: this.getTransitionDuration() + 'ms',
-            willChange: 'height'
+            willChange : 'transform'
         }
     }
 
@@ -91,7 +95,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             position: 'absolute',
             width: '100%',
             height: '100%',
-            background: 'rgba(255,255,255,0.5)',
+            // background: 'rgba(255,255,255,0.5)',
+            background: 'repeating-linear-gradient(-45deg,transparent,transparent 2px,rgba(100,100,100,0.1) 2px, rgba(100,100,100,0.1) 4px)',
             opacity: this.state.hovered ? 0 : 1,
             transition: this.getTransitionDuration() + 'ms',
             transitionDelay: this.getTransitionDuration() + 'ms',
@@ -113,6 +118,12 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             lineHeight: 0.8,
             textTransform: 'uppercase',
             mixBlendMode: 'overlay',
+            wordBreak: 'break-all',
+            background: 'repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(100,100,100,0.1) 2px, rgba(100,100,100,0.1) 4px)',
+            // backgroundClip: 'text',
+            // WebkitBackgroundClip: 'text',
+            // WebkitTextFillColor: 'transparent',
+            color: 'white',
             left: 0,
             top: 0,
         }

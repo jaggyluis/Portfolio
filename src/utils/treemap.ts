@@ -17,7 +17,7 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
     }
 
     const value = (data: NodeData) => {
-        return data.weight !== undefined ? data.weight : data.content ? 2 : 1; // 1;
+        return data.weight !== undefined ? data.weight : data.content ? 3 : 1; // 1;
         // return data.weight !== undefined ? data.weight : data.type === 'data' ? data.content ? 2 : 1 : 1;
     }
 

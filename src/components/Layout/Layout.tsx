@@ -1,17 +1,10 @@
 import * as React from 'react';
 import { NodeData, NodeState } from '../../model/NodeData';
 import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
-import { Node } from './../../model/Node';
-import { treemap } from './../../utils/treemap';
+import { Node } from '../../model/Node';
+import { treemap } from '../../utils/treemap';
 import { LayoutContent } from '../LayoutContent/LayoutContent';
-
-function debounce(func: any) {
-    var timer: any;
-    return function (event: any) {
-        if (timer) clearTimeout(timer);
-        timer = setTimeout(func, 100, event);
-    };
-}
+import './Layout.css';
 
 /**
  * Shuffles array in place.
@@ -29,6 +22,8 @@ function shuffle(a: any) {
 }
 
 export interface LayoutProps {
+    width: number,
+    height: number,
     node: Node;
     nodeState: NodeState;
     nodeDepth: number;
@@ -36,12 +31,11 @@ export interface LayoutProps {
     parent: Node | null;
     parentState: NodeState | null;
     onChildClick?: (child: Node) => void;
+    onSiblingClick?:(sibling: Node) => void;
 }
 export interface LayoutState {
     selectedChildId: string | null;
     transitionDuration: number;
-    width: number;
-    height: number;
 }
 export class Layout extends React.Component<LayoutProps> {
 
@@ -49,10 +43,8 @@ export class Layout extends React.Component<LayoutProps> {
     layout: Node = treemap({ label: '_', type: 'dir', id: '_' }, 100, 100);
 
     state: LayoutState = {
-        width: window.innerWidth,
-        height: window.innerHeight,
         selectedChildId: null,
-        transitionDuration: 600
+        transitionDuration: 0
     }
 
     componentWillMount() {
@@ -63,16 +55,10 @@ export class Layout extends React.Component<LayoutProps> {
         this.update();
     }
 
-    componentDidMount() {
-        // window.addEventListener("resize", debounce(() => {
-        //     if (this.props.nodeState.selected) {
-        //         this.setState({ width: window.innerWidth, height: window.innerHeight })
-        //     }
-        // }));
-    }
-
     update() {
-
+        if (!this.areNoChildrenSelected()) {
+            return;
+        }
         if (this.props.nodeState.hidden) {
             this.layout = treemap({ label: '_', type: 'dir', id: '_' }, 100, 100);
             this.state.selectedChildId = null;
@@ -80,7 +66,7 @@ export class Layout extends React.Component<LayoutProps> {
             const nodeData = Object.assign({}, this.props.node.data);
             nodeData.children = !nodeData.children ? undefined : nodeData.children.filter(child => this.props.parentState?.selected || !child.content)
 
-            this.layout = treemap(nodeData, this.state.width, this.state.height);
+            this.layout = treemap(nodeData, this.props.width, this.props.height);
             this.state.selectedChildId = null;
         }
     }
@@ -100,8 +86,9 @@ export class Layout extends React.Component<LayoutProps> {
         return this.state.selectedChildId === child.data.id;
     }
 
-    setChildSelected(child: Node) {
-        this.setState({ selectedChildId: child.data.id })
+    setSelectedChild(child: Node | null) {
+        console.log(this.props.node.data.label, child?.data.label)
+        this.setState({ selectedChildId: child === null ? null : child.data.id })
     }
 
     areNoChildrenSelected() {
@@ -110,7 +97,7 @@ export class Layout extends React.Component<LayoutProps> {
 
     onChildClick(child: Node) {
         if (!child.data.content) {
-            this.setChildSelected(child);
+            this.setSelectedChild(child);
         }
     }
 
@@ -119,13 +106,13 @@ export class Layout extends React.Component<LayoutProps> {
             display: this.props.nodeState.selected ? 'flex' : 'none',
             flexWrap: 'wrap',
             marginBottom: '10px',
-            borderBottom : '1px solid rgba(100,100,100,0.05)'
+            borderBottom: '1px solid rgba(100,100,100,0.05)'
         }
     }
 
     getHeaderNodeStyle(isSibling: boolean = false): React.CSSProperties {
 
-        const s = this.state.width < 600 ? 30 : 40;
+        const s = this.props.width < 600 ? 30 : 40;
         const c = Math.ceil(s / 5)
         const d = this.props.nodeDepth * c
         const h = s - d;
@@ -148,15 +135,26 @@ export class Layout extends React.Component<LayoutProps> {
             this.props.parentState.selected &&
             this.props.node.data.type === 'dir')) {
             return (
-                <div className='layout-header' style={this.getHeaderStyle()}>
-                    <div className='layout-header-node' style={this.getHeaderNodeStyle()}>{this.props.node.data.label}</div>
+                <div className='layout-header' 
+                    // onClick={this.onHeaderClick.bind(this)}
+                    style={this.getHeaderStyle()}
+                    >
+                    <div 
+                        className='layout-header-node' 
+                        style={this.getHeaderNodeStyle()}>{this.props.node.data.label}
+                    </div>
                     {
-                        this.state.width < 600 ? undefined :
+                        this.props.width < 600 ? undefined :
                             this.props.nodeSiblings.map(sibling => {
                                 if (sibling.data.id !== this.props.node.data.id) {
                                     return (
                                         <div
                                             className='layout-header-node'
+                                            onClick={() => {
+                                                if (this.props.onSiblingClick) {
+                                                    this.props.onSiblingClick(sibling);
+                                                }
+                                             }}
                                             key={sibling.data.id}
                                             style={this.getHeaderNodeStyle(true)}>
                                             {"/ " + sibling.data.label}
@@ -175,6 +173,8 @@ export class Layout extends React.Component<LayoutProps> {
     getOverlay() {
         return this.props.node.data.type === 'dir' ?
             <LayoutOverlay
+                width={this.props.width}
+                height={this.props.height}
                 node={this.props.node}
                 nodeState={this.props.nodeState}
                 nodeDepth={this.props.nodeDepth}
@@ -184,6 +184,8 @@ export class Layout extends React.Component<LayoutProps> {
             />
             :
             <LayoutContent
+                width={this.props.width}
+                height={this.props.height}
                 node={this.props.node}
                 nodeState={this.props.nodeState}
                 nodeDepth={this.props.nodeDepth}
@@ -255,12 +257,15 @@ export class Layout extends React.Component<LayoutProps> {
                     style={this.getChildStyle(child)}
                 >
                     <Layout
+                        width={this.props.width}
+                        height={this.props.height}
                         parent={this.props.node}
                         parentState={this.props.nodeState}
                         node={child}
                         nodeState={this.getChildState(child)}
                         nodeDepth={this.props.nodeDepth + 1}
                         nodeSiblings={this.layout.children || []}
+                        onSiblingClick={this.setSelectedChild.bind(this)}
                     />
                 </div>
             )
@@ -279,6 +284,7 @@ export class Layout extends React.Component<LayoutProps> {
                     position: 'absolute',
                     width: window.innerWidth * 3 + 'px',
                     height: '1px',
+                    marginTop: '-1px',
                     top: 0,
                     left: 0,
                     marginLeft: -window.innerWidth,
@@ -293,6 +299,7 @@ export class Layout extends React.Component<LayoutProps> {
                     position: 'absolute',
                     width: window.innerWidth * 3 + 'px',
                     height: '1px',
+                    marginBottom : '-1px',
                     left: 0,
                     bottom: 0,
                     marginLeft: -window.innerWidth,
@@ -306,6 +313,7 @@ export class Layout extends React.Component<LayoutProps> {
                 style={{
                     position: 'absolute',
                     width: '1px',
+                    marginLeft: '-1px',
                     height: window.innerHeight * 3,
                     left: 0,
                     top: 0,

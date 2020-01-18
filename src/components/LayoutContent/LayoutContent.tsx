@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { LayoutProps } from '../Layout/Layout';
 import { color } from 'd3';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
+import { LayoutProps } from '../Layout/Layout';
 
 export class LayoutContent extends React.Component<LayoutProps> {
     
@@ -20,9 +20,9 @@ export class LayoutContent extends React.Component<LayoutProps> {
 
     getContentStyle() : React.CSSProperties {
         return {
-            borderBottom : '1px solid rgba(100,100,100,0.05)',
+            borderBottom : '1px solid rgba(100,100,100,0.1)',
             color : 'dimgrey',
-            maxWidth : '500px'
+            maxWidth : '500px',
         }
     }
 
@@ -71,11 +71,12 @@ export class LayoutContent extends React.Component<LayoutProps> {
         return {
             width: 'calc(100% - ' + (2*padding) + 'px)',
             height: 'calc(100% - ' + (2*padding) + 'px)',
-            background: 'rgba(' + v + ',' + v + ',' + v + ',' + 0.2 + ')',
+            background: this.props.node.data.content ? '' : 'rgba(' + v + ',' + v + ',' + v + ',' + 0.2 + ')',
             margin : padding + 'px' ,
             position: 'absolute',
             overflowY : 'auto',
-            overflowX : 'hidden'
+            overflowX : 'hidden',
+            zIndex : 1
         }
     }
     

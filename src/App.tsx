@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Layout } from './components/Layout/Layout';
 import { treemap } from './utils/treemap';
 import { NodeData } from './model/NodeData';
+import { Layout } from './components/Layout/Layout';
 
 function debounce(func: any) {
     var timer: any;
@@ -13,21 +13,28 @@ function debounce(func: any) {
 }
 
 export interface AppProps {
-    data : NodeData;
+    data: NodeData;
 }
 class App extends React.Component<AppProps> {
 
-    state={
-        selected : false,
+    state = {
+        selected: false,
+        width : window.innerWidth,
+        height : window.innerHeight,
     }
 
     onNodeClick() {
-        this.setState({selected : true});
+        this.setState({ selected: true });
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", debounce(() => {
+            this.setState({ width: window.innerWidth, height: window.innerHeight })
+        }));
     }
 
     render() {
-
-        const node = treemap(this.props.data, window.innerWidth, window.innerHeight);
+        const node = treemap(this.props.data, this.state.width, this.state.height);
         node.data.label = "Luis Jaggy";
 
         return (
@@ -38,13 +45,15 @@ class App extends React.Component<AppProps> {
                     height: '95%',
                     width: '95%',
                     position: 'absolute',
-                    marginLeft : '2.5%',
+                    marginLeft: '2.5%',
                     // overflow: 'hidden'
                 }}
             >
                 <Layout
+                    width={this.state.width}
+                    height={this.state.height}
                     node={node}
-                    nodeState={{selected : this.state.selected }}
+                    nodeState={{ selected: this.state.selected }}
                     nodeDepth={0}
                     nodeSiblings={[]}
                     parent={null}
