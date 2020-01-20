@@ -1,7 +1,8 @@
 import * as React from 'react'
 
 export class LayoutImage extends React.Component {
-    state = { src: null, placeholder : null };
+
+    state = { src: null, placeholder: null };
 
     getPlaceholderPath(path) {
         if (path) {
@@ -26,7 +27,8 @@ export class LayoutImage extends React.Component {
     componentDidMount() {
         let { src } = this.props;
 
-        if (window.innerWidth < 1200) src = this.getMobilePath(src);
+        if (window.innerWidth < 600) src = this.getMobilePath(src);
+        // src = this.getPlaceholderPath(src);
 
         const srcImageLoader = new Image();
         srcImageLoader.src = src;
@@ -36,10 +38,10 @@ export class LayoutImage extends React.Component {
     }
 
     getStyle() {
-        return { 
-            width: '100%', 
-            height: '100%', 
-            objectFit:  this.props.contain ? 'contain' : 'cover', 
+        return {
+            width: '100%',
+            height: '100%',
+            objectFit: this.props.contain ? 'contain' : 'cover',
             position: 'absolute',
         }
     }
@@ -47,7 +49,13 @@ export class LayoutImage extends React.Component {
     render() {
         // return <div></div>
         // console.log(this.state.src, this.state.placeholder)
-        return <img src={this.state.src || this.getPlaceholderPath(this.props.src)} alt='' style={this.getStyle()}/>;
+        return (
+            <img
+                src={this.state.src || this.getPlaceholderPath(this.props.src)}
+                alt=''
+                style={this.getStyle()}
+            />
+        )
 
         // const url = this.state.src ? this.state.src : this.state.placeholder ? this.state.placeholder : ''
 

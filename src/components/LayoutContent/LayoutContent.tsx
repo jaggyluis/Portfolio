@@ -64,15 +64,9 @@ export class LayoutContent extends React.Component<LayoutProps> {
     }
 
     getStyle() : React.CSSProperties {
-
-        const padding = 0;
-        const v = Math.floor(Math.random() * 50) + 200;
-
         return {
-            width: 'calc(100% - ' + (2*padding) + 'px)',
-            height: 'calc(100% - ' + (2*padding) + 'px)',
-            background: this.props.node.data.content ? '' : 'rgba(' + v + ',' + v + ',' + v + ',' + 0.2 + ')',
-            margin : padding + 'px' ,
+            width: '100%',
+            height: '100%',
             position: 'absolute',
             overflowY : 'auto',
             overflowX : 'hidden',

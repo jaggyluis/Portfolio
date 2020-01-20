@@ -6,8 +6,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     state = {
         hovered: false,
-        hidden: false,
-        selected: false,
         transitionDuration: 300
     }
 
@@ -21,20 +19,11 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         event.stopPropagation();
     }
 
-    onClick() {
-        // setTimeout(() => {
-            this.setState({ hidden: true });
-        // }, this.state.transitionDuration * 3);   
-    }
-
     getSplashImagePath(): string {
         return this.props.node.data.src || '';
     }
 
     getSplashStyle(): React.CSSProperties {
-
-        const v = Math.floor(Math.random() * 30) + 225;
-
         return {
             width: '100%',
             height: '100%',
@@ -96,7 +85,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             width: '100%',
             height: '100%',
             // background: 'rgba(255,255,255,0.5)',
-            background: 'repeating-linear-gradient(-45deg,transparent,transparent 2px,rgba(100,100,100,0.1) 2px, rgba(100,100,100,0.1) 4px)',
+            background: 'repeating-linear-gradient(-45deg,transparent,transparent 1px,rgba(100,100,100,0.1) 1px, rgba(100,100,100,0.1) 2px)',
             opacity: this.state.hovered ? 0 : 1,
             transition: this.getTransitionDuration() + 'ms',
             transitionDelay: this.getTransitionDuration() + 'ms',
@@ -106,7 +95,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
 
-        const s = window.innerWidth < 600 ? 30 : 40;
+        const s = this.props.width < 600 ? 30 : 40;
         const c = Math.ceil(s / 5)
         const d = this.props.nodeDepth * c
         const h = s - d;
@@ -117,12 +106,13 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             fontSize: h + 'px',
             lineHeight: 0.8,
             textTransform: 'uppercase',
-            mixBlendMode: 'overlay',
+            borderBottom : '1px solid rgba(100,100,100,0.1)',
+            // mixBlendMode: 'overlay',
             wordBreak: 'break-all',
-            background: 'repeating-linear-gradient(45deg,transparent,transparent 2px,rgba(100,100,100,0.1) 2px, rgba(100,100,100,0.1) 4px)',
-            // backgroundClip: 'text',
-            // WebkitBackgroundClip: 'text',
-            // WebkitTextFillColor: 'transparent',
+            background: 'repeating-linear-gradient(45deg,transparent,transparent 1px,rgba(100,100,100,0.2) 1px, rgba(100,100,100,0.2) 2px)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
             color: 'white',
             left: 0,
             top: 0,
@@ -131,18 +121,13 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getStyle(): React.CSSProperties {
 
-        const padding = 0;
-        const v = Math.floor(Math.random() * 30) + 225;
-
         return {
-            width: 'calc(100% - ' + (2 * padding) + 'px)',
-            height: 'calc(100% - ' + (2 * padding) + 'px)',
-            // background: 'rgba(' + v + ',' + v + ',' + v + ',' + 1 + ')',
-            margin: padding + 'px',
+            width: '100%',
+            height: '100%',
             overflow: 'hidden',
             position: 'absolute',
             zIndex: 2,
-            display: this.state.hidden ? 'none' : '',
+            display: this.props.nodeState.selected ? 'none' : '',
             opacity: this.props.parentState == null || this.props.parentState.selected ? 1 : 0,
             transition: 2 * this.getTransitionDuration() + 'ms'
         }
@@ -156,7 +141,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         return (
             <div
                 className='layout-overlay'
-                onClick={this.onClick.bind(this)}
                 onMouseEnter={this.onMouseEnter.bind(this)}
                 onMouseLeave={this.onMouseLeave.bind(this)}
                 style={this.getStyle()}

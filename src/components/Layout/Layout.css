@@ -1,3 +1,4 @@
 .layout-header-node:hover {
     color : black !important;
+    transition: 300ms;
 }
