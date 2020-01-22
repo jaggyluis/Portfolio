@@ -2,94 +2,44 @@ import * as React from 'react';
 import { color } from 'd3';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { LayoutProps } from '../Layout/Layout';
-
+import './LayoutContent.css';
+import { isTextNode, getTextNodeContent, isImageNode, getImageNodeSrc, getNodeLabel } from './../../utils/node';
 
 export class LayoutContent extends React.Component<LayoutProps> {
     
-    getImagePath() : string {
-        return this.props.node.data.src || '';
+    getClassName() {
+        const className = ['layout-content'];
+        if (isTextNode(this.props.node))  className.push('text-node');
+        return className.join(' ');
     }
 
     getImage() {
-        return (
-            <LayoutImage 
-                src={this.getImagePath()} 
-                contain={this.props.nodeState.selected}
-            />
-        )
-    }
-
-    getContentStyle() : React.CSSProperties {
-        return {
-            borderBottom : '1px solid rgba(100,100,100,0.1)',
-            borderTop: '1px solid rgba(100,100,100,0.1)',
-            color : 'dimgrey',
-            // maxWidth : '500px',
-            marginTop: '10px'
+        if (isImageNode(this.props.node)) {
+            return <LayoutImage src={getImageNodeSrc(this.props.node)} contain={this.props.nodeState.selected}/>
         }
-    }
-
-    getContent() {
-        return this.props.node.data.content ? this.props.node.data.content.map((txt, index) => {
-            return (
-                <div 
-                    className='layout-text'
-                    style={this.getContentStyle()}
-                    key={index}
-                    >
-                    {txt}
-                </div>
-            )
-        }) : [];
-    }
-
-    getLabelStyle() : React.CSSProperties {
-        return {
-            textTransform: 'uppercase',
-            fontWeight : 'bold',
-            fontSize : '40px',
-            lineHeight: 0.8,
-            position: 'sticky',
-            top : 0,
-            color : '#d3d3d366',
-            mixBlendMode : 'multiply',
-        }
+        return undefined;
     }
 
     getLabel() {
-        return this.props.node.data.content ? (
-            <div
-                className='layout-label'
-                style={this.getLabelStyle()}
-            >{this.props.node.data.label}
-            </div>
-        ) : undefined;
+        if (isTextNode(this.props.node)) {
+            return <div className='layout-label' >{getNodeLabel(this.props.node)}</div>
+        }
+        return undefined;
     }
 
-    getStyle() : React.CSSProperties {
-        return {
-            width: this.props.node.data.content ? 'calc(100% - 10px)' : '100%',
-            height: '100%',
-            position: 'absolute',
-            overflowY : 'auto',
-            overflowX : 'hidden',
-            zIndex : 4,
-            marginLeft: this.props.node.data.content ? '10px' : '',
-            borderLeft: this.props.node.data.content ? '1px solid rgba(100,100,100,0.1)' : '',
-            fontSize : window.innerWidth < 600 ? '12px' : '14px'
-            // background : 'white',
-        }
+    getText() {
+        if (isTextNode(this.props.node)) return getTextNodeContent(this.props.node).map((txt, index) => {
+            return <div className='layout-text' key={index} >{txt}</div>
+        });
+        return undefined;
     }
-    
+
     render() {
         return (
-            <div   
-                className='layout-content'
-                style={this.getStyle()}
-            >   
+            <div className={this.getClassName()}>   
                 {this.getImage()}
                 {this.getLabel()}
-                {this.getContent()}
+                {this.getText()}
             </div>
         )
     }

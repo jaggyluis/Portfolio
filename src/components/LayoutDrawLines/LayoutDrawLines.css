@@ -1,0 +1,29 @@
+
+.layout-draw-lines .line {
+    position: absolute;
+    pointer-events: none;
+    background: rgba(100,100,100,0.05);
+}
+
+
+.layout-draw-lines .horizontal {
+    height: 1px;
+}
+
+.layout-draw-lines .vertical {
+    position: absolute;
+    width: 1px;
+    margin-left: -1px;
+}
+
+.layout-draw-lines .top {
+    top: 0;
+    left: 0;
+    margin-top: -1px;
+}
+
+.layout-draw-lines .bottom {
+    left: 0;
+    bottom: 0;
+    margin-top: 1px;
+}

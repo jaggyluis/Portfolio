@@ -11,12 +11,12 @@
 }
 
 .layout-overlay img {
-    /* filter: contrast(1.5) saturate(0.3); */
+    filter: contrast(0.3) saturate(0) brightness(1.5);
     /* transition:  var(--transitionDuration); */
 }
 
 .layout-overlay:hover img {
-    /* filter: contrast(1.2) saturate(0.5); */
+    filter: none;
 }
 
 .layout-overlay .layout-lslider {

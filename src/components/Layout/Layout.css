@@ -1,4 +1,16 @@
-.layout-header-node:hover {
-    color : black !important;
-    transition: 300ms;
+.layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    z-index: 1;
+    display: flex;
+    margin: -1px;
+    border: 1px solid rgba(100,100,100,0.05);
+}
+
+.layout.hidden {
+    display: none;
 }
