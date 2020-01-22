@@ -12,14 +12,16 @@ export interface LayoutProps {
     node: Node;
     nodeState: NodeState;
     nodeDepth: number;
-    nodeSiblings: Node[];  
+    nodeSiblings: Node[];
     parent: Node | null;
     parentState: NodeState | null;
-    onNodeClick?: (node : Node) => void;
+    onNodeClick?: (node: Node) => void;
 }
 export interface LayoutState {
+    width: number;
+    height: number;
     selectedChildId: string | null;
-    visibleChildId : string | null;
+    visibleChildId: string | null;
     transitionDuration: number;
 }
 export class Layout extends React.Component<LayoutProps> {
@@ -28,9 +30,11 @@ export class Layout extends React.Component<LayoutProps> {
     layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
 
     state: LayoutState = {
+        width: this.props.width,
+        height: this.props.height,
         selectedChildId: null,
-        visibleChildId : null,
-        transitionDuration: 300
+        visibleChildId: null,
+        transitionDuration: 400
     }
 
     componentWillMount() {
@@ -41,8 +45,14 @@ export class Layout extends React.Component<LayoutProps> {
         this.update();
     }
 
+    shouldComponentUpdate() {
+        return this.props.parentState == null || this.props.parentState.selected;
+    }
+
     update() {
-        this.layout = treemap(this.props.node.data, this.props.width, this.props.height);
+        if (this.props.width !== this.state.width || this.props.height !== this.state.height) {
+            this.layout = treemap(this.props.node.data, this.props.width, this.props.height);
+        }
         if (!this.props.nodeState.selected) {
             this.state.selectedChildId = null;
             this.state.visibleChildId = null;
@@ -56,7 +66,7 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    isChildVisible(child : Node) {
+    isChildVisible(child: Node) {
         return this.state.visibleChildId === child.data.id;
     }
 
@@ -69,15 +79,18 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     setSelectedChild(child: Node) {
-        this.setState({ selectedChildId: child.data.id, visibleChildId: child.data.id })
-        // this.setState({ selectedChildId: child.data.id })
-        // setTimeout(() => {
-        //     this.setState({visibleChildId : child.data.id});
-        // }, this.state.transitionDuration * 2)
+        if (child.data.type === 'dir') {
+            this.setState({ selectedChildId: child.data.id })
+            setTimeout(() => {
+                this.setState({ visibleChildId: child.data.id });
+            }, this.state.transitionDuration)
+        } else {
+            this.setState({ selectedChildId: child.data.id, visibleChildId: child.data.id })
+        }
     }
 
     clearSelectedChildren() {
-        this.setState({selectedChildId : null, visibleChildId : null});
+        this.setState({ selectedChildId: null, visibleChildId: null });
     }
 
     onChildClick(child: Node | null) {
@@ -86,103 +99,8 @@ export class Layout extends React.Component<LayoutProps> {
         } else {
             if (!child.data.content) {
                 this.setSelectedChild(child);
-            } 
+            }
         }
-    }
-
-    getHeaderStyle(): React.CSSProperties {
-        return {
-            display: this.props.nodeState.selected ? 'flex' : 'none',
-            flexWrap: 'wrap',
-            marginBottom: '10px',
-            borderBottom: '1px solid rgba(100,100,100,0.05)'
-        }
-    }
-
-    getHeaderNodeStyle(isSibling: boolean = false): React.CSSProperties {
-
-        const s = this.props.width < 600 ? 30 : 40;
-        const c = Math.ceil(s / 5)
-        const d = this.props.nodeDepth * c
-        const h = s - d;
-
-        return {
-            position: 'relative',
-            fontWeight: isSibling ? 'lighter' : 'bolder',
-            paddingRight: '10px',
-            fontSize: h + 'px',
-            lineHeight: 0.8,
-            textTransform: 'uppercase',
-            mixBlendMode: 'overlay',
-            color: isSibling ? 'lightgrey' : 'black',
-            opacity: this.props.nodeState.selected ? 1 : 0,
-        }
-    }
-
-    getHeader() {
-        if (!this.props.parentState || (this.props.parentState &&
-            this.props.parentState.selected &&
-            this.props.node.data.type === 'dir')) {
-            return (
-                <div className='layout-header' 
-                    style={this.getHeaderStyle()}
-                    >
-                    <div 
-                        className='layout-header-node' 
-                        onClick={this.clearSelectedChildren.bind(this)}
-                        style={this.getHeaderNodeStyle()}>{this.props.node.data.label}
-                    </div>
-                    {
-                        this.props.width < 600 ? undefined :
-                            this.props.nodeSiblings.map(sibling => {
-                                if (sibling.data.id !== this.props.node.data.id) {
-                                    return (
-                                        <div
-                                            className='layout-header-node'
-                                            onClick={(e) => {
-                                                if (this.props.onNodeClick) {
-                                                    this.props.onNodeClick(sibling);
-                                                    e.stopPropagation();
-                                                }
-                                             }}
-                                            key={sibling.data.id}
-                                            style={this.getHeaderNodeStyle(true)}>
-                                            {"/ " + sibling.data.label}
-                                        </div>
-                                    )
-                                } else {
-                                    return undefined
-                                }
-                            })
-                    }
-                </div>
-            )
-        } else return undefined;
-    }
-
-    getOverlay() {
-        return this.props.node.data.type === 'dir' ?
-            <LayoutOverlay
-                width={this.props.width}
-                height={this.props.height}
-                node={this.props.node}
-                nodeState={this.props.nodeState}
-                nodeDepth={this.props.nodeDepth}
-                nodeSiblings={this.props.nodeSiblings}
-                parent={this.props.parent}
-                parentState={this.props.parentState}
-            />
-            :
-            <LayoutContent
-                width={this.props.width}
-                height={this.props.height}
-                node={this.props.node}
-                nodeState={this.props.nodeState}
-                nodeDepth={this.props.nodeDepth}
-                nodeSiblings={this.props.nodeSiblings}
-                parent={this.props.parent}
-                parentState={this.props.parentState}
-            />
     }
 
     getChildTop(child: Node) {
@@ -197,14 +115,16 @@ export class Layout extends React.Component<LayoutProps> {
 
     getChildWidth(child: Node) {
         if (this.isChildSelected(child)) return '100%';
-        if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
-        return '0%';
+        return (100 * (child.x1 - child.x0)) + "%";
+        // if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
+        // return '0%';
     }
 
     getChildHeight(child: Node) {
         if (this.isChildSelected(child)) return '100%';
-        if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
-        return '0%';
+        return (100 * (child.y1 - child.y0)) + "%"
+        // if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
+        // return '0%';
     }
 
     getChildOpacity(child: Node) {
@@ -216,6 +136,11 @@ export class Layout extends React.Component<LayoutProps> {
         return 'none';
     }
 
+    getChildZIndex(child: Node) {
+        if (this.isChildSelected(child) || this.areNoChildrenSelected()) return 2;
+        return 0;
+    }
+
     getChildStyle(child: Node): React.CSSProperties {
         return {
             position: 'absolute',
@@ -223,8 +148,10 @@ export class Layout extends React.Component<LayoutProps> {
             left: this.getChildLeft(child),
             height: this.getChildHeight(child),
             width: this.getChildWidth(child),
+            zIndex: this.getChildZIndex(child),
+            // opacity: this.getChildOpacity(child),
+            display: this.getChildDisplay(child),
             transition: this.state.transitionDuration + 'ms',
-            opacity: this.getChildOpacity(child),
             willChange: 'top, left, height, width, opacity'
         }
     }
@@ -238,82 +165,218 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getChildren() {
-        // if (this.props.nodeState.selected) {
-        return this.layout.children ? this.layout.children.map((child) => {
-            return (
+        if (!this.props.nodeState.selected) {
+            return undefined;
+        }
+        return <div
+            className='layout-children'
+            style={this.getChildrenStyle()}
+        >
+            {
+                (this.layout.children || []).map((child) => {
+                    return (
+                        <div
+                            key={child.data.id}
+                            className='layout-child-position'
+                            style={this.getChildStyle(child)}
+                        >
+                            <Layout
+                                width={this.props.width}
+                                height={this.props.height}
+                                parent={this.props.node}
+                                parentState={this.props.nodeState}
+                                node={child}
+                                nodeState={this.getChildState(child)}
+                                nodeDepth={this.props.nodeDepth + 1}
+                                nodeSiblings={this.layout.children || []}
+                                onNodeClick={this.onChildClick.bind(this)}
+                            />
+                        </div>
+                    )
+                })
+            }
+        </div>
+    }
+
+    getHeaderStyle(): React.CSSProperties {
+        return {
+            display: this.props.nodeState.selected ? 'flex' : 'none',
+            flexWrap: 'wrap',
+            marginBottom: '10px',
+            borderBottom: '1px solid rgba(100,100,100,0.05)'
+        }
+    }
+
+    getHeaderNodeStyle(isSibling: boolean = false): React.CSSProperties {
+
+        const s = this.props.width < 600 ? 25 : 30;
+        const c = Math.ceil(s / 5)
+        const d = this.props.nodeDepth * c
+        const h = s - d;
+
+        return {
+            position: 'relative',
+            fontWeight: isSibling ? 'lighter' : 'bolder',
+            paddingRight: '10px',
+            fontSize: h + 'px',
+            lineHeight: 0.8,
+            // letterSpacing: '-2px',
+            textTransform: 'uppercase',
+            mixBlendMode: 'overlay',
+            color: isSibling ? 'lightgrey' : 'black',
+            display: this.props.nodeState.selected ? '' : 'none'
+        }
+    }
+
+    getHeader() {
+        if (this.props.node.data.type !== 'dir') {
+            return undefined;
+        }
+        return (
+            <div className='layout-header'
+                style={this.getHeaderStyle()}
+            >
                 <div
-                    key={child.data.id}
-                    className='layout-position'
-                    style={this.getChildStyle(child)}
-                >
-                    <Layout
-                        width={this.props.width}
-                        height={this.props.height}
-                        parent={this.props.node}
-                        parentState={this.props.nodeState}
-                        node={child}
-                        nodeState={this.getChildState(child)}
-                        nodeDepth={this.props.nodeDepth + 1}
-                        nodeSiblings={this.layout.children || []}
-                        onNodeClick={this.onChildClick.bind(this)}
-                    />
+                    className='layout-header-node'
+                    onClick={this.clearSelectedChildren.bind(this)}
+                    style={this.getHeaderNodeStyle()}>{this.props.node.data.label}
                 </div>
-            )
-        })
-            : [];
-        // } else {
-        //     return undefined;
-        // }
+                {
+                    this.props.width < 600 ? undefined :
+                        this.props.nodeSiblings.map(sibling => {
+                            if (sibling.data.id !== this.props.node.data.id) {
+                                return (
+                                    <div
+                                        className='layout-header-node'
+                                        onClick={(e) => {
+                                            if (this.props.onNodeClick) {
+                                                this.props.onNodeClick(sibling);
+                                                e.stopPropagation();
+                                            }
+                                        }}
+                                        key={sibling.data.id}
+                                        style={this.getHeaderNodeStyle(true)}>
+                                        {"/ " + sibling.data.label}
+                                    </div>
+                                )
+                            } else {
+                                return undefined
+                            }
+                        })
+                }
+            </div>
+        )
+    }
+
+    getOverlayStyle(): React.CSSProperties {
+        return {
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            pointerEvents: this.props.nodeState.selected ? 'none' : 'all',
+            display: this.props.nodeState.selected ? 'none' : ''
+            // opacity: this.props.nodeState.selected ? 0 : 1,
+            // transitionDelay: this.state.transitionDuration + 'ms',
+            // transition: this.state.transitionDuration + 'ms',
+        }
+    }
+
+    getOverlay() {
+        if (this.props.node.data.type !== 'dir') {
+            return undefined;
+        }
+        return (
+            <div
+                className='layout-overlay-position'
+                style={this.getOverlayStyle()}
+            >
+                <LayoutOverlay
+                    width={this.props.width}
+                    height={this.props.height}
+                    node={this.props.node}
+                    nodeState={this.props.nodeState}
+                    nodeDepth={this.props.nodeDepth}
+                    nodeSiblings={this.props.nodeSiblings}
+                    parent={this.props.parent}
+                    parentState={this.props.parentState}
+                />
+            </div>
+        )
+    }
+
+    getContent() {
+        if (this.props.node.data.type === 'dir') {
+            return undefined;
+        }
+        return (
+            <LayoutContent
+                width={this.props.width}
+                height={this.props.height}
+                node={this.props.node}
+                nodeState={this.props.nodeState}
+                nodeDepth={this.props.nodeDepth}
+                nodeSiblings={this.props.nodeSiblings}
+                parent={this.props.parent}
+                parentState={this.props.parentState}
+            />
+        )
     }
 
     getDrawLines() {
-        return [
+        if (this.props.parentState && !this.props.parentState.selected) {
+            return undefined;
+        }
+        return (
             <div
-                key={'top'}
-                style={{
-                    position: 'absolute',
-                    width: window.innerWidth * 3 + 'px',
-                    height: '1px',
-                    marginTop: '-1px',
-                    top: 0,
-                    left: 0,
-                    marginLeft: -window.innerWidth,
-                    pointerEvents: 'none',
-                    background: 'rgba(100,100,100,0.05)'
-                }}
+                className='layout-draw-lines'
             >
-            </div>,
-            <div
-                key={'bottom'}
-                style={{
-                    position: 'absolute',
-                    width: window.innerWidth * 3 + 'px',
-                    height: '1px',
-                    marginBottom : '-1px',
-                    left: 0,
-                    bottom: 0,
-                    marginLeft: -window.innerWidth,
-                    pointerEvents: 'none',
-                    background: 'rgba(100,100,100,0.05)'
-                }}
-            >
-            </div>,
-            <div
-                key={'left'}
-                style={{
-                    position: 'absolute',
-                    width: '1px',
-                    marginLeft: '-1px',
-                    height: window.innerHeight * 3,
-                    left: 0,
-                    top: 0,
-                    marginTop: -window.innerHeight,
-                    pointerEvents: 'none',
-                    background: 'rgba(100,100,100,0.05)'
-                }}
-            >
+                <div
+                    key={'top'}
+                    style={{
+                        position: 'absolute',
+                        width: window.innerWidth * 3 + 'px',
+                        height: '1px',
+                        marginTop: '-1px',
+                        top: 0,
+                        left: 0,
+                        marginLeft: -window.innerWidth,
+                        pointerEvents: 'none',
+                        background: 'rgba(100,100,100,0.05)'
+                    }}
+                >
+                </div>
+                <div
+                    key={'bottom'}
+                    style={{
+                        position: 'absolute',
+                        width: window.innerWidth * 3 + 'px',
+                        height: '1px',
+                        marginBottom: '-1px',
+                        left: 0,
+                        bottom: 0,
+                        marginLeft: -window.innerWidth,
+                        pointerEvents: 'none',
+                        background: 'rgba(100,100,100,0.05)'
+                    }}
+                >
+                </div>
+                <div
+                    key={'left'}
+                    style={{
+                        position: 'absolute',
+                        width: '1px',
+                        marginLeft: '-1px',
+                        height: window.innerHeight * 3,
+                        left: 0,
+                        top: 0,
+                        marginTop: -window.innerHeight,
+                        pointerEvents: 'none',
+                        background: 'rgba(100,100,100,0.05)'
+                    }}
+                >
+                </div>
             </div>
-        ]
+        )
     }
 
     getStyle(): React.CSSProperties {
@@ -352,12 +415,8 @@ export class Layout extends React.Component<LayoutProps> {
             >
                 {this.getHeader()}
                 {this.getOverlay()}
-                <div
-                    className='layout-children'
-                    style={this.getChildrenStyle()}
-                >
-                    {this.getChildren()}
-                </div>
+                {this.getChildren()}
+                {this.getContent()}
                 {this.getDrawLines()}
             </div>
         )

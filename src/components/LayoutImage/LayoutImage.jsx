@@ -2,7 +2,7 @@ import * as React from 'react'
 
 export class LayoutImage extends React.Component {
 
-    state = { src: null, placeholder: null };
+    state = { src: null, placeholder: null, contain: !!this.props.contain };
 
     getPlaceholderPath(path) {
         if (path) {
@@ -37,18 +37,24 @@ export class LayoutImage extends React.Component {
         };
     }
 
+    shouldComponentUpdate(nextProps) {
+        return this.state.src === null || (this.state.contain !== !!nextProps.contain);
+    }
+
     getStyle() {
         return {
             width: '100%',
             height: '100%',
             objectFit: this.props.contain ? 'contain' : 'cover',
             position: 'absolute',
+            filter :  this.props.contain ? 'drop-shadow(0px 0px 1px rgba(0,0,0,.3))' : ''
         }
     }
 
     render() {
-        // return <div></div>
-        // console.log(this.state.src, this.state.placeholder)
+
+        this.state.contain = !!this.props.contain;
+
         return (
             <img
                 src={this.state.src || this.getPlaceholderPath(this.props.src)}
@@ -56,17 +62,5 @@ export class LayoutImage extends React.Component {
                 style={this.getStyle()}
             />
         )
-
-        // const url = this.state.src ? this.state.src : this.state.placeholder ? this.state.placeholder : ''
-
-        // return <div style={{
-        //     position: 'absolute',
-        //     width: '100%',
-        //     height: '100%',
-        //     backgroundSize:  'cover',
-        //     backgroundPosition: 'center',
-        //     backgroundImage: 'url("' + url + '")',
-        //     backgroundRepeat: 'no-repeat',
-        // }}></div>
     }
 }

@@ -24,7 +24,9 @@ class App extends React.Component<AppProps> {
     }
 
     onNodeClick() {
-        this.setState({ selected: true });
+        // setTimeout(() => {
+            this.setState({ selected: true });
+        // }, 300)
     }
 
     componentDidMount() {
@@ -45,8 +47,8 @@ class App extends React.Component<AppProps> {
                     height: '95%',
                     width: '95%',
                     position: 'absolute',
+                    marginTop: '1%',
                     marginLeft: '2.5%',
-                    // overflow: 'hidden'
                 }}
             >
                 <Layout

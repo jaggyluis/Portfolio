@@ -3,6 +3,7 @@ import { color } from 'd3';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { LayoutProps } from '../Layout/Layout';
 
+
 export class LayoutContent extends React.Component<LayoutProps> {
     
     getImagePath() : string {
@@ -21,8 +22,10 @@ export class LayoutContent extends React.Component<LayoutProps> {
     getContentStyle() : React.CSSProperties {
         return {
             borderBottom : '1px solid rgba(100,100,100,0.1)',
+            borderTop: '1px solid rgba(100,100,100,0.1)',
             color : 'dimgrey',
-            maxWidth : '500px',
+            // maxWidth : '500px',
+            marginTop: '10px'
         }
     }
 
@@ -48,8 +51,8 @@ export class LayoutContent extends React.Component<LayoutProps> {
             lineHeight: 0.8,
             position: 'sticky',
             top : 0,
-            color : 'lightgrey',
-            mixBlendMode : 'multiply'
+            color : '#d3d3d366',
+            mixBlendMode : 'multiply',
         }
     }
 
@@ -65,12 +68,16 @@ export class LayoutContent extends React.Component<LayoutProps> {
 
     getStyle() : React.CSSProperties {
         return {
-            width: '100%',
+            width: this.props.node.data.content ? 'calc(100% - 10px)' : '100%',
             height: '100%',
             position: 'absolute',
             overflowY : 'auto',
             overflowX : 'hidden',
-            zIndex : 1
+            zIndex : 4,
+            marginLeft: this.props.node.data.content ? '10px' : '',
+            borderLeft: this.props.node.data.content ? '1px solid rgba(100,100,100,0.1)' : '',
+            fontSize : window.innerWidth < 600 ? '12px' : '14px'
+            // background : 'white',
         }
     }
     
