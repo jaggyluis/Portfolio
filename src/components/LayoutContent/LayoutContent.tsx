@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { color } from 'd3';
-import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { LayoutProps } from '../Layout/Layout';
 import './LayoutContent.css';
 import { isTextNode, getTextNodeContent, isImageNode, getImageNodeSrc, getNodeLabel } from './../../utils/node';
+import { LayoutImage } from '../LayoutImage/LayoutImage';
 
-export class LayoutContent extends React.Component<LayoutProps> {
-    
-    getClassName() {
-        const className = ['layout-content'];
-        if (isTextNode(this.props.node))  className.push('text-node');
-        return className.join(' ');
-    }
+
+export class LayoutContent extends React.PureComponent<LayoutProps> {
 
     getImage() {
         if (isImageNode(this.props.node)) {
-            return <LayoutImage src={getImageNodeSrc(this.props.node)} contain={this.props.nodeState.selected}/>
+            return <LayoutImage 
+                src={getImageNodeSrc(this.props.node)} 
+                contain={this.props.nodeState.selected}
+                width={this.props.width}
+                />
         }
         return undefined;
     }
@@ -36,28 +35,22 @@ export class LayoutContent extends React.Component<LayoutProps> {
 
     getButton() {
         if (this.props.nodeState.selected) {
-            return <div className='layout-content-btn' onClick={this.onButtonClick.bind(this)} style={this.getButtonStyle()}>x</div>
+            return <div className='layout-btn' onClick={this.onButtonClick.bind(this)}>x</div>
         }
         return undefined;
     }
 
-    onButtonClick() {
-
+    onButtonClick(e:React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        if (this.props.onNodeClick) {
+            this.props.onNodeClick(null);
+            e.stopPropagation();
+        }
     }
 
-    getButtonStyle(): React.CSSProperties {
-        return {
-            position: 'absolute',
-            right: 0,
-            top: 0,
-            fontSize: '25px',
-            height: '36px',
-            borderRadius: '36px',
-            border: '1px dashed lightgrey',
-            width: '36px',
-            textAlign: 'center',
-            lineHeight: '32px'
-        }
+    getClassName() {
+        const className = ['layout-content'];
+        if (isTextNode(this.props.node))  className.push('text-node');
+        return className.join(' ');
     }
 
     render() {

@@ -1,4 +1,51 @@
-.layout-header-node:hover {
+
+.layout-header {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    overflow-y: visible;
+    height : '';
+    border-bottom: 1px solid rgba(100,100,100,0.05);
+}
+
+.layout-header.expanded {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height : 100%;
+}
+
+.layout-header .layout-header-node {
+    top: 0;
+    z-index: 4;
+    position: sticky;
+    font-weight: bolder;
+    padding-right: 10px;
+    line-height: 0.8;
+    text-transform: uppercase;
+    color: black;
+    /* display: this.props.nodeState.selected ? '' : 'none' */
+}
+
+.layout-header .layout-header-node.sibling {
+    top: '';
+    z-index: 0;
+    position: relative;
+    font-weight: lighter;
+    color: lightgrey;
+}
+
+.layout-header .layout-header-node:hover {
     color : black !important;
     transition: 300ms;
+}
+
+.layout-header .layout-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 30px;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    line-height: 36px;
+    cursor : pointer;
 }

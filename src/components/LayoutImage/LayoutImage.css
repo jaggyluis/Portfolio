@@ -1,0 +1,23 @@
+.layout-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: saturate(0.4);
+    transition: 300ms;
+    object-fit: cover;
+}
+
+.layout-image:hover {
+    filter: none;
+}
+
+.layout-image.contain {
+    /* filter :  drop-shadow(0px 0px 1px rgba(0,0,0,.2)); */
+    object-fit: contain;
+}
+
+@media screen and (max-width: 800px) {
+    .layout-image {
+        filter: none;
+    }
+}

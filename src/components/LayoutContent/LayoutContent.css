@@ -4,9 +4,7 @@
     position: absolute;
     overflow-y : auto;
     overflow-x : hidden;
-    z-index : 4;
     font-size : 14px;
-    /* background : white, */
 }
 
 .layout-content.text-node {
@@ -30,8 +28,19 @@
     border-bottom : 1px solid rgba(100,100,100,0.1);
     border-top: 1px solid rgba(100,100,100,0.1);
     color : dimgrey;
-    /* max-width : 500px; */
     margin-top: 10px;
+}
+
+.layout-content .layout-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 25px;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    line-height: 32p;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {

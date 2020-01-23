@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { NodeData, NodeState } from '../../model/NodeData';
-import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
 import { Node } from '../../model/Node';
+import { NodeState } from '../../model/NodeData';
+import { isDataNode, isDirectoryNode } from '../../utils/node';
 import { treemap } from '../../utils/treemap';
 import { LayoutContent } from '../LayoutContent/LayoutContent';
-import './Layout.css';
-import { LayoutHeader } from '../LayoutHeader/LayoutHeader';
-import { isDirectoryNode, isDataNode } from '../../utils/node';
 import { LayoutDrawLines } from '../LayoutDrawLines/LayoutDrawLines';
+import { LayoutHeader } from '../LayoutHeader/LayoutHeader';
+import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
+import './Layout.css';
 
 export interface LayoutProps {
     width: number,
@@ -18,28 +18,24 @@ export interface LayoutProps {
     nodeSiblings: Node[];
     parent: Node | null;
     parentState: NodeState | null;
-    onNodeClick?: (node: Node) => void;
+    onNodeClick?: (node: Node | null) => void;
 }
 export interface LayoutState {
-    width: number;
-    height: number;
     selectedChildId: string | null;
-    visibleChildId: string | null;
-    visibleHeaderNodes: boolean;
+    headerExpanded : boolean;
     transitionDuration: number;
+    transitioning: boolean;
 }
-export class Layout extends React.Component<LayoutProps> {
+export class Layout extends React.PureComponent<LayoutProps> {
 
     container: HTMLElement | null = null;
     layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
 
     state: LayoutState = {
-        width: this.props.width,
-        height: this.props.height,
         selectedChildId: null,
-        visibleChildId: null,
-        visibleHeaderNodes: false,
-        transitionDuration: 400
+        headerExpanded: false,
+        transitionDuration: 400,
+        transitioning: false
     }
 
     componentWillMount() {
@@ -50,35 +46,24 @@ export class Layout extends React.Component<LayoutProps> {
         this.update(nxtProps);
     }
 
-    shouldComponentUpdate() {
-        return this.props.parentState == null || this.props.parentState.selected;
-    }
+    // shouldComponentUpdate() { // NOTE - pureComponent
+    //     return this.props.parentState == null || this.props.parentState.selected;
+    // }
 
-    isComponentMobile() {
-        return this.state.width < 600;
-    }
-
-    update(layoutProps: LayoutProps) {
-        if (layoutProps.width !== this.state.width || layoutProps.height !== this.state.height) {
-            this.layout = treemap(layoutProps.node.data, layoutProps.width, layoutProps.height);
-            this.state.width = layoutProps.width;
-            this.state.height = layoutProps.height;
+    update(nxtProps: LayoutProps) {
+        this.state.headerExpanded = false;
+        if (nxtProps.width !== this.props.width || nxtProps.height !== this.props.height) {
+            this.layout = treemap(nxtProps.node.data, nxtProps.width, nxtProps.height);
         }
-        if (!layoutProps.nodeState.selected) {
+        if (!nxtProps.nodeState.selected) {
             this.state.selectedChildId = null;
-            this.state.visibleChildId = null;
         }
     }
 
     getChildState(child: Node): NodeState {
         return {
-            selected: this.isChildVisible(child), //this.isChildSelected(child),
-            hidden: this.props.parent !== null && !this.props.nodeState.selected
+            selected: this.isChildSelected(child),
         }
-    }
-
-    isChildVisible(child: Node) {
-        return this.state.visibleChildId === child.data.id;
     }
 
     isChildSelected(child: Node) {
@@ -90,18 +75,17 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     setSelectedChild(child: Node) {
-        // if (child.data.type === 'dir') {
-        //     this.setState({ selectedChildId: child.data.id })
-        //     setTimeout(() => {
-        //         this.setState({ visibleChildId: child.data.id });
-        //     }, this.state.transitionDuration)
-        // } else {
-            this.setState({ selectedChildId: child.data.id, visibleChildId: child.data.id })
-        // }
+        this.setState({ selectedChildId: child.data.id, transitioning : true})
+        setTimeout(() => {
+            this.setState({transitioning : false})
+        }, this.state.transitionDuration)
     }
 
     clearSelectedChildren() {
-        this.setState({ selectedChildId: null, visibleChildId: null });
+        this.setState({ selectedChildId: null, transitioning : true});
+        setTimeout(() => {
+            this.setState({transitioning : false})
+        }, this.state.transitionDuration)
     }
 
     onChildClick(child: Node | null) {
@@ -126,25 +110,14 @@ export class Layout extends React.Component<LayoutProps> {
 
     getChildWidth(child: Node) {
         if (this.isChildSelected(child)) return '100%';
-        // return (100 * (child.x1 - child.x0)) + "%";
         if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
         return '0%';
     }
 
     getChildHeight(child: Node) {
         if (this.isChildSelected(child)) return '100%';
-        // return (100 * (child.y1 - child.y0)) + "%"
         if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
         return '0%';
-    }
-
-    getChildOpacity(child: Node) {
-        return this.isChildSelected(child) || this.areNoChildrenSelected() ? 1 : 0;
-    }
-
-    getChildDisplay(child: Node) {
-        if (this.isChildSelected(child) || this.areNoChildrenSelected()) return '';
-        return 'none';
     }
 
     getChildZIndex(child: Node) {
@@ -160,25 +133,22 @@ export class Layout extends React.Component<LayoutProps> {
             height: this.getChildHeight(child),
             width: this.getChildWidth(child),
             zIndex: this.getChildZIndex(child),
-            // opacity: this.getChildOpacity(child),
-            // display: this.getChildDisplay(child),
             transition: this.state.transitionDuration + 'ms',
-            willChange: 'top, left, height, width, opacity'
+            willChange: 'top, left, height, width'
         }
     }
 
     getChildrenStyle(): React.CSSProperties {
         return {
             position: 'relative',
-            height: '100%',
+            height: this.state.headerExpanded ? '0' : '100%',
+            overflow: this.state.headerExpanded ? 'hidden' : 'visible',
             width: '100%',
+            display: this.props.nodeState.selected ? '' : 'none',
         }
     }
 
     getChildren() {
-        if (!this.props.nodeState.selected) {
-            return undefined;
-        }
         return <div
             className='layout-children'
             style={this.getChildrenStyle()}
@@ -214,18 +184,15 @@ export class Layout extends React.Component<LayoutProps> {
             position: 'absolute',
             width: '100%',
             height: '100%',
-            pointerEvents: this.props.nodeState.selected ? 'none' : 'all',
-            display: this.props.nodeState.selected ? 'none' : ''
-            // opacity: this.props.nodeState.selected ? 0 : 1,
-            // transitionDelay: this.state.transitionDuration + 'ms',
-            // transition: this.state.transitionDuration + 'ms',
+            pointerEvents: this.props.nodeState.selected ? 'none' : undefined,
+            display: this.props.nodeState.selected ? 'none' : '',
         }
     }
 
     getOverlay() {
         if (isDirectoryNode(this.props.node)) {
             return (
-                <div className='layout-overlay-position'style={this.getOverlayPositionStyle()}>
+                <div className='layout-overlay-position' style={this.getOverlayPositionStyle()}>
                     <LayoutOverlay {...this.props} />
                 </div>
             )
@@ -241,31 +208,39 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getDrawLines() {
-        if (!this.props.parentState || this.props.parentState.selected) {
-            return <LayoutDrawLines {...this.props} />
+        if (!this.props.nodeState.selected) {
+            return <LayoutDrawLines />
+        } else {
+            return undefined;
         }
-        return undefined;
     }
 
     getHeader() {
         if (isDirectoryNode(this.props.node)) {
-            return <LayoutHeader {...this.props} onNodeClick={(node) => {
-                if (node.data.id === this.props.node.data.id) {
-                    this.clearSelectedChildren()
-                } else {
-                    if (this.props.onNodeClick) {
-                        this.props.onNodeClick(node);
+            return <LayoutHeader
+                {...this.props}
+                expanded={this.state.headerExpanded}
+                onNodeClick={(node) => {
+                    if (!node || node.data.id === this.props.node.data.id) {
+                        this.clearSelectedChildren()
+                    } else {
+                        if (this.props.onNodeClick) {
+                            this.props.onNodeClick(node);
+                        }
                     }
-                }
-            }} />
+                }}
+                onButtonClick={() => {
+                    this.setState({headerExpanded : !this.state.headerExpanded})
+                }}
+            />
         }
         return undefined;
     }
 
     getClassName() {
         const className = ['layout'];
-        if (this.props.nodeState.hidden) className.push('hidden');
         if (this.props.nodeState.selected) className.push('selected');
+        if (this.state.transitioning) className.push('transitioning');
         return className.join(' ');
     }
 

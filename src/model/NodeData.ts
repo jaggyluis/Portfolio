@@ -12,5 +12,4 @@ export interface NodeData {
 
 export interface NodeState {
     selected: boolean;
-    hidden?:boolean;
 }

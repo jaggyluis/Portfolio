@@ -1,16 +1,20 @@
 import * as React from 'react';
-import { LayoutImage } from '../LayoutImage/LayoutImage';
+import { getImageNodeSrc, isImageNode } from '../../utils/node';
 import { LayoutProps } from '../Layout/Layout';
-import './LayoutOverlay.css';
-import { isImageNode, getImageNodeSrc, isTextNode } from '../../utils/node';
+import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { isLayoutMobile } from './../../utils/layout';
 import { getNodeLabel } from './../../utils/node';
+import './LayoutOverlay.css';
 
-export class LayoutOverlay extends React.Component<LayoutProps> {
+export class LayoutOverlay extends React.PureComponent<LayoutProps> {
 
     getImage() {
         if (isImageNode(this.props.node)) {
-            return <LayoutImage src={getImageNodeSrc(this.props.node)} contain={this.props.nodeState.selected}/>
+            return <LayoutImage 
+                src={getImageNodeSrc(this.props.node)} 
+                contain={this.props.nodeState.selected}
+                width={this.props.width}
+                />
         }
         return undefined;
     }
@@ -28,10 +32,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
     }
 
     getLabel() {
-        // if (true) {
-            return <div className='layout-label' style={this.getLabelStyle()} >{getNodeLabel(this.props.node)}</div>
-        // }
-        // return undefined;
+        return <div className='layout-label' style={this.getLabelStyle()} >{getNodeLabel(this.props.node)}</div>
     }
 
     render() {

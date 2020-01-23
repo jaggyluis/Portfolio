@@ -20,13 +20,13 @@ class App extends React.Component<AppProps> {
 
     state = {
         selected: false,
-        width : window.innerWidth,
-        height : window.innerHeight,
+        width: window.innerWidth,
+        height: window.innerHeight,
     }
 
     onNodeClick() {
         // setTimeout(() => {
-            this.setState({ selected: true });
+        this.setState({ selected: true });
         // }, 300)
     }
 
@@ -42,41 +42,59 @@ class App extends React.Component<AppProps> {
 
         return (
             <div
-                className="App"
-                onClick={this.onNodeClick.bind(this)}
+                className='Wrapper'
                 style={{
-                    height: '95%',
-                    width: '95%',
-                    position: 'absolute',
-                    marginTop: '1%',
-                    marginLeft: '2.5%',
+                    width: '100%',
+                    height: '100%',
+                    overflow: 'hidden',
+                    position: 'absolute'
                 }}
             >
-                <Layout
-                    width={this.state.width}
-                    height={this.state.height}
-                    node={node}
-                    nodeState={{ selected: this.state.selected }}
-                    nodeDepth={0}
-                    nodeSiblings={[]}
-                    parent={null}
-                    parentState={null}
-                />
                 <div
+                    className="App"
+                    onClick={this.onNodeClick.bind(this)}
                     style={{
-                        height : '5%',
-                        width : '5%',
-                        position : 'absolute',
-                        top : '100%',
+                        height: 'calc(100% - 50px)',
+                        width: '95%',
+                        position: 'absolute',
+                        marginTop: '10px',
+                        marginLeft: '2.5%',
                     }}
                 >
-                {/* <img
+                    <Layout
+                        width={this.state.width}
+                        height={this.state.height}
+                        node={node}
+                        nodeState={{ selected: this.state.selected }}
+                        nodeDepth={0}
+                        nodeSiblings={[]}
+                        parent={null}
+                        parentState={null}
+                    />
+                </div>
+                <div
+                    className='Menu'
                     style={{
-                        width : '100%',
-                        height : '100%',
-                    }} 
-                    src={LinkedIn} 
-                /> */}
+                        height: '40px',
+                        position: 'absolute',
+                        bottom: '0',
+                        left: '2.5%',
+                        width: '95%',
+                        display: 'flex'
+                    }}
+                >
+                    <img
+                        alt='linkedIn'
+                        onClick={() => { window.open('https://www.linkedin.com/in/jaggyluis/', 'mywindow') }}
+                        style={{
+                            // width: 'calc(100% - 20px)',
+                            height: 'calc(100% - 20px)',
+                            objectFit: 'contain',
+                            margin: '10px',
+                            opacity: 0.5
+                        }}
+                        src={LinkedIn}
+                    />
                 </div>
             </div>
         );

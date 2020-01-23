@@ -1,15 +1,22 @@
 import * as React from 'react';
-import { LayoutProps } from '../LayoutHeader/LayoutHeader';
 import './LayoutDrawLines.css';
 
-export const LayoutDrawLines: React.FC<LayoutProps> = (props) => {
+export class LayoutDrawLines extends React.Component {
 
-    return (
-        <div className='layout-draw-lines'>
-            <div className='line horizontal top' key={'top'}></div>
-            <div className='line horizontal bottom' key={'bottom'}></div>
-            <div className='line vertical top' key={'left'}>
+    shouldComponentUpdate() {
+        return false;
+    }
+
+    render() {
+        return (
+            <div className='layout-draw-lines'>
+                <div className='line horizontal top' key={'top'}></div>
+                <div className='line horizontal bottom' key={'bottom'}></div>
+                <div className='line vertical top' key={'left'}>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+
+
 }

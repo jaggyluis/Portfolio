@@ -11,8 +11,8 @@ source_path = "src\\data\\root\\"
 target_path = "public/data/"    
 target_src = "data/"
 
-file_image_pixel_target = 1000000
-file_image_pixel_target_mobile = 500000
+file_image_pixel_target = 500000 #1000000
+file_image_pixel_target_mobile = 100000 #500000
 file_image_pixel_target_sm = 10
 
 def format_path_src(path) :   

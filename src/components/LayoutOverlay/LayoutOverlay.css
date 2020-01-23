@@ -7,7 +7,9 @@
     height: 100%;
     overflow: hidden;
     position: absolute;
-    z-index: 2;
+    background:white;
+    z-index: 3;
+    /* z-index was 2 background was none */
 }
 
 .layout-overlay img {

@@ -7,10 +7,9 @@
     flex-direction: column;
     z-index: 1;
     display: flex;
-    margin: -1px;
-    border: 1px solid rgba(100,100,100,0.05);
+    background: white;
 }
 
-.layout.hidden {
-    display: none;
+.layout.transitioning > * {
+    pointer-events: none !important;
 }

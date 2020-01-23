@@ -1,10 +1,21 @@
 import * as React from 'react'
+import './LayoutImage.css';
 
-export class LayoutImage extends React.Component {
+export interface LayoutImageProps {
+    src : string;
+    contain : boolean;
+    width : number;
+}
+export interface LayoutImageState {
+    src : string | null;
+    placeholder : string | null;
+    contain : boolean;
+}
+export class LayoutImage extends React.Component<LayoutImageProps> {
 
     state = { src: null, placeholder: null, contain: !!this.props.contain };
 
-    getPlaceholderPath(path) {
+    getPlaceholderPath(path:string) : string {
         if (path) {
             const paths = path.split(".");
             const placeholder = paths[0] + "_s." + paths[1];
@@ -14,7 +25,7 @@ export class LayoutImage extends React.Component {
         }
     }
 
-    getMobilePath(path) {
+    getMobilePath(path:string) : string {
         if (path) {
             const paths = path.split(".");
             const placeholder = paths[0] + "_m." + paths[1];
@@ -25,11 +36,11 @@ export class LayoutImage extends React.Component {
     }
 
     componentDidMount() {
-        let { src } = this.props;
+        let src = this.props.src;
 
-        if (window.innerWidth < 600) src = this.getMobilePath(src);
+        if (this.props.width < 600) src = this.getMobilePath(src);
         // src = this.getPlaceholderPath(src);
-
+        
         const srcImageLoader = new Image();
         srcImageLoader.src = src;
         srcImageLoader.onload = () => {
@@ -37,18 +48,14 @@ export class LayoutImage extends React.Component {
         };
     }
 
-    shouldComponentUpdate(nextProps) {
+    shouldComponentUpdate(nextProps : LayoutImageProps) {
         return this.state.src === null || (this.state.contain !== !!nextProps.contain);
     }
 
-    getStyle() {
-        return {
-            width: '100%',
-            height: '100%',
-            objectFit: this.props.contain ? 'contain' : 'cover',
-            position: 'absolute',
-            filter :  this.props.contain ? 'drop-shadow(0px 0px 1px rgba(0,0,0,.3))' : ''
-        }
+    getClassName() {
+        const className = ['layout-image'];
+        if (this.props.contain) className.push('contain');
+        return className.join(' ');
     }
 
     render() {
@@ -57,9 +64,9 @@ export class LayoutImage extends React.Component {
 
         return (
             <img
+                className={this.getClassName()}
                 src={this.state.src || this.getPlaceholderPath(this.props.src)}
-                alt=''
-                style={this.getStyle()}
+                alt='layout-image'
             />
         )
     }
