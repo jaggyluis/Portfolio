@@ -18,12 +18,8 @@ export interface LayoutProps {
     parentState: NodeState | null;
     onNodeClick?: (node: Node) => void;
 }
-export interface LayoutState {
-    width: number;
-    height: number;
-    selectedChildId: string | null;
-    visibleChildId: string | null;
-    visibleHeaderNodes : boolean;
+export interface LayoutHeaderState {
+    visibleHeaderNodes: boolean;
     transitionDuration: number;
 }
 export class LayoutHeader extends React.Component<LayoutProps> {
@@ -31,11 +27,7 @@ export class LayoutHeader extends React.Component<LayoutProps> {
     container: HTMLElement | null = null;
     layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
 
-    state: LayoutState = {
-        width: this.props.width,
-        height: this.props.height,
-        selectedChildId: null,
-        visibleChildId: null,
+    state: LayoutHeaderState = {
         visibleHeaderNodes: false,
         transitionDuration: 400
     }
@@ -77,14 +69,14 @@ export class LayoutHeader extends React.Component<LayoutProps> {
             fontSize: h + 'px',
             lineHeight: 0.8,
             textTransform: 'uppercase',
-            mixBlendMode: 'overlay',
-            marginBottom : isLayoutMobile(this.props) ? diff +'px' : '', 
+            paddingTop: isLayoutMobile(this.props) && isSibling ? diff + 'px' : '',
             color: isSibling ? 'lightgrey' : 'black',
+            background: 'repeating-linear-gradient(-45deg,transparent,transparent 1px,rgba(100,100,100,0.1) 1px, rgba(100,100,100,0.1) 2px)',
             display: this.props.nodeState.selected ? '' : 'none'
         }
     }
 
-    getHeaderNodeContent(node : Node) : string {
+    getHeaderNodeContent(node: Node): string {
         let content = node.data.label;
         if (!isLayoutMobile(this.props) && this.props.nodeState.selected) {
             content = "/ " + node.data.label;
@@ -92,11 +84,11 @@ export class LayoutHeader extends React.Component<LayoutProps> {
         return content;
     }
 
-    onHeaderDropdownClick() {
-        this.setState({visibleHeaderNodes : !this.state.visibleHeaderNodes})
+    onButtonClick() {
+        this.setState({ visibleHeaderNodes: !this.state.visibleHeaderNodes })
     }
 
-    getHeaderDropdownStyle() : React.CSSProperties {
+    getButtonStyle(): React.CSSProperties {
         return {
             position: 'absolute',
             right: 0,
@@ -114,10 +106,10 @@ export class LayoutHeader extends React.Component<LayoutProps> {
     getButton() {
         if (this.props.nodeSiblings.length && isLayoutMobile(this.props)) {
             return (
-                <div 
-                className='layout-header-dropdown' 
-                onClick={this.onHeaderDropdownClick.bind(this)}
-                style={this.getHeaderDropdownStyle()}>
+                <div
+                    className='layout-header-btn'
+                    onClick={this.onButtonClick.bind(this)}
+                    style={this.getButtonStyle()}>
                     {
                         this.state.visibleHeaderNodes ? '-' : '+'
                     }
@@ -139,6 +131,7 @@ export class LayoutHeader extends React.Component<LayoutProps> {
                                     if (this.props.onNodeClick) {
                                         this.props.onNodeClick(sibling);
                                         e.stopPropagation();
+                                        this.state.visibleHeaderNodes = false;
                                     }
                                 }}
                                 key={sibling.data.id}
@@ -155,6 +148,23 @@ export class LayoutHeader extends React.Component<LayoutProps> {
         return undefined;
     }
 
+    getPrimaryNode() {
+        return (
+            <div
+                className='layout-header-node'
+                // onClick={this.clearSelectedChildren.bind(this)}
+                onClick={(e) => {
+                    if (this.props.onNodeClick) {
+                        this.props.onNodeClick(this.props.node);
+                        e.stopPropagation();
+                        this.state.visibleHeaderNodes = false;
+                    }
+                }}
+                style={this.getHeaderNodeStyle()}>{this.props.node.data.label}
+            </div>
+        )
+    }
+
     getClassName() {
         const className = ['layout'];
         if (this.props.nodeState.hidden) className.push('hidden');
@@ -163,18 +173,11 @@ export class LayoutHeader extends React.Component<LayoutProps> {
     }
 
     render() {
-        if (this.props.node.data.type !== 'dir') {
-            return undefined;
-        }
         return (
             <div className='layout-header'
                 style={this.getHeaderStyle()}
             >
-                <div
-                    className='layout-header-node'
-                    // onClick={this.clearSelectedChildren.bind(this)}
-                    style={this.getHeaderNodeStyle()}>{this.props.node.data.label}
-                </div>
+                {this.getPrimaryNode()}
                 {this.getSiblingNodes()}
                 {this.getButton()}
             </div>

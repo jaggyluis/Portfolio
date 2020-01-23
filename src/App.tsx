@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { treemap } from './utils/treemap';
 import { NodeData } from './model/NodeData';
+import LinkedIn from './assets/images/linkedIn-icon.png';
 import { Layout } from './components/Layout/Layout';
 
 function debounce(func: any) {
@@ -61,6 +62,22 @@ class App extends React.Component<AppProps> {
                     parent={null}
                     parentState={null}
                 />
+                <div
+                    style={{
+                        height : '5%',
+                        width : '5%',
+                        position : 'absolute',
+                        top : '100%',
+                    }}
+                >
+                {/* <img
+                    style={{
+                        width : '100%',
+                        height : '100%',
+                    }} 
+                    src={LinkedIn} 
+                /> */}
+                </div>
             </div>
         );
     }

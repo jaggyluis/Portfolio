@@ -90,14 +90,14 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     setSelectedChild(child: Node) {
-        if (child.data.type === 'dir') {
-            this.setState({ selectedChildId: child.data.id })
-            setTimeout(() => {
-                this.setState({ visibleChildId: child.data.id });
-            }, this.state.transitionDuration)
-        } else {
+        // if (child.data.type === 'dir') {
+        //     this.setState({ selectedChildId: child.data.id })
+        //     setTimeout(() => {
+        //         this.setState({ visibleChildId: child.data.id });
+        //     }, this.state.transitionDuration)
+        // } else {
             this.setState({ selectedChildId: child.data.id, visibleChildId: child.data.id })
-        }
+        // }
     }
 
     clearSelectedChildren() {
@@ -126,16 +126,16 @@ export class Layout extends React.Component<LayoutProps> {
 
     getChildWidth(child: Node) {
         if (this.isChildSelected(child)) return '100%';
-        return (100 * (child.x1 - child.x0)) + "%";
-        // if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
-        // return '0%';
+        // return (100 * (child.x1 - child.x0)) + "%";
+        if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
+        return '0%';
     }
 
     getChildHeight(child: Node) {
         if (this.isChildSelected(child)) return '100%';
-        return (100 * (child.y1 - child.y0)) + "%"
-        // if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
-        // return '0%';
+        // return (100 * (child.y1 - child.y0)) + "%"
+        if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
+        return '0%';
     }
 
     getChildOpacity(child: Node) {
@@ -161,7 +161,7 @@ export class Layout extends React.Component<LayoutProps> {
             width: this.getChildWidth(child),
             zIndex: this.getChildZIndex(child),
             // opacity: this.getChildOpacity(child),
-            display: this.getChildDisplay(child),
+            // display: this.getChildDisplay(child),
             transition: this.state.transitionDuration + 'ms',
             willChange: 'top, left, height, width, opacity'
         }
@@ -249,7 +249,15 @@ export class Layout extends React.Component<LayoutProps> {
 
     getHeader() {
         if (isDirectoryNode(this.props.node)) {
-            return <LayoutHeader {...this.props} />
+            return <LayoutHeader {...this.props} onNodeClick={(node) => {
+                if (node.data.id === this.props.node.data.id) {
+                    this.clearSelectedChildren()
+                } else {
+                    if (this.props.onNodeClick) {
+                        this.props.onNodeClick(node);
+                    }
+                }
+            }} />
         }
         return undefined;
     }
@@ -266,9 +274,10 @@ export class Layout extends React.Component<LayoutProps> {
             <div
                 className={this.getClassName()}
                 ref={el => this.container = el}
-                onClick={() => {
+                onClick={(e) => {
                     if (this.props.onNodeClick) {
                         this.props.onNodeClick(this.props.node);
+                        e.stopPropagation();
                     }
                 }}
             >
