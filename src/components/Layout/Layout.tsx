@@ -26,7 +26,7 @@ export interface LayoutState {
     transitionDuration: number;
     transitioning: boolean;
 }
-export class Layout extends React.PureComponent<LayoutProps> {
+export class Layout extends React.Component<LayoutProps> {
 
     container: HTMLElement | null = null;
     layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
@@ -46,9 +46,9 @@ export class Layout extends React.PureComponent<LayoutProps> {
         this.update(nxtProps);
     }
 
-    // shouldComponentUpdate() { // NOTE - pureComponent
-    //     return this.props.parentState == null || this.props.parentState.selected;
-    // }
+    shouldComponentUpdate(nxtProps : LayoutProps, nxtState : LayoutState) { // NOTE - pureComponent
+        return (this.props.parentState == null || this.props.parentState.selected); // || this.state.selectedChildId !== nxtState.selectedChildId;
+    }
 
     update(nxtProps: LayoutProps) {
         this.state.headerExpanded = false;
@@ -208,11 +208,11 @@ export class Layout extends React.PureComponent<LayoutProps> {
     }
 
     getDrawLines() {
-        if (!this.props.nodeState.selected) {
-            return <LayoutDrawLines />
-        } else {
-            return undefined;
-        }
+        // if (!this.props.nodeState.selected) {
+            return <LayoutDrawLines {...this.props}/>
+        // } else {
+        //     return undefined;
+        // }
     }
 
     getHeader() {

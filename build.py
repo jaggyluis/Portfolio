@@ -11,9 +11,14 @@ source_path = "src\\data\\root\\"
 target_path = "public/data/"    
 target_src = "data/"
 
-file_image_pixel_target = 500000
-file_image_pixel_target_mobile = 250000
-file_image_pixel_target_icon = 125000 #can possibly go down to 100000
+# file_image_pixel_target = 500000
+# file_image_pixel_target_mobile = 250000
+# file_image_pixel_target_icon = 125000 #can possibly go down to 100000
+# file_image_pixel_target_sm = 10
+
+file_image_pixel_target = 1200
+file_image_pixel_target_mobile = 600
+file_image_pixel_target_icon = 300
 file_image_pixel_target_sm = 10
 
 def format_path_src(path) :   
@@ -26,13 +31,32 @@ def format_path(path) :
 def load_image(path):
     return Image.open(path)
 
-def compress_image(im, target_pixel_count) :
+# def compress_image(im, target_pixel_count) :
+
+#     im_size = im.size
+#     im_pixel_count = im_size[0] * im_size[1] 
+#     im_pixel_factor =  int(math.sqrt(im_pixel_count / target_pixel_count))
+
+#     if (im_pixel_count > target_pixel_count and im_pixel_factor != 1) :
+
+#         im_new_x = im_size[0]/im_pixel_factor
+#         im_new_y = im_size[1]/im_pixel_factor
+
+#         if im_new_x <= 0 : im_new_x = 1
+#         if im_new_y <= 0 : im_new_y = 1
+
+#         im = im.resize((im_new_x,im_new_y),Image.ANTIALIAS)
+
+#         print "--> " , im_size, im_pixel_count, im.size, target_pixel_count, im_pixel_factor
+
+#     return im
+
+def compress_image(im, target_pixel_width) :
 
     im_size = im.size
-    im_pixel_count = im_size[0] * im_size[1] 
-    im_pixel_factor =  int(math.sqrt(im_pixel_count / target_pixel_count))
+    im_pixel_factor =  im_size[0] / target_pixel_width
 
-    if (im_pixel_count > target_pixel_count and im_pixel_factor != 1) :
+    if (im_pixel_factor > 1) :
 
         im_new_x = im_size[0]/im_pixel_factor
         im_new_y = im_size[1]/im_pixel_factor
@@ -42,7 +66,7 @@ def compress_image(im, target_pixel_count) :
 
         im = im.resize((im_new_x,im_new_y),Image.ANTIALIAS)
 
-        print "--> " , im_size, im_pixel_count, im.size, target_pixel_count, im_pixel_factor
+        print "--> " , im_size[0], im.size[0], target_pixel_width, im_pixel_factor
 
     return im
 
