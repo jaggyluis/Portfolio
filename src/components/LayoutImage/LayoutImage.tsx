@@ -5,15 +5,15 @@ import { getImageNodeSrc } from '../../utils/node';
 
 export interface LayoutImageProps {
     node: Node;
-    contain : boolean;
+    contain: boolean;
     width: number;
 }
 export interface LayoutImageState {
-    src : string | null;
+    src: string | null;
 }
 export class LayoutImage extends React.Component<LayoutImageProps> {
 
-    getMobilePath(path:string) : string {
+    getMobilePath(path: string): string {
         if (path) {
             const paths = path.split(".");
             const placeholder = paths[0] + "_m." + paths[1];
@@ -23,7 +23,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         }
     }
 
-    getIconPath(path:string) : string {
+    getIconPath(path: string): string {
         if (path) {
             const paths = path.split(".");
             const placeholder = paths[0] + "_i." + paths[1];
@@ -33,7 +33,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         }
     }
 
-    getPlaceholderPath(path:string) : string {
+    getPlaceholderPath(path: string): string {
         if (path) {
             const paths = path.split(".");
             const placeholder = paths[0] + "_s." + paths[1];
@@ -50,7 +50,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         return width * nodeWidth;
     }
 
-    shouldComponentUpdate(nxtProps : LayoutImageProps) {
+    shouldComponentUpdate(nxtProps: LayoutImageProps) {
         return nxtProps.contain !== this.props.contain || nxtProps.width !== this.props.width;
     }
 
@@ -59,7 +59,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
 
     //     if (this.props.width < 600) src = this.getMobilePath(src);
     //     // src = this.getPlaceholderPath(src);
-        
+
     //     const srcImageLoader = new Image();
     //     srcImageLoader.src = src;
     //     srcImageLoader.onload = () => {
@@ -79,8 +79,8 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         let width = this.props.width;
 
         if (!this.props.contain) {
-           width = this.getNodeWidth();
-        } 
+            width = this.getNodeWidth();
+        }
 
         if (width < 300) {
             src = this.getIconPath(src);
@@ -94,18 +94,18 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             //     src={this.state.src || this.getPlaceholderPath(this.props.src)}
             //     alt='layout-node'
             // />
-        //     <img
-        //     className={this.getClassName()}
-        //     src={src}
-        //     data-src={this.getNodeWidth()}
-        //     data-width={this.props.width}
-        //     alt='layout-node'
-        // />
-            <div
+            <img
                 className={this.getClassName()}
-                style={{ backgroundImage:'url(' + src + ')' }}
-            >
-            </div>
+                src={src}
+                data-src={this.getNodeWidth()}
+                data-width={this.props.width}
+                alt='layout-node'
+            />
+            // <div
+            //     className={this.getClassName()}
+            //     style={{ backgroundImage:'url(' + src + ')' }}
+            // >
+            // </div>
         )
     }
 }
