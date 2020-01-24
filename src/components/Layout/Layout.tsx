@@ -9,6 +9,8 @@ import { LayoutHeader } from '../LayoutHeader/LayoutHeader';
 import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
 import './Layout.css';
 
+const EMPTY_NODE_ARRAY:Node[] = [];
+
 export interface LayoutProps {
     width: number,
     height: number,
@@ -16,13 +18,14 @@ export interface LayoutProps {
     nodeState: NodeState;
     nodeDepth: number;
     nodeSiblings: Node[];
+    nodeSiblingSelectedId : string | null;
     parent: Node | null;
     parentState: NodeState | null;
     onNodeClick?: (node: Node | null) => void;
 }
 export interface LayoutState {
     selectedChildId: string | null;
-    headerExpanded : boolean;
+    headerExpanded: boolean;
     transitionDuration: number;
     transitioning: boolean;
 }
@@ -46,8 +49,9 @@ export class Layout extends React.Component<LayoutProps> {
         this.update(nxtProps);
     }
 
-    shouldComponentUpdate(nxtProps : LayoutProps, nxtState : LayoutState) { // NOTE - pureComponent
-        return (this.props.parentState == null || this.props.parentState.selected); // || this.state.selectedChildId !== nxtState.selectedChildId;
+    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - pureComponent
+        return (nxtProps.parentState == null || nxtProps.parentState.selected) &&
+            (nxtProps.nodeSiblingSelectedId == null || nxtProps.nodeSiblingSelectedId == nxtProps.node.data.id);
     }
 
     update(nxtProps: LayoutProps) {
@@ -75,16 +79,16 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     setSelectedChild(child: Node) {
-        this.setState({ selectedChildId: child.data.id, transitioning : true})
+        this.setState({ selectedChildId: child.data.id, transitioning: true })
         setTimeout(() => {
-            this.setState({transitioning : false})
+            this.setState({ transitioning: false })
         }, this.state.transitionDuration)
     }
 
     clearSelectedChildren() {
-        this.setState({ selectedChildId: null, transitioning : true});
+        this.setState({ selectedChildId: null, transitioning: true });
         setTimeout(() => {
-            this.setState({transitioning : false})
+            this.setState({ transitioning: false })
         }, this.state.transitionDuration)
     }
 
@@ -150,11 +154,12 @@ export class Layout extends React.Component<LayoutProps> {
 
     getChildren() {
         return <div
+            key={this.props.node.data.id + '-children'}
             className='layout-children'
             style={this.getChildrenStyle()}
         >
             {
-                (this.layout.children || []).map((child) => {
+                (this.layout.children || EMPTY_NODE_ARRAY).map((child) => {
                     return (
                         <div
                             key={child.data.id}
@@ -169,7 +174,8 @@ export class Layout extends React.Component<LayoutProps> {
                                 node={child}
                                 nodeState={this.getChildState(child)}
                                 nodeDepth={this.props.nodeDepth + 1}
-                                nodeSiblings={this.layout.children || []}
+                                nodeSiblings={this.layout.children || EMPTY_NODE_ARRAY}
+                                nodeSiblingSelectedId={this.state.selectedChildId}
                                 onNodeClick={this.onChildClick.bind(this)}
                             />
                         </div>
@@ -179,7 +185,7 @@ export class Layout extends React.Component<LayoutProps> {
         </div>
     }
 
-    getOverlayPositionStyle(): React.CSSProperties {
+    getOverlayStyle(): React.CSSProperties {
         return {
             position: 'absolute',
             width: '100%',
@@ -192,8 +198,8 @@ export class Layout extends React.Component<LayoutProps> {
     getOverlay() {
         if (isDirectoryNode(this.props.node)) {
             return (
-                <div className='layout-overlay-position' style={this.getOverlayPositionStyle()}>
-                    <LayoutOverlay {...this.props} />
+                <div className='layout-overlay-position' style={this.getOverlayStyle()}>
+                    <LayoutOverlay key={this.props.node.data.id + '-overlay'} {...this.props} />
                 </div>
             )
         }
@@ -202,36 +208,37 @@ export class Layout extends React.Component<LayoutProps> {
 
     getContent() {
         if (isDataNode(this.props.node)) {
-            return <LayoutContent {...this.props} />
+            return <LayoutContent key={this.props.node.data.id + '-content'}  {...this.props} />
         }
         return undefined;
     }
 
     getDrawLines() {
-        // if (!this.props.nodeState.selected) {
-            return <LayoutDrawLines {...this.props}/>
-        // } else {
-        //     return undefined;
-        // }
+        return <LayoutDrawLines key={this.props.node.data.id + '-lines'}  {...this.props} />
+    }
+
+    onHeaderNodeClick(node: Node | null) {
+        if (!node || node.data.id === this.props.node.data.id) {
+            this.clearSelectedChildren()
+        } else {
+            if (this.props.onNodeClick) {
+                this.props.onNodeClick(node);
+            }
+        }
+    }
+
+    onHeaderButtonClick() {
+        this.setState({ headerExpanded: !this.state.headerExpanded })
     }
 
     getHeader() {
         if (isDirectoryNode(this.props.node)) {
             return <LayoutHeader
+                key={this.props.node.data.id + '-header'}
                 {...this.props}
                 expanded={this.state.headerExpanded}
-                onNodeClick={(node) => {
-                    if (!node || node.data.id === this.props.node.data.id) {
-                        this.clearSelectedChildren()
-                    } else {
-                        if (this.props.onNodeClick) {
-                            this.props.onNodeClick(node);
-                        }
-                    }
-                }}
-                onButtonClick={() => {
-                    this.setState({headerExpanded : !this.state.headerExpanded})
-                }}
+                onNodeClick={this.onHeaderNodeClick.bind(this)}
+                onButtonClick={this.onHeaderButtonClick.bind(this)}
             />
         }
         return undefined;

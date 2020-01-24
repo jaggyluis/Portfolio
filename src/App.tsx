@@ -68,6 +68,7 @@ class App extends React.Component<AppProps> {
                         nodeState={{ selected: this.state.selected }}
                         nodeDepth={0}
                         nodeSiblings={[]}
+                        nodeSiblingSelectedId={this.state.selected ? node.data.id : null}
                         parent={null}
                         parentState={null}
                     />

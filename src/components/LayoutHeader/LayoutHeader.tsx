@@ -58,7 +58,7 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
                                         e.stopPropagation();
                                     }
                                 }}
-                                key={sibling.data.id}
+                                key={sibling.data.id + "-sibling"}
                                 style={this.getNodeStyle(true)}>
                                 {this.getNodeContent(sibling)}
                             </div>
@@ -75,6 +75,7 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
     getPrimaryNode() {
         return (
             <div
+                key={this.props.node.data.id + '-primary'}
                 className='layout-header-node'
                 onClick={(e) => {
                     if (this.props.onNodeClick) {
@@ -96,7 +97,12 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
 
     getButton() {
         if (this.props.nodeSiblings.length && isLayoutMobile(this.props)) {
-            return <div className='layout-btn' onClick={this.onButtonClick.bind(this)}>{this.props.expanded ? '-' : '+'}</div>
+            return <div 
+                key={this.props.node.data.id + '-btn'} 
+                className='layout-btn' 
+                onClick={this.onButtonClick.bind(this)}>
+                    {this.props.expanded ? '-' : '+'}
+                </div>
         }
         return undefined;
     }
