@@ -1,47 +1,24 @@
 import * as React from 'react';
-import { Node } from '../../model/Node';
-import { treemap } from '../../utils/treemap';
+import { LayoutProps } from '../Layout/Layout';
+import { LayoutHeaderLabel } from '../LayoutHeaderLabel/LayoutHeaderLabel';
 import { isLayoutMobile } from './../../utils/layout';
 import './LayoutHeader.css';
-import { LayoutProps } from '../Layout/Layout';
 
 export interface LayoutHeaderProps extends LayoutProps {
-    expanded? : boolean;
-    onButtonClick? : () => void;
+    expanded?: boolean;
+    onButtonClick?: () => void;
 }
 export interface LayoutHeaderState {
     transitionDuration: number;
 }
-export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
+export class LayoutHeader extends React.Component<LayoutHeaderProps> {
 
-    container: HTMLElement | null = null;
-    layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
 
-    state: LayoutHeaderState = {
-        transitionDuration: 400
-    }
-
-    getNodeStyle(isSibling: boolean = false): React.CSSProperties {
-
-        const s = isLayoutMobile(this.props) ? 25 : 30;
-        const c = Math.ceil(s / 5)
-        const d = this.props.nodeDepth * c
-        const h = s - d;
-
-        let diff = 42 - h;
-
-        return {
-            fontSize: h + 'px',
-            paddingTop: isLayoutMobile(this.props) && isSibling ? diff + 'px' : '',
-        }
-    }
-
-    getNodeContent(node: Node): string {
-        let content = node.data.label;
-        if (!isLayoutMobile(this.props) && this.props.nodeState.selected) {
-            content = "/ " + node.data.label;
-        }
-        return content;
+    shouldComponentUpdate(nxtProps: LayoutHeaderProps) { // NOTE - or pureComponent
+        if (this.props.expanded !== nxtProps.expanded) return true;
+        if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
+        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
+        return false;
     }
 
     getSiblingNodes() {
@@ -50,18 +27,14 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
                 this.props.nodeSiblings.map(sibling => {
                     if (sibling.data.id !== this.props.node.data.id) {
                         return (
-                            <div
-                                className='layout-header-node sibling'
-                                onClick={(e) => {
-                                    if (this.props.onNodeClick) {
-                                        this.props.onNodeClick(sibling);
-                                        e.stopPropagation();
-                                    }
-                                }}
-                                key={sibling.data.id + "-sibling"}
-                                style={this.getNodeStyle(true)}>
-                                {this.getNodeContent(sibling)}
-                            </div>
+                            <LayoutHeaderLabel
+                                key={sibling.data.id + '-header-label'}
+                                node={sibling}
+                                depth={this.props.nodeDepth}
+                                selected={false}
+                                small={isLayoutMobile(this.props)}
+                                onNodeClick={this.props.onNodeClick}
+                            />
                         )
                     } else {
                         return undefined
@@ -74,35 +47,32 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
 
     getPrimaryNode() {
         return (
-            <div
-                key={this.props.node.data.id + '-primary'}
-                className='layout-header-node'
-                onClick={(e) => {
-                    if (this.props.onNodeClick) {
-                        this.props.onNodeClick(this.props.node);
-                        e.stopPropagation();
-                    }
-                }}
-                style={this.getNodeStyle()}>{this.props.node.data.label}
-            </div>
+            <LayoutHeaderLabel
+                key={this.props.node.data.id + '-header-label'}
+                node={this.props.node}
+                depth={this.props.nodeDepth}
+                selected={true}
+                small={isLayoutMobile(this.props)}
+                onNodeClick={this.props.onNodeClick}
+            />
         )
     }
 
-    onButtonClick(e:React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    onButtonClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         if (this.props.onButtonClick) {
             this.props.onButtonClick();
+            e.stopPropagation();
         }
-        e.stopPropagation();
     }
 
     getButton() {
         if (this.props.nodeSiblings.length && isLayoutMobile(this.props)) {
-            return <div 
-                key={this.props.node.data.id + '-btn'} 
-                className='layout-btn' 
+            return <div
+                key={this.props.node.data.id + '-btn'}
+                className='layout-btn'
                 onClick={this.onButtonClick.bind(this)}>
-                    {this.props.expanded ? '-' : '+'}
-                </div>
+                {this.props.expanded ? '-' : '+'}
+            </div>
         }
         return undefined;
     }
@@ -117,7 +87,7 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
         let diff = 42 - h;
         let display = this.props.nodeState.selected ? 'flex' : 'none';
         let margin = diff + 'px';
-        
+
         if (isLayoutMobile(this.props) && this.props.nodeState.selected) {
             display = '';
         }
@@ -137,9 +107,7 @@ export class LayoutHeader extends React.PureComponent<LayoutHeaderProps> {
 
     render() {
         return (
-            <div className={this.getClassName()}
-                style={this.getStyle()}
-            >
+            <div className={this.getClassName()} style={this.getStyle()} >
                 {this.getPrimaryNode()}
                 {this.getSiblingNodes()}
                 {this.getButton()}

@@ -49,9 +49,14 @@ export class Layout extends React.Component<LayoutProps> {
         this.update(nxtProps);
     }
 
-    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - pureComponent
-        return (nxtProps.parentState == null || nxtProps.parentState.selected) &&
-            (nxtProps.nodeSiblingSelectedId == null || nxtProps.nodeSiblingSelectedId == nxtProps.node.data.id);
+    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - or pureComponent
+        if (this.props.width !== nxtProps.width) return true;
+        if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
+        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
+        if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
+        if (this.state.transitioning !== nxtState.transitioning) return true;
+        if (this.state.headerExpanded !== nxtState.headerExpanded) return true;
+        return false;
     }
 
     update(nxtProps: LayoutProps) {
@@ -136,7 +141,7 @@ export class Layout extends React.Component<LayoutProps> {
             left: this.getChildLeft(child),
             height: this.getChildHeight(child),
             width: this.getChildWidth(child),
-            zIndex: this.getChildZIndex(child),
+            // zIndex: this.getChildZIndex(child),
             transition: this.state.transitionDuration + 'ms',
             willChange: 'top, left, height, width'
         }
@@ -244,6 +249,13 @@ export class Layout extends React.Component<LayoutProps> {
         return undefined;
     }
 
+    onNodeClick(e : React.MouseEvent<HTMLDivElement, MouseEvent>) {
+        if (this.props.onNodeClick) {
+            this.props.onNodeClick(this.props.node);
+            e.stopPropagation();
+        }
+    }
+
     getClassName() {
         const className = ['layout'];
         if (this.props.nodeState.selected) className.push('selected');
@@ -256,12 +268,7 @@ export class Layout extends React.Component<LayoutProps> {
             <div
                 className={this.getClassName()}
                 ref={el => this.container = el}
-                onClick={(e) => {
-                    if (this.props.onNodeClick) {
-                        this.props.onNodeClick(this.props.node);
-                        e.stopPropagation();
-                    }
-                }}
+                onClick={this.onNodeClick.bind(this)}
             >
                 {this.getHeader()}
                 {this.getOverlay()}

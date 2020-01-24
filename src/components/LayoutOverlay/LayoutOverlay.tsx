@@ -1,16 +1,21 @@
 import * as React from 'react';
-import { getImageNodeSrc, isImageNode } from '../../utils/node';
+import { isImageNode } from '../../utils/node';
 import { LayoutProps } from '../Layout/Layout';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { isLayoutMobile } from './../../utils/layout';
 import { getNodeLabel } from './../../utils/node';
 import './LayoutOverlay.css';
 
-export class LayoutOverlay extends React.PureComponent<LayoutProps> {
+export class LayoutOverlay extends React.Component<LayoutProps> {
+
+    shouldComponentUpdate() {
+        return false;
+    }
 
     getImage() {
         if (isImageNode(this.props.node)) {
             return <LayoutImage 
+            key={this.props.node.data.id + '-overlay-image'}
             node={this.props.node}
             contain={this.props.nodeState.selected}
             width={this.props.width}

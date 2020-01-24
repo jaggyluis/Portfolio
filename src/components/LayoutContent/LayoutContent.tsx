@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { color } from 'd3';
 import { LayoutProps } from '../Layout/Layout';
-import './LayoutContent.css';
-import { isTextNode, getTextNodeContent, isImageNode, getImageNodeSrc, getNodeLabel } from './../../utils/node';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
+import { getNodeLabel, getTextNodeContent, isImageNode, isTextNode } from './../../utils/node';
+import './LayoutContent.css';
 
 
 export class LayoutContent extends React.PureComponent<LayoutProps> {

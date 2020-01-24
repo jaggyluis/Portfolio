@@ -8,6 +8,8 @@
     filter: saturate(0.4);
     transition: 300ms;
     object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
 
 .layout-image:hover {

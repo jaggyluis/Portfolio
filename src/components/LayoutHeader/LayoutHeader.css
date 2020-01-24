@@ -22,7 +22,6 @@
     line-height: 0.8;
     text-transform: uppercase;
     color: black;
-    /* display: this.props.nodeState.selected ? '' : 'none' */
 }
 
 .layout-header .layout-header-node.sibling {

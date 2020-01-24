@@ -8,8 +8,6 @@
     overflow: hidden;
     position: absolute;
     background:white;
-    z-index: 3;
-    /* z-index was 2 background was none */
 }
 
 .layout-overlay img {
@@ -101,7 +99,7 @@
     color: #d2d2d2;
     left: 0;
     top: 0;
-    z-index: -2;
+    /* z-index: -2; */
     margin-left: -2%;
     padding-left: 2%;
 }

@@ -5,7 +5,7 @@ import { LayoutProps } from '../Layout/Layout';
 export class LayoutDrawLines extends React.Component<LayoutProps> {
 
     shouldComponentUpdate(nxtProps : LayoutProps) {
-        return this.props.nodeState.selected != nxtProps.nodeState.selected;
+        return this.props.nodeState.selected !== nxtProps.nodeState.selected;
     }
 
     getClassName() : string {
