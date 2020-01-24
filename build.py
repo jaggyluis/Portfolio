@@ -20,6 +20,7 @@ file_image_pixel_target = 1200
 file_image_pixel_target_mobile = 600
 file_image_pixel_target_icon = 300
 file_image_pixel_target_sm = 10
+file_image_quality = 95
 
 def format_path_src(path) :   
     # return path.replace("\\", "/").replace(source_path, target_path)
@@ -136,10 +137,10 @@ def build_dir(directory, target):
                     file_image_compressed_icon = compress_image(file_image, file_image_pixel_target_icon)
                     file_image_compressed_sm = compress_image(file_image, file_image_pixel_target_sm)
 
-                    file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
-                    file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=95)
-                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=95)
-                    file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=95)
+                    file_image_compressed.save(file_image_target_path, optimize=True,quality=file_image_quality) 
+                    file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=file_image_quality)
+                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=file_image_quality)
+                    file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=file_image_quality)
 
                     # write this to the tree ---
                     data["src"] = file_image_target_src
@@ -175,10 +176,10 @@ def build_dir(directory, target):
                     file_image_compressed_icon = compress_image(file_image, file_image_pixel_target_icon)
                     file_image_compressed_sm = compress_image(file_image, file_image_pixel_target_sm)
 
-                    file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
-                    file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=95)
-                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=95)
-                    file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=95)
+                    file_image_compressed.save(file_image_target_path, optimize=True,quality=file_image_quality) 
+                    file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=file_image_quality)
+                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=file_image_quality)
+                    file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=file_image_quality)
 
                     # write this to the tree ---
                     file_data["src"] = file_image_target_src   

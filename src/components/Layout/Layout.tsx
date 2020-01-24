@@ -134,6 +134,11 @@ export class Layout extends React.Component<LayoutProps> {
         return 0;
     }
 
+    getChildDisplay(child:Node) {
+        if (this.isChildSelected(child) || this.areNoChildrenSelected()) return undefined;
+        return 'none'
+    }
+
     getChildStyle(child: Node): React.CSSProperties {
         return {
             position: 'absolute',
@@ -271,9 +276,9 @@ export class Layout extends React.Component<LayoutProps> {
                 onClick={this.onNodeClick.bind(this)}
             >
                 {this.getHeader()}
-                {this.getOverlay()}
+                {/* {this.getOverlay()} */}
                 {this.getChildren()}
-                {this.getContent()}
+                {/* {this.getContent()} */}
                 {this.getDrawLines()}
             </div>
         )
