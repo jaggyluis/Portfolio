@@ -11,8 +11,9 @@ source_path = "src\\data\\root\\"
 target_path = "public/data/"    
 target_src = "data/"
 
-file_image_pixel_target = 500000 #1000000
-file_image_pixel_target_mobile = 100000 #500000
+file_image_pixel_target = 500000
+file_image_pixel_target_mobile = 250000
+file_image_pixel_target_icon = 125000 #can possibly go down to 100000
 file_image_pixel_target_sm = 10
 
 def format_path_src(path) :   
@@ -96,8 +97,9 @@ def build_dir(directory, target):
                 elif file_.lower().endswith(".jpg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
 
                     file_image_target_path = format_path(file_path)
-                    file_image_targed_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
-                    file_image_targed_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
+                    file_image_target_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
+                    file_image_target_path_icon = format_path(directory + "/" + file_name + "_i." + file_extension)
+                    file_image_target_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
 
                     file_image_target_src = format_path_src(file_path)
                     
@@ -107,11 +109,13 @@ def build_dir(directory, target):
 
                     file_image_compressed = compress_image(file_image, file_image_pixel_target)
                     file_image_compressed_mobile = compress_image(file_image, file_image_pixel_target_mobile)
+                    file_image_compressed_icon = compress_image(file_image, file_image_pixel_target_icon)
                     file_image_compressed_sm = compress_image(file_image, file_image_pixel_target_sm)
 
                     file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
-                    file_image_compressed_mobile.save(file_image_targed_path_mobile, optimize=True, quality=95)
-                    file_image_compressed_sm.save(file_image_targed_path_sm, optimize=True, quality=95)
+                    file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=95)
+                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=95)
+                    file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=95)
 
                     # write this to the tree ---
                     data["src"] = file_image_target_src
@@ -132,8 +136,9 @@ def build_dir(directory, target):
                 elif file_.lower().endswith(".jpg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
 
                     file_image_target_path = format_path(file_path)
-                    file_image_targed_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
-                    file_image_targed_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
+                    file_image_target_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
+                    file_image_target_path_icon = format_path(directory + "/" + file_name + "_i." + file_extension)
+                    file_image_target_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
 
                     file_image_target_src = format_path_src(file_path)
                     
@@ -143,11 +148,13 @@ def build_dir(directory, target):
 
                     file_image_compressed = compress_image(file_image, file_image_pixel_target)
                     file_image_compressed_mobile = compress_image(file_image, file_image_pixel_target_mobile)
+                    file_image_compressed_icon = compress_image(file_image, file_image_pixel_target_icon)
                     file_image_compressed_sm = compress_image(file_image, file_image_pixel_target_sm)
 
                     file_image_compressed.save(file_image_target_path, optimize=True,quality=95) 
-                    file_image_compressed_mobile.save(file_image_targed_path_mobile, optimize=True, quality=95)
-                    file_image_compressed_sm.save(file_image_targed_path_sm, optimize=True, quality=95)
+                    file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=95)
+                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=95)
+                    file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=95)
 
                     # write this to the tree ---
                     file_data["src"] = file_image_target_src   

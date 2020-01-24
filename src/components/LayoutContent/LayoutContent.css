@@ -5,6 +5,7 @@
     overflow-y : auto;
     overflow-x : hidden;
     font-size : 14px;
+    background: white;
 }
 
 .layout-content.text-node {
