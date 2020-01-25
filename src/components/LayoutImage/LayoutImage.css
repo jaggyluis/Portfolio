@@ -2,14 +2,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background-repeat:no-repeat;
+    background-repeat:no-repeat;
     background-size:cover;
-    background-position: center; */
+    background-position: center;
     filter: saturate(0.4);
     transition: 300ms;
     object-fit: cover;
-    /* transform-style: preserve-3d;
-    backface-visibility: hidden; */
 }
 
 .layout-image:hover {
@@ -19,12 +17,6 @@
 .layout-image.contain {
     filter: none;
     pointer-events: none;
-    /* background-size: contain; */
+    background-size: contain;
     object-fit: contain;
-}
-
-@media screen and (max-width: 800px) {
-    .layout-image {
-        filter: none;
-    }
 }

@@ -10,13 +10,15 @@
     background:white;
 }
 
-.layout-overlay img {
+.layout-overlay .layout-image {
     filter: contrast(0.3) saturate(0) brightness(1.5);
+    /* box-shadow: 30px 30px 100px 20px white inset */
     /* transition:  var(--transitionDuration); */
 }
 
-.layout-overlay:hover img {
+.layout-overlay:hover .layout-image {
     filter: none;
+    /* box-shadow: none; */
 }
 
 .layout-overlay .layout-lslider {

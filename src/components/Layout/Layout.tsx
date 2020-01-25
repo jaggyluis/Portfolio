@@ -139,6 +139,29 @@ export class Layout extends React.Component<LayoutProps> {
         return 'none'
     }
 
+    getChildTransform(child:Node) {
+
+        if (this.isChildSelected(child)) {
+            return 'translate(' + 0 + '%, ' + 0 +'%)';
+        }
+
+        let childLeftPerc = child.x0;
+        let childTopPerc = child.y0;
+        let childWidthPerc = 1; //(child.x1 - child.x0);
+        let childHeightPerc = 1; //(child.y1 - child.y0);
+        
+        let parentWidthPerc = 1 / childWidthPerc;
+        let parentWidthPercM = 100 * parentWidthPerc;
+
+        let parentHeightPerc = 1 / childHeightPerc;
+        let parentHeightPercM = 100 * parentHeightPerc;
+
+        let childLeftTranslate = childLeftPerc * parentWidthPercM;
+        let childTopTranslate = childTopPerc * parentHeightPercM;
+
+        return 'translate(' + childLeftTranslate + '%, ' + childTopTranslate +'%)';
+    }
+
     getChildStyle(child: Node): React.CSSProperties {
         return {
             position: 'absolute',
@@ -159,6 +182,7 @@ export class Layout extends React.Component<LayoutProps> {
             overflow: this.state.headerExpanded ? 'hidden' : 'visible',
             width: '100%',
             display: this.props.nodeState.selected ? '' : 'none',
+            // transform:'translate3d(0,0,0)'
         }
     }
 
@@ -276,9 +300,9 @@ export class Layout extends React.Component<LayoutProps> {
                 onClick={this.onNodeClick.bind(this)}
             >
                 {this.getHeader()}
-                {/* {this.getOverlay()} */}
+                {this.getOverlay()}
                 {this.getChildren()}
-                {/* {this.getContent()} */}
+                {this.getContent()}
                 {this.getDrawLines()}
             </div>
         )

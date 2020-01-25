@@ -44,11 +44,11 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         return (
             <div className='layout-overlay' >
                 {this.getImage()}
-                <div className='layout-color'></div>
+                {/* <div className='layout-color'></div> */}
                 <div className='layout-lslider'>
-                    <div className='layout-slider-color'></div>
+                    {/* <div className='layout-slider-color'></div> */}
                     <div className='layout-tslider'>
-                        <div className='layout-slider-color'></div>
+                        {/* <div className='layout-slider-color'></div> */}
                         {this.getLabel()}
                     </div>
                 </div>
