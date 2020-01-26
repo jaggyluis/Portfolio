@@ -139,7 +139,7 @@ export class Layout extends React.Component<LayoutProps> {
         return 'none'
     }
 
-    getChildTransform(child:Node) {
+    __getChildTransform(child:Node) {
 
         if (this.isChildSelected(child)) {
             return 'translate(' + 0 + '%, ' + 0 +'%)';
@@ -162,6 +162,11 @@ export class Layout extends React.Component<LayoutProps> {
         return 'translate(' + childLeftTranslate + '%, ' + childTopTranslate +'%)';
     }
 
+    getChildTransform(child : Node) {
+        if (this.isChildSelected(child)) return 'translate3d(0,0,0)';
+        return 'translate3d(0,0,0)';
+    }
+
     getChildStyle(child: Node): React.CSSProperties {
         return {
             position: 'absolute',
@@ -170,8 +175,10 @@ export class Layout extends React.Component<LayoutProps> {
             height: this.getChildHeight(child),
             width: this.getChildWidth(child),
             // zIndex: this.getChildZIndex(child),
+            transform: this.getChildTransform(child),
             transition: this.state.transitionDuration + 'ms',
-            willChange: 'top, left, height, width'
+            willChange: 'top, left, height, width, transform',
+            
         }
     }
 
@@ -182,7 +189,6 @@ export class Layout extends React.Component<LayoutProps> {
             overflow: this.state.headerExpanded ? 'hidden' : 'visible',
             width: '100%',
             display: this.props.nodeState.selected ? '' : 'none',
-            // transform:'translate3d(0,0,0)'
         }
     }
 
