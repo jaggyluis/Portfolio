@@ -50,7 +50,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         let width = this.props.width;
 
         if (!this.props.contain) {
-            width = this.getNodeWidth();
+            width = this.getNodeWidth() / 2;
         }
 
         if (width < 300) {
@@ -112,11 +112,16 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             //     style={{ backgroundImage:'url(' + src + ')' }}
             // >
             // </div>
-            <div
+            // <div
+            //     className={this.getClassName()}
+            //     style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
+            // >
+            // </div>
+            <img
                 className={this.getClassName()}
-                style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
-            >
-            </div>
+                src={this.getPath()}
+                alt='layout-node'
+            />
         )
     }
 }

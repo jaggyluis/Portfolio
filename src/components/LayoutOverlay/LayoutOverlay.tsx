@@ -8,8 +8,8 @@ import './LayoutOverlay.css';
 
 export class LayoutOverlay extends React.Component<LayoutProps> {
 
-    shouldComponentUpdate() {
-        return false;
+    shouldComponentUpdate(nxtProps : LayoutProps) {
+        return this.props.width !== nxtProps.width;
     }
 
     getImage() {

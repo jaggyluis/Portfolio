@@ -16,33 +16,31 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
 
     shouldComponentUpdate(nxtProps: LayoutHeaderProps) { // NOTE - or pureComponent
         if (this.props.expanded !== nxtProps.expanded) return true;
+        if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
         if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
         return false;
     }
 
     getSiblingNodes() {
-        if (!isLayoutMobile(this.props) || this.props.expanded) {
-            return (
-                this.props.nodeSiblings.map(sibling => {
-                    if (sibling.data.id !== this.props.node.data.id) {
-                        return (
-                            <LayoutHeaderLabel
-                                key={sibling.data.id + '-header-label'}
-                                node={sibling}
-                                depth={this.props.nodeDepth}
-                                selected={false}
-                                small={isLayoutMobile(this.props)}
-                                onNodeClick={this.props.onNodeClick}
-                            />
-                        )
-                    } else {
-                        return undefined
-                    }
-                })
-            )
-        }
-        return undefined;
+        return (
+            this.props.nodeSiblings.map(sibling => {
+                if (sibling.data.id !== this.props.node.data.id) {
+                    return (
+                        <LayoutHeaderLabel
+                            key={sibling.data.id + '-header-label'}
+                            node={sibling}
+                            depth={this.props.nodeDepth}
+                            selected={false}
+                            small={isLayoutMobile(this.props)}
+                            onNodeClick={this.props.onNodeClick}
+                        />
+                    )
+                } else {
+                    return undefined
+                }
+            })
+        )
     }
 
     getPrimaryNode() {
@@ -66,11 +64,12 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
     }
 
     getButton() {
-        if (this.props.nodeSiblings.length && isLayoutMobile(this.props)) {
+        if (this.props.nodeSiblings.length) {
             return <div
                 key={this.props.node.data.id + '-btn'}
                 className='layout-btn'
-                onClick={this.onButtonClick.bind(this)}>
+                onClick={this.onButtonClick.bind(this)}
+                >
                 {this.props.expanded ? '-' : '+'}
             </div>
         }
@@ -102,6 +101,7 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
         const className = ['layout-header'];
         if (this.props.expanded) className.push('expanded');
         if (this.props.nodeState.selected) className.push('selected');
+        if (isLayoutMobile(this.props)) className.push('small');
         return className.join(' ');
     }
 
