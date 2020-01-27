@@ -78,17 +78,19 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
 
     getStyle(): React.CSSProperties {
 
-        const s = isLayoutMobile(this.props) ? 25 : 30;
+        const s = isLayoutMobile(this.props) ? 20 : 30;
         const c = Math.ceil(s / 5)
         const d = this.props.nodeDepth * c
         const h = s - d;
 
-        let diff = 42 - h;
+        let diff = 30 - h;
         let display = this.props.nodeState.selected ? 'flex' : 'none';
-        let margin = diff + 'px';
+        let margin = '0px';
 
         if (isLayoutMobile(this.props) && this.props.nodeState.selected) {
             display = '';
+            margin = '10px';
+            // margin = diff + 'px';
         }
 
         return {

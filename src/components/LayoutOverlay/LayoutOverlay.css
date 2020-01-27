@@ -1,113 +1,94 @@
 :root {
-    --transitionDuration : 150ms
+  --transitionDuration: 150ms;
 }
 
 .layout-overlay {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    background:white;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  background: white;
 }
 
 .layout-overlay .layout-image {
-    filter: contrast(0.3) saturate(0) brightness(1.5);
-    /* box-shadow: 30px 30px 100px 20px white inset */
-    /* transition:  var(--transitionDuration); */
+  filter: contrast(0.3) saturate(0) brightness(1.5);
 }
 
 .layout-overlay:hover .layout-image {
-    filter: none;
-    /* box-shadow: none; */
+  filter: none;
 }
 
 .layout-overlay .layout-lslider {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width : 100%;
-    /* background: rgba(255,255,255,0.5);  */
-    border-left : 1px solid rgba(100,100,100,0.1);
-    transition:  var(--transitionDuration);
-    transform : translate(10%, 0);
-    -webkit-transform: translate(10%, 0);
-    will-change: transform;
-}
-
-.layout-overlay:hover .layout-lslider {
-    transform : translate(0, 0);
-    -webkit-transform: translate(0, 0);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .layout-overlay .layout-tslider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height : 100%;
-    width: 100%;
-    margin-left : -25%;
-    padding-left : 25%;
-    /* background: rgba(255,255,255,0.5);  */
-    border-top : 1px solid rgba(100,100,100,0.1);
-    transform : translate(0, 10%);
-    -webkit-transform: translate(0, 10%);
-    transition: var(--transitionDuration);
-    transition-delay: var(--transitionDuration);
-    will-change : transform;
-}
-
-.layout-overlay:hover .layout-tslider {
-    transform : translate(0, 0);
-    -webkit-transform: translate(0, 0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .layout-overlay .layout-color {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: linear-gradient(170deg, #ffffff 0%, #ffffff7a 100%);
-    opacity: 1;
-    transition: 600ms;
-    will-change: opacity;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(170deg, #ffffff 0%, #ffffff7a 100%);
+  opacity: 1;
+  transition: var(--transitionDuration);
+  will-change: opacity;
 }
 
 .layout-overlay:hover .layout-color {
-    opacity: 0;
+  opacity: 0;
 }
 
 .layout-overlay .layout-slider-color {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(-45deg,transparent,transparent 1px,rgba(100,100,100,0.1) 1px, rgba(100,100,100,0.1) 2px);
-    opacity: 1;
-    transition: var(--transitionDuration);
-    transition-delay: var(--transitionDuration);
-    will-change: opacity;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 1px,
+    rgba(100, 100, 100, 0.1) 1px,
+    rgba(100, 100, 100, 0.1) 2px
+  );
+  opacity: 1;
+  transition: var(--transitionDuration);
+  transition-delay: var(--transitionDuration);
+  will-change: opacity;
 }
 
 .layout-overlay:hover .layout-slider-color {
-    opacity: 0;
+  opacity: 0;
 }
 
 .layout-overlay .layout-label {
-    position: relative;
-    font-weight: bolder;
-    line-height: 0.8;
-    text-transform: uppercase;
-    border-bottom : 1px solid rgba(100,100,100,0.1);
-    word-break: break-all;
-    color: #d2d2d2;
-    left: 0;
-    top: 0;
-    /* z-index: -2; */
-    margin-left: -2%;
-    padding-left: 2%;
+  position: relative;
+  line-height: 0.8;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.1);
+  word-break: break-all;
+  color: #d2d2d2;
+  left: 0;
+  top: 0;
+  margin-left: -2%;
+  padding-left: 2%;
+  letter-spacing: -1px;
+}
+
+.layout-overlay .layout-label::first-letter {
+  margin-left:-2px;
 }
 
 .layout-overlay:hover .layout-label {
-    color: black;
-    transition: var(--transitionDuration);
-    will-change: color;
+  color: black;
+  transition: var(--transitionDuration);
+  will-change: color;
 }

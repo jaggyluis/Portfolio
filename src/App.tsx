@@ -55,10 +55,9 @@ class App extends React.Component<AppProps> {
                     onClick={this.onNodeClick.bind(this)}
                     style={{
                         height: 'calc(100% - 50px)',
-                        width: '95%',
+                        top: '10px',
+                        width: '100%',
                         position: 'absolute',
-                        marginTop: '10px',
-                        marginLeft: '2.5%',
                     }}
                 >
                     <Layout
@@ -79,8 +78,7 @@ class App extends React.Component<AppProps> {
                         height: '40px',
                         position: 'absolute',
                         bottom: '0',
-                        left: '2.5%',
-                        width: '95%',
+                        width: '100%',
                         display: 'flex'
                     }}
                 >

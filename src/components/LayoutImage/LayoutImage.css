@@ -20,3 +20,9 @@
     background-size: contain;
     object-fit: contain;
 }
+
+@media screen and (max-width: 600px) {
+    .layout-image {
+        filter: inherit;
+    }
+}

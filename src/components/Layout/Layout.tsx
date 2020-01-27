@@ -174,7 +174,7 @@ export class Layout extends React.Component<LayoutProps> {
             left: this.getChildLeft(child),
             height: this.getChildHeight(child),
             width: this.getChildWidth(child),
-            // zIndex: this.getChildZIndex(child),
+            zIndex: this.getChildZIndex(child),
             transform: this.getChildTransform(child),
             transition: this.state.transitionDuration + 'ms',
             willChange: 'top, left, height, width, transform',

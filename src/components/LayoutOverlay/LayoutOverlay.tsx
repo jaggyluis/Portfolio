@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isImageNode } from '../../utils/node';
+import { isImageNode, isDataNode } from '../../utils/node';
 import { LayoutProps } from '../Layout/Layout';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { isLayoutMobile } from './../../utils/layout';
@@ -9,7 +9,9 @@ import './LayoutOverlay.css';
 export class LayoutOverlay extends React.Component<LayoutProps> {
 
     shouldComponentUpdate(nxtProps : LayoutProps) {
-        return this.props.width !== nxtProps.width;
+        if (this.props.width !== nxtProps.width) return true;
+        if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
+        return false;
     }
 
     getImage() {
@@ -26,7 +28,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
 
-        const s = isLayoutMobile(this.props) ? 25 : 30;
+        const s = isLayoutMobile(this.props) ? 20 : 30;
         const c = Math.ceil(s / 5)
         const d = this.props.nodeDepth * c
         const h = s - d;
@@ -37,7 +39,10 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
     }
 
     getLabel() {
-        return <div className='layout-label' style={this.getLabelStyle()} >{getNodeLabel(this.props.node)}</div>
+        if (!isDataNode(this.props.node)) {
+            return <div className='layout-label' style={this.getLabelStyle()} >{getNodeLabel(this.props.node)}</div>
+        }
+        return undefined;
     }
 
     render() {
