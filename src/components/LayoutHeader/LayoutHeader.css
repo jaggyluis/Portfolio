@@ -26,10 +26,6 @@
   color: black;
 }
 
-.layout-header .layout-header-node::first-letter {
-  margin-left:-2px;
-}
-
 .layout-header .layout-header-node.sibling {
   top: "";
   z-index: 0;

@@ -28,7 +28,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
 
-        const s = isLayoutMobile(this.props) ? 20 : 30;
+        const s = isLayoutMobile(this.props) ? 25 : 30;
         const c = Math.ceil(s / 5)
         const d = this.props.nodeDepth * c
         const h = s - d;

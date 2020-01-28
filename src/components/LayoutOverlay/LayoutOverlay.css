@@ -45,7 +45,8 @@
 }
 
 .layout-overlay:hover .layout-color {
-  opacity: 0;
+  /* opacity: 0; */
+  background: linear-gradient(170deg, #ffffff 0%, transparent 100%);
 }
 
 .layout-overlay .layout-slider-color {
@@ -81,10 +82,6 @@
   margin-left: -2%;
   padding-left: 2%;
   letter-spacing: -1px;
-}
-
-.layout-overlay .layout-label::first-letter {
-  margin-left:-2px;
 }
 
 .layout-overlay:hover .layout-label {
