@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { Node } from '../../model/Node';
 import { NodeState } from '../../model/NodeData';
-import { isDataNode, isDirectoryNode } from '../../utils/node';
+import { isDataNode, isDirectoryNode, isNodebranch, isTextNode } from '../../utils/node';
 import { treemap } from '../../utils/treemap';
 import { LayoutContent } from '../LayoutContent/LayoutContent';
 import { LayoutDrawLines } from '../LayoutDrawLines/LayoutDrawLines';
 import { LayoutHeader } from '../LayoutHeader/LayoutHeader';
 import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
 import './Layout.css';
+import { isLayoutMobile } from './../../utils/layout';
+import { isNodeLeaf } from './../../utils/node';
 
-const EMPTY_NODE_ARRAY:Node[] = [];
+const EMPTY_NODE_ARRAY: Node[] = [];
 
 export interface LayoutProps {
     width: number,
@@ -18,7 +20,7 @@ export interface LayoutProps {
     nodeState: NodeState;
     nodeDepth: number;
     nodeSiblings: Node[];
-    nodeSiblingSelectedId : string | null;
+    nodeSiblingSelectedId: string | null;
     parent: Node | null;
     parentState: NodeState | null;
     onNodeClick?: (node: Node | null) => void;
@@ -101,7 +103,7 @@ export class Layout extends React.Component<LayoutProps> {
         if (!child) {
             this.clearSelectedChildren()
         } else {
-            if (!child.data.content) {
+            if (!isTextNode(child) /*&& !(isNodeLeaf(child) && isLayoutMobile(this.props)) */) {
                 this.setSelectedChild(child);
             }
         }
@@ -134,22 +136,22 @@ export class Layout extends React.Component<LayoutProps> {
         return 0;
     }
 
-    getChildDisplay(child:Node) {
+    getChildDisplay(child: Node) {
         if (this.isChildSelected(child) || this.areNoChildrenSelected()) return undefined;
         return 'none'
     }
 
-    __getChildTransform(child:Node) {
+    __getChildTransform(child: Node) {
 
         if (this.isChildSelected(child)) {
-            return 'translate(' + 0 + '%, ' + 0 +'%)';
+            return 'translate(' + 0 + '%, ' + 0 + '%)';
         }
 
         let childLeftPerc = child.x0;
         let childTopPerc = child.y0;
         let childWidthPerc = 1; //(child.x1 - child.x0);
         let childHeightPerc = 1; //(child.y1 - child.y0);
-        
+
         let parentWidthPerc = 1 / childWidthPerc;
         let parentWidthPercM = 100 * parentWidthPerc;
 
@@ -159,38 +161,91 @@ export class Layout extends React.Component<LayoutProps> {
         let childLeftTranslate = childLeftPerc * parentWidthPercM;
         let childTopTranslate = childTopPerc * parentHeightPercM;
 
-        return 'translate(' + childLeftTranslate + '%, ' + childTopTranslate +'%)';
+        return 'translate(' + childLeftTranslate + '%, ' + childTopTranslate + '%)';
     }
 
-    getChildTransform(child : Node) {
+    getChildTransform(child: Node) {
         if (this.isChildSelected(child)) return 'translate3d(0,0,0)';
         return 'translate3d(0,0,0)';
     }
 
+    // getChildPosition(child : Node) {
+
+    // }
+
     getChildStyle(child: Node): React.CSSProperties {
-        return {
-            position: 'absolute',
-            top: this.getChildTop(child),
-            left: this.getChildLeft(child),
-            height: this.getChildHeight(child),
-            width: this.getChildWidth(child),
-            zIndex: this.getChildZIndex(child),
-            transform: this.getChildTransform(child),
-            transition: this.state.transitionDuration + 'ms',
-            willChange: 'top, left, height, width, transform',
-            
+        if (isLayoutMobile(this.props) && isNodebranch(this.props.node)) {
+            return {
+                position: 'relative',
+                // top: this.getChildTop(child),
+                left: this.getChildLeft(child),
+                height: this.getChildHeight(child),
+                width: this.getChildWidth(child),
+                zIndex: this.getChildZIndex(child),
+                transform: this.getChildTransform(child),
+                transition: this.state.transitionDuration + 'ms',
+                willChange: 'top, left, height, width, transform',
+            }
+        } else {
+            return {
+                position: 'absolute',
+                top: this.getChildTop(child),
+                left: this.getChildLeft(child),
+                height: this.getChildHeight(child),
+                width: this.getChildWidth(child),
+                zIndex: this.getChildZIndex(child),
+                transform: this.getChildTransform(child),
+                transition: this.state.transitionDuration + 'ms',
+                willChange: 'top, left, height, width, transform',
+            }
         }
     }
 
+    // getChildStyle(child: Node): React.CSSProperties {
+    //     return {
+    //         position: 'absolute',
+    //         top: this.getChildTop(child),
+    //         left: this.getChildLeft(child),
+    //         height: this.getChildHeight(child),
+    //         width: this.getChildWidth(child),
+    //         zIndex: this.getChildZIndex(child),
+    //         transform: this.getChildTransform(child),
+    //         transition: this.state.transitionDuration + 'ms',
+    //         willChange: 'top, left, height, width, transform',
+
+    //     }
+    // }
+
     getChildrenStyle(): React.CSSProperties {
-        return {
-            position: 'relative',
-            height: this.state.headerExpanded ? '0' : '100%',
-            overflow: this.state.headerExpanded ? 'hidden' : 'visible',
-            width: '100%',
-            display: this.props.nodeState.selected ? '' : 'none',
+        if (isLayoutMobile(this.props) && isNodebranch(this.props.node)) {
+            return {
+                position: 'relative',
+                height: this.state.headerExpanded ? '0' : '100%',
+                overflowY: this.state.headerExpanded ? 'hidden' : 'auto',
+                overflowX: 'hidden' ,
+                width: '100%',
+                display: this.props.nodeState.selected ? '' : 'none',
+            }
+        } else {
+            return {
+                position: 'relative',
+                height: this.state.headerExpanded ? '0' : '100%',
+                overflow: this.state.headerExpanded ? 'hidden' : 'visible',
+                width: '100%',
+                display: this.props.nodeState.selected ? '' : 'none',
+            }
         }
     }
+
+    // getChildrenStyle(): React.CSSProperties {
+    //     return {
+    //         position: 'relative',
+    //         height: this.state.headerExpanded ? '0' : '100%',
+    //         overflow: this.state.headerExpanded ? 'hidden' : 'visible',
+    //         width: '100%',
+    //         display: this.props.nodeState.selected ? '' : 'none',
+    //     }
+    // }
 
     getChildren() {
         return <div
@@ -284,7 +339,7 @@ export class Layout extends React.Component<LayoutProps> {
         return undefined;
     }
 
-    onNodeClick(e : React.MouseEvent<HTMLDivElement, MouseEvent>) {
+    onNodeClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         if (this.props.onNodeClick) {
             this.props.onNodeClick(this.props.node);
             e.stopPropagation();

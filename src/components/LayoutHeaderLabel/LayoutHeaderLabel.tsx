@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Node } from './../../model/Node';
 import { getNodeLabel } from './../../utils/node';
+import { isLayoutMobile } from './../../utils/layout';
 
 
 export interface LayoutHeaderLabelProps {
@@ -39,13 +40,25 @@ export class LayoutHeaderLabel extends React.Component<LayoutHeaderLabelProps> {
         const d = this.props.depth * c
         const h = s - d;
 
-        let diff = 30 - h;
+        let diff = 40 - h;
         let border = '1px solid rgba(100, 100, 100, 0.1)'
+        let fontSize = h + 'px';
+        let padding = '';
+
+        if (this.props.small) {
+            border = '';
+            if (this.props.depth === 0) {
+                fontSize = '15px';
+            }
+            if (!this.props.selected) {
+                padding = diff + 'px'
+            }
+        }
 
         return {
-            fontSize: h + 'px',
-            paddingTop: this.props.small && !this.props.selected ? diff + 'px' : '',
-            borderTop: this.props.small ? '' : border
+            fontSize: fontSize,
+            paddingTop: padding,
+            borderTop:  border
         }
     }
 

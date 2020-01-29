@@ -19,7 +19,7 @@ export interface AppProps {
 class App extends React.Component<AppProps> {
 
     state = {
-        selected: false,
+        selected: true,
         width: window.innerWidth,
         height: window.innerHeight,
     }

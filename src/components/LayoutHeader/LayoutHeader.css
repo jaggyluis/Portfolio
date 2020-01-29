@@ -16,7 +16,7 @@
   top: 0;
   z-index: 4;
   position: sticky;
-  /* font-weight: bold; */
+  font-weight: bold;
   padding-right: 10px;
   line-height: 0.8;
   text-transform: uppercase;
@@ -25,6 +25,11 @@
   letter-spacing: -1px;
   color: black;
 }
+
+/* .layout-header .layout-header-node:hover {
+  color: darkgray !important;
+  transition: 50ms;
+} */
 
 .layout-header .layout-header-node.sibling {
   top: "";
@@ -38,9 +43,9 @@
   display: none;
 }
 
-.layout-header .layout-header-node:hover {
+.layout-header .layout-header-node.sibling:hover {
   color: black !important;
-  transition: 300ms;
+  transition: 150ms;
 }
 
 .layout-header .layout-btn {
