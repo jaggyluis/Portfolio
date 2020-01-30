@@ -35,30 +35,13 @@ export class LayoutHeaderLabel extends React.Component<LayoutHeaderLabelProps> {
 
     getStyle(): React.CSSProperties {
 
-        const s = this.props.small ? 25 : 30;
+        const s = this.props.small ? 35 : 30;
         const c = Math.ceil(s / 5)
         const d = this.props.depth * c
         const h = s - d;
 
-        let diff = 40 - h;
-        let border = '1px solid rgba(100, 100, 100, 0.1)'
-        let fontSize = h + 'px';
-        let padding = '';
-
-        if (this.props.small) {
-            border = '';
-            if (this.props.depth === 0) {
-                fontSize = '15px';
-            }
-            if (!this.props.selected) {
-                padding = diff + 'px'
-            }
-        }
-
         return {
-            fontSize: fontSize,
-            paddingTop: padding,
-            // borderTop:  border
+            fontSize: h + 'px',
         }
     }
 

@@ -28,7 +28,7 @@ export const isDataNode = (node : Node) => {
     return node.data.type === 'data';
 }
 
-export const isNodebranch = (node : Node) : boolean => {
+export const isNodeBranch = (node : Node) : boolean => {
     if (!node.data.children) return false;
     for (let i = 0; i<node.data.children.length; i++) {
         if (node.data.children[i].type === 'dir') {

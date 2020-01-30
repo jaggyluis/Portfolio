@@ -60,6 +60,11 @@ class App extends React.Component<AppProps> {
                         left : '10px',
                         position: 'absolute',
                     }}
+                    // style={{
+                    //     height: '100%',
+                    //     width: '100%',
+                    //     position: 'absolute',
+                    // }}
                 >
                     <Layout
                         width={this.state.width}

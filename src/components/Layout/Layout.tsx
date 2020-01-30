@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Node } from '../../model/Node';
 import { NodeState } from '../../model/NodeData';
-import { isDataNode, isDirectoryNode, isNodebranch, isTextNode } from '../../utils/node';
+import { isDataNode, isDirectoryNode, isNodeBranch, isTextNode } from '../../utils/node';
 import { treemap } from '../../utils/treemap';
 import { LayoutContent } from '../LayoutContent/LayoutContent';
 import { LayoutDrawLines } from '../LayoutDrawLines/LayoutDrawLines';
@@ -141,36 +141,13 @@ export class Layout extends React.Component<LayoutProps> {
         return 'none'
     }
 
-    __getChildTransform(child: Node) {
-
-        if (this.isChildSelected(child)) {
-            return 'translate(' + 0 + '%, ' + 0 + '%)';
-        }
-
-        let childLeftPerc = child.x0;
-        let childTopPerc = child.y0;
-        let childWidthPerc = 1; //(child.x1 - child.x0);
-        let childHeightPerc = 1; //(child.y1 - child.y0);
-
-        let parentWidthPerc = 1 / childWidthPerc;
-        let parentWidthPercM = 100 * parentWidthPerc;
-
-        let parentHeightPerc = 1 / childHeightPerc;
-        let parentHeightPercM = 100 * parentHeightPerc;
-
-        let childLeftTranslate = childLeftPerc * parentWidthPercM;
-        let childTopTranslate = childTopPerc * parentHeightPercM;
-
-        return 'translate(' + childLeftTranslate + '%, ' + childTopTranslate + '%)';
-    }
-
     getChildTransform(child: Node) {
         if (this.isChildSelected(child)) return 'translate3d(0,0,0)';
         return 'translate3d(0,0,0)';
     }
 
     getChildStyle(child: Node): React.CSSProperties {
-        if (isLayoutMobile(this.props) && isNodebranch(this.props.node)) {
+        if (isLayoutMobile(this.props) && isNodeBranch(this.props.node)) {
             return {
                 position: 'relative',
                 height:"40%"
@@ -206,7 +183,7 @@ export class Layout extends React.Component<LayoutProps> {
     // }
 
     getChildrenStyle(): React.CSSProperties {
-        if (isLayoutMobile(this.props) && isNodebranch(this.props.node)) {
+        if (isLayoutMobile(this.props) && isNodeBranch(this.props.node)) {
             return {
                 position: 'relative',
                 height: this.state.headerExpanded ? '0' : '100%',

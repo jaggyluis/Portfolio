@@ -30,6 +30,7 @@
 .layout-content .layout-text {
     color : dimgrey;
     margin-right: 20px;
+    margin-top: 14px;
 }
 
 .layout-content .layout-btn {
@@ -45,7 +46,12 @@
 }
 
 @media screen and (max-width: 600px) {
+    
     .layout-content {
         font-size: 12px;
+    }
+
+    .layout-content .layout-text {
+        margin-top: 12px;
     }
 }

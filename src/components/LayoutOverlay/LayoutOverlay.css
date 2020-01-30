@@ -1,5 +1,12 @@
 :root {
   --transitionDuration: 150ms;
+  --gradientLines : repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 1px,
+    rgba(100, 100, 100, 0.1) 1px,
+    rgba(100, 100, 100, 0.1) 2px
+  );
 }
 
 .layout-overlay {
@@ -18,22 +25,6 @@
   filter: none;
 }
 
-.layout-overlay .layout-lslider {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.layout-overlay .layout-tslider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
 .layout-overlay .layout-color {
   width: 100%;
   height: 100%;
@@ -45,36 +36,13 @@
 }
 
 .layout-overlay:hover .layout-color {
-  /* opacity: 0; */
   background: linear-gradient(170deg, #ffffff 0%, transparent 100%);
-}
-
-.layout-overlay .layout-slider-color {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 1px,
-    rgba(100, 100, 100, 0.1) 1px,
-    rgba(100, 100, 100, 0.1) 2px
-  );
-  opacity: 1;
-  transition: var(--transitionDuration);
-  transition-delay: var(--transitionDuration);
-  will-change: opacity;
-}
-
-.layout-overlay:hover .layout-slider-color {
-  opacity: 0;
 }
 
 .layout-overlay .layout-label {
   position: relative;
   line-height: 0.8;
   text-transform: uppercase;
-  /* border-bottom: 1px solid rgba(100, 100, 100, 0.1); */
   word-break: break-all;
   color: #d2d2d2;
   /* font-weight: bold; */
@@ -89,4 +57,19 @@
   color: black;
   transition: var(--transitionDuration);
   will-change: color;
+}
+
+@media screen and (max-width: 600px) {
+
+  /* .layout-overlay .layout-image {
+    filter: none;
+  } */
+  
+  .layout-overlay .layout-label {
+    color: #aeaeae;
+  }
+
+  /* .layout-overlay .layout-color {
+    background: linear-gradient(170deg, #ffffff 0%, transparent 100%);
+  } */
 }

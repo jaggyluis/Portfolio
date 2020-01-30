@@ -8,7 +8,7 @@ import './LayoutOverlay.css';
 
 export class LayoutOverlay extends React.Component<LayoutProps> {
 
-    shouldComponentUpdate(nxtProps : LayoutProps) {
+    shouldComponentUpdate(nxtProps: LayoutProps) {
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
         return false;
@@ -16,11 +16,11 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getImage() {
         if (isImageNode(this.props.node)) {
-            return <LayoutImage 
-            key={this.props.node.data.id + '-overlay-image'}
-            node={this.props.node}
-            contain={this.props.nodeState.selected}
-            width={this.props.width}
+            return <LayoutImage
+                key={this.props.node.data.id + '-overlay-image'}
+                node={this.props.node}
+                contain={this.props.nodeState.selected}
+                width={this.props.width}
             />
         }
         return undefined;
@@ -28,7 +28,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
 
-        const s = isLayoutMobile(this.props) ? 25 : 30;
+        const s = isLayoutMobile(this.props) ? 35 : 30;
         const c = Math.ceil(s / 5)
         const d = this.props.nodeDepth * c
         const h = s - d;
@@ -50,14 +50,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             <div className='layout-overlay' >
                 {this.getImage()}
                 <div className='layout-color'></div>
-                <div className='layout-lslider'>
-                    {/* <div className='layout-slider-color'></div> */}
-                    <div className='layout-tslider'>
-                        {/* <div className='layout-slider-color'></div> */}
-                        {this.getLabel()}
-                    </div>
-                </div>
-
+                {this.getLabel()}
             </div>
         )
     }

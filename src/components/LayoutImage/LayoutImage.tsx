@@ -112,16 +112,16 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             //     style={{ backgroundImage:'url(' + src + ')' }}
             // >
             // </div>
-            // <div
-            //     className={this.getClassName()}
-            //     style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
-            // >
-            // </div>
-            <img
+            <div
                 className={this.getClassName()}
-                src={this.getPath()}
-                alt='layout-node'
-            />
+                style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
+            >
+            </div>
+            // <img
+            //     className={this.getClassName()}
+            //     src={this.getPath()}
+            //     alt='layout-node'
+            // />
         )
     }
 }

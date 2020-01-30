@@ -3,6 +3,7 @@ import { LayoutProps } from '../Layout/Layout';
 import { LayoutHeaderLabel } from '../LayoutHeaderLabel/LayoutHeaderLabel';
 import { isLayoutMobile } from './../../utils/layout';
 import './LayoutHeader.css';
+import { isNodeBranch } from '../../utils/node';
 
 export interface LayoutHeaderProps extends LayoutProps {
     expanded?: boolean;
@@ -12,7 +13,6 @@ export interface LayoutHeaderState {
     transitionDuration: number;
 }
 export class LayoutHeader extends React.Component<LayoutHeaderProps> {
-
 
     shouldComponentUpdate(nxtProps: LayoutHeaderProps) { // NOTE - or pureComponent
         if (this.props.expanded !== nxtProps.expanded) return true;
@@ -56,63 +56,20 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
         )
     }
 
-    onButtonClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-        if (this.props.onButtonClick) {
-            this.props.onButtonClick();
-            e.stopPropagation();
-        }
-    }
-
-    getButton() {
-        if (this.props.nodeSiblings.length) {
-            return <div
-                key={this.props.node.data.id + '-btn'}
-                className='layout-btn'
-                onClick={this.onButtonClick.bind(this)}
-                >
-                {this.props.expanded ? '-' : '+'}
-            </div>
-        }
-        return undefined;
-    }
-
-    getStyle(): React.CSSProperties {
-
-        const s = isLayoutMobile(this.props) ? 25 : 30;
-        const c = Math.ceil(s / 5)
-        const d = this.props.nodeDepth * c
-        const h = s - d;
-
-        let diff = 30 - h;
-        let display = this.props.nodeState.selected ? 'flex' : 'none';
-        let margin = '0px';
-
-        if (isLayoutMobile(this.props) && this.props.nodeState.selected) {
-            display = '';
-            margin = '10px';
-            // margin = diff + 'px';
-        }
-
-        return {
-            display: display,
-            marginBottom: margin
-        }
-    }
-
     getClassName() {
         const className = ['layout-header'];
         if (this.props.expanded) className.push('expanded');
         if (this.props.nodeState.selected) className.push('selected');
         if (isLayoutMobile(this.props)) className.push('small');
+        if (isNodeBranch(this.props.node)) className.push('branch');
         return className.join(' ');
     }
 
     render() {
         return (
-            <div className={this.getClassName()} style={this.getStyle()} >
+            <div className={this.getClassName()}>
                 {this.getPrimaryNode()}
                 {this.getSiblingNodes()}
-                {this.getButton()}
             </div>
         )
     }
