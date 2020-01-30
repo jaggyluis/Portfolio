@@ -169,22 +169,11 @@ export class Layout extends React.Component<LayoutProps> {
         return 'translate3d(0,0,0)';
     }
 
-    // getChildPosition(child : Node) {
-
-    // }
-
     getChildStyle(child: Node): React.CSSProperties {
         if (isLayoutMobile(this.props) && isNodebranch(this.props.node)) {
             return {
                 position: 'relative',
-                // top: this.getChildTop(child),
-                left: this.getChildLeft(child),
-                height: this.getChildHeight(child),
-                width: this.getChildWidth(child),
-                zIndex: this.getChildZIndex(child),
-                transform: this.getChildTransform(child),
-                transition: this.state.transitionDuration + 'ms',
-                willChange: 'top, left, height, width, transform',
+                height:"40%"
             }
         } else {
             return {
@@ -364,7 +353,7 @@ export class Layout extends React.Component<LayoutProps> {
                 {this.getOverlay()}
                 {this.getChildren()}
                 {this.getContent()}
-                {this.getDrawLines()}
+                {/* {this.getDrawLines()} */}
             </div>
         )
     }

@@ -56,7 +56,8 @@ class App extends React.Component<AppProps> {
                     style={{
                         height: 'calc(100% - 50px)',
                         top: '10px',
-                        width: '100%',
+                        width: 'calc(100% - 20px)',
+                        left : '10px',
                         position: 'absolute',
                     }}
                 >

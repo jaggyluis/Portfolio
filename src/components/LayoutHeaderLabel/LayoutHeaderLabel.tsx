@@ -58,7 +58,7 @@ export class LayoutHeaderLabel extends React.Component<LayoutHeaderLabelProps> {
         return {
             fontSize: fontSize,
             paddingTop: padding,
-            borderTop:  border
+            // borderTop:  border
         }
     }
 

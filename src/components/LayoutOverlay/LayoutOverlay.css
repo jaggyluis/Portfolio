@@ -74,7 +74,7 @@
   position: relative;
   line-height: 0.8;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.1);
+  /* border-bottom: 1px solid rgba(100, 100, 100, 0.1); */
   word-break: break-all;
   color: #d2d2d2;
   /* font-weight: bold; */
