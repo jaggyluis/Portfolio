@@ -61,7 +61,6 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
         if (this.props.expanded) className.push('expanded');
         if (this.props.nodeState.selected) className.push('selected');
         if (isLayoutMobile(this.props)) className.push('small');
-        if (isNodeBranch(this.props.node)) className.push('branch');
         return className.join(' ');
     }
 

@@ -9,9 +9,7 @@
 }
 
 .layout-content.text-node {
-    /* width: calc(100% - 10px); */
-    /* margin-left: 10px; */
-    /* border-left: 1px solid rgba(100,100,100,0.1); */
+    margin-bottom: 30px;
 }
 
 .layout-content .layout-label {
@@ -29,7 +27,10 @@
 
 .layout-content .layout-text {
     color : dimgrey;
-    margin-right: 20px;
+    /* margin-right: 40px; */
+}
+
+.layout-content .layout-text + .layout-text {
     margin-top: 14px;
 }
 
@@ -51,7 +52,13 @@
         font-size: 12px;
     }
 
-    .layout-content .layout-text {
+    .layout-content .layout-text + .layout-text {
         margin-top: 12px;
+    }
+
+    .layout-content.text-node {
+        position: unset;
+        overflow: unset;
+        height: unset;
     }
 }

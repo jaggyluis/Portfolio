@@ -150,7 +150,13 @@ export class Layout extends React.Component<LayoutProps> {
         if (isLayoutMobile(this.props) && isNodeBranch(this.props.node)) {
             return {
                 position: 'relative',
-                height:"40%"
+                // height:"40%"
+                height: isTextNode(child) 
+                    ? 'unset' 
+                    : this.areNoChildrenSelected() ? '40%' : this.getChildHeight(child),
+                transform: this.getChildTransform(child),
+                // transition: this.state.transitionDuration + 'ms',
+                willChange: 'top, left, height, width, transform',
             }
         } else {
             return {
@@ -316,6 +322,9 @@ export class Layout extends React.Component<LayoutProps> {
         const className = ['layout'];
         if (this.props.nodeState.selected) className.push('selected');
         if (this.state.transitioning) className.push('transitioning');
+        if (isNodeLeaf(this.props.node)) className.push('leaf');
+        if (isNodeBranch(this.props.node)) className.push('branch');
+        if (this.props.nodeDepth === 0) className.push('root');
         return className.join(' ');
     }
 

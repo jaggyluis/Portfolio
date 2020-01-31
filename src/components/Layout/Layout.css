@@ -1,14 +1,11 @@
 .layout {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
     width: 100%;
     flex-direction: column;
     display: flex;
     background: white;
     border: 1px solid white;
-    box-sizing: border-box;
+    margin: -1px;
 }
 
 .layout.transitioning > * {
