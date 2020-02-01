@@ -12,7 +12,7 @@
     transparent,
     transparent 1px,
    white 1px,
-   white 5px
+   white 4px
   );
 }
 
@@ -26,14 +26,15 @@
 
 .layout-overlay .layout-image {
   /* filter: contrast(0.3) saturate(0) brightness(1.5); */
-  filter: contrast(100) saturate(0) brightness(100);
+  filter: contrast(3) saturate(0) brightness(2); /*invert(1) */;
+  /* filter: contrast(10) saturate(0) brightness(2); */
   opacity: 0.2;
+  /* opacity: 1; */
 }
 
 .layout-overlay:hover .layout-image {
-  /* filter: contrast(10) saturate(0) brightness(2); */
   /* filter: ''; */
-  /* filter: contrast(1.4) saturate(0) brightness(1); */
+  /* filter: contrast(2) saturate(0) brightness(2); */
   opacity: 1;
 }
 
@@ -49,7 +50,8 @@
 }
 
 .layout-overlay:hover .layout-color {
-  background: linear-gradient(170deg, #ffffff 0%, transparent 50%);
+  background: linear-gradient(170deg, #ffffff 0%, transparent 100%);
+  /* background: linear-gradient(170deg, #ffffff 0%, #ffffffe3 100%); */
 }
 
 .layout-overlay .layout-label {

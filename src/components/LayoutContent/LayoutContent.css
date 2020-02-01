@@ -27,7 +27,7 @@
 
 .layout-content .layout-text {
     color : dimgrey;
-    /* margin-right: 40px; */
+    margin-right: 40px;
 }
 
 .layout-content .layout-text + .layout-text {

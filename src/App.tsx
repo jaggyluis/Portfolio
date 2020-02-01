@@ -96,7 +96,6 @@ class App extends React.Component<AppProps> {
                             height: 'calc(100% - 20px)',
                             objectFit: 'contain',
                             margin: '10px',
-                            opacity: 0.5
                         }}
                         src={LinkedIn}
                     />
