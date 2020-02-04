@@ -5,6 +5,7 @@
   height: "";
   position: relative;
   display: none;
+  padding-left: 10px;
 }
 
 .layout-header.selected {
@@ -28,7 +29,6 @@
 
 .layout-header .layout-header-node.sibling {
   top: "";
-  z-index: 0;
   position: relative;
   font-weight: normal;
   color: lightgrey;
@@ -49,4 +49,8 @@
 
 .layout.root > .layout-header .layout-header-node {
   font-weight: bold;
+}
+
+.layout.branch > .layout-header.selected {
+  margin-bottom: 10px;
 }

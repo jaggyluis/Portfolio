@@ -1,19 +1,5 @@
 :root {
   --transitionDuration: 150ms;
-  /* --gradientLines : repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 1px,
-    rgba(100, 100, 100, 0.1) 1px,
-    rgba(100, 100, 100, 0.1) 2px
-  ); */
-  --gradientLines : repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 1px,
-   white 1px,
-   white 4px
-  );
 }
 
 .layout-overlay {
@@ -21,70 +7,23 @@
   height: 100%;
   overflow: hidden;
   position: absolute;
-  background: white;
-}
-
-.layout-overlay .layout-image {
-  /* filter: contrast(0.3) saturate(0) brightness(1.5); */
-  filter: contrast(3) saturate(0) brightness(2); /*invert(1) */;
-  /* filter: contrast(10) saturate(0) brightness(2); */
-  opacity: 0.2;
-  /* opacity: 1; */
-}
-
-.layout-overlay:hover .layout-image {
-  /* filter: ''; */
-  /* filter: contrast(2) saturate(0) brightness(2); */
-  opacity: 1;
-}
-
-.layout-overlay .layout-color {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  /* background: linear-gradient(170deg, #ffffff 0%, #ffffff7a 100%); */
-  background: var(--gradientLines);
-  opacity: 1;
-  transition: var(--transitionDuration);
-  will-change: opacity;
-}
-
-.layout-overlay:hover .layout-color {
-  background: linear-gradient(170deg, #ffffff 0%, transparent 100%);
-  /* background: linear-gradient(170deg, #ffffff 0%, #ffffffe3 100%); */
+  background: black;
 }
 
 .layout-overlay .layout-label {
-  position: relative;
+  position: absolute;
   line-height: 0.8;
   text-transform: uppercase;
   word-break: break-all;
-  /* color: #d2d2d2; */
-  /* font-weight: bold; */
-  left: 0;
-  top: 0;
-  margin-left: -2%;
-  padding-left: 2%;
+  color: #ffffff;
   letter-spacing: -1px;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  padding-left: 10px;
 }
 
 .layout-overlay:hover .layout-label {
-  color: black;
+  color: #4b4b4b;;
   transition: var(--transitionDuration);
   will-change: color;
-}
-
-@media screen and (max-width: 600px) {
-
-  /* .layout-overlay .layout-image {
-    filter: none;
-  } */
-  
-  .layout-overlay .layout-label {
-    color:black;
-  }
-
-  /* .layout-overlay .layout-color {
-    background: linear-gradient(170deg, #ffffff 0%, transparent 100%);
-  } */
 }

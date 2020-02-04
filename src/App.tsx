@@ -55,16 +55,9 @@ class App extends React.Component<AppProps> {
                     onClick={this.onNodeClick.bind(this)}
                     style={{
                         height: 'calc(100% - 50px)',
-                        top: '10px',
-                        width: 'calc(100% - 20px)',
-                        left : '10px',
-                        position: 'absolute',
+                        paddingTop: '10px',
+                        width: '100%',
                     }}
-                    // style={{
-                    //     height: '100%',
-                    //     width: '100%',
-                    //     position: 'absolute',
-                    // }}
                 >
                     <Layout
                         width={this.state.width}
@@ -84,21 +77,30 @@ class App extends React.Component<AppProps> {
                         height: '40px',
                         position: 'absolute',
                         bottom: '0',
-                        width: '100%',
-                        display: 'flex'
+                        right: '0',
+                        display: 'flex',
+                        padding : '0px 10px'
                     }}
                 >
-                    <img
-                        alt='linkedIn'
+                    <div
                         onClick={() => { window.open('https://www.linkedin.com/in/jaggyluis/', 'mywindow') }}
                         style={{
-                            // width: 'calc(100% - 20px)',
-                            height: 'calc(100% - 20px)',
-                            objectFit: 'contain',
-                            margin: '10px',
+                            fontWeight: 'bold',
+                            fontSize: '18px',
+                            cursor: 'pointer',
+                            lineHeight: '40px',
+                            margin: 'auto',
+                            paddingRight: '10px',
                         }}
-                        src={LinkedIn}
-                    />
+                    >in</div>
+                    <div
+                        style={{
+                            fontSize: '18px',
+                            cursor: 'pointer',
+                            lineHeight: '40px',
+                            margin: 'auto'
+                        }}
+                    >resume</div>
                 </div>
             </div>
         );

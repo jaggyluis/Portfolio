@@ -4,8 +4,8 @@
     flex-direction: column;
     display: flex;
     background: white;
-    border: 1px solid white;
-    margin: -1px;
+    /* border: 1px solid white; */
+    /* margin: -1px; */
 }
 
 .layout.transitioning > * {

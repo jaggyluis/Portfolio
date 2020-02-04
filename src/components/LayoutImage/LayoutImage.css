@@ -5,9 +5,8 @@
     background-repeat:no-repeat;
     background-size:cover;
     background-position: center;
-    /* filter: saturate(0.4); */
     filter: contrast(1.4) saturate(0) brightness(1);
-    /* transition: 150ms; */
+    transition: 150ms;
     object-fit: cover;
 }
 
@@ -20,10 +19,4 @@
     pointer-events: none;
     background-size: contain;
     object-fit: contain;
-}
-
-@media screen and (max-width: 600px) {
-    .layout-image {
-        /* filter: inherit; */
-    }
 }

@@ -4,6 +4,9 @@ import * as d3 from "d3";
 
 export const treemap = (data: NodeData, width: number, height: number): Node => {
 
+    // width = 1;
+    // height = 1;
+    
     function tile(node: d3.HierarchyRectangularNode<any>, x0: number, y0: number, x1: number, y1: number) {
         d3.treemapBinary(node, 0, 0, width, height);
         // d3.treemapResquarify(node, 0, 0, width, height);
@@ -16,14 +19,22 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
         }
     }
 
-    const value = (data: NodeData) => {
-        return data.weight !== undefined ? data.weight : data.content ? 4 : 1; // 1;
+    const value = (nodeData: NodeData) => {
+        return 1;
+        // return data.weight !== undefined ? data.weight : data.content ? 4 : 1; // 1;
         // return data.weight !== undefined ? data.weight : data.type === 'data' ? data.content ? 2 : 1 : 1;
+    }
+
+    const accessor = (nodeData : NodeData) => {
+        if (data.id == nodeData.id) {
+            return nodeData.children
+        }
+        return [];
     }
 
     return d3.treemap()
         .tile(tile)
-        (d3.hierarchy(data)
+        (d3.hierarchy(data, accessor)
             .sum(d => value(d))
             .sort((a, b) => (b.value || 0) - (a.value || 0))) as Node;
 }

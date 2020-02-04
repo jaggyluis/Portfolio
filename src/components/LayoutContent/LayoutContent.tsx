@@ -32,23 +32,8 @@ export class LayoutContent extends React.PureComponent<LayoutProps> {
         return undefined;
     }
 
-    getButton() {
-        if (this.props.nodeState.selected) {
-            return <div className='layout-btn' onClick={this.onButtonClick.bind(this)}>x</div>
-        }
-        return undefined;
-    }
-
-    onButtonClick(e:React.MouseEvent<HTMLDivElement, MouseEvent>) {
-        if (this.props.onNodeClick) {
-            this.props.onNodeClick(null);
-            e.stopPropagation();
-        }
-    }
-
     getClassName() {
         const className = ['layout-content'];
-        if (isTextNode(this.props.node))  className.push('text-node');
         return className.join(' ');
     }
 
@@ -58,7 +43,6 @@ export class LayoutContent extends React.PureComponent<LayoutProps> {
                 {this.getImage()}
                 {this.getLabel()}
                 {this.getText()}
-                {this.getButton()}
             </div>
         )
     }

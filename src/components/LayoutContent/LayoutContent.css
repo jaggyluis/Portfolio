@@ -8,17 +8,17 @@
     background: white;
 }
 
-.layout-content.text-node {
-    margin-bottom: 30px;
+.layout.selected > .layout-content {
+    /* overflow: visible; */
 }
 
 .layout-content .layout-label {
     text-transform: uppercase;
     font-weight : bold;
-    font-size : 40px;
+    font-size : 60px;
     line-height: 0.8;
+    top: 0;
     position: sticky;
-    top : 0;
     color : #d3d3d366;
     letter-spacing: -1px;
     word-break: break-all;
@@ -27,23 +27,12 @@
 
 .layout-content .layout-text {
     color : dimgrey;
-    margin-right: 40px;
+    max-width: 600px;
+    padding: 0px 10px;
 }
 
 .layout-content .layout-text + .layout-text {
     margin-top: 14px;
-}
-
-.layout-content .layout-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 18px;
-    height: 30px;
-    width: 40px;
-    text-align: center;
-    line-height: 32p;
-    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
@@ -54,11 +43,5 @@
 
     .layout-content .layout-text + .layout-text {
         margin-top: 12px;
-    }
-
-    .layout-content.text-node {
-        position: unset;
-        overflow: unset;
-        height: unset;
     }
 }

@@ -10,6 +10,7 @@ import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
 import './Layout.css';
 import { isLayoutMobile } from './../../utils/layout';
 import { isNodeLeaf } from './../../utils/node';
+import { ontouch } from './../../utils/touch';
 
 const EMPTY_NODE_ARRAY: Node[] = [];
 
@@ -41,6 +42,12 @@ export class Layout extends React.Component<LayoutProps> {
         headerExpanded: false,
         transitionDuration: 400,
         transitioning: false
+    }
+
+    componentDidMount() {
+        if (this.container) {
+            ontouch(this.container, this.onNodeTouch.bind(this))
+        }
     }
 
     componentWillMount() {
@@ -85,6 +92,34 @@ export class Layout extends React.Component<LayoutProps> {
         return this.state.selectedChildId === null;
     }
 
+    nextSelectedChild() {
+        if (this.areNoChildrenSelected() || !this.layout.children) {
+            return;
+        } else {
+            let index: number | null = null;
+            let child = this.layout.children.find((child, i) => {
+                if (this.isChildSelected(child)) {
+                    index = i;
+                    return true;
+                }
+                return false;
+            });
+
+            if (index !== null) {
+
+                index = index === this.layout.children.length - 1 ? 0 : ++index;
+                child = this.layout.children[index];
+
+                if (child) {
+                    this.clearSelectedChildren();
+                    setTimeout(() => {
+                        this.setSelectedChild(child as Node);
+                    }, this.state.transitionDuration + 100)
+                }
+            }
+        }
+    }
+
     setSelectedChild(child: Node) {
         this.setState({ selectedChildId: child.data.id, transitioning: true })
         setTimeout(() => {
@@ -100,12 +135,10 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     onChildClick(child: Node | null) {
-        if (!child) {
+        if (!child || (isDataNode(child) && this.isChildSelected(child))) {
             this.clearSelectedChildren()
         } else {
-            if (!isTextNode(child) /*&& !(isNodeLeaf(child) && isLayoutMobile(this.props)) */) {
-                this.setSelectedChild(child);
-            }
+            this.setSelectedChild(child);
         }
     }
 
@@ -147,109 +180,63 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getChildStyle(child: Node): React.CSSProperties {
-        if (isLayoutMobile(this.props) && isNodeBranch(this.props.node)) {
-            return {
-                position: 'relative',
-                // height:"40%"
-                height: isTextNode(child) 
-                    ? 'unset' 
-                    : this.areNoChildrenSelected() ? '40%' : this.getChildHeight(child),
-                transform: this.getChildTransform(child),
-                // transition: this.state.transitionDuration + 'ms',
-                willChange: 'top, left, height, width, transform',
-            }
-        } else {
-            return {
-                position: 'absolute',
-                top: this.getChildTop(child),
-                left: this.getChildLeft(child),
-                height: this.getChildHeight(child),
-                width: this.getChildWidth(child),
-                zIndex: this.getChildZIndex(child),
-                transform: this.getChildTransform(child),
-                transition: this.state.transitionDuration + 'ms',
-                willChange: 'top, left, height, width, transform',
-            }
+        return {
+            position: 'absolute',
+            top: this.getChildTop(child),
+            left: this.getChildLeft(child),
+            height: this.getChildHeight(child),
+            width: this.getChildWidth(child),
+            zIndex: this.getChildZIndex(child),
+            transform: this.getChildTransform(child),
+            transition: this.state.transitionDuration + 'ms',
+            willChange: 'top, left, height, width, transform',
         }
     }
-
-    // getChildStyle(child: Node): React.CSSProperties {
-    //     return {
-    //         position: 'absolute',
-    //         top: this.getChildTop(child),
-    //         left: this.getChildLeft(child),
-    //         height: this.getChildHeight(child),
-    //         width: this.getChildWidth(child),
-    //         zIndex: this.getChildZIndex(child),
-    //         transform: this.getChildTransform(child),
-    //         transition: this.state.transitionDuration + 'ms',
-    //         willChange: 'top, left, height, width, transform',
-
-    //     }
-    // }
 
     getChildrenStyle(): React.CSSProperties {
-        if (isLayoutMobile(this.props) && isNodeBranch(this.props.node)) {
-            return {
-                position: 'relative',
-                height: this.state.headerExpanded ? '0' : '100%',
-                overflowY: this.state.headerExpanded ? 'hidden' : 'auto',
-                overflowX: 'hidden' ,
-                width: '100%',
-                display: this.props.nodeState.selected ? '' : 'none',
-            }
-        } else {
-            return {
-                position: 'relative',
-                height: this.state.headerExpanded ? '0' : '100%',
-                overflow: this.state.headerExpanded ? 'hidden' : 'visible',
-                width: '100%',
-                display: this.props.nodeState.selected ? '' : 'none',
-            }
+        return {
+            position: 'relative',
+            height: this.state.headerExpanded ? '0' : '100%',
+            overflow: this.state.headerExpanded ? 'hidden' : 'visible',
+            width: '100%',
+            display: this.props.nodeState.selected ? '' : 'none',
         }
     }
 
-    // getChildrenStyle(): React.CSSProperties {
-    //     return {
-    //         position: 'relative',
-    //         height: this.state.headerExpanded ? '0' : '100%',
-    //         overflow: this.state.headerExpanded ? 'hidden' : 'visible',
-    //         width: '100%',
-    //         display: this.props.nodeState.selected ? '' : 'none',
-    //     }
-    // }
-
     getChildren() {
-        return <div
-            key={this.props.node.data.id + '-children'}
-            className='layout-children'
-            style={this.getChildrenStyle()}
-        >
-            {
-                (this.layout.children || EMPTY_NODE_ARRAY).map((child) => {
-                    return (
-                        <div
-                            key={child.data.id}
-                            className='layout-child-position'
-                            style={this.getChildStyle(child)}
-                        >
-                            <Layout
-                                width={this.props.width}
-                                height={this.props.height}
-                                parent={this.props.node}
-                                parentState={this.props.nodeState}
-                                node={child}
-                                nodeState={this.getChildState(child)}
-                                nodeDepth={this.props.nodeDepth + 1}
-                                nodeSiblings={this.layout.children || EMPTY_NODE_ARRAY}
-                                nodeSiblingSelectedId={this.state.selectedChildId}
-                                onNodeClick={this.onChildClick.bind(this)}
-                            />
-                        </div>
-                    )
-                })
-            }
-        </div>
+        if (this.layout.children) {
+            return <div
+                key={this.props.node.data.id + '-children'}
+                className='layout-children'
+                style={this.getChildrenStyle()}
+            >
+                {
+                    (this.layout.children).map((child) => {
+                        return (
+                            <div
+                                key={child.data.id}
+                                className='layout-child-position'
+                                style={this.getChildStyle(child)}
+                            >
+                                <Layout
+                                    width={this.props.width}
+                                    height={this.props.height}
+                                    parent={this.props.node}
+                                    parentState={this.props.nodeState}
+                                    node={child}
+                                    nodeState={this.getChildState(child)}
+                                    nodeDepth={this.props.nodeDepth + 1}
+                                    nodeSiblings={this.layout.children || EMPTY_NODE_ARRAY}
+                                    nodeSiblingSelectedId={this.state.selectedChildId}
+                                    onNodeClick={this.onChildClick.bind(this)}
+                                />
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        }
+        return undefined;
     }
 
     getOverlayStyle(): React.CSSProperties {
@@ -263,7 +250,7 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getOverlay() {
-        if (isDirectoryNode(this.props.node)) {
+        if (isDirectoryNode(this.props.node) || isTextNode(this.props.node)) {
             return (
                 <div className='layout-overlay-position' style={this.getOverlayStyle()}>
                     <LayoutOverlay key={this.props.node.data.id + '-overlay'} {...this.props} />
@@ -318,6 +305,22 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
+    onNodeTouch(evt: React.MouseEvent<HTMLDivElement, MouseEvent>, dir: string, phase: string, swipetype: string, distance: number) {
+
+        // evt: contains original Event object
+        // dir: contains "none", "left", "right", "top", or "down"
+        // phase: contains "start", "move", or "end"
+        // swipetype: contains "none", "left", "right", "top", or "down"
+        // distance: distance traveled either horizontally or vertically, depending on dir value
+
+        if (phase === 'end' && (dir == 'left' || dir == 'right')) {
+            if (this.props.nodeState.selected && isNodeBranch(this.props.node)) {
+                this.nextSelectedChild();
+                evt.stopPropagation();
+            }
+        }
+    }
+
     getClassName() {
         const className = ['layout'];
         if (this.props.nodeState.selected) className.push('selected');
@@ -334,11 +337,12 @@ export class Layout extends React.Component<LayoutProps> {
                 className={this.getClassName()}
                 ref={el => this.container = el}
                 onClick={this.onNodeClick.bind(this)}
+                tabIndex={0}
             >
                 {this.getHeader()}
-                {this.getOverlay()}
                 {this.getChildren()}
                 {this.getContent()}
+                {this.getOverlay()}
                 {/* {this.getDrawLines()} */}
             </div>
         )
