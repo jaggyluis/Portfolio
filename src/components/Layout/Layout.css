@@ -4,10 +4,29 @@
     flex-direction: column;
     display: flex;
     background: white;
-    /* border: 1px solid white; */
-    /* margin: -1px; */
 }
 
 .layout.transitioning > * {
     pointer-events: none !important;
+}
+
+.layout .layout-buttons {
+    position: absolute;
+    height: 100%;
+    width: calc(100% + 10px);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.layout .layout-buttons .layout-btn {
+    margin: auto -1px;
+    z-index: 10;
+    font-size: 50px;
+    font-stretch: ultra-condensed;
+    transform: scaleY(10);
+    filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.2));
+    color: white;
+    opacity: 0.8;
+    font-weight: bold;
 }

@@ -56,7 +56,7 @@ class App extends React.Component<AppProps> {
                     style={{
                         height: 'calc(100% - 50px)',
                         paddingTop: '10px',
-                        width: '100%',
+                        width: 'calc(100% - 10px)',
                     }}
                 >
                     <Layout

@@ -27,7 +27,19 @@ export class LayoutContent extends React.PureComponent<LayoutProps> {
 
     getText() {
         if (isTextNode(this.props.node)) return getTextNodeContent(this.props.node).map((txt, index) => {
-            return <div className='layout-text' key={index} >{txt}</div>
+
+            const split = txt.split('::');
+
+            if (split.length > 1) {
+                return <div className='layout-text bullet' key={index} >
+                    <div className='layout-title'>{split[0]}</div>
+                    {split.slice(1).map((s,i) => <div key={i}>{s}</div>)}
+                </div>
+            } else {
+                return <div className='layout-text' key={index} >{txt}</div>
+            }
+
+            
         });
         return undefined;
     }

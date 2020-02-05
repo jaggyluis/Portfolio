@@ -8,30 +8,33 @@
     background: white;
 }
 
-.layout.selected > .layout-content {
-    /* overflow: visible; */
-}
-
 .layout-content .layout-label {
     text-transform: uppercase;
     font-weight : bold;
     font-size : 60px;
-    line-height: 0.8;
+    line-height: 0.7;
     top: 0;
     position: sticky;
     color : #d3d3d366;
     letter-spacing: -1px;
     word-break: break-all;
     mix-blend-mode : multiply;
+    margin-bottom: -10px;
+}
+
+.layout-content .layout-title {
+    float: left;
+    font-weight: bold;
+    padding-right: 10px;
 }
 
 .layout-content .layout-text {
-    color : dimgrey;
-    max-width: 600px;
+    max-width: 700px;
+    line-height: 1.5;
     padding: 0px 10px;
 }
 
-.layout-content .layout-text + .layout-text {
+.layout-content .layout-text:not(.bullet) + .layout-text:not(.bullet) {
     margin-top: 14px;
 }
 
@@ -41,7 +44,7 @@
         font-size: 12px;
     }
 
-    .layout-content .layout-text + .layout-text {
+    .layout-content .layout-text:not(.bullet) + .layout-text:not(.bullet) {
         margin-top: 12px;
     }
 }

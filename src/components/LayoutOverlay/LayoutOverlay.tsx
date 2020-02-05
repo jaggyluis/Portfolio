@@ -30,35 +30,41 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
         const t = isTextNode(this.props.node)
         const s = isLayoutMobile(this.props) ? 26 : 30;
-        const c = Math.ceil(s / 5)
+        const c = Math.ceil(s / 7)
         const d = this.props.nodeDepth * c
         const h = t ? 60 : s - d;
+        const r = 220 + Math.random() * 20;
+
+        const color = 'rgb(' + r + ',' + r + ',' + r + ')';
+        const gradient = 'repeating-linear-gradient(-45deg, lightgrey, lightgrey 1px, white 1px, white 3px)'
 
         return {
             fontSize: h + 'px',
             fontWeight: t ? 'bold' : undefined,
             paddingLeft: t ? 0 : undefined,
-            lineHeight : t ? 0.7 : undefined
+            lineHeight : t ? 0.7 : undefined,
+            background : t ? gradient : undefined,
+            mixBlendMode : t ? 'normal' : undefined,
+            color : t ? 'white' : undefined
         }
+    }
+
+    getColor() {
+        return <div className='layout-color' ></div>
     }
 
     getLabel() {
-        return <div className='layout-label' style={this.getLabelStyle()} >{getNodeLabel(this.props.node)}</div>
-    }
+        let label = getNodeLabel(this.props.node);
+        label = label.replace(/_/g, ' ');
 
-    getStyle() : React.CSSProperties {
-
-        const r = Math.random() * 75;
-
-        return {
-            background : 'rgb(' + r + ',' + r + ',' + r + ')'
-        }
+        return <div className='layout-label' style={this.getLabelStyle()} >{label}</div>
     }
 
     render() {
         return (
-            <div className='layout-overlay' style={this.getStyle()}>
+            <div className='layout-overlay'>
                 {this.getImage()}
+                {this.getColor()}
                 {this.getLabel()}
             </div>
         )

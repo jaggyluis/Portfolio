@@ -23,7 +23,7 @@ export class LayoutHeaderLabel extends React.Component<LayoutHeaderLabelProps> {
     getLabel(): string {
         let label = getNodeLabel(this.props.node)
         if (!this.props.small && !this.props.selected) label = "/ " + label;
-        return label;
+        return label.replace(/_/g, ' ');
     }
 
     onNodeClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
@@ -36,7 +36,7 @@ export class LayoutHeaderLabel extends React.Component<LayoutHeaderLabelProps> {
     getStyle(): React.CSSProperties {
 
         const s = this.props.small ? 26 : 30;
-        const c = Math.ceil(s / 5)
+        const c = Math.ceil(s / 7)
         const d = this.props.depth * c
         const h = s - d;
 

@@ -53,9 +53,9 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             width = this.getNodeWidth() / 2;
         }
 
-        if (width < 300) {
+        if (width < 600) {
             src = this.getIconPath(src);
-        } else if (width < 600) {
+        } else if (width < 1200) {
             src = this.getMobilePath(src);
         }
 
@@ -112,16 +112,16 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             //     style={{ backgroundImage:'url(' + src + ')' }}
             // >
             // </div>
-            <div
-                className={this.getClassName()}
-                style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
-            >
-            </div>
-            // <img
+            // <div
             //     className={this.getClassName()}
-            //     src={this.getPath()}
-            //     alt='layout-node'
-            // />
+            //     style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
+            // >
+            // </div>
+            <img
+                className={this.getClassName()}
+                src={this.getPath()}
+                alt='layout-node'
+            />
         )
     }
 }

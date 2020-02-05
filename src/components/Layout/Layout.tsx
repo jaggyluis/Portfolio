@@ -298,6 +298,37 @@ export class Layout extends React.Component<LayoutProps> {
         return undefined;
     }
 
+    getButtonsStyle(): React.CSSProperties {
+        return {
+            // opacity : this.props.nodeState.selected && this.areNoChildrenSelected() ? 1 : 0,
+            // transition: this.state.transitionDuration + 'ms',
+            display : isLayoutMobile(this.props) 
+                && this.props.nodeState.selected 
+                && this.areNoChildrenSelected() ? undefined : 'none'
+        }
+    }
+
+    getLeftButtonStyle(): React.CSSProperties {
+        return {
+            visibility : this.props.parentState !== null ? undefined : 'hidden'
+        }
+    }
+
+    getRightButtonStyle() : React.CSSProperties {
+        return {
+            visibility : isNodeLeaf(this.props.node) ? undefined : 'hidden'
+        }
+    }
+
+    getButtons() {
+        return (
+            <div className='layout-buttons' style={this.getButtonsStyle()}>
+                <div className='layout-btn' style={this.getLeftButtonStyle()}>{'<'}</div>
+                <div className='layout-btn' style={this.getRightButtonStyle()}>{'>'}</div>
+            </div>
+        )
+    }
+
     onNodeClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         if (this.props.onNodeClick) {
             this.props.onNodeClick(this.props.node);
@@ -312,10 +343,17 @@ export class Layout extends React.Component<LayoutProps> {
         // phase: contains "start", "move", or "end"
         // swipetype: contains "none", "left", "right", "top", or "down"
         // distance: distance traveled either horizontally or vertically, depending on dir value
+        
+        // if (phase === 'end' && (dir == 'right' || dir == 'down')) 
 
-        if (phase === 'end' && (dir == 'left' || dir == 'right')) {
+        if (phase === 'end' && dir == 'left') {
             if (this.props.nodeState.selected && isNodeBranch(this.props.node)) {
                 this.nextSelectedChild();
+                evt.stopPropagation();
+            }
+        } else if (phase === 'end' && dir == 'right') {
+            if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
+                this.clearSelectedChildren();
                 evt.stopPropagation();
             }
         }
@@ -342,6 +380,7 @@ export class Layout extends React.Component<LayoutProps> {
                 {this.getHeader()}
                 {this.getChildren()}
                 {this.getContent()}
+                {this.getButtons()}
                 {this.getOverlay()}
                 {/* {this.getDrawLines()} */}
             </div>

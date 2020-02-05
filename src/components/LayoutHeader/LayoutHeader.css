@@ -25,6 +25,7 @@
   text-transform: uppercase;
   letter-spacing: -1px;
   color: black;
+  cursor: default;
 }
 
 .layout-header .layout-header-node.sibling {

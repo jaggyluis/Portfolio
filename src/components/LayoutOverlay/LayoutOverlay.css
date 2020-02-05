@@ -7,7 +7,15 @@
   height: 100%;
   overflow: hidden;
   position: absolute;
-  background: black;
+  background: white;
+}
+
+.layout-overlay .layout-color {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(170deg, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%);;
 }
 
 .layout-overlay .layout-label {
@@ -15,15 +23,20 @@
   line-height: 0.8;
   text-transform: uppercase;
   word-break: break-all;
-  color: #ffffff;
+  color: #595959;
+  /* color: white; */
   letter-spacing: -1px;
   mix-blend-mode: difference;
   pointer-events: none;
   padding-left: 10px;
+  height: calc(100% - 10px);
+  width: calc(100% - 20px);
+  /* background: linear-gradient(170deg, rgb(24, 24, 24) 10%, rgba(255, 255, 255, 0) 100%); */
+  /* background: linear-gradient(170deg, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 100%); */
 }
 
 .layout-overlay:hover .layout-label {
-  color: #4b4b4b;;
+  color: #909090 !important;
   transition: var(--transitionDuration);
   will-change: color;
 }

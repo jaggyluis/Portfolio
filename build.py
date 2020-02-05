@@ -119,7 +119,7 @@ def build_dir(directory, target):
                 if file_.endswith(".json"): 
                     pass # do nothing here - maybe later ---
 
-                elif file_.lower().endswith(".jpg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
+                elif file_.lower().endswith(".jpg") or file_.lower().endswith(".jpeg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
 
                     file_image_target_path = format_path(file_path)
                     file_image_target_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
@@ -158,7 +158,7 @@ def build_dir(directory, target):
                 if file_.endswith(".json"): 
                     pass # do nothing here - maybe later ---
 
-                elif file_.lower().endswith(".jpg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
+                elif file_.lower().endswith(".jpg") or file_.lower().endswith(".jpeg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
 
                     file_image_target_path = format_path(file_path)
                     file_image_target_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
