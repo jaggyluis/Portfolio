@@ -26,6 +26,8 @@
   letter-spacing: -1px;
   color: black;
   cursor: default;
+  margin-top: -1px;
+  border-top: 1px solid rgba(100,100,100,0.1);
 }
 
 .layout-header .layout-header-node.sibling {

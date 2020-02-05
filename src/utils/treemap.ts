@@ -8,8 +8,8 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
     // height = 1;
     
     function tile(node: d3.HierarchyRectangularNode<any>, x0: number, y0: number, x1: number, y1: number) {
-        d3.treemapBinary(node, 0, 0, width, height);
-        // d3.treemapResquarify(node, 0, 0, width, height);
+        // d3.treemapBinary(node, 0, 0, width, height);
+        d3.treemapResquarify(node, 0, 0, width, height);
         // d3.treemapSquarify(node, 0, 0, width, height);
         for (const child of (node.children || [])) {
             child.x0 = x0 + child.x0 / width * (x1 - x0);
@@ -32,9 +32,15 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
         return [];
     }
 
+    const compare = (a : d3.HierarchyNode<NodeData>, b : d3.HierarchyNode<NodeData> ) : number => {
+        // if (a.data.content) return -1;
+        return 1;
+        // return (b.value || 0) - (a.value || 0);
+    }
+
     return d3.treemap()
         .tile(tile)
         (d3.hierarchy(data, accessor)
             .sum(d => value(d))
-            .sort((a, b) => (b.value || 0) - (a.value || 0))) as Node;
+            .sort(compare)) as Node;
 }

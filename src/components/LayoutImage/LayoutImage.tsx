@@ -120,7 +120,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             <img
                 className={this.getClassName()}
                 src={this.getPath()}
-                alt='layout-node'
+                alt={this.getPath()}
             />
         )
     }

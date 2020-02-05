@@ -33,10 +33,12 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         const c = Math.ceil(s / 7)
         const d = this.props.nodeDepth * c
         const h = t ? 60 : s - d;
-        const r = 220 + Math.random() * 20;
+        const r = 180 + Math.random() * 40;
 
-        const color = 'rgb(' + r + ',' + r + ',' + r + ')';
-        const gradient = 'repeating-linear-gradient(-45deg, lightgrey, lightgrey 1px, white 1px, white 3px)'
+        const color =  'lightgrey'; //'rgb(' + r + ',' + r + ',' + r + ')';
+        const separation = 2; //Math.round(Math.random() * 5) + 1;
+        const degrees = -45; //[-45, 45][Math.round(Math.random())];
+        const gradient = 'repeating-linear-gradient(' + degrees + 'deg, ' + color + ',' + color + ' 1px, white 1px, white '+ separation + 'px)'
 
         return {
             fontSize: h + 'px',

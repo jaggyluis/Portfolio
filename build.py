@@ -112,7 +112,7 @@ def build_dir(directory, target):
         #if the file is not a directory ---
         else :
 
-            file_extension = file_.split(".")[-1]
+            file_extension = file_.split(".")[-1].lower()
 
             if (file_name == directory_name) :
 

@@ -5,12 +5,15 @@ import { LayoutProps } from '../Layout/Layout';
 export class LayoutDrawLines extends React.Component<LayoutProps> {
 
     shouldComponentUpdate(nxtProps : LayoutProps) {
-        return this.props.nodeState.selected !== nxtProps.nodeState.selected;
+        // if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
+        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
+        return false;
     }
 
     getClassName() : string {
         const className = ['layout-draw-lines'];
-        if (this.props.nodeState.selected)  className.push('hidden');
+        if (this.props.nodeSiblingSelectedId !== null && !this.props.nodeState.selected) className.push('hidden');
+        // if (this.props.nodeState.selected)  className.push('hidden');
         return className.join(' ');
     }
 
