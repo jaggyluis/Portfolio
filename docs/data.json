@@ -6,7 +6,7 @@
                     "content": [
                         "luis.jaggy@gmail.com"
                     ], 
-                    "id": "a2ee255e-486e-11ea-b30c-8e6746f68c05", 
+                    "id": "00edfb70-4a10-11ea-8e65-8e6746f68c05", 
                     "label": "contact", 
                     "type": "data"
                 }, 
@@ -14,18 +14,18 @@
                     "content": [
                         "I am a full-stack computational geometry specialist and software developer, focused on solving problems and building tools for the automation, optimization, analysis and visualization of data-driven architectural design solutions."
                     ], 
-                    "id": "a2efac00-486e-11ea-a0ea-8e6746f68c05", 
+                    "id": "00efd030-4a10-11ea-91bd-8e6746f68c05", 
                     "label": "hello", 
                     "type": "data"
                 }, 
                 {
-                    "id": "a2f7c24f-486e-11ea-9c58-8e6746f68c05", 
+                    "id": "00f09380-4a10-11ea-85ea-8e6746f68c05", 
                     "label": "profile", 
                     "src": "data/about/profile.png", 
                     "type": "data"
                 }
             ], 
-            "id": "a38200f0-486e-11ea-84e6-8e6746f68c05", 
+            "id": "0192c6ee-4a10-11ea-a972-8e6746f68c05", 
             "label": "about", 
             "src": "data/about/about.jpg", 
             "type": "dir"
@@ -46,12 +46,12 @@
                                 "link|source code:https://github.com/ksteinfe/decodes", 
                                 "link|website:http://decod.es/"
                             ], 
-                            "id": "a3e1ad21-486e-11ea-a2f5-8e6746f68c05", 
+                            "id": "02070c8f-4a10-11ea-86b3-8e6746f68c05", 
                             "label": "about", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a3e72b5e-486e-11ea-9592-8e6746f68c05", 
+                            "id": "0209f2c0-4a10-11ea-9e34-8e6746f68c05", 
                             "label": "image-asset", 
                             "src": "data/computation/decodes/image-asset.jpeg", 
                             "type": "data"
@@ -65,12 +65,12 @@
                                 "Extension library development", 
                                 "Graphics + Documentation creation and implementation"
                             ], 
-                            "id": "a4298b91-486e-11ea-bb06-8e6746f68c05", 
+                            "id": "02574f70-4a10-11ea-a750-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }
                     ], 
-                    "id": "a429b29e-486e-11ea-97b1-8e6746f68c05", 
+                    "id": "02574f71-4a10-11ea-b286-8e6746f68c05", 
                     "label": "decodes", 
                     "src": "data/computation/decodes/image-asset.jpeg", 
                     "type": "dir"
@@ -78,97 +78,97 @@
                 {
                     "children": [
                         {
-                            "id": "a4374730-486e-11ea-b199-8e6746f68c05", 
+                            "id": "02607730-4a10-11ea-9eb6-8e6746f68c05", 
                             "label": "01", 
                             "src": "data/computation/lx_stack/01.bmp", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a44d1921-486e-11ea-bc8a-8e6746f68c05", 
+                            "id": "033b46cf-4a10-11ea-ac1a-8e6746f68c05", 
                             "label": "diagram_01", 
                             "src": "data/computation/lx_stack/diagram_01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a5c70ef0-486e-11ea-9291-8e6746f68c05", 
+                            "id": "047e4e21-4a10-11ea-9774-8e6746f68c05", 
                             "label": "diagram_02_cropped", 
                             "src": "data/computation/lx_stack/diagram_02_cropped.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a9f21b00-486e-11ea-9a0c-8e6746f68c05", 
+                            "id": "08d4fe0f-4a10-11ea-9371-8e6746f68c05", 
                             "label": "floor_01", 
                             "src": "data/computation/lx_stack/floor_01.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "aad4b2cf-486e-11ea-9898-8e6746f68c05", 
+                            "id": "0991974f-4a10-11ea-bdc7-8e6746f68c05", 
                             "label": "generations", 
                             "src": "data/computation/lx_stack/generations.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ac11035e-486e-11ea-b935-8e6746f68c05", 
+                            "id": "0aaddcc0-4a10-11ea-a3f2-8e6746f68c05", 
                             "label": "legend", 
                             "src": "data/computation/lx_stack/legend.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ad4e1740-486e-11ea-9761-8e6746f68c05", 
+                            "id": "0be1efee-4a10-11ea-af82-8e6746f68c05", 
                             "label": "NEO_Limassol_Report_Final_V2", 
                             "src": "data/computation/lx_stack/NEO_Limassol_Report_Final_V2.bmp", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ad75002e-486e-11ea-acb3-8e6746f68c05", 
+                            "id": "0c26c11e-4a10-11ea-8288-8e6746f68c05", 
                             "label": "NEO_Limassol_Report_Final_V2_02", 
                             "src": "data/computation/lx_stack/NEO_Limassol_Report_Final_V2_02.bmp", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ad89c0b0-486e-11ea-9226-8e6746f68c05", 
+                            "id": "0c443430-4a10-11ea-98e4-8e6746f68c05", 
                             "label": "solar_01", 
                             "src": "data/computation/lx_stack/solar_01.bmp", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ada9f2e1-486e-11ea-8169-8e6746f68c05", 
+                            "id": "0c68850f-4a10-11ea-ac7e-8e6746f68c05", 
                             "label": "unitCost_m2", 
                             "src": "data/computation/lx_stack/unitCost_m2.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "af4664cf-486e-11ea-8d14-8e6746f68c05", 
+                            "id": "0e17949e-4a10-11ea-91b4-8e6746f68c05", 
                             "label": "unitDelta_m2", 
                             "src": "data/computation/lx_stack/unitDelta_m2.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b0f4d81e-486e-11ea-b86c-8e6746f68c05", 
+                            "id": "0f5f2fcf-4a10-11ea-a284-8e6746f68c05", 
                             "label": "unitValeu", 
                             "src": "data/computation/lx_stack/unitValeu.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b212560f-486e-11ea-936f-8e6746f68c05", 
+                            "id": "1062bd1e-4a10-11ea-a5c1-8e6746f68c05", 
                             "label": "unitValue_m2", 
                             "src": "data/computation/lx_stack/unitValue_m2.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b38ce81e-486e-11ea-b172-8e6746f68c05", 
+                            "id": "121af470-4a10-11ea-b071-8e6746f68c05", 
                             "label": "unitValue_total", 
                             "src": "data/computation/lx_stack/unitValue_total.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b5539e61-486e-11ea-b93a-8e6746f68c05", 
+                            "id": "137ea321-4a10-11ea-9aa1-8e6746f68c05", 
                             "label": "unitVisibility_totalPoints", 
                             "src": "data/computation/lx_stack/unitVisibility_totalPoints.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "b6ed0311-486e-11ea-b2d7-8e6746f68c05", 
+                    "id": "14c972a1-4a10-11ea-891c-8e6746f68c05", 
                     "label": "lx_stack", 
                     "src": "data/computation/lx_stack/lx_stack.PNG", 
                     "type": "dir"
@@ -180,50 +180,50 @@
                                 "UC Berkeley - Arch 229", 
                                 "Declarative design is a technique in computer science that facilitates the enhanced iteration through design options using much higher-level descriptions than are typically employed, thus enabling the manual or automatic exploration of potential implementation tradeoffs. This is done by factoring design patterns into both scales typically addressed in the design of computer architecture: macro-level specifications, and workflows that automatically handle micro-architectural implementations. Using this technique, new automatic design space optimization methods are made possible, including ones that effectively explore over large design spaces while maximizing the exposure of the most salient variables."
                             ], 
-                            "id": "b6f148cf-486e-11ea-ae30-8e6746f68c05", 
+                            "id": "14cfdb40-4a10-11ea-90ad-8e6746f68c05", 
                             "label": "about", 
                             "type": "data"
                         }, 
                         {
                             "children": [
                                 {
-                                    "id": "b6f9ad40-486e-11ea-8af5-8e6746f68c05", 
+                                    "id": "14e7a900-4a10-11ea-86b6-8e6746f68c05", 
                                     "label": "CaseStudy_02", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/CaseStudy_02.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "b7fd619e-486e-11ea-a65c-8e6746f68c05", 
+                                    "id": "16118300-4a10-11ea-a12c-8e6746f68c05", 
                                     "label": "Group_Exibition", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/Group_Exibition.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "b8f75200-486e-11ea-9c09-8e6746f68c05", 
+                                    "id": "16e526b0-4a10-11ea-84bc-8e6746f68c05", 
                                     "label": "IMG_0918+copy", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/IMG_0918+copy.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "b9de2f8f-486e-11ea-bc86-8e6746f68c05", 
+                                    "id": "17905acf-4a10-11ea-ac5b-8e6746f68c05", 
                                     "label": "InitialStep", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/InitialStep.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ba4d9330-486e-11ea-b997-8e6746f68c05", 
+                                    "id": "17e66a11-4a10-11ea-bbcb-8e6746f68c05", 
                                     "label": "MainPhoto", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/MainPhoto.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bad539c0-486e-11ea-92d0-8e6746f68c05", 
+                                    "id": "19163780-4a10-11ea-acc8-8e6746f68c05", 
                                     "label": "Products", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/Products.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bb0cc480-486e-11ea-ad48-8e6746f68c05", 
+                                    "id": "1978a2cf-4a10-11ea-aa72-8e6746f68c05", 
                                     "label": "project+summary+board", 
                                     "src": "data/computation/manufacturing/bending_reciprocal_structures/project+summary+board.jpg", 
                                     "type": "data"
@@ -234,12 +234,12 @@
                                         "Yinuo Wang", 
                                         "Yuqing Nie"
                                     ], 
-                                    "id": "bb944400-486e-11ea-b0db-8e6746f68c05", 
+                                    "id": "19e1289e-4a10-11ea-96ba-8e6746f68c05", 
                                     "label": "students", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "bb944401-486e-11ea-b227-8e6746f68c05", 
+                            "id": "19e1289f-4a10-11ea-a6fe-8e6746f68c05", 
                             "label": "bending_reciprocal_structures", 
                             "src": "data/computation/manufacturing/bending_reciprocal_structures/CaseStudy_02.jpg", 
                             "type": "dir"
@@ -247,67 +247,67 @@
                         {
                             "children": [
                                 {
-                                    "id": "bb9b9700-486e-11ea-84b1-8e6746f68c05", 
+                                    "id": "19ee4800-4a10-11ea-9195-8e6746f68c05", 
                                     "label": "03", 
                                     "src": "data/computation/manufacturing/chaise_lounge/03.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bc5aef61-486e-11ea-8240-8e6746f68c05", 
+                                    "id": "1a83d140-4a10-11ea-84f9-8e6746f68c05", 
                                     "label": "04", 
                                     "src": "data/computation/manufacturing/chaise_lounge/04.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bd3dfc5e-486e-11ea-80e0-8e6746f68c05", 
+                                    "id": "1bf6e940-4a10-11ea-8aad-8e6746f68c05", 
                                     "label": "Adaptation+to+human+body_Diagram", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Adaptation+to+human+body_Diagram.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bd967c9e-486e-11ea-abc2-8e6746f68c05", 
+                                    "id": "1c43f7cf-4a10-11ea-9e9f-8e6746f68c05", 
                                     "label": "Bending+iterations+diagra,", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Bending+iterations+diagra,.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "be073fcf-486e-11ea-8614-8e6746f68c05", 
+                                    "id": "1cca8cf0-4a10-11ea-b800-8e6746f68c05", 
                                     "label": "Bottom+part", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Bottom+part.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "be9b1b61-486e-11ea-a5b7-8e6746f68c05", 
+                                    "id": "1d67b74f-4a10-11ea-a098-8e6746f68c05", 
                                     "label": "Chair_FN", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Chair_FN.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bf44c8e1-486e-11ea-921f-8e6746f68c05", 
+                                    "id": "1dd6a5c0-4a10-11ea-b129-8e6746f68c05", 
                                     "label": "Final+model_Edited+Photo", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Final+model_Edited+Photo.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "bfd98ecf-486e-11ea-ac65-8e6746f68c05", 
+                                    "id": "1f30906e-4a10-11ea-b1a2-8e6746f68c05", 
                                     "label": "IMG_0974_2", 
                                     "src": "data/computation/manufacturing/chaise_lounge/IMG_0974_2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c060991e-486e-11ea-a1fb-8e6746f68c05", 
+                                    "id": "1fdab31e-4a10-11ea-86c2-8e6746f68c05", 
                                     "label": "Module+angle+analysis", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Module+angle+analysis.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c1692f80-486e-11ea-b9d6-8e6746f68c05", 
+                                    "id": "206b5a61-4a10-11ea-82c3-8e6746f68c05", 
                                     "label": "Module+parameterization", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Module+parameterization.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c1c6dfe1-486e-11ea-8716-8e6746f68c05", 
+                                    "id": "20a77900-4a10-11ea-93e0-8e6746f68c05", 
                                     "label": "Sofistik+simulation", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Sofistik+simulation.jpg", 
                                     "type": "data"
@@ -317,18 +317,18 @@
                                         "Eleanna Panagoulia", 
                                         "Shima Sahebnassagh"
                                     ], 
-                                    "id": "c1fa7300-486e-11ea-b9c1-8e6746f68c05", 
+                                    "id": "20c70eee-4a10-11ea-ae23-8e6746f68c05", 
                                     "label": "students", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c1ff7c11-486e-11ea-b6ce-8e6746f68c05", 
+                                    "id": "20c90ac0-4a10-11ea-9d00-8e6746f68c05", 
                                     "label": "Top+part+optimization", 
                                     "src": "data/computation/manufacturing/chaise_lounge/Top+part+optimization.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "c28267b0-486e-11ea-b11e-8e6746f68c05", 
+                            "id": "21faacf0-4a10-11ea-8ecd-8e6746f68c05", 
                             "label": "chaise_lounge", 
                             "src": "data/computation/manufacturing/chaise_lounge/03.jpg", 
                             "type": "dir"
@@ -336,55 +336,55 @@
                         {
                             "children": [
                                 {
-                                    "id": "c2b621e1-486e-11ea-85b8-8e6746f68c05", 
+                                    "id": "220ef840-4a10-11ea-a298-8e6746f68c05", 
                                     "label": "DesignSpace_ShapeFinding-3", 
                                     "src": "data/computation/manufacturing/environmental_baffle/DesignSpace_ShapeFinding-3.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c393b09e-486e-11ea-a759-8e6746f68c05", 
+                                    "id": "22f1900f-4a10-11ea-9731-8e6746f68c05", 
                                     "label": "IMG_0988_2", 
                                     "src": "data/computation/manufacturing/environmental_baffle/IMG_0988_2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c4175f8f-486e-11ea-aff7-8e6746f68c05", 
+                                    "id": "234d92c0-4a10-11ea-9712-8e6746f68c05", 
                                     "label": "IMG_0996_2", 
                                     "src": "data/computation/manufacturing/environmental_baffle/IMG_0996_2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c4e5fa30-486e-11ea-b6dd-8e6746f68c05", 
+                                    "id": "23ae294f-4a10-11ea-80bc-8e6746f68c05", 
                                     "label": "IMG_1011_2", 
                                     "src": "data/computation/manufacturing/environmental_baffle/IMG_1011_2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c5976fe1-486e-11ea-980c-8e6746f68c05", 
+                                    "id": "25465580-4a10-11ea-af16-8e6746f68c05", 
                                     "label": "Model+Testing-9", 
                                     "src": "data/computation/manufacturing/environmental_baffle/Model+Testing-9.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c60d150f-486e-11ea-a68d-8e6746f68c05", 
+                                    "id": "25db698f-4a10-11ea-aa27-8e6746f68c05", 
                                     "label": "ModuleDevelopment", 
                                     "src": "data/computation/manufacturing/environmental_baffle/ModuleDevelopment.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c6935c0f-486e-11ea-b0be-8e6746f68c05", 
+                                    "id": "2613426e-4a10-11ea-8eb9-8e6746f68c05", 
                                     "label": "ModuleTest", 
                                     "src": "data/computation/manufacturing/environmental_baffle/ModuleTest.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c6db889e-486e-11ea-89b3-8e6746f68c05", 
+                                    "id": "263c4e40-4a10-11ea-a46b-8e6746f68c05", 
                                     "label": "Rendering-1", 
                                     "src": "data/computation/manufacturing/environmental_baffle/Rendering-1.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c76c08cf-486e-11ea-afee-8e6746f68c05", 
+                                    "id": "27917e00-4a10-11ea-a192-8e6746f68c05", 
                                     "label": "ShapeDevelopement", 
                                     "src": "data/computation/manufacturing/environmental_baffle/ShapeDevelopement.jpg", 
                                     "type": "data"
@@ -394,12 +394,12 @@
                                         "Dairan Xu", 
                                         "Wenzhe Peng"
                                     ], 
-                                    "id": "c79a6bd1-486e-11ea-825d-8e6746f68c05", 
+                                    "id": "27d2578f-4a10-11ea-b903-8e6746f68c05", 
                                     "label": "students", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "c79ab9f0-486e-11ea-957d-8e6746f68c05", 
+                            "id": "27d25790-4a10-11ea-b3a8-8e6746f68c05", 
                             "label": "environmental_baffle", 
                             "src": "data/computation/manufacturing/environmental_baffle/DesignSpace_ShapeFinding-3.jpg", 
                             "type": "dir"
@@ -409,56 +409,56 @@
                                 "Role:: Lecturer | Co-instructor", 
                                 "Spring 2015:: Selected Student Works"
                             ], 
-                            "id": "c79e154f-486e-11ea-809e-8e6746f68c05", 
+                            "id": "27e25d21-4a10-11ea-af9d-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
                             "children": [
                                 {
-                                    "id": "c85b71de-486e-11ea-814d-8e6746f68c05", 
+                                    "id": "28c8775e-4a10-11ea-9010-8e6746f68c05", 
                                     "label": "2015-", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/2015-.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "c92ec770-486e-11ea-a6d4-8e6746f68c05", 
+                                    "id": "293f7c1e-4a10-11ea-a01f-8e6746f68c05", 
                                     "label": "2015-02copy", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/2015-02copy.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ca09970f-486e-11ea-87d8-8e6746f68c05", 
+                                    "id": "2ad70c0f-4a10-11ea-9457-8e6746f68c05", 
                                     "label": "2015-0copy", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/2015-0copy.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cab25a2e-486e-11ea-ae78-8e6746f68c05", 
+                                    "id": "2b83ede1-4a10-11ea-ab2f-8e6746f68c05", 
                                     "label": "800A5898", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/800A5898.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cb303cc0-486e-11ea-ba3a-8e6746f68c05", 
+                                    "id": "2bf5745e-4a10-11ea-a80e-8e6746f68c05", 
                                     "label": "Chair_Front", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/Chair_Front.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cbc83700-486e-11ea-b335-8e6746f68c05", 
+                                    "id": "2c5a77c0-4a10-11ea-aa0d-8e6746f68c05", 
                                     "label": "IMG_1228_2", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/IMG_1228_2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cc937640-486e-11ea-ac81-8e6746f68c05", 
+                                    "id": "2dc9e640-4a10-11ea-ac24-8e6746f68c05", 
                                     "label": "Process+3", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/Process+3.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cceae50f-486e-11ea-a193-8e6746f68c05", 
+                                    "id": "2e9377cf-4a10-11ea-98dc-8e6746f68c05", 
                                     "label": "Process+4", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/Process+4.jpg", 
                                     "type": "data"
@@ -468,18 +468,18 @@
                                         "NJ Namju Lee", 
                                         "Mustafa Ahmad"
                                     ], 
-                                    "id": "cdb16961-486e-11ea-bbb5-8e6746f68c05", 
+                                    "id": "2f057380-4a10-11ea-a263-8e6746f68c05", 
                                     "label": "students", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cdca2180-486e-11ea-914d-8e6746f68c05", 
+                                    "id": "2f0aa39e-4a10-11ea-8a40-8e6746f68c05", 
                                     "label": "Untitled-1", 
                                     "src": "data/computation/manufacturing/parasitic_urban_chair/Untitled-1.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "cde0ddcf-486e-11ea-a7f8-8e6746f68c05", 
+                            "id": "2f2e3130-4a10-11ea-8907-8e6746f68c05", 
                             "label": "parasitic_urban_chair", 
                             "src": "data/computation/manufacturing/parasitic_urban_chair/2015-.jpg", 
                             "type": "dir"
@@ -487,73 +487,73 @@
                         {
                             "children": [
                                 {
-                                    "id": "ce3b32cf-486e-11ea-b2fa-8e6746f68c05", 
+                                    "id": "2f3f6f40-4a10-11ea-95eb-8e6746f68c05", 
                                     "label": "Bending+&+Locking", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Bending+&+Locking.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cec60db0-486e-11ea-9e3a-8e6746f68c05", 
+                                    "id": "2fb3dbee-4a10-11ea-b3ce-8e6746f68c05", 
                                     "label": "Bending+&+Locking_02", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Bending+&+Locking_02.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cf339c8f-486e-11ea-aece-8e6746f68c05", 
+                                    "id": "3107850f-4a10-11ea-8d92-8e6746f68c05", 
                                     "label": "Bend_Interlock", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Bend_Interlock.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cfa682a1-486e-11ea-bee1-8e6746f68c05", 
+                                    "id": "31d3fcd1-4a10-11ea-af65-8e6746f68c05", 
                                     "label": "CaseStudies_02", 
                                     "src": "data/computation/manufacturing/plywood_curfing/CaseStudies_02.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "cfce07d1-486e-11ea-ac1e-8e6746f68c05", 
+                                    "id": "31ffeecf-4a10-11ea-922d-8e6746f68c05", 
                                     "label": "CaseStudies_3", 
                                     "src": "data/computation/manufacturing/plywood_curfing/CaseStudies_3.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d009b140-486e-11ea-99c5-8e6746f68c05", 
+                                    "id": "32288570-4a10-11ea-84ae-8e6746f68c05", 
                                     "label": "Digital_Simulation", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Digital_Simulation.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d08b6461-486e-11ea-97ef-8e6746f68c05", 
+                                    "id": "329af64f-4a10-11ea-9db0-8e6746f68c05", 
                                     "label": "DSC_0709", 
                                     "src": "data/computation/manufacturing/plywood_curfing/DSC_0709.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d0f326e1-486e-11ea-a022-8e6746f68c05", 
+                                    "id": "33c9160f-4a10-11ea-85cd-8e6746f68c05", 
                                     "label": "DSC_0721", 
                                     "src": "data/computation/manufacturing/plywood_curfing/DSC_0721.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d1b0d18f-486e-11ea-91b5-8e6746f68c05", 
+                                    "id": "34ceed51-4a10-11ea-b91c-8e6746f68c05", 
                                     "label": "In_Flexbile+Pavilion_Diagram", 
                                     "src": "data/computation/manufacturing/plywood_curfing/In_Flexbile+Pavilion_Diagram.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d231c15e-486e-11ea-bee9-8e6746f68c05", 
+                                    "id": "351915ae-4a10-11ea-8b16-8e6746f68c05", 
                                     "label": "Join+and+Connection", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Join+and+Connection.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d2ad0be1-486e-11ea-8216-8e6746f68c05", 
+                                    "id": "358c9800-4a10-11ea-849f-8e6746f68c05", 
                                     "label": "Main_Photo", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Main_Photo.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "d35f44de-486e-11ea-84f4-8e6746f68c05", 
+                                    "id": "36c4f0f0-4a10-11ea-8016-8e6746f68c05", 
                                     "label": "Product", 
                                     "src": "data/computation/manufacturing/plywood_curfing/Product.jpg", 
                                     "type": "data"
@@ -563,18 +563,18 @@
                                         "Kyle Johnson", 
                                         "Qingzhi Li"
                                     ], 
-                                    "id": "d3acc89e-486e-11ea-8c59-8e6746f68c05", 
+                                    "id": "37253961-4a10-11ea-99e3-8e6746f68c05", 
                                     "label": "students", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "d3acc89f-486e-11ea-b380-8e6746f68c05", 
+                            "id": "37256070-4a10-11ea-b6a2-8e6746f68c05", 
                             "label": "plywood_curfing", 
                             "src": "data/computation/manufacturing/plywood_curfing/Bending+&+Locking.jpg", 
                             "type": "dir"
                         }
                     ], 
-                    "id": "d3acefb0-486e-11ea-90e1-8e6746f68c05", 
+                    "id": "3725d5a1-4a10-11ea-af13-8e6746f68c05", 
                     "label": "manufacturing", 
                     "src": "data/computation/manufacturing/manufacturing.jpg", 
                     "type": "dir"
@@ -582,61 +582,61 @@
                 {
                     "children": [
                         {
-                            "id": "d3cd7000-486e-11ea-8ab3-8e6746f68c05", 
+                            "id": "373035de-4a10-11ea-9c5f-8e6746f68c05", 
                             "label": "Capture", 
                             "src": "data/computation/rx_spatial/Capture.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d57f65c0-486e-11ea-95ba-8e6746f68c05", 
+                            "id": "3873d970-4a10-11ea-9ba6-8e6746f68c05", 
                             "label": "Capture2", 
                             "src": "data/computation/rx_spatial/Capture2.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d7502e1e-486e-11ea-b587-8e6746f68c05", 
+                            "id": "39f7e15e-4a10-11ea-b7e6-8e6746f68c05", 
                             "label": "cofco_circuation_2", 
                             "src": "data/computation/rx_spatial/cofco_circuation_2.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d78f5a00-486e-11ea-9bde-8e6746f68c05", 
+                            "id": "3a933700-4a10-11ea-aa24-8e6746f68c05", 
                             "label": "density-map-combined-with-legend-and-fruin-los-legend-0", 
                             "src": "data/computation/rx_spatial/density-map-combined-with-legend-and-fruin-los-legend-0.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d9a8eb30-486e-11ea-8788-8e6746f68c05", 
+                            "id": "3cd585e1-4a10-11ea-9a26-8e6746f68c05", 
                             "label": "frontage_vis", 
                             "src": "data/computation/rx_spatial/frontage_vis.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dc0307d1-486e-11ea-8737-8e6746f68c05", 
+                            "id": "3e5f5a30-4a10-11ea-97f4-8e6746f68c05", 
                             "label": "ReX-1800x620", 
                             "src": "data/computation/rx_spatial/ReX-1800x620.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dc50165e-486e-11ea-a878-8e6746f68c05", 
+                            "id": "3f683eae-4a10-11ea-86c5-8e6746f68c05", 
                             "label": "rex_matrix", 
                             "src": "data/computation/rx_spatial/rex_matrix.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dc8d4670-486e-11ea-979b-8e6746f68c05", 
+                            "id": "3fda134f-4a10-11ea-960b-8e6746f68c05", 
                             "label": "rex_matrix_zoomed_lrg", 
                             "src": "data/computation/rx_spatial/rex_matrix_zoomed_lrg.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dde6e300-486e-11ea-9ee1-8e6746f68c05", 
+                            "id": "415cbbae-4a10-11ea-86da-8e6746f68c05", 
                             "label": "rx_spatial_area", 
                             "src": "data/computation/rx_spatial/rx_spatial_area.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "deba1180-486e-11ea-9697-8e6746f68c05", 
+                    "id": "422f7500-4a10-11ea-8c20-8e6746f68c05", 
                     "label": "rx_spatial", 
                     "src": "data/computation/rx_spatial/rx_spatial.png", 
                     "type": "dir"
@@ -649,110 +649,110 @@
                                 "Studio One is a one-year post-professional degree program intended for those who hold a professional (accredited Bachelor of Architecture or equivalent) degree, and who wish to continue to explore current design issues in a stimulating, rigorous, and experimental studio setting. Students who complete the program receive a non-accredited Master of Architecture degree. The two-semester studio course is at the core of the program, and is integrated with seminars, lectures, and workshops in design theory, history, urbanism, digital applications, and building technology.", 
                                 "The research theme for the year-long 2014-15 studio, The Data Made Me Do It, is predicated on the observation that the balance of agency in architectural design culture is not fixed, but rather is in a constant state of renegotiation. New technologies of design do not directly determine social relationships, but are among the network of actors in this space \u2014 designers and specialists, professionals and clients, software and users, data and drawings \u2014 that compete to shape the diffusion of design authorship and the social distribution of design work."
                             ], 
-                            "id": "dec0ef4f-486e-11ea-bf56-8e6746f68c05", 
+                            "id": "42f89161-4a10-11ea-9e27-8e6746f68c05", 
                             "label": "about", 
                             "type": "data"
                         }, 
                         {
                             "children": [
                                 {
-                                    "id": "decada61-486e-11ea-862c-8e6746f68c05", 
+                                    "id": "430143f0-4a10-11ea-b249-8e6746f68c05", 
                                     "label": "Chicago+Configuration", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Chicago+Configuration.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "dfd9d961-486e-11ea-bef8-8e6746f68c05", 
+                                    "id": "43bacff0-4a10-11ea-ac4b-8e6746f68c05", 
                                     "label": "Chicago+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Chicago+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e051ef8f-486e-11ea-82fd-8e6746f68c05", 
+                                    "id": "440fcdc0-4a10-11ea-950e-8e6746f68c05", 
                                     "label": "Exploded+axon", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Exploded+axon.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e0e26fc0-486e-11ea-afd8-8e6746f68c05", 
+                                    "id": "44854bde-4a10-11ea-a10c-8e6746f68c05", 
                                     "label": "Flow+diagram", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Flow+diagram.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e19ac340-486e-11ea-9e76-8e6746f68c05", 
+                                    "id": "45dceca1-4a10-11ea-91d3-8e6746f68c05", 
                                     "label": "Game+dagrams", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Game+dagrams.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e1baa74f-486e-11ea-bfb9-8e6746f68c05", 
+                                    "id": "45fb2300-4a10-11ea-b169-8e6746f68c05", 
                                     "label": "Metabolic+system+diagram", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Metabolic+system+diagram.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e1d77e21-486e-11ea-8d68-8e6746f68c05", 
+                                    "id": "4689ce6e-4a10-11ea-b5ce-8e6746f68c05", 
                                     "label": "Module+1_Axon+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Module+1_Axon+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e281c7de-486e-11ea-9133-8e6746f68c05", 
+                                    "id": "4747c740-4a10-11ea-bf12-8e6746f68c05", 
                                     "label": "Module+2_Axon+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Module+2_Axon+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e377245e-486e-11ea-a23d-8e6746f68c05", 
+                                    "id": "49c9901e-4a10-11ea-be57-8e6746f68c05", 
                                     "label": "Module+3_Axon+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Module+3_Axon+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e49b590f-486e-11ea-8ab5-8e6746f68c05", 
+                                    "id": "4a7e3a1e-4a10-11ea-8a4f-8e6746f68c05", 
                                     "label": "Module+4_Axon+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Module+4_Axon+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e569094f-486e-11ea-a8ee-8e6746f68c05", 
+                                    "id": "4bc18f91-4a10-11ea-9dba-8e6746f68c05", 
                                     "label": "Module+5_Axon+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Module+5_Axon+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e5fc6fb0-486e-11ea-a3aa-8e6746f68c05", 
+                                    "id": "4ccda861-4a10-11ea-9e45-8e6746f68c05", 
                                     "label": "singapore+configuration", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/singapore+configuration.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e68ec49e-486e-11ea-a272-8e6746f68c05", 
+                                    "id": "4d4d86c0-4a10-11ea-a012-8e6746f68c05", 
                                     "label": "Singapore+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Singapore+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e711621e-486e-11ea-abdb-8e6746f68c05", 
+                                    "id": "4dc68751-4a10-11ea-99c3-8e6746f68c05", 
                                     "label": "Tokyo+configuration", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Tokyo+configuration.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e7a787a1-486e-11ea-8bb4-8e6746f68c05", 
+                                    "id": "4f01784f-4a10-11ea-b444-8e6746f68c05", 
                                     "label": "Tokyo+drawing", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Tokyo+drawing.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e8568c4f-486e-11ea-8d0b-8e6746f68c05", 
+                                    "id": "4fd431a1-4a10-11ea-8fe8-8e6746f68c05", 
                                     "label": "Types+diagram", 
                                     "src": "data/computation/studio_one/eleanna_panagoulia/Types+diagram.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "e8dc1000-486e-11ea-a28e-8e6746f68c05", 
+                            "id": "505855c0-4a10-11ea-84fb-8e6746f68c05", 
                             "label": "eleanna_panagoulia", 
                             "src": "data/computation/studio_one/eleanna_panagoulia/Chicago+Configuration.jpg", 
                             "type": "dir"
@@ -762,86 +762,86 @@
                                 "Role:: Lecturer | Co-instructor", 
                                 "2014-2015:: Selected Student Works"
                             ], 
-                            "id": "e8e6be61-486e-11ea-b303-8e6746f68c05", 
+                            "id": "505aedcf-4a10-11ea-9fa3-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
                             "children": [
                                 {
-                                    "id": "e8e9a48f-486e-11ea-a7dd-8e6746f68c05", 
+                                    "id": "505e2221-4a10-11ea-a49b-8e6746f68c05", 
                                     "label": "Process_+(1)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(1).png", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "e9cb790f-486e-11ea-b68a-8e6746f68c05", 
+                                    "id": "51ad5e6e-4a10-11ea-9d74-8e6746f68c05", 
                                     "label": "Process_+(10)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(10).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ea0b8f4f-486e-11ea-8881-8e6746f68c05", 
+                                    "id": "51e70c0f-4a10-11ea-998e-8e6746f68c05", 
                                     "label": "Process_+(11)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(11).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ea949570-486e-11ea-ae71-8e6746f68c05", 
+                                    "id": "52ddef2e-4a10-11ea-bad8-8e6746f68c05", 
                                     "label": "Process_+(13)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(13).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "eae833ae-486e-11ea-a287-8e6746f68c05", 
+                                    "id": "534e3d30-4a10-11ea-b0f3-8e6746f68c05", 
                                     "label": "Process_+(2)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(2).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "eb506b5e-486e-11ea-819c-8e6746f68c05", 
+                                    "id": "53a33b00-4a10-11ea-aca2-8e6746f68c05", 
                                     "label": "Process_+(3)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(3).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ec125bcf-486e-11ea-af94-8e6746f68c05", 
+                                    "id": "558a4a80-4a10-11ea-a0f4-8e6746f68c05", 
                                     "label": "Process_+(4)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(4).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ecdab4e1-486e-11ea-88ac-8e6746f68c05", 
+                                    "id": "567f7ff0-4a10-11ea-a8be-8e6746f68c05", 
                                     "label": "Process_+(5)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(5).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ed2ea140-486e-11ea-9525-8e6746f68c05", 
+                                    "id": "56b1b380-4a10-11ea-af1b-8e6746f68c05", 
                                     "label": "Process_+(6)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(6).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ed5c40f0-486e-11ea-8584-8e6746f68c05", 
+                                    "id": "56da4a1e-4a10-11ea-8a77-8e6746f68c05", 
                                     "label": "Process_+(7)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(7).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "edaf1be1-486e-11ea-811d-8e6746f68c05", 
+                                    "id": "57074d8f-4a10-11ea-8b50-8e6746f68c05", 
                                     "label": "Process_+(8)", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Process_+(8).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ee62664f-486e-11ea-bf73-8e6746f68c05", 
+                                    "id": "5830161e-4a10-11ea-9aec-8e6746f68c05", 
                                     "label": "Z_Main_00", 
                                     "src": "data/computation/studio_one/nj_namju_lee/Z_Main_00.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "eec51fc0-486e-11ea-a020-8e6746f68c05", 
+                            "id": "58c52a30-4a10-11ea-b6bc-8e6746f68c05", 
                             "label": "nj_namju_lee", 
                             "src": "data/computation/studio_one/nj_namju_lee/Process_+(1).png", 
                             "type": "dir"
@@ -849,112 +849,112 @@
                         {
                             "children": [
                                 {
-                                    "id": "eed5e89e-486e-11ea-bc42-8e6746f68c05", 
+                                    "id": "58f0a700-4a10-11ea-8a92-8e6746f68c05", 
                                     "label": "800A6054", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "eedcc670-486e-11ea-adeb-8e6746f68c05", 
+                                    "id": "58ff9b21-4a10-11ea-9159-8e6746f68c05", 
                                     "label": "800A6061", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "eedfd3b0-486e-11ea-a267-8e6746f68c05", 
+                                    "id": "591964b0-4a10-11ea-be31-8e6746f68c05", 
                                     "label": "800A6063", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "eee551f0-486e-11ea-aedf-8e6746f68c05", 
+                                    "id": "59513d8f-4a10-11ea-9d74-8e6746f68c05", 
                                     "label": "Axonometric", 
                                     "src": "data/computation/studio_one/qingzhi_li/Axonometric.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ef25411e-486e-11ea-922f-8e6746f68c05", 
+                                    "id": "59a63b5e-4a10-11ea-957b-8e6746f68c05", 
                                     "label": "Exterior+Perspective_RV", 
                                     "src": "data/computation/studio_one/qingzhi_li/Exterior+Perspective_RV.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "efb43ab0-486e-11ea-bf05-8e6746f68c05", 
+                                    "id": "59ff09c0-4a10-11ea-97df-8e6746f68c05", 
                                     "label": "Field+Office+Generate+System (1)", 
                                     "src": "data/computation/studio_one/qingzhi_li/Field+Office+Generate+System (1).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f023ec70-486e-11ea-88a5-8e6746f68c05", 
+                                    "id": "5a3b7680-4a10-11ea-a4b8-8e6746f68c05", 
                                     "label": "Field+Office+Generate+System", 
                                     "src": "data/computation/studio_one/qingzhi_li/Field+Office+Generate+System.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f0996a91-486e-11ea-9503-8e6746f68c05", 
+                                    "id": "5a7c01ee-4a10-11ea-bc72-8e6746f68c05", 
                                     "label": "HumanScaleDetails", 
                                     "src": "data/computation/studio_one/qingzhi_li/HumanScaleDetails.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f0e3ba00-486e-11ea-bce0-8e6746f68c05", 
+                                    "id": "5ba36af0-4a10-11ea-b273-8e6746f68c05", 
                                     "label": "ModelQingzhi_Edit", 
                                     "src": "data/computation/studio_one/qingzhi_li/ModelQingzhi_Edit.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f1966830-486e-11ea-b006-8e6746f68c05", 
+                                    "id": "5c6e0df0-4a10-11ea-9385-8e6746f68c05", 
                                     "label": "Perspective+Section", 
                                     "src": "data/computation/studio_one/qingzhi_li/Perspective+Section.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f1fec6f0-486e-11ea-85ab-8e6746f68c05", 
+                                    "id": "5cca5ec0-4a10-11ea-9758-8e6746f68c05", 
                                     "label": "Plan&Section", 
                                     "src": "data/computation/studio_one/qingzhi_li/Plan&Section.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f2528c40-486e-11ea-a0fd-8e6746f68c05", 
+                                    "id": "5d108f80-4a10-11ea-a403-8e6746f68c05", 
                                     "label": "Plan", 
                                     "src": "data/computation/studio_one/qingzhi_li/Plan.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f2be465e-486e-11ea-a5a4-8e6746f68c05", 
+                                    "id": "5d4d9880-4a10-11ea-a33b-8e6746f68c05", 
                                     "label": "Satellite+Generate+System+", 
                                     "src": "data/computation/studio_one/qingzhi_li/Satellite+Generate+System+.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f2f7a5de-486e-11ea-b501-8e6746f68c05", 
+                                    "id": "5d7ebaa1-4a10-11ea-86cd-8e6746f68c05", 
                                     "label": "Section+Perspective+", 
                                     "src": "data/computation/studio_one/qingzhi_li/Section+Perspective+.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f373658f-486e-11ea-bb22-8e6746f68c05", 
+                                    "id": "5edf8321-4a10-11ea-ae7f-8e6746f68c05", 
                                     "label": "Section1", 
                                     "src": "data/computation/studio_one/qingzhi_li/Section1.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f3993d0f-486e-11ea-9298-8e6746f68c05", 
+                                    "id": "5f417940-4a10-11ea-aeff-8e6746f68c05", 
                                     "label": "Site+Plan", 
                                     "src": "data/computation/studio_one/qingzhi_li/Site+Plan.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f408799e-486e-11ea-86ce-8e6746f68c05", 
+                                    "id": "5fecd46e-4a10-11ea-8f1f-8e6746f68c05", 
                                     "label": "Tiling_Microsoft+Redmond+Campus+2", 
                                     "src": "data/computation/studio_one/qingzhi_li/Tiling_Microsoft+Redmond+Campus+2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f4bcfc91-486e-11ea-8cc6-8e6746f68c05", 
+                                    "id": "60494c51-4a10-11ea-8952-8e6746f68c05", 
                                     "label": "Tiling_Microsoft+Redmond+Campus", 
                                     "src": "data/computation/studio_one/qingzhi_li/Tiling_Microsoft+Redmond+Campus.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "f51e2f5e-486e-11ea-9de8-8e6746f68c05", 
+                            "id": "6099410f-4a10-11ea-8b08-8e6746f68c05", 
                             "label": "qingzhi_li", 
                             "src": "data/computation/studio_one/qingzhi_li/Axonometric.jpg", 
                             "type": "dir"
@@ -962,61 +962,61 @@
                         {
                             "children": [
                                 {
-                                    "id": "f53dc54f-486e-11ea-b4bb-8e6746f68c05", 
+                                    "id": "609c4e4f-4a10-11ea-9156-8e6746f68c05", 
                                     "label": "800A5379", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/800A5379.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f5e6fd9e-486e-11ea-8c4d-8e6746f68c05", 
+                                    "id": "61da2580-4a10-11ea-a955-8e6746f68c05", 
                                     "label": "800A5387", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/800A5387.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f66ca861-486e-11ea-a52a-8e6746f68c05", 
+                                    "id": "626352ae-4a10-11ea-83aa-8e6746f68c05", 
                                     "label": "800A5396", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/800A5396.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f6d8b0a1-486e-11ea-883e-8e6746f68c05", 
+                                    "id": "6320fd5e-4a10-11ea-890a-8e6746f68c05", 
                                     "label": "Diagrams2", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/Diagrams2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f7700e9e-486e-11ea-8950-8e6746f68c05", 
+                                    "id": "6396f0ae-4a10-11ea-999c-8e6746f68c05", 
                                     "label": "elevation", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/elevation.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f7da421e-486e-11ea-92ea-8e6746f68c05", 
+                                    "id": "63dfe091-4a10-11ea-9282-8e6746f68c05", 
                                     "label": "interior+render", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/interior+render.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f845fc40-486e-11ea-9fdc-8e6746f68c05", 
+                                    "id": "653efb5e-4a10-11ea-bc00-8e6746f68c05", 
                                     "label": "Plan02", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/Plan02.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f8b586f0-486e-11ea-8d95-8e6746f68c05", 
+                                    "id": "65cac0a1-4a10-11ea-a65a-8e6746f68c05", 
                                     "label": "section", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/section.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "f94320f0-486e-11ea-9a98-8e6746f68c05", 
+                                    "id": "6603aaf0-4a10-11ea-9d32-8e6746f68c05", 
                                     "label": "site+drawing-diagrams", 
                                     "src": "data/computation/studio_one/shima_sahebnessagh/site+drawing-diagrams.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "f9b4a770-486e-11ea-b149-8e6746f68c05", 
+                            "id": "66755880-4a10-11ea-9912-8e6746f68c05", 
                             "label": "shima_sahebnessagh", 
                             "src": "data/computation/studio_one/shima_sahebnessagh/800A5379.jpg", 
                             "type": "dir"
@@ -1024,103 +1024,103 @@
                         {
                             "children": [
                                 {
-                                    "id": "fa8d7b40-486e-11ea-9a34-8e6746f68c05", 
+                                    "id": "67011dc0-4a10-11ea-b15e-8e6746f68c05", 
                                     "label": "2014FALLdiagram+(3)", 
                                     "src": "data/computation/studio_one/wenzhe peng/2014FALLdiagram+(3).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "facdb88f-486e-11ea-966f-8e6746f68c05", 
+                                    "id": "67421e5e-4a10-11ea-b83b-8e6746f68c05", 
                                     "label": "2014FALLdiagram+(4)", 
                                     "src": "data/computation/studio_one/wenzhe peng/2014FALLdiagram+(4).jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fb3294de-486e-11ea-a795-8e6746f68c05", 
+                                    "id": "683be7b0-4a10-11ea-bb2f-8e6746f68c05", 
                                     "label": "axon", 
                                     "src": "data/computation/studio_one/wenzhe peng/axon.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fbb92a00-486e-11ea-bb5e-8e6746f68c05", 
+                                    "id": "68d96030-4a10-11ea-bc07-8e6746f68c05", 
                                     "label": "formerPerspective", 
                                     "src": "data/computation/studio_one/wenzhe peng/formerPerspective.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fc41e200-486e-11ea-a24d-8e6746f68c05", 
+                                    "id": "69aa92e1-4a10-11ea-a787-8e6746f68c05", 
                                     "label": "GeneratingDiagram1", 
                                     "src": "data/computation/studio_one/wenzhe peng/GeneratingDiagram1.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fc783440-486e-11ea-800e-8e6746f68c05", 
+                                    "id": "69d6fa0f-4a10-11ea-96cf-8e6746f68c05", 
                                     "label": "GeneratingDiagram2", 
                                     "src": "data/computation/studio_one/wenzhe peng/GeneratingDiagram2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fce83421-486e-11ea-82bd-8e6746f68c05", 
+                                    "id": "6a018c80-4a10-11ea-b3b7-8e6746f68c05", 
                                     "label": "GeneratingDiagram3", 
                                     "src": "data/computation/studio_one/wenzhe peng/GeneratingDiagram3.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fd3dce30-486e-11ea-9180-8e6746f68c05", 
+                                    "id": "6a351fa1-4a10-11ea-9ec0-8e6746f68c05", 
                                     "label": "LAPlanSection", 
                                     "src": "data/computation/studio_one/wenzhe peng/LAPlanSection.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fdcf38c0-486e-11ea-8cd8-8e6746f68c05", 
+                                    "id": "6a6d1f8f-4a10-11ea-80e0-8e6746f68c05", 
                                     "label": "optimizationProcess2", 
                                     "src": "data/computation/studio_one/wenzhe peng/optimizationProcess2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fe24f9de-486e-11ea-a40e-8e6746f68c05", 
+                                    "id": "6a96c79e-4a10-11ea-b78d-8e6746f68c05", 
                                     "label": "perspective1", 
                                     "src": "data/computation/studio_one/wenzhe peng/perspective1.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fe9fa81e-486e-11ea-aee1-8e6746f68c05", 
+                                    "id": "6c72b38f-4a10-11ea-96ff-8e6746f68c05", 
                                     "label": "perspective2", 
                                     "src": "data/computation/studio_one/wenzhe peng/perspective2.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "ff344700-486e-11ea-bfee-8e6746f68c05", 
+                                    "id": "6ce72040-4a10-11ea-b807-8e6746f68c05", 
                                     "label": "plan_section", 
                                     "src": "data/computation/studio_one/wenzhe peng/plan_section.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "fffbb5b0-486e-11ea-8a89-8e6746f68c05", 
+                                    "id": "6e770f0f-4a10-11ea-bf2a-8e6746f68c05", 
                                     "label": "SingaporePerspective", 
                                     "src": "data/computation/studio_one/wenzhe peng/SingaporePerspective.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "00b1bf40-486f-11ea-a202-8e6746f68c05", 
+                                    "id": "6f48de00-4a10-11ea-9dfd-8e6746f68c05", 
                                     "label": "StockholmPerspective", 
                                     "src": "data/computation/studio_one/wenzhe peng/StockholmPerspective.jpg", 
                                     "type": "data"
                                 }, 
                                 {
-                                    "id": "018b7d6e-486f-11ea-bfca-8e6746f68c05", 
+                                    "id": "6ffa53b0-4a10-11ea-97a1-8e6746f68c05", 
                                     "label": "TokyoAxon", 
                                     "src": "data/computation/studio_one/wenzhe peng/TokyoAxon.jpg", 
                                     "type": "data"
                                 }
                             ], 
-                            "id": "02145c80-486f-11ea-8156-8e6746f68c05", 
+                            "id": "705285cf-4a10-11ea-9323-8e6746f68c05", 
                             "label": "wenzhe peng", 
                             "src": "data/computation/studio_one/wenzhe peng/2014FALLdiagram+(3).jpg", 
                             "type": "dir"
                         }
                     ], 
-                    "id": "0214f8c0-486f-11ea-82a7-8e6746f68c05", 
+                    "id": "7052fb00-4a10-11ea-a28c-8e6746f68c05", 
                     "label": "studio_one", 
                     "src": "data/computation/studio_one/studio_one.jpg", 
                     "type": "dir"
@@ -1128,25 +1128,25 @@
                 {
                     "children": [
                         {
-                            "id": "024cf8b0-486f-11ea-9318-8e6746f68c05", 
+                            "id": "705cbf00-4a10-11ea-ad8e-8e6746f68c05", 
                             "label": "1", 
                             "src": "data/computation/tx_aviation/1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "03d4aa1e-486f-11ea-8136-8e6746f68c05", 
+                            "id": "72151d5e-4a10-11ea-881f-8e6746f68c05", 
                             "label": "2", 
                             "src": "data/computation/tx_aviation/2.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "070613f0-486f-11ea-a255-8e6746f68c05", 
+                            "id": "748a3c0f-4a10-11ea-800b-8e6746f68c05", 
                             "label": "Capture", 
                             "src": "data/computation/tx_aviation/Capture.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "0853f0b0-486f-11ea-bad1-8e6746f68c05", 
+                            "id": "757893ae-4a10-11ea-ab24-8e6746f68c05", 
                             "label": "density_select_alll", 
                             "src": "data/computation/tx_aviation/density_select_alll.png", 
                             "type": "data"
@@ -1155,36 +1155,36 @@
                             "content": [
                                 "TX.Aviation is  a set of tools for predicting and simulating  passenger behavior and occupation on the airside of a terminal concourse. The application is built as a web data visualization and clustering tool, feeding into a java application that uses passenger timing output, behavioral propensities and spatial analysis to estimate densities at retail establishments along the concourse.  The application has been implemented on several airport terminals, including the San Francisco Intl Airport, Gatwick Intl. Airport and Perth Intl. Airport."
                             ], 
-                            "id": "093d182e-486f-11ea-b2f3-8e6746f68c05", 
+                            "id": "75e38a80-4a10-11ea-b391-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
-                            "id": "093db470-486f-11ea-8056-8e6746f68c05", 
+                            "id": "75e6becf-4a10-11ea-a1a7-8e6746f68c05", 
                             "label": "out", 
                             "src": "data/computation/tx_aviation/out.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "099daec0-486f-11ea-bd20-8e6746f68c05", 
+                            "id": "76d2cc80-4a10-11ea-8761-8e6746f68c05", 
                             "label": "out3", 
                             "src": "data/computation/tx_aviation/out3.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "09e60261-486f-11ea-9344-8e6746f68c05", 
+                            "id": "773a40de-4a10-11ea-8417-8e6746f68c05", 
                             "label": "PassengerProfilesInterpolated", 
                             "src": "data/computation/tx_aviation/PassengerProfilesInterpolated.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "0ea18ea1-486f-11ea-953a-8e6746f68c05", 
+                            "id": "7a715000-4a10-11ea-a504-8e6746f68c05", 
                             "label": "tx_aviation_1", 
                             "src": "data/computation/tx_aviation/tx_aviation_1.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "0fd92440-486f-11ea-9bbd-8e6746f68c05", 
+                    "id": "7b15f470-4a10-11ea-927e-8e6746f68c05", 
                     "label": "tx_aviation", 
                     "src": "data/computation/tx_aviation/tx_aviation.PNG", 
                     "type": "dir"
@@ -1192,91 +1192,91 @@
                 {
                     "children": [
                         {
-                            "id": "1016544f-486f-11ea-8b92-8e6746f68c05", 
+                            "id": "7b1be7e1-4a10-11ea-bcc2-8e6746f68c05", 
                             "label": "001", 
                             "src": "data/computation/ux_view/001.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "132f541e-486f-11ea-a26a-8e6746f68c05", 
+                            "id": "7d7e68f0-4a10-11ea-936e-8e6746f68c05", 
                             "label": "03", 
                             "src": "data/computation/ux_view/03.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "173ee8ee-486f-11ea-90ea-8e6746f68c05", 
+                            "id": "7fd96ff0-4a10-11ea-b8f6-8e6746f68c05", 
                             "label": "04", 
                             "src": "data/computation/ux_view/04.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "1b156c61-486f-11ea-b94a-8e6746f68c05", 
+                            "id": "821444c0-4a10-11ea-bf94-8e6746f68c05", 
                             "label": "07", 
                             "src": "data/computation/ux_view/07.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "1f2ddad1-486f-11ea-91fb-8e6746f68c05", 
+                            "id": "84be2f0f-4a10-11ea-8ed4-8e6746f68c05", 
                             "label": "181115_LACoMotion_survey", 
                             "src": "data/computation/ux_view/181115_LACoMotion_survey.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "212a6e21-486f-11ea-a5d0-8e6746f68c05", 
+                            "id": "86320a5e-4a10-11ea-a329-8e6746f68c05", 
                             "label": "buildings_far1", 
                             "src": "data/computation/ux_view/buildings_far1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "24e182b0-486f-11ea-a0f1-8e6746f68c05", 
+                            "id": "88b6e080-4a10-11ea-8323-8e6746f68c05", 
                             "label": "c1", 
                             "src": "data/computation/ux_view/c1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "281bed30-486f-11ea-bc74-8e6746f68c05", 
+                            "id": "8b90db80-4a10-11ea-927e-8e6746f68c05", 
                             "label": "c3", 
                             "src": "data/computation/ux_view/c3.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "2c63f721-486f-11ea-aeb2-8e6746f68c05", 
+                            "id": "8facf36e-4a10-11ea-a0f9-8e6746f68c05", 
                             "label": "c4", 
                             "src": "data/computation/ux_view/c4.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "302d3421-486f-11ea-9590-8e6746f68c05", 
+                            "id": "940e78cf-4a10-11ea-995d-8e6746f68c05", 
                             "label": "Capture", 
                             "src": "data/computation/ux_view/Capture.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "3410fe00-486f-11ea-ae7b-8e6746f68c05", 
+                            "id": "968bd4e1-4a10-11ea-a4aa-8e6746f68c05", 
                             "label": "landsec1", 
                             "src": "data/computation/ux_view/landsec1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "3706221e-486f-11ea-9a61-8e6746f68c05", 
+                            "id": "98632cf0-4a10-11ea-a69c-8e6746f68c05", 
                             "label": "nbds", 
                             "src": "data/computation/ux_view/nbds.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "3b0bcbe1-486f-11ea-a516-8e6746f68c05", 
+                            "id": "9b03c870-4a10-11ea-a456-8e6746f68c05", 
                             "label": "pts_amenity1", 
                             "src": "data/computation/ux_view/pts_amenity1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "3e8429c0-486f-11ea-805e-8e6746f68c05", 
+                            "id": "9c5b6930-4a10-11ea-8c72-8e6746f68c05", 
                             "label": "public_transport_access_levels1", 
                             "src": "data/computation/ux_view/public_transport_access_levels1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "418a3dd1-486f-11ea-85a2-8e6746f68c05", 
+                            "id": "9deabbc0-4a10-11ea-9b30-8e6746f68c05", 
                             "label": "radialToggle2", 
                             "src": "data/computation/ux_view/radialToggle2.png", 
                             "type": "data"
@@ -1286,7 +1286,7 @@
                                 "Deadlights jack lad schooner scallywag dance the hempen jig carouser broadside cable strike colors. ", 
                                 "Bring a spring upon her cable holystone blow the man down spanker Shiver me timbers to go on account lookout wherry doubloon chase. Belay yo-ho-ho keelhaul squiffy black spot yardarm spyglass sheet transom heave to."
                             ], 
-                            "id": "432947d1-486f-11ea-a3a2-8e6746f68c05", 
+                            "id": "9ecda1b0-4a10-11ea-beeb-8e6746f68c05", 
                             "label": "t1", 
                             "type": "data"
                         }, 
@@ -1294,18 +1294,18 @@
                             "content": [
                                 "Trysail Sail ho Corsair red ensign hulk smartly boom jib rum gangway. Case shot Shiver me timbers gangplank crack Jennys tea cup ballast Blimey lee snow crow's nest rutters. Fluke jib scourge of the seven seas boatswain schooner gaff booty Jack Tar transom spirits."
                             ], 
-                            "id": "4331370f-486f-11ea-b697-8e6746f68c05", 
+                            "id": "9ed039c0-4a10-11ea-a1fb-8e6746f68c05", 
                             "label": "t2", 
                             "type": "data"
                         }, 
                         {
-                            "id": "45410440-486f-11ea-8096-8e6746f68c05", 
+                            "id": "a10939d1-4a10-11ea-8d29-8e6746f68c05", 
                             "label": "ux_view_m", 
                             "src": "data/computation/ux_view/ux_view_m.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "476591f0-486f-11ea-bd57-8e6746f68c05", 
+                    "id": "a38620b0-4a10-11ea-be8e-8e6746f68c05", 
                     "label": "ux_view", 
                     "src": "data/computation/ux_view/ux_view.png", 
                     "type": "dir"
@@ -1313,79 +1313,79 @@
                 {
                     "children": [
                         {
-                            "id": "479fb4c0-486f-11ea-ade7-8e6746f68c05", 
+                            "id": "a39f4e00-4a10-11ea-b997-8e6746f68c05", 
                             "label": "01", 
                             "src": "data/computation/wx_fit/01.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "48d85bcf-486f-11ea-aee1-8e6746f68c05", 
+                            "id": "a4b6ff8f-4a10-11ea-af14-8e6746f68c05", 
                             "label": "1", 
                             "src": "data/computation/wx_fit/1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "4a64a121-486f-11ea-bc84-8e6746f68c05", 
+                            "id": "a5c90bcf-4a10-11ea-b2fc-8e6746f68c05", 
                             "label": "2", 
                             "src": "data/computation/wx_fit/2.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "4b6a0330-486f-11ea-824e-8e6746f68c05", 
+                            "id": "a7122da1-4a10-11ea-a495-8e6746f68c05", 
                             "label": "3", 
                             "src": "data/computation/wx_fit/3.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "4cc3ede1-486f-11ea-bc36-8e6746f68c05", 
+                            "id": "a82dfdde-4a10-11ea-85ab-8e6746f68c05", 
                             "label": "4", 
                             "src": "data/computation/wx_fit/4.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "4dd0f10f-486f-11ea-817e-8e6746f68c05", 
+                            "id": "a8a99680-4a10-11ea-9102-8e6746f68c05", 
                             "label": "5", 
                             "src": "data/computation/wx_fit/5.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "4f804ec0-486f-11ea-af3c-8e6746f68c05", 
+                            "id": "aa3d07c0-4a10-11ea-b4bb-8e6746f68c05", 
                             "label": "bhp", 
                             "src": "data/computation/wx_fit/bhp.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "50d1d500-486f-11ea-814e-8e6746f68c05", 
+                            "id": "ab0d2900-4a10-11ea-a385-8e6746f68c05", 
                             "label": "centrality", 
                             "src": "data/computation/wx_fit/centrality.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5126f9de-486f-11ea-8510-8e6746f68c05", 
+                            "id": "ab2dd061-4a10-11ea-a11a-8e6746f68c05", 
                             "label": "dublin_sliceAnalysis_01", 
                             "src": "data/computation/wx_fit/dublin_sliceAnalysis_01.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5226b6a1-486f-11ea-abc4-8e6746f68c05", 
+                            "id": "ac69f9e1-4a10-11ea-b744-8e6746f68c05", 
                             "label": "dublin_wxPartition_interface_03", 
                             "src": "data/computation/wx_fit/dublin_wxPartition_interface_03.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "52a9c94f-486f-11ea-b8e6-8e6746f68c05", 
+                            "id": "ad490f40-4a10-11ea-acb3-8e6746f68c05", 
                             "label": "sheet", 
                             "src": "data/computation/wx_fit/sheet.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "536f151e-486f-11ea-902c-8e6746f68c05", 
+                            "id": "add040a1-4a10-11ea-9dbe-8e6746f68c05", 
                             "label": "walking", 
                             "src": "data/computation/wx_fit/walking.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "553b2291-486f-11ea-91db-8e6746f68c05", 
+                    "id": "ae41c721-4a10-11ea-b099-8e6746f68c05", 
                     "label": "wx_fit", 
                     "src": "data/computation/wx_fit/wx_fit.PNG", 
                     "type": "dir"
@@ -1393,73 +1393,73 @@
                 {
                     "children": [
                         {
-                            "id": "55455bc0-486f-11ea-b6c4-8e6746f68c05", 
+                            "id": "ae45bec0-4a10-11ea-8490-8e6746f68c05", 
                             "label": "1", 
                             "src": "data/computation/wx_floorplate/1.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "56598ade-486f-11ea-9cb6-8e6746f68c05", 
+                            "id": "af7453ae-4a10-11ea-abb3-8e6746f68c05", 
                             "label": "2", 
                             "src": "data/computation/wx_floorplate/2.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5760738f-486f-11ea-8d4b-8e6746f68c05", 
+                            "id": "aff36ec0-4a10-11ea-9c06-8e6746f68c05", 
                             "label": "3", 
                             "src": "data/computation/wx_floorplate/3.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "58de39f0-486f-11ea-a194-8e6746f68c05", 
+                            "id": "b0aa89c0-4a10-11ea-852e-8e6746f68c05", 
                             "label": "4", 
                             "src": "data/computation/wx_floorplate/4.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5a485140-486f-11ea-8239-8e6746f68c05", 
+                            "id": "b13cdeb0-4a10-11ea-96c4-8e6746f68c05", 
                             "label": "5", 
                             "src": "data/computation/wx_floorplate/5.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5b594c0f-486f-11ea-95b9-8e6746f68c05", 
+                            "id": "b26f924f-4a10-11ea-a90a-8e6746f68c05", 
                             "label": "6", 
                             "src": "data/computation/wx_floorplate/6.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5d6f81de-486f-11ea-9dc5-8e6746f68c05", 
+                            "id": "b3999361-4a10-11ea-9947-8e6746f68c05", 
                             "label": "7", 
                             "src": "data/computation/wx_floorplate/7.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "5f016c80-486f-11ea-8d4c-8e6746f68c05", 
+                            "id": "b43e85ee-4a10-11ea-8bd0-8e6746f68c05", 
                             "label": "8", 
                             "src": "data/computation/wx_floorplate/8.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "603aafcf-486f-11ea-9c69-8e6746f68c05", 
+                            "id": "b5704f30-4a10-11ea-bdde-8e6746f68c05", 
                             "label": "9", 
                             "src": "data/computation/wx_floorplate/9.PNG", 
                             "type": "data"
                         }, 
                         {
-                            "id": "61de26a1-486f-11ea-bc58-8e6746f68c05", 
+                            "id": "b68a4aae-4a10-11ea-a047-8e6746f68c05", 
                             "label": "visibility_raw", 
                             "src": "data/computation/wx_floorplate/visibility_raw.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "64a1654f-486f-11ea-b731-8e6746f68c05", 
+                    "id": "b80db65e-4a10-11ea-bf46-8e6746f68c05", 
                     "label": "wx_floorplate", 
                     "src": "data/computation/wx_floorplate/wx_floorplate.PNG", 
                     "type": "dir"
                 }
             ], 
-            "id": "64a16550-486f-11ea-8f32-8e6746f68c05", 
+            "id": "b80e0480-4a10-11ea-b305-8e6746f68c05", 
             "label": "computation", 
             "src": "data/computation/computation.jpg", 
             "type": "dir"
@@ -1469,18 +1469,7 @@
                 {
                     "children": [
                         {
-                            "content": [
-                                "The design proposal for the new Bauhaus Museum celebrates the beauty that is derived from the complexity of program and performance imbued in the synthesis of form, structure, and material. The design reflects contemporary construction and fabrication techniques in the spirit of the Bauhaus.", 
-                                "Although the building is highly visible and intended to be a notable landmark of the City of Dessau, The architecture is designed to be fully integrated into the existing park.", 
-                                "Both the residents of Dessau visitors can move through the park and main central atrium outdoor ramps and staircase toward to roof top of the Museum building without having to go inside the Museum. The design emphasizes and fosters the relationship between Museum and City Park, reinforcing and complementing each other as an integrated public space and cultural center.", 
-                                "The external envelope is designed to respond to the different programmatic conditions and desired climate control. This external system also creates a porous enclosure for various  outdoor park activities such as outdoor performance spaces, outdoor concerts, and playrooms."
-                            ], 
-                            "id": "64bae0c0-486f-11ea-8518-8e6746f68c05", 
-                            "label": "about", 
-                            "type": "data"
-                        }, 
-                        {
-                            "id": "64cbd0b0-486f-11ea-b9ef-8e6746f68c05", 
+                            "id": "b85d840f-4a10-11ea-a204-8e6746f68c05", 
                             "label": "BAUHAUS-BOARD-PRINT-2015-0412-01", 
                             "src": "data/design/bauhaus/BAUHAUS-BOARD-PRINT-2015-0412-01.jpg", 
                             "type": "data"
@@ -1490,32 +1479,37 @@
                                 "Site:: Dessau, Germany", 
                                 "Program:: New Bauhaus Museum", 
                                 "Competition:: Bauhaus Museum Competition 2015", 
-                                "Team Members:: Raveevarn Choksombatchai, Tyler Beard"
+                                "Team Members:: Raveevarn Choksombatchai, Tyler Beard", 
+                                "", 
+                                "The design proposal for the new Bauhaus Museum celebrates the beauty that is derived from the complexity of program and performance imbued in the synthesis of form, structure, and material. The design reflects contemporary construction and fabrication techniques in the spirit of the Bauhaus.", 
+                                "Although the building is highly visible and intended to be a notable landmark of the City of Dessau, The architecture is designed to be fully integrated into the existing park.", 
+                                "Both the residents of Dessau visitors can move through the park and main central atrium outdoor ramps and staircase toward to roof top of the Museum building without having to go inside the Museum. The design emphasizes and fosters the relationship between Museum and City Park, reinforcing and complementing each other as an integrated public space and cultural center.", 
+                                "The external envelope is designed to respond to the different programmatic conditions and desired climate control. This external system also creates a porous enclosure for various  outdoor park activities such as outdoor performance spaces, outdoor concerts, and playrooms."
                             ], 
-                            "id": "6933beae-486f-11ea-85c3-8e6746f68c05", 
+                            "id": "bd5f1a00-4a10-11ea-81ee-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
-                            "id": "693c7140-486f-11ea-9db4-8e6746f68c05", 
+                            "id": "bd613ce1-4a10-11ea-bc7e-8e6746f68c05", 
                             "label": "plan_03", 
                             "src": "data/design/bauhaus/plan_03.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "6a217a0f-486f-11ea-a735-8e6746f68c05", 
+                            "id": "bdc3cf40-4a10-11ea-bf10-8e6746f68c05", 
                             "label": "render_01bis", 
                             "src": "data/design/bauhaus/render_01bis.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "6af9ffc0-486f-11ea-be85-8e6746f68c05", 
+                            "id": "bfe1cd40-4a10-11ea-8e73-8e6746f68c05", 
                             "label": "render_02bis3", 
                             "src": "data/design/bauhaus/render_02bis3.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "6bcba79e-486f-11ea-a87e-8e6746f68c05", 
+                    "id": "c0bd120f-4a10-11ea-8d50-8e6746f68c05", 
                     "label": "bauhaus", 
                     "src": "data/design/bauhaus/bauhaus.jpg", 
                     "type": "dir"
@@ -1523,55 +1517,61 @@
                 {
                     "children": [
                         {
-                            "id": "78a2db0f-486f-11ea-93e3-8e6746f68c05", 
+                            "id": "cb242fe1-4a10-11ea-a598-8e6746f68c05", 
                             "label": "350015_N11_screenhd", 
                             "src": "data/design/funan/350015_N11_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7991cef0-486f-11ea-846f-8e6746f68c05", 
+                            "id": "cbf4c64f-4a10-11ea-ac1d-8e6746f68c05", 
                             "label": "350015_N15_screenhd", 
                             "src": "data/design/funan/350015_N15_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7a1afc21-486f-11ea-b636-8e6746f68c05", 
+                            "id": "cc720ca1-4a10-11ea-b034-8e6746f68c05", 
                             "label": "350015_N23_screenhd", 
                             "src": "data/design/funan/350015_N23_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7ababe8f-486f-11ea-a1b7-8e6746f68c05", 
+                            "id": "ccf9da40-4a10-11ea-974b-8e6746f68c05", 
                             "label": "350015_N25_screenhd", 
                             "src": "data/design/funan/350015_N25_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7b7534ee-486f-11ea-b1bb-8e6746f68c05", 
+                            "id": "ce3ba90f-4a10-11ea-8dd9-8e6746f68c05", 
                             "label": "350015_N32_screenhd", 
                             "src": "data/design/funan/350015_N32_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7bfed751-486f-11ea-ac54-8e6746f68c05", 
+                            "id": "ceeb7111-4a10-11ea-9e15-8e6746f68c05", 
                             "label": "350015_N6_screenhd", 
                             "src": "data/design/funan/350015_N6_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7c69f530-486f-11ea-a844-8e6746f68c05", 
+                            "id": "cfc4ba0f-4a10-11ea-abd5-8e6746f68c05", 
                             "label": "350015_N73_screenhd", 
                             "src": "data/design/funan/350015_N73_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7d0c018f-486f-11ea-ac7e-8e6746f68c05", 
+                            "id": "d013eb80-4a10-11ea-8591-8e6746f68c05", 
                             "label": "350015_N7_screenhd", 
                             "src": "data/design/funan/350015_N7_screenhd.jpg", 
                             "type": "data"
                         }, 
                         {
                             "content": [
+                                "Design::Woods Bagot Architects", 
+                                "Name::Singapore Funan Mall", 
+                                "Location::Singapore ", 
+                                "Date::2015", 
+                                "Role::Parametric Fa\u00e7ade Typology development and optimization ", 
+                                "", 
                                 "Representing a new era in retail and mixed-use design, the redevelopment of CapitaLand\u2019s Funan DigitaLife Mall, has been designed as a civic hub where life is experienced efficiently and thoughtfully thanks to this experiential concept that includes retail, entertainment, leisure, wellness, dining, offices, co-working and co-living environments.", 
                                 "Project Owners CapitaLand were keen for their designers, Woods Bagot\u2019s Hong Kong studio, to deliver a new era for retail. With the rise of online shopping and the decline of brick-and-mortar retail stores, the team was tasked with maximizing engagement for a new tech-savvy generation.", 
                                 "Early project workshops centered around the future of retail and meeting the requirement to create a destination that encourages discovery and entices people to consistently come back. After their initial discovery and analysis, Woods Bagot recommended the complete redevelopment of the site to create Funan, an integrated mixed-use development that maximizes the site\u2019s potential and takes advantage of its prime location.", 
@@ -1579,12 +1579,12 @@
                                 "The Tree of Life is a habitat for creativity. Referred to as \u201cpassion clusters\u201d, the Tree\u2019s branches offer environments for technology, fitness, dining, craft, shopping and play areas that are destinations for expression. On the Connector Floor \u2013 Level Four \u2013 The Tree of Life encourages circulation to enjoy dining, theatre, wellness, offices, co-working, co-living and outdoor space.", 
                                 "Green stairs, which nurture exercise and movement, lead from the Connector Floor to Level 7, which is home a 5,000 square foot rooftop urban garden, the largest in Singapore\u2019s CBD. There is also an 18,000 square foot food garden, a futsal court and outdoor leisure space. Additionally, the office blocks on the upper levels have external stairs that provide easy accessibility to green spaces and promote wellness."
                             ], 
-                            "id": "7d8ddbc0-486f-11ea-84f8-8e6746f68c05", 
-                            "label": "project", 
+                            "id": "d079b230-4a10-11ea-bc76-8e6746f68c05", 
+                            "label": "info", 
                             "type": "data"
                         }
                     ], 
-                    "id": "7d8e02cf-486f-11ea-a616-8e6746f68c05", 
+                    "id": "d079b231-4a10-11ea-8638-8e6746f68c05", 
                     "label": "funan", 
                     "src": "data/design/funan/350015_N11_screenhd.jpg", 
                     "type": "dir"
@@ -1592,25 +1592,37 @@
                 {
                     "children": [
                         {
-                            "id": "7d9afb21-486f-11ea-975a-8e6746f68c05", 
+                            "id": "d0891b80-4a10-11ea-b1e7-8e6746f68c05", 
                             "label": "190111_GNE_Exterior_parrallel", 
                             "src": "data/design/genentech/190111_GNE_Exterior_parrallel.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "7f2ac2de-486f-11ea-ac4e-8e6746f68c05", 
+                            "id": "d285aecf-4a10-11ea-a082-8e6746f68c05", 
                             "label": "IMG_6645", 
                             "src": "data/design/genentech/IMG_6645.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "80b162de-486f-11ea-a1a8-8e6746f68c05", 
+                            "id": "d3ae9e70-4a10-11ea-8d8e-8e6746f68c05", 
                             "label": "IMG_9423", 
                             "src": "data/design/genentech/IMG_9423.jpg", 
                             "type": "data"
+                        }, 
+                        {
+                            "content": [
+                                "Design::Woods Bagot Architects", 
+                                "Name::Genentech B40 South Campus Connector Building ", 
+                                "Location::South San Francisco, California", 
+                                "Date::2015", 
+                                "Role::Site / Daylighting analysis"
+                            ], 
+                            "id": "d525ae0f-4a10-11ea-8ee4-8e6746f68c05", 
+                            "label": "info", 
+                            "type": "data"
                         }
                     ], 
-                    "id": "8227af30-486f-11ea-834f-8e6746f68c05", 
+                    "id": "d525ae10-4a10-11ea-9b63-8e6746f68c05", 
                     "label": "genentech", 
                     "src": "data/design/genentech/190111_GNE_Exterior_parrallel.jpg", 
                     "type": "dir"
@@ -1618,54 +1630,43 @@
                 {
                     "children": [
                         {
-                            "content": [
-                                "The Glenridge Cooperative Nursery School Project was part of the Arch 201 Comprehensive Design Studio at UC Berkeley in Fall 2012. Located in Glen Canyon Park , San Francisco, Glenridge Cooperative was founded in 1970 on a site that underwent multiple uses over the years, from a dynamite manufacturing facility in the 1850s to an amusement park through the early 1900s. Now owned by the city of San Francisco, the site functions as a public park. The building itself is a dual purpose facility, serving as a full time nursery school to around 50 children during the school year, and as a outdoor activity camp to around 200 during the summer. The studio prompt was a redesign proposal for the current building that would better accommodate the variable needs of the program over the course of the year.", 
-                                "The proposal seeks to reuse the existing ground floor masonry and retaining walls, along with a majority of the first floor and roofing  structural timber framework.  The current usage of the ground floor is limited to storage and amenities, The building suffers from general lack of solar exposure and has very little opening on either floor. Creating an internal opening between the two, while establishing more fluid access both internally and externally through a re-skinning of the facade and ramping access ways aids in both allowing sunlight into the ground floor and opening its usage to more social activities.", 
-                                "The new facade/skin system is designed to function as an overhead solar barrier during the summer months, while allowing sunlight to enter into the building during the fall and winter seasons. During the school year when occupancy is low, it functions primarily as a sheltering system, while the thermal barrier exists at the location of the original building facade. During the summer, the thermal barrier can be opened through a system of sliding glass panels, increasing the floor area to suit the increased spacial requirement of the program. ", 
-                                "The introduction of the blue gum eucalyptus in the 1850s to the park resulted in the invasive species taking overwhelming control of the vegetation in the surrounding area. The formal strategy of the proposal is of a similar nature, acting through a wrapping and entwining of the building's interior and exterior frame. The curtain wall and interior wall systems integrate and consume the shell of the old structure, leaving remnants of the previous building visible where the process is incomplete."
-                            ], 
-                            "id": "8244fb2e-486f-11ea-b9fa-8e6746f68c05", 
-                            "label": "about", 
-                            "type": "data"
-                        }, 
-                        {
-                            "id": "8246cff0-486f-11ea-843e-8e6746f68c05", 
+                            "id": "d52eaec0-4a10-11ea-99c6-8e6746f68c05", 
                             "label": "axon_exploded-01", 
                             "src": "data/design/glen_park/axon_exploded-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "84e2d78f-486f-11ea-9a2a-8e6746f68c05", 
+                            "id": "da075ff0-4a10-11ea-8b2d-8e6746f68c05", 
                             "label": "banner", 
                             "src": "data/design/glen_park/banner.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "855659de-486f-11ea-a0b2-8e6746f68c05", 
+                            "id": "dab441c0-4a10-11ea-8ad2-8e6746f68c05", 
                             "label": "diagram-01", 
                             "src": "data/design/glen_park/diagram-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "8addc19e-486f-11ea-8f71-8e6746f68c05", 
+                            "id": "df818140-4a10-11ea-bca6-8e6746f68c05", 
                             "label": "IMG_0309", 
                             "src": "data/design/glen_park/IMG_0309.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "8c32f161-486f-11ea-991f-8e6746f68c05", 
+                            "id": "e0099d00-4a10-11ea-b627-8e6746f68c05", 
                             "label": "IMG_0313", 
                             "src": "data/design/glen_park/IMG_0313.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "8cf779de-486f-11ea-8092-8e6746f68c05", 
+                            "id": "e1775dcf-4a10-11ea-9936-8e6746f68c05", 
                             "label": "IMG_0325", 
                             "src": "data/design/glen_park/IMG_0325.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "8de953f0-486f-11ea-af98-8e6746f68c05", 
+                            "id": "e25c8dae-4a10-11ea-918e-8e6746f68c05", 
                             "label": "IMG_0326", 
                             "src": "data/design/glen_park/IMG_0326.jpg", 
                             "type": "data"
@@ -1675,88 +1676,79 @@
                                 "Class:: Arch 201 - Fall 2012 Comprehensive Design Studio", 
                                 "Site:: Glen Canyon Park, San Francisco, CA", 
                                 "Program:: Nursery School / Summer Camp Facility", 
-                                "Instructor:: Roddy Creedon"
+                                "Instructor:: Roddy Creedon", 
+                                "", 
+                                "The Glenridge Cooperative Nursery School Project was part of the Arch 201 Comprehensive Design Studio at UC Berkeley in Fall 2012. Located in Glen Canyon Park , San Francisco, Glenridge Cooperative was founded in 1970 on a site that underwent multiple uses over the years, from a dynamite manufacturing facility in the 1850s to an amusement park through the early 1900s. Now owned by the city of San Francisco, the site functions as a public park. The building itself is a dual purpose facility, serving as a full time nursery school to around 50 children during the school year, and as a outdoor activity camp to around 200 during the summer. The studio prompt was a redesign proposal for the current building that would better accommodate the variable needs of the program over the course of the year.", 
+                                "The proposal seeks to reuse the existing ground floor masonry and retaining walls, along with a majority of the first floor and roofing  structural timber framework.  The current usage of the ground floor is limited to storage and amenities, The building suffers from general lack of solar exposure and has very little opening on either floor. Creating an internal opening between the two, while establishing more fluid access both internally and externally through a re-skinning of the facade and ramping access ways aids in both allowing sunlight into the ground floor and opening its usage to more social activities.", 
+                                "The new facade/skin system is designed to function as an overhead solar barrier during the summer months, while allowing sunlight to enter into the building during the fall and winter seasons. During the school year when occupancy is low, it functions primarily as a sheltering system, while the thermal barrier exists at the location of the original building facade. During the summer, the thermal barrier can be opened through a system of sliding glass panels, increasing the floor area to suit the increased spacial requirement of the program. ", 
+                                "The introduction of the blue gum eucalyptus in the 1850s to the park resulted in the invasive species taking overwhelming control of the vegetation in the surrounding area. The formal strategy of the proposal is of a similar nature, acting through a wrapping and entwining of the building's interior and exterior frame. The curtain wall and interior wall systems integrate and consume the shell of the old structure, leaving remnants of the previous building visible where the process is incomplete."
                             ], 
-                            "id": "8ea79ade-486f-11ea-b656-8e6746f68c05", 
+                            "id": "e2f72000-4a10-11ea-ba6a-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
-                            "id": "8eab4461-486f-11ea-bf91-8e6746f68c05", 
+                            "id": "e2f9b811-4a10-11ea-8ad3-8e6746f68c05", 
                             "label": "oldPlan-01", 
                             "src": "data/design/glen_park/oldPlan-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "903343f0-486f-11ea-9dd0-8e6746f68c05", 
+                            "id": "e5522700-4a10-11ea-8378-8e6746f68c05", 
                             "label": "plan_1-02", 
                             "src": "data/design/glen_park/plan_1-02.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "938973cf-486f-11ea-a412-8e6746f68c05", 
+                            "id": "ea495cae-4a10-11ea-ba9c-8e6746f68c05", 
                             "label": "plan_2-01", 
                             "src": "data/design/glen_park/plan_2-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "96237f9e-486f-11ea-9f4d-8e6746f68c05", 
+                            "id": "ee08d5b0-4a10-11ea-a9a9-8e6746f68c05", 
                             "label": "plan_3-01", 
                             "src": "data/design/glen_park/plan_3-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "97d156b0-486f-11ea-afdc-8e6746f68c05", 
+                            "id": "f1f85f5e-4a10-11ea-918c-8e6746f68c05", 
                             "label": "render_back", 
                             "src": "data/design/glen_park/render_back.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "9905b800-486f-11ea-aa3b-8e6746f68c05", 
+                            "id": "f2f84330-4a10-11ea-b791-8e6746f68c05", 
                             "label": "render_diagram_after", 
                             "src": "data/design/glen_park/render_diagram_after.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "99c73340-486f-11ea-8e29-8e6746f68c05", 
+                            "id": "f488a730-4a10-11ea-860e-8e6746f68c05", 
                             "label": "render_diagram_before", 
                             "src": "data/design/glen_park/render_diagram_before.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "9a4ed9cf-486f-11ea-b2b2-8e6746f68c05", 
+                            "id": "f4fbb44f-4a10-11ea-afde-8e6746f68c05", 
                             "label": "render_front", 
                             "src": "data/design/glen_park/render_front.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "9b66b26e-486f-11ea-92e6-8e6746f68c05", 
+                            "id": "f5fa5f9e-4a10-11ea-ba6a-8e6746f68c05", 
                             "label": "sections_crop", 
                             "src": "data/design/glen_park/sections_crop.png", 
                             "type": "data"
                         }
                     ], 
-                    "id": "9ef97621-486f-11ea-b565-8e6746f68c05", 
+                    "id": "fc28408f-4a10-11ea-b73d-8e6746f68c05", 
                     "label": "glen_park", 
                     "src": "data/design/glen_park/glen_park.jpg", 
                     "type": "dir"
                 }, 
                 {
-                    "id": "9f1d03b0-486f-11ea-a4e6-8e6746f68c05", 
-                    "label": "google_moffett_place", 
-                    "type": "dir"
-                }, 
-                {
                     "children": [
-                        {
-                            "content": [
-                                "The Flavor and Fragrance Innovatrium was part of an advanced elective design studio at The University of California, Berkeley in the fall of 2013. The aims of the studio were to rethink typical architectural design methodologies focused on the product in favor of ones that would prioritize the process of design. The prompt was to create a multi-use space that would facilitate the research + development of new flavors and fragrances, while emphasizing interactions across usages. ", 
-                                "The gross anatomies of the programmatic matrix itself were a given, although their relationships to one another were left up to interpretation. Rather than on the building as a whole, the design focus was on desired moments, situations and scenarios readily associated with the horizontal striations of the programmatic matrix."
-                            ], 
-                            "id": "9f251a00-486f-11ea-a07c-8e6746f68c05", 
-                            "label": "about", 
-                            "type": "data"
-                        }, 
                         {
                             "content": [
                                 "As a starting point, the studio sought to derive design morphologies from an assortment of assigned flowers/plants - in this case, a reed.  The resulting study led to an understanding of the variation in the formal capacities of the reed due to its response to growing conditions/site, and mutations in an otherwise repetitive and self-similar modular system.", 
@@ -1765,24 +1757,24 @@
                                 "The L-system Interpreter was in turn conscious of the surrounding site and neighboring strains, provoking a growth in the complexity of the system that  produced unpredictable relationships between program elements, as well as  between program and site, that still conformed to the rule-set established in the programmatic matrix.", 
                                 "A secondary matrix of formal building requirements containing program data pertaining to height, sunlight access and spacial capacity, as well as interior spacial division design decisions was used to inform the formal logic of the design. The Interior partitioning and facade systems are derivative of the second matrix and implemented through an overlapping double skin which melds interior and exterior walls, creating apertures that function as light wells, windows and access across program strains."
                             ], 
-                            "id": "9f27b20f-486f-11ea-8e98-8e6746f68c05", 
+                            "id": "fcb76130-4a10-11ea-aee5-8e6746f68c05", 
                             "label": "algorithm", 
                             "type": "data"
                         }, 
                         {
-                            "id": "9f29fc00-486f-11ea-9bb0-8e6746f68c05", 
+                            "id": "fcbc914f-4a10-11ea-81f4-8e6746f68c05", 
                             "label": "image-asset1", 
                             "src": "data/design/innovatrium/image-asset1.jpeg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "9f672c0f-486f-11ea-ae14-8e6746f68c05", 
+                            "id": "fcf50670-4a10-11ea-b866-8e6746f68c05", 
                             "label": "image-asset2", 
                             "src": "data/design/innovatrium/image-asset2.jpeg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "9fb3774f-486f-11ea-bb8f-8e6746f68c05", 
+                            "id": "fd2230f0-4a10-11ea-911d-8e6746f68c05", 
                             "label": "image-asset3", 
                             "src": "data/design/innovatrium/image-asset3.jpeg", 
                             "type": "data"
@@ -1792,68 +1784,71 @@
                                 "Class:: Arch 202 - Fall 2013 Advanced Elective Design Studio", 
                                 "Site:: Richmond, CA", 
                                 "Program:: Flavor and Fragrance Innovatrium", 
-                                "Instructor(s):: Jason Young / Melanie Kaba"
+                                "Instructor(s):: Jason Young / Melanie Kaba", 
+                                "", 
+                                "The Flavor and Fragrance Innovatrium was part of an advanced elective design studio at The University of California, Berkeley in the fall of 2013. The aims of the studio were to rethink typical architectural design methodologies focused on the product in favor of ones that would prioritize the process of design. The prompt was to create a multi-use space that would facilitate the research + development of new flavors and fragrances, while emphasizing interactions across usages. ", 
+                                "The gross anatomies of the programmatic matrix itself were a given, although their relationships to one another were left up to interpretation. Rather than on the building as a whole, the design focus was on desired moments, situations and scenarios readily associated with the horizontal striations of the programmatic matrix."
                             ], 
-                            "id": "9ff53b40-486f-11ea-85f0-8e6746f68c05", 
+                            "id": "fd583511-4a10-11ea-8947-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a1001b8f-486f-11ea-95ab-8e6746f68c05", 
+                            "id": "ff402ef0-4a10-11ea-b606-8e6746f68c05", 
                             "label": "innovatrium_diagram_final", 
                             "src": "data/design/innovatrium/innovatrium_diagram_final.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a453171e-486f-11ea-8715-8e6746f68c05", 
+                            "id": "015b46c0-4a11-11ea-a8f5-8e6746f68c05", 
                             "label": "innovatrium_diagram_mutation", 
                             "src": "data/design/innovatrium/innovatrium_diagram_mutation.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "a831d7ee-486f-11ea-a44a-8e6746f68c05", 
+                            "id": "07519cf0-4a11-11ea-bbcd-8e6746f68c05", 
                             "label": "innovatrium_diagram_process", 
                             "src": "data/design/innovatrium/innovatrium_diagram_process.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "aabaf3d1-486f-11ea-b398-8e6746f68c05", 
+                            "id": "09e0852e-4a11-11ea-8616-8e6746f68c05", 
                             "label": "innovatrium_diagram_strain", 
                             "src": "data/design/innovatrium/innovatrium_diagram_strain.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "adca56ae-486f-11ea-ad50-8e6746f68c05", 
+                            "id": "0cfc1d0f-4a11-11ea-8cad-8e6746f68c05", 
                             "label": "innovatrium_plan", 
                             "src": "data/design/innovatrium/innovatrium_plan.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "af8f3830-486f-11ea-9e02-8e6746f68c05", 
+                            "id": "0e8aac51-4a11-11ea-9fe1-8e6746f68c05", 
                             "label": "innovatrium_s_long", 
                             "src": "data/design/innovatrium/innovatrium_s_long.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b1f7acb0-486f-11ea-815e-8e6746f68c05", 
+                            "id": "12d17dc0-4a11-11ea-9481-8e6746f68c05", 
                             "label": "plant-12", 
                             "src": "data/design/innovatrium/plant-12.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b3ce416e-486f-11ea-9c4b-8e6746f68c05", 
+                            "id": "1599775e-4a11-11ea-98b0-8e6746f68c05", 
                             "label": "render_04", 
                             "src": "data/design/innovatrium/render_04.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b4b015f0-486f-11ea-8506-8e6746f68c05", 
+                            "id": "1696ea30-4a11-11ea-b8ef-8e6746f68c05", 
                             "label": "serial-09", 
                             "src": "data/design/innovatrium/serial-09.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "b8077e4f-486f-11ea-8e85-8e6746f68c05", 
+                    "id": "19061570-4a11-11ea-89c6-8e6746f68c05", 
                     "label": "innovatrium", 
                     "src": "data/design/innovatrium/innovatrium.jpg", 
                     "type": "dir"
@@ -1861,43 +1856,45 @@
                 {
                     "children": [
                         {
-                            "id": "b833222e-486f-11ea-a8fd-8e6746f68c05", 
+                            "id": "194eb72e-4a11-11ea-a45d-8e6746f68c05", 
                             "label": "0", 
                             "src": "data/design/napa_superblock/0.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b8931c80-486f-11ea-9f23-8e6746f68c05", 
+                            "id": "19f4e240-4a11-11ea-ad0f-8e6746f68c05", 
                             "label": "1", 
                             "src": "data/design/napa_superblock/1.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b960ccc0-486f-11ea-bbe1-8e6746f68c05", 
+                            "id": "1a697600-4a11-11ea-a563-8e6746f68c05", 
                             "label": "180521_NapaCC_Renderings-v15-2048x1325", 
                             "src": "data/design/napa_superblock/180521_NapaCC_Renderings-v15-2048x1325.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "b9dbc91e-486f-11ea-8d75-8e6746f68c05", 
+                            "id": "1c31b2e1-4a11-11ea-b023-8e6746f68c05", 
                             "label": "2", 
                             "src": "data/design/napa_superblock/2.jpg", 
                             "type": "data"
                         }, 
                         {
                             "content": [
-                                "Design:: Woods Bagot Architects", 
-                                "Location:: Napa, CA, USA", 
-                                "Date:: 2018", 
+                                "Design::Woods Bagot Architects", 
+                                "Name::Napa Superblock", 
+                                "Location::Napa, California", 
+                                "Date::2018", 
+                                "Role::Daylighting analysis", 
                                 "", 
                                 "The design for the City of Napa\u2019s new civic center is still in process. Currently, the project includes two parts: the public space that includes a new Civic Center building and the private development that includes a new hotel and residential units. The vision of the project is to promote the role of the downtown area as the primary place where both civic buildings are concentrated and people come together to enjoy public art and culture, open spaces, and public facilities."
                             ], 
-                            "id": "ba7b6480-486f-11ea-aeab-8e6746f68c05", 
-                            "label": "project", 
+                            "id": "1cae5cf0-4a11-11ea-a7ab-8e6746f68c05", 
+                            "label": "info", 
                             "type": "data"
                         }
                     ], 
-                    "id": "ba7b8b91-486f-11ea-a2d5-8e6746f68c05", 
+                    "id": "1cae8400-4a11-11ea-a7c5-8e6746f68c05", 
                     "label": "napa_superblock", 
                     "src": "data/design/napa_superblock/0.jpg", 
                     "type": "dir"
@@ -1905,85 +1902,87 @@
                 {
                     "children": [
                         {
-                            "id": "ba843e1e-486f-11ea-bc31-8e6746f68c05", 
+                            "id": "1cbd02f0-4a11-11ea-baf5-8e6746f68c05", 
                             "label": "191018_LIMASSOL_CROP_2", 
                             "src": "data/design/pafilia/191018_LIMASSOL_CROP_2.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bbad2dc0-486f-11ea-a4d8-8e6746f68c05", 
+                            "id": "1e71dee1-4a11-11ea-a6d5-8e6746f68c05", 
                             "label": "191018_LIMASSOL_CROP_4", 
                             "src": "data/design/pafilia/191018_LIMASSOL_CROP_4.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bc9cbde1-486f-11ea-9e21-8e6746f68c05", 
+                            "id": "1f706321-4a11-11ea-822b-8e6746f68c05", 
                             "label": "191018_LIMASSOL_EXTERIORS_AERIAL_BALCONY_WB", 
                             "src": "data/design/pafilia/191018_LIMASSOL_EXTERIORS_AERIAL_BALCONY_WB.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bde91400-486f-11ea-950e-8e6746f68c05", 
+                            "id": "21a36fc0-4a11-11ea-aa99-8e6746f68c05", 
                             "label": "191018_LIMASSOL_EXTERIORS_PODIUM_POOL_WB", 
                             "src": "data/design/pafilia/191018_LIMASSOL_EXTERIORS_PODIUM_POOL_WB.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "bf7ad78f-486f-11ea-b827-8e6746f68c05", 
+                            "id": "22e628ee-4a11-11ea-9cc0-8e6746f68c05", 
                             "label": "2", 
                             "src": "data/design/pafilia/2.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c027b961-486f-11ea-b778-8e6746f68c05", 
+                            "id": "247888c0-4a11-11ea-8d7f-8e6746f68c05", 
                             "label": "3", 
                             "src": "data/design/pafilia/3.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c08df540-486f-11ea-ad29-8e6746f68c05", 
+                            "id": "251760cf-4a11-11ea-9821-8e6746f68c05", 
                             "label": "4", 
                             "src": "data/design/pafilia/4.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c0ec1acf-486f-11ea-b847-8e6746f68c05", 
+                            "id": "25a3c24f-4a11-11ea-9edb-8e6746f68c05", 
                             "label": "Image_010", 
                             "src": "data/design/pafilia/Image_010.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c84bec0f-486f-11ea-855f-8e6746f68c05", 
+                            "content": [
+                                "Design:: Woods Bagot Architects", 
+                                "Name:: Limassol NEO Residential Towers", 
+                                "Location:: Limassol, Cyprus", 
+                                "Date::2017", 
+                                "Role::Financial Stack & Block program optimization prototype, Daylighting/Visibility optimization", 
+                                "", 
+                                "Bordered by the Limassol Zoological Gardens and the Municipal Art Gallery, four luxury residential towers complemented by commercial offerings will soon reside on Cyprus\u2019 southern coast and elevate its community\u2019s holistic lifestyle. The mixed use waterfront development will be situated on a three-level podium with lush greenery that helps to frame the plaza and provide entry into the residential lobbies. Additionally, all 353 two- and three-bedroom apartments will enjoy uninterrupted views of both the mountains and Akrotiri Bay\u2014which was concluded with a detailed analysis by the firm\u2019s research analysis arm, SUPERSPACE."
+                            ], 
+                            "id": "2bec5730-4a11-11ea-8b73-8e6746f68c05", 
+                            "label": "info", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "2bee2bf0-4a11-11ea-b6a2-8e6746f68c05", 
                             "label": "NEO_Limassol_Report_Final_V2_01", 
                             "src": "data/design/pafilia/NEO_Limassol_Report_Final_V2_01.bmp", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c87df88f-486f-11ea-8d37-8e6746f68c05", 
+                            "id": "2c308c21-4a11-11ea-8371-8e6746f68c05", 
                             "label": "NEO_Limassol_Report_Final_V2_03", 
                             "src": "data/design/pafilia/NEO_Limassol_Report_Final_V2_03.bmp", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c8bb018f-486f-11ea-9e53-8e6746f68c05", 
+                            "id": "2c91beee-4a11-11ea-85c7-8e6746f68c05", 
                             "label": "NEO_Limassol_Report_Final_V2_04", 
                             "src": "data/design/pafilia/NEO_Limassol_Report_Final_V2_04.bmp", 
                             "type": "data"
-                        }, 
-                        {
-                            "content": [
-                                "Design:: Woods Bagot Architects", 
-                                "Location:: Limassol, Cyprus", 
-                                "Date:: 2017", 
-                                "", 
-                                "Bordered by the Limassol Zoological Gardens and the Municipal Art Gallery, four luxury residential towers complemented by commercial offerings will soon reside on Cyprus\u2019 southern coast and elevate its community\u2019s holistic lifestyle. The mixed use waterfront development will be situated on a three-level podium with lush greenery that helps to frame the plaza and provide entry into the residential lobbies. Additionally, all 353 two- and three-bedroom apartments will enjoy uninterrupted views of both the mountains and Akrotiri Bay\u2014which was concluded with a detailed analysis by the firm\u2019s research analysis arm, SUPERSPACE."
-                            ], 
-                            "id": "c8fc7761-486f-11ea-8567-8e6746f68c05", 
-                            "label": "project", 
-                            "type": "data"
                         }
                     ], 
-                    "id": "c8fc9e70-486f-11ea-bf13-8e6746f68c05", 
+                    "id": "2d9a5551-4a11-11ea-8a15-8e6746f68c05", 
                     "label": "pafilia", 
                     "src": "data/design/pafilia/191018_LIMASSOL_CROP_2.jpg", 
                     "type": "dir"
@@ -1991,19 +1990,32 @@
                 {
                     "children": [
                         {
-                            "id": "c9041880-486f-11ea-a310-8e6746f68c05", 
+                            "id": "2e0943c0-4a11-11ea-9ad6-8e6746f68c05", 
                             "label": "55c0ee1c4d9148281475102b10a74e39", 
                             "src": "data/design/sahmri2/55c0ee1c4d9148281475102b10a74e39.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c9519c40-486f-11ea-b5d9-8e6746f68c05", 
+                            "id": "2e866300-4a11-11ea-864d-8e6746f68c05", 
                             "label": "ba04657e4c9cc0d83261d91892f15387", 
                             "src": "data/design/sahmri2/ba04657e4c9cc0d83261d91892f15387.jpg", 
                             "type": "data"
+                        }, 
+                        {
+                            "content": [
+                                "Design::Woods Bagot Architects", 
+                                "Name::Sahmri II", 
+                                "Location::Adelaide, Australia", 
+                                "Date::2018", 
+                                "Role::Computational Floorplate Analysis/Daylighting", 
+                                ""
+                            ], 
+                            "id": "2ed01630-4a11-11ea-b1d2-8e6746f68c05", 
+                            "label": "info", 
+                            "type": "data"
                         }
                     ], 
-                    "id": "c9a5618f-486f-11ea-81cd-8e6746f68c05", 
+                    "id": "2ed03d40-4a11-11ea-afb6-8e6746f68c05", 
                     "label": "sahmri2", 
                     "src": "data/design/sahmri2/55c0ee1c4d9148281475102b10a74e39.jpg", 
                     "type": "dir"
@@ -2011,69 +2023,71 @@
                 {
                     "children": [
                         {
-                            "id": "c9b40791-486f-11ea-b310-8e6746f68c05", 
+                            "id": "2edf0a4f-4a11-11ea-8c29-8e6746f68c05", 
                             "label": "4SFO_BAB_950x534_creditSFO", 
                             "src": "data/design/sfo_t1_bab/4SFO_BAB_950x534_creditSFO.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "c9f0c270-486f-11ea-95ed-8e6746f68c05", 
+                            "id": "2efdb5e1-4a11-11ea-8477-8e6746f68c05", 
                             "label": "Harvey-Milk-Terminal__SF_Joe-Fletcher_01", 
                             "src": "data/design/sfo_t1_bab/Harvey-Milk-Terminal__SF_Joe-Fletcher_01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ca2036de-486f-11ea-86b5-8e6746f68c05", 
+                            "id": "2f1f95c0-4a11-11ea-8a31-8e6746f68c05", 
                             "label": "Harvey-Milk-Terminal__SF_Joe-Fletcher_02", 
                             "src": "data/design/sfo_t1_bab/Harvey-Milk-Terminal__SF_Joe-Fletcher_02.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ca6fb670-486f-11ea-ae3a-8e6746f68c05", 
+                            "id": "2f648e00-4a11-11ea-b14a-8e6746f68c05", 
                             "label": "Harvey-Milk-Terminal__SF_Joe-Fletcher_03", 
                             "src": "data/design/sfo_t1_bab/Harvey-Milk-Terminal__SF_Joe-Fletcher_03.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "cabbda9e-486f-11ea-b33e-8e6746f68c05", 
+                            "id": "2fb2fc21-4a11-11ea-bc45-8e6746f68c05", 
                             "label": "Harvey-Milk-Terminal__SF_Joe-Fletcher_04", 
                             "src": "data/design/sfo_t1_bab/Harvey-Milk-Terminal__SF_Joe-Fletcher_04.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "caec6080-486f-11ea-8d7c-8e6746f68c05", 
+                            "id": "31117ab0-4a11-11ea-85e5-8e6746f68c05", 
                             "label": "Harvey-Milk-Terminal__SF_Joe-Fletcher_05", 
                             "src": "data/design/sfo_t1_bab/Harvey-Milk-Terminal__SF_Joe-Fletcher_05.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "cb24395e-486f-11ea-903c-8e6746f68c05", 
+                            "content": [
+                                "", 
+                                "Design::Woods Bagot Architects", 
+                                "Name::San Francisco International Airport Terminal 1, Boarding Area B", 
+                                "Location::San Francisco, California", 
+                                "Date::2016 - 2017", 
+                                "Role::Passenger typology data analytics, clustering and visualization, Predictive behavioral/flow simulation/wayfinding, Behavioral/flow analysis scheme comparison, Prototype agent based modelling GH components and interoperability with Arup\u2019s MassMotion, Daylighting/Facade optimization, Ceiling panel acoustics optimization", 
+                                "", 
+                                "Comprehensive upgrades to the outdated 1960\u2019s facility encompass both its reconstruction and the addition of a 25-gate concourse to serve international and domestic operations. Incorporating next-generation building systems, the design anticipates forecasted leaps in traffic, aviation trends and the potential effects of rising sea levels. True to the values of its locale, the project is expected to achieve LEED Gold certification. This terminal elevates the passenger experience and the very idea of how an airport can perform.", 
+                                "The design of Boarding Area B creates a calm and curated journey from security to airside with improved passenger circulation and access to gates. Framed by high ceilings and abundant natural light, the generous central concourse features a new arrangement of intuitive wayfinding, advanced acoustics, controllable LED fixtures, art galleries, integrated technology, comfortable furnishings and food halls."
+                            ], 
+                            "id": "317c4a70-4a11-11ea-965b-8e6746f68c05", 
+                            "label": "info", 
+                            "type": "data"
+                        }, 
+                        {
+                            "id": "31dcb9f0-4a11-11ea-b12e-8e6746f68c05", 
                             "label": "original_SFO_BAB_HKS", 
                             "src": "data/design/sfo_t1_bab/original_SFO_BAB_HKS.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "content": [
-                                "Client:: San Fancisco International Airport", 
-                                "Design:: Woods Bagot Architects", 
-                                "Location:: San Francisco, CA, USA", 
-                                "Date:: 2016", 
-                                "", 
-                                "Comprehensive upgrades to the outdated 1960\u2019s facility encompass both its reconstruction and the addition of a 25-gate concourse to serve international and domestic operations. Incorporating next-generation building systems, the design anticipates forecasted leaps in traffic, aviation trends and the potential effects of rising sea levels. True to the values of its locale, the project is expected to achieve LEED Gold certification. This terminal elevates the passenger experience and the very idea of how an airport can perform.", 
-                                "The design of Boarding Area B creates a calm and curated journey from security to airside with improved passenger circulation and access to gates. Framed by high ceilings and abundant natural light, the generous central concourse features a new arrangement of intuitive wayfinding, advanced acoustics, controllable LED fixtures, art galleries, integrated technology, comfortable furnishings and food halls."
-                            ], 
-                            "id": "cba80f61-486f-11ea-83f7-8e6746f68c05", 
-                            "label": "project", 
-                            "type": "data"
-                        }, 
-                        {
-                            "id": "cbaa3240-486f-11ea-beef-8e6746f68c05", 
+                            "id": "326dd65e-4a11-11ea-8c54-8e6746f68c05", 
                             "label": "SFO-Mural-", 
                             "src": "data/design/sfo_t1_bab/SFO-Mural-.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "cc324e00-486f-11ea-acb7-8e6746f68c05", 
+                    "id": "32d2b2b0-4a11-11ea-bf44-8e6746f68c05", 
                     "label": "sfo_t1_bab", 
                     "src": "data/design/sfo_t1_bab/4SFO_BAB_950x534_creditSFO.jpg", 
                     "type": "dir"
@@ -2082,66 +2096,58 @@
                     "children": [
                         {
                             "content": [
-                                "The current context of the Architectural profession is at a turning point in regards to authorship of design, given the state of computational design and the rapidly increasing prevalence of BIM systems in the workplace. Likewise, the increased effectiveness of cloud computing has increased the ability to work anywhere, leading to a re imagining of the idea of a traditional \u201cworkplace\u201d. As a means of dealing with the idea of a deferred authorship resulting from computation in design, control of the output can be achieved earlier in the design process, on the level of the design tool. ", 
-                                "This project seeks to address the concept of the multi-use tower through the implementation of a design method for zoning and optimizing spacial conditions within a mixed use tech city, while tracking possible outcomes for desired program change over time."
-                            ], 
-                            "id": "cc39a100-486f-11ea-a5af-8e6746f68c05", 
-                            "label": "about", 
-                            "type": "data"
-                        }, 
-                        {
-                            "content": [
                                 "The algorithm builds off of a combination of shape grammar and cellular automata frameworks, determining ideal permutations of program zone location and possible spacial subdivisions from a user defined matrix of design prerequisites.", 
                                 "The competition includes a breakdown of the necessary program requirements and their percentages within the building which are transposed into a  detailed matrix of program information for the desired zoning relationships and adjacency, as well as other information such as floor plan type, capacity, solar orientation and location/height preferences. ", 
                                 "The evolution of the system and its ability to track changes over generations evaluates the efficacy of each generation based on the aforementioned parameters.", 
                                 "The dynamic customizable ruleset reads the matrix as a dictionary of desired attributes that each piece of program needs in order to fulfill its requirements to move on the next generation. Implemented in the process is the ability for any cell within the system to join with another cell, or to subdivide based on certain criterium. This permits the introduction of a spacial typology that can be pre-established in the parameters prior to the running of the algorithm.", 
                                 "Stasis is met when each cell's conditions are met and the next computed generation creates no changes in any cell\u2019s state. Cells attempt to rearrange in a mutually beneficial fashion in order to minimize problematic scenarios and to reach stasis in fewer computed generations."
                             ], 
-                            "id": "cc3c1200-486f-11ea-9865-8e6746f68c05", 
+                            "id": "32d76d9e-4a11-11ea-ac1d-8e6746f68c05", 
                             "label": "algorithm", 
                             "type": "data"
                         }, 
                         {
-                            "id": "cc427a9e-486f-11ea-8687-8e6746f68c05", 
+                            "id": "32d8cd30-4a11-11ea-9149-8e6746f68c05", 
                             "label": "axon-01", 
                             "src": "data/design/the_feed/axon-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "cda0ab0f-486f-11ea-a27c-8e6746f68c05", 
+                            "id": "351c7b9e-4a11-11ea-9a2d-8e6746f68c05", 
                             "label": "axon_02-01", 
                             "src": "data/design/the_feed/axon_02-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d12b7f80-486f-11ea-919d-8e6746f68c05", 
+                            "id": "37ea68ae-4a11-11ea-89b5-8e6746f68c05", 
                             "label": "board5-08", 
                             "src": "data/design/the_feed/board5-08.jpg", 
                             "type": "data"
                         }, 
                         {
                             "content": [
-                                "Adaptive Skyscraper London Competition brief, 2014", 
+                                "Adaptive Skyscraper London Competition brief::2014", 
+                                "", 
                                 "Explore and investigate the possibility of an inspirational design topology for a high quality Organic Skyscraper concept to be used as a Tech City for innovative technology and digital focused companies. The skyscraper concept should present a possible design solution for achieving a skyscraper that can grow vertically and horizontally to accommodate additionally floors to address a need for expansion or increased density. "
                             ], 
-                            "id": "d29ebe8f-486f-11ea-ba6f-8e6746f68c05", 
+                            "id": "38adb8b0-4a11-11ea-bcff-8e6746f68c05", 
                             "label": "brief", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d2b330f0-486f-11ea-9935-8e6746f68c05", 
+                            "id": "38b077cf-4a11-11ea-8487-8e6746f68c05", 
                             "label": "CA-01", 
                             "src": "data/design/the_feed/CA-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d54d3cc0-486f-11ea-b3f7-8e6746f68c05", 
+                            "id": "3cc7fbe1-4a11-11ea-a412-8e6746f68c05", 
                             "label": "flow-01", 
                             "src": "data/design/the_feed/flow-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d624b100-486f-11ea-a366-8e6746f68c05", 
+                            "id": "3dae8b4f-4a11-11ea-9e94-8e6746f68c05", 
                             "label": "full-01", 
                             "src": "data/design/the_feed/full-01.jpg", 
                             "type": "data"
@@ -2152,26 +2158,28 @@
                                 "Site:: London, UK", 
                                 "Program:: Mixed-Use Tech City", 
                                 "Competition::  Adaptive Skyscraper London Competition 2014", 
-                                "Advisers:: Raveevarn Choksombatchai, Kyle Steinfeld"
+                                "Advisers:: Raveevarn Choksombatchai, Kyle Steinfeld", 
+                                "", 
+                                "This project seeks to address the concept of the multi-use tower through the implementation of a design method for zoning and optimizing spacial conditions within a mixed use tech city, while tracking possible outcomes for desired program change over time."
                             ], 
-                            "id": "d99cc0c0-486f-11ea-bd46-8e6746f68c05", 
+                            "id": "42084880-4a11-11ea-90d1-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
-                            "id": "d99f58cf-486f-11ea-be9f-8e6746f68c05", 
+                            "id": "420eff40-4a11-11ea-907b-8e6746f68c05", 
                             "label": "matrix-01", 
                             "src": "data/design/the_feed/matrix-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "db83a930-486f-11ea-bf2f-8e6746f68c05", 
+                            "id": "436c1e40-4a11-11ea-837f-8e6746f68c05", 
                             "label": "PLAN-01-01", 
                             "src": "data/design/the_feed/PLAN-01-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "dd2dfdcf-486f-11ea-9bb8-8e6746f68c05", 
+                            "id": "45f7f940-4a11-11ea-b026-8e6746f68c05", 
                             "label": "process-01-01", 
                             "src": "data/design/the_feed/process-01-01.jpg", 
                             "type": "data"
@@ -2182,30 +2190,30 @@
                                 "The introduction of a residential component to the matrix results in a dual facade system where a glazed facade wraps the tech-city zones, while the screen facade provides exterior balconies and public spaces for the residential and social components of the program.  As a means of negotiating overlap, the screen functions as a protective barrier while on the outside of the glazing, and as a shading device for the work related program while on the inside.", 
                                 "Floor plates are all installed on space-frames in order to allow for their mobility or removal/additions based on program necessity"
                             ], 
-                            "id": "e00eaf8f-486f-11ea-8823-8e6746f68c05", 
+                            "id": "47972a4f-4a11-11ea-9dbf-8e6746f68c05", 
                             "label": "program", 
                             "type": "data"
                         }, 
                         {
-                            "id": "e01677c0-486f-11ea-8a6f-8e6746f68c05", 
+                            "id": "47b0579e-4a11-11ea-8044-8e6746f68c05", 
                             "label": "render_01bis", 
                             "src": "data/design/the_feed/render_01bis.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "e38b2c21-486f-11ea-8e04-8e6746f68c05", 
+                            "id": "4a63dee1-4a11-11ea-bc92-8e6746f68c05", 
                             "label": "render_02_base", 
                             "src": "data/design/the_feed/render_02_base.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "e5b3634f-486f-11ea-980c-8e6746f68c05", 
+                            "id": "4c02258f-4a11-11ea-83e0-8e6746f68c05", 
                             "label": "section-01", 
                             "src": "data/design/the_feed/section-01.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "f05eb611-486f-11ea-aca1-8e6746f68c05", 
+                    "id": "555d9fc0-4a11-11ea-a770-8e6746f68c05", 
                     "label": "the_feed", 
                     "src": "data/design/the_feed/the_feed.jpg", 
                     "type": "dir"
@@ -2213,29 +2221,19 @@
                 {
                     "children": [
                         {
-                            "content": [
-                                "Vertical Cities Asia is an  International Design Competition held once a year between 10-12 Architecture and Design Institutions around the world. The overall brief of the project remains the same year to year: Create a sustainable proposal for a future city on one square kilometer with the ability for 100 thousand people to live and work. The 2013 competition was sited on the outskirts of the rapidly expanding city of Hanoi, Vietnam, with the additional premise that the proposal should seek to produce 100% of its needed food resources on that same area while maintaining sustainable farming practices. This proposal was part of a collaborative effort between a team of UC Berkeley Architecture, City Planning and Landscape Architecture graduate students.", 
-                                "The project builds on the framework and hierarchy of the current tiered canal networks  to transform the existing farming system into a far more productive one, while retaining its ability to cope with heavy flooding during the monsoon season. The already locally prevalent closed-loop hydroponic and aquaponic coupling techniques, combined with a multilevel structural framework and rainwater storage system allows for a large increase in vegetable and fish yields compared to a traditionally farmed and similarly sized land area.", 
-                                "The upper levels of the aquaponic vertical farms are composed of variable density growing panels oriented on a North-South axis in order to optimize solar exposure, with the shade requirements of each plant affecting their location within the structure. The base of the system houses livestock and fish farms, and function as a wet market and distribution center for excess production."
-                            ], 
-                            "id": "f070b770-486f-11ea-9b81-8e6746f68c05", 
-                            "label": "about", 
-                            "type": "data"
-                        }, 
-                        {
-                            "id": "f073015e-486f-11ea-8140-8e6746f68c05", 
+                            "id": "557371b0-4a11-11ea-8a78-8e6746f68c05", 
                             "label": "DISTRICT_SMALL", 
                             "src": "data/design/vertical_cities/DISTRICT_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "f0ec2900-486f-11ea-8e01-8e6746f68c05", 
+                            "id": "55f15440-4a11-11ea-95dc-8e6746f68c05", 
                             "label": "Food_Forest_i", 
                             "src": "data/design/vertical_cities/Food_Forest_i.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "f39528ee-486f-11ea-9c59-8e6746f68c05", 
+                            "id": "58e1e480-4a11-11ea-a895-8e6746f68c05", 
                             "label": "highrise-rendering_small-copy", 
                             "src": "data/design/vertical_cities/highrise-rendering_small-copy.jpg", 
                             "type": "data"
@@ -2246,134 +2244,138 @@
                                 "Site:: Hanoi, Vietnam", 
                                 "Program:: \"Everyone Harvests\" Sustainable Future City", 
                                 "Competition:: Vertical Cities Asia (Honorable Mention)", 
-                                "Instructor:: Renee Chow"
+                                "Instructor:: Renee Chow", 
+                                "", 
+                                "Vertical Cities Asia is an  International Design Competition held once a year between 10-12 Architecture and Design Institutions around the world. The overall brief of the project remains the same year to year: Create a sustainable proposal for a future city on one square kilometer with the ability for 100 thousand people to live and work. The 2013 competition was sited on the outskirts of the rapidly expanding city of Hanoi, Vietnam, with the additional premise that the proposal should seek to produce 100% of its needed food resources on that same area while maintaining sustainable farming practices. This proposal was part of a collaborative effort between a team of UC Berkeley Architecture, City Planning and Landscape Architecture graduate students.", 
+                                "The project builds on the framework and hierarchy of the current tiered canal networks  to transform the existing farming system into a far more productive one, while retaining its ability to cope with heavy flooding during the monsoon season. The already locally prevalent closed-loop hydroponic and aquaponic coupling techniques, combined with a multilevel structural framework and rainwater storage system allows for a large increase in vegetable and fish yields compared to a traditionally farmed and similarly sized land area.", 
+                                "The upper levels of the aquaponic vertical farms are composed of variable density growing panels oriented on a North-South axis in order to optimize solar exposure, with the shade requirements of each plant affecting their location within the structure. The base of the system houses livestock and fish farms, and function as a wet market and distribution center for excess production."
                             ], 
-                            "id": "f45fa4e1-486f-11ea-b3bb-8e6746f68c05", 
+                            "id": "5a19ef4f-4a11-11ea-aae6-8e6746f68c05", 
                             "label": "info", 
                             "type": "data"
                         }, 
                         {
-                            "id": "f466a9c0-486f-11ea-9a62-8e6746f68c05", 
+                            "id": "5a207f00-4a11-11ea-bea9-8e6746f68c05", 
                             "label": "Innovation_line-01", 
                             "src": "data/design/vertical_cities/Innovation_line-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "f5f9a5d1-486f-11ea-8cae-8e6746f68c05", 
+                            "id": "5c10410f-4a11-11ea-8e40-8e6746f68c05", 
                             "label": "lungBase4", 
                             "src": "data/design/vertical_cities/lungBase4.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "f729251e-486f-11ea-95c0-8e6746f68c05", 
+                            "id": "5e3fa430-4a11-11ea-8166-8e6746f68c05", 
                             "label": "lung_axon", 
                             "src": "data/design/vertical_cities/lung_axon.png", 
                             "type": "data"
                         }, 
                         {
-                            "id": "fc4743c0-486f-11ea-b87f-8e6746f68c05", 
+                            "id": "64de6f61-4a11-11ea-9eca-8e6746f68c05", 
                             "label": "LUNG_uppercatwalk_desaturated_tiltshift", 
                             "src": "data/design/vertical_cities/LUNG_uppercatwalk_desaturated_tiltshift.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "fcf5ac30-486f-11ea-9a3c-8e6746f68c05", 
+                            "id": "6527d470-4a11-11ea-a3be-8e6746f68c05", 
                             "label": "master-plan3_SMALL", 
                             "src": "data/design/vertical_cities/master-plan3_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "fd80fc40-486f-11ea-86c8-8e6746f68c05", 
+                            "id": "659cdd5e-4a11-11ea-9746-8e6746f68c05", 
                             "label": "persp_02", 
                             "src": "data/design/vertical_cities/persp_02.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ff42f78f-486f-11ea-9719-8e6746f68c05", 
+                            "id": "6820a20f-4a11-11ea-84c5-8e6746f68c05", 
                             "label": "ppt-to-board-graphics2_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics2_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ff763c8f-486f-11ea-ba5b-8e6746f68c05", 
+                            "id": "684456b0-4a11-11ea-afba-8e6746f68c05", 
                             "label": "ppt-to-board-graphics3_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics3_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ffaaba11-486f-11ea-89d2-8e6746f68c05", 
+                            "id": "689f9611-4a11-11ea-a7ee-8e6746f68c05", 
                             "label": "ppt-to-board-graphics4_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics4_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "ffc4aab0-486f-11ea-814c-8e6746f68c05", 
+                            "id": "68c7de8f-4a11-11ea-a0d5-8e6746f68c05", 
                             "label": "ppt-to-board-graphics5_SMALL", 
                             "src": "data/design/vertical_cities/ppt-to-board-graphics5_SMALL.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "fffcd1b0-486f-11ea-bcee-8e6746f68c05", 
+                            "id": "68e48e4f-4a11-11ea-8fb2-8e6746f68c05", 
                             "label": "Section_finadfsl", 
                             "src": "data/design/vertical_cities/Section_finadfsl.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "00319d4f-4870-11ea-b32b-8e6746f68c05", 
+                            "id": "691f264f-4a11-11ea-9eaa-8e6746f68c05", 
                             "label": "Section_Food-System-copy", 
                             "src": "data/design/vertical_cities/Section_Food-System-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "01337cf0-4870-11ea-a2de-8e6746f68c05", 
+                            "id": "6ad2a2ae-4a11-11ea-aed4-8e6746f68c05", 
                             "label": "Section_Sun-System-copy", 
                             "src": "data/design/vertical_cities/Section_Sun-System-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "0259ad70-4870-11ea-b508-8e6746f68c05", 
+                            "id": "6bdf57c0-4a11-11ea-8ad3-8e6746f68c05", 
                             "label": "Section_Water SystemFLOOD", 
                             "src": "data/design/vertical_cities/Section_Water SystemFLOOD.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "03e7a070-4870-11ea-a953-8e6746f68c05", 
+                            "id": "6e8ac8ae-4a11-11ea-9ea4-8e6746f68c05", 
                             "label": "Section_Water SystemNOFLOOD-01", 
                             "src": "data/design/vertical_cities/Section_Water SystemNOFLOOD-01.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "063d5040-4870-11ea-a5f8-8e6746f68c05", 
+                            "id": "712a79d1-4a11-11ea-89d5-8e6746f68c05", 
                             "label": "Section_Water-System-copy", 
                             "src": "data/design/vertical_cities/Section_Water-System-copy.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "074152c0-4870-11ea-b150-8e6746f68c05", 
+                            "id": "721464a1-4a11-11ea-a837-8e6746f68c05", 
                             "label": "VAC_2_logo", 
                             "src": "data/design/vertical_cities/VAC_2_logo.jpg", 
                             "type": "data"
                         }, 
                         {
-                            "id": "081c9791-4870-11ea-9b8f-8e6746f68c05", 
+                            "id": "73a7fcf0-4a11-11ea-bce4-8e6746f68c05", 
                             "label": "VAC_2_logo_garden", 
                             "src": "data/design/vertical_cities/VAC_2_logo_garden.jpg", 
                             "type": "data"
                         }
                     ], 
-                    "id": "0ab82a00-4870-11ea-8495-8e6746f68c05", 
+                    "id": "767c52a1-4a11-11ea-944a-8e6746f68c05", 
                     "label": "vertical_cities", 
                     "src": "data/design/vertical_cities/vertical_cities.jpg", 
                     "type": "dir"
                 }
             ], 
-            "id": "0ab9145e-4870-11ea-b520-8e6746f68c05", 
+            "id": "767d15ee-4a11-11ea-aafd-8e6746f68c05", 
             "label": "design", 
             "src": "data/design/design.png", 
             "type": "dir"
         }
     ], 
-    "id": "0ab96280-4870-11ea-af20-8e6746f68c05", 
+    "id": "767d3d00-4a11-11ea-8d3a-8e6746f68c05", 
     "label": "", 
     "type": "dir"
 }
