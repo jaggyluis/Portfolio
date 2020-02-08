@@ -5,7 +5,7 @@
     overflow-y : auto;
     overflow-x : hidden;
     font-size : 14px;
-    background: white;
+    /* background: white; */
 }
 
 .layout-content .layout-label {
@@ -23,7 +23,7 @@
 }
 
 .layout-content .layout-title {
-    float: left;
+    /* float: left; */
     font-weight: bold;
     padding-right: 10px;
 }
@@ -32,6 +32,10 @@
     max-width: 700px;
     line-height: 1.5;
     padding: 0px 10px;
+}
+
+.layout-content .layout-text.bullet {
+    display: flex;
 }
 
 .layout-content .layout-text:not(.bullet) + .layout-text:not(.bullet) {

@@ -52,22 +52,47 @@ def load_image(path):
 
 #     return im
 
+# def compress_image(im, target_pixel_width) :
+
+#     im_size = im.size
+#     im_pixel_factor =  im_size[0] / target_pixel_width
+
+#     if (im_pixel_factor > 1) :
+
+#         im_new_x = im_size[0]/im_pixel_factor
+#         im_new_y = im_size[1]/im_pixel_factor
+
+#         if im_new_x <= 0 : im_new_x = 1
+#         if im_new_y <= 0 : im_new_y = 1
+
+#         im = im.resize((im_new_x,im_new_y),Image.ANTIALIAS)
+
+#         print "--> " , im_size[0], im.size[0], target_pixel_width, im_pixel_factor
+
+#     return im
+
+# def compress_image(im, target_pixel_width) :
+
+#     im_size = im.size
+#     im_pixel_factor =  im_size[0] / target_pixel_width
+
+#     if (im_pixel_factor > 1) :
+
+#         im_new_y = im_size[1]/im_pixel_factor
+#         if im_new_y <= 0 : im_new_y = 1
+
+#         im = im.resize((target_pixel_width, im_new_y),Image.ANTIALIAS)
+
+#         print "--> " , im_size, im.size, target_pixel_width, im_pixel_factor
+
+#     return im
+
 def compress_image(im, target_pixel_width) :
 
+    im = im.copy()
     im_size = im.size
-    im_pixel_factor =  im_size[0] / target_pixel_width
-
-    if (im_pixel_factor > 1) :
-
-        im_new_x = im_size[0]/im_pixel_factor
-        im_new_y = im_size[1]/im_pixel_factor
-
-        if im_new_x <= 0 : im_new_x = 1
-        if im_new_y <= 0 : im_new_y = 1
-
-        im = im.resize((im_new_x,im_new_y),Image.ANTIALIAS)
-
-        print "--> " , im_size[0], im.size[0], target_pixel_width, im_pixel_factor
+    im.thumbnail((target_pixel_width, target_pixel_width),Image.ANTIALIAS)
+    print "--> " , im_size, im.size, target_pixel_width
 
     return im
 
@@ -139,7 +164,7 @@ def build_dir(directory, target):
 
                     file_image_compressed.save(file_image_target_path, optimize=True,quality=file_image_quality) 
                     file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=file_image_quality)
-                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=file_image_quality)
+                    file_image_compressed_icon.save(file_image_target_path_icon, optimize=True, quality=file_image_quality)
                     file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=file_image_quality)
 
                     # write this to the tree ---
@@ -178,7 +203,7 @@ def build_dir(directory, target):
 
                     file_image_compressed.save(file_image_target_path, optimize=True,quality=file_image_quality) 
                     file_image_compressed_mobile.save(file_image_target_path_mobile, optimize=True, quality=file_image_quality)
-                    file_image_compressed_mobile.save(file_image_target_path_icon, optimize=True, quality=file_image_quality)
+                    file_image_compressed_icon.save(file_image_target_path_icon, optimize=True, quality=file_image_quality)
                     file_image_compressed_sm.save(file_image_target_path_sm, optimize=True, quality=file_image_quality)
 
                     # write this to the tree ---

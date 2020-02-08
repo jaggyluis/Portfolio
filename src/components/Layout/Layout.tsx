@@ -151,59 +151,27 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    getSlideChildTop(child: Node) {
-        if (this.isChildSelected(child)) return '0%';
-        if (isLayoutMobile(this.props) && !this.areNoChildrenSelected()) return 50 + (50 * (child.y0)) + "%"
-        return (100 * child.y0) + "%";
-    }
-
     getChildTop(child: Node) {
-        // if (this.shouldChildrenSlide()) return this.getSlideChildTop(child);
         if (this.isChildSelected(child)) return '0%';
         return (100 * child.y0) + "%";
-    }
-
-    getSlideChildLeft(child: Node) {
-        if (this.isChildSelected(child)) return '0%';
-        if (isLayoutMobile(this.props)) return (100 * child.x0) + "%";
-        if (!this.areNoChildrenSelected()) return 50 + (50 * (child.x0)) + "%"
-        return (100 * child.x0) + "%";
     }
 
     getChildLeft(child: Node) {
-        // if (this.shouldChildrenSlide()) return this.getSlideChildLeft(child);
         if (this.isChildSelected(child)) return '0%';
         return (100 * child.x0) + "%";
     }
 
-    getSlideChildWidth(child: Node) {
-        if (isLayoutMobile(this.props) && this.isChildSelected(child)) return '100%';
-        if (this.isChildSelected(child)) return '50%';
-        if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
-        if (!isLayoutMobile(this.props) && !this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0) / 2) + "%"
-        if (!this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
-        return '0%';
-    }
-
     getChildWidth(child: Node) {
-        // if (this.shouldChildrenSlide()) return this.getSlideChildWidth(child);
         if (this.isChildSelected(child)) return '100%';
         if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
+        if (!this.areNoChildrenSelected() && isTextNode(this.getSelectedChild() as Node)) return (100 * (child.x1 - child.x0)) + "%";
         return '0%';
-    }
-
-    getSlideChildHeight(child: Node) {
-        if (isLayoutMobile(this.props) && this.isChildSelected(child) && isDataNode(child)) return '50%';
-        if (this.isChildSelected(child)) return '100%';
-        if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
-        if (isLayoutMobile(this.props) &&  !this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0) / 2) + "%"
-        return (100 * (child.y1 - child.y0)) + "%";
     }
 
     getChildHeight(child: Node) {
-        // if (this.shouldChildrenSlide()) return this.getSlideChildHeight(child);
         if (this.isChildSelected(child)) return '100%';
         if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
+        if (!this.areNoChildrenSelected() && isTextNode(this.getSelectedChild() as Node)) return (100 * (child.y1 - child.y0)) + "%";
         return '0%';
     }
 

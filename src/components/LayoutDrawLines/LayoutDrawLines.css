@@ -1,4 +1,8 @@
 
+.layout-draw-lines {
+    transform: translate3d(0,0,0);
+}
+
 .layout-draw-lines.hidden {
     display: none;
 }
@@ -6,7 +10,7 @@
 .layout-draw-lines .line {
     position: absolute;
     pointer-events: none;
-    background: rgba(100,100,100,0.1);
+    background: rgba(100,100,100,0.05);
 }
 
 .layout-draw-lines .horizontal {

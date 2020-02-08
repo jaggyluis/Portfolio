@@ -47,24 +47,51 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
 
     getPath() {
         let src = getImageNodeSrc(this.props.node);
+        let width = this.props.width;
+
+        if (!this.props.contain) {
+            width = this.getNodeWidth() / 2;
+        }
+
+        if (width < 600) {
+            src = this.getIconPath(src);
+        } else if (width < 1200) {
+            src = this.getMobilePath(src);
+        }
+
         return src;
     }
 
-    getSrcSet(): string {
-        const path = this.getPath();
-        const srcSets = [
-            this.getIconPath(path) + " 300w",
-            this.getMobilePath(path) + " 600w",
-            path + " 1200w"
-        ]
-        const srcSet = srcSets.join(',');
-        return srcSet;
+    getNodeWidth() {
+        const width = this.props.width;
+        const nodeWidth = this.props.node.x1 - this.props.node.x0;
+        return width * nodeWidth;
     }
 
     shouldComponentUpdate(nxtProps: LayoutImageProps, nxsState: LayoutImageState) {
         return nxtProps.contain !== this.props.contain ||
             nxtProps.width !== this.props.width ||
             nxsState.src !== this.state.src;
+    }
+
+    componentWillMount() {
+        this.updateSrc();
+    }
+
+    componentDidUpdate() {
+        this.updateSrc();
+    }
+
+    updateSrc() {
+        // let src = this.getPath();
+
+        // if (src !== this.state.src) {
+        //     const srcImageLoader = new Image();
+        //     srcImageLoader.src = src;
+        //     srcImageLoader.onload = () => {
+        //         this.setState({ src });
+        //     };
+        // }
     }
 
     getClassName() {
@@ -77,24 +104,24 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         return (
             // <img
             //     className={this.getClassName()}
-            //     // src={this.getIconPath(this.getPath())}
-            //     sizes="100vw"
-            //     srcSet={this.getSrcSet()}
-            //     alt={this.getPath()}
+            //     src={this.state.src || this.getPlaceholderPath(getImageNodeSrc(this.props.node))}
+            //     alt='layout-node'
             // />
-            <picture>
-                {
-                    this.props.width >= 1200 || (this.props.width > 600 && this.props.contain)
-                    ?  <source srcSet={this.getPath()} media="(min-width: 600px)" />
-                    : undefined
-                }
-                {
-                    this.props.width >= 600 || (this.props.width > 300 && this.props.contain)
-                    ? <source srcSet={this.getMobilePath(this.getPath())} media="(min-width: 300px)" />
-                    : undefined
-                }
-                <img className={this.getClassName()} src={this.getIconPath(this.getPath())} alt={this.getPath()} />
-            </picture>
+            // <div
+            //     className={this.getClassName()}
+            //     style={{ backgroundImage:'url(' + src + ')' }}
+            // >
+            // </div>
+            // <div
+            //     className={this.getClassName()}
+            //     style={{ backgroundImage: 'url(' + this.getPath() + ')' }}
+            // >
+            // </div>
+            <img
+                className={this.getClassName()}
+                src={this.getPath()}
+                alt={this.getPath()}
+            />
         )
     }
 }

@@ -3,7 +3,7 @@
     width: 100%;
     flex-direction: column;
     display: flex;
-    background: white;
+    background: #ffffffde;
 }
 
 .layout.transitioning > * {

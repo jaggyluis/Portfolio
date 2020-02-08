@@ -36,9 +36,9 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         const r = 180 + Math.random() * 40;
 
         const color =  'lightgrey'; //'rgb(' + r + ',' + r + ',' + r + ')';
-        const separation = 2; //Math.round(Math.random() * 5) + 1;
+        const separation = 0.05; //Math.round(Math.random() * 5) + 1;
         const degrees = -45; //[-45, 45][Math.round(Math.random())];
-        const gradient = 'repeating-linear-gradient(' + degrees + 'deg, ' + color + ',' + color + ' 1px, white 1px, white '+ separation + 'px)'
+        const gradient = 'repeating-linear-gradient(' + degrees + 'deg, ' + color + ',' + color + ' 1px, white 1px, white '+ separation + 'em)'
 
         return {
             fontSize: h + 'px',
