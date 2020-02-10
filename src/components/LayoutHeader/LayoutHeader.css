@@ -22,7 +22,8 @@
   position: sticky;
   padding-right: 10px;
   line-height: 0.8;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  text-transform: capitalize;
   letter-spacing: -1px;
   color: black;
   cursor: default;

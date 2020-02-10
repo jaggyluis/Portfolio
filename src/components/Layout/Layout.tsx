@@ -370,6 +370,20 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
+    onKeyUp(evt : React.KeyboardEvent) {
+        if (evt.keyCode === 39) {
+            if (this.props.nodeState.selected && isNodeBranch(this.props.node)) {
+                this.nextSelectedChild();
+                evt.stopPropagation();
+            }
+        } else if (evt.keyCode === 37) {
+            if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
+                this.clearSelectedChildren();
+                evt.stopPropagation();
+            }
+        }
+    }
+
     getClassName() {
         const className = ['layout'];
         if (this.props.nodeState.selected) className.push('selected');
@@ -386,6 +400,7 @@ export class Layout extends React.Component<LayoutProps> {
                 className={this.getClassName()}
                 ref={el => this.container = el}
                 onClick={this.onNodeClick.bind(this)}
+                onKeyUp={this.onKeyUp.bind(this)}
                 tabIndex={0}
             >
                 {this.getHeader()}

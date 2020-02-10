@@ -27,19 +27,21 @@ export class LayoutContent extends React.PureComponent<LayoutProps> {
 
     getText() {
         if (isTextNode(this.props.node)) return getTextNodeContent(this.props.node).map((txt, index) => {
-
-            const split = txt.split('::');
-
-            if (split.length > 1) {
+            if (txt.includes('::')) {
+                let split = txt.split('::');
+                let items: string[] = [];
+                if (split.length > 1) {
+                    items = split[1].split('|');
+                }
                 return <div className='layout-text bullet' key={index} >
                     <div className='layout-title'>{split[0]}</div>
-                    {split.slice(1).map((s,i) => <div key={i}>{s}</div>)}
+                    <div className='layout-items'>
+                        {items.map((s,i) => <div key={i}>{s}</div>)}
+                    </div>
                 </div>
             } else {
                 return <div className='layout-text' key={index} >{txt}</div>
             }
-
-            
         });
         return undefined;
     }

@@ -13,7 +13,7 @@
 .layout .layout-buttons {
     position: absolute;
     height: 100%;
-    width: calc(100% + 10px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
