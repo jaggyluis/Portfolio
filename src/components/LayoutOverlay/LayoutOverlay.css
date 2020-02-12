@@ -20,13 +20,13 @@
 
 .layout-overlay .layout-label {
   position: absolute;
-  line-height: 0.8;
-  /* text-transform: uppercase; */
-  text-transform: capitalize;
+  line-height: 0.75;
+  text-transform: uppercase;
+  /* text-transform: capitalize; */
   word-break: break-all;
   color: #595959;
   /* color: white; */
-  letter-spacing: -1px;
+  /* letter-spacing: -1px; */
   mix-blend-mode: difference;
   pointer-events: none;
   padding-left: 10px;

@@ -26,8 +26,16 @@ class App extends React.Component<AppProps> {
 
     onNodeClick() {
         // setTimeout(() => {
-        this.setState({ selected: true });
+        //     this.setState({ selected: true });
         // }, 300)
+    }
+
+    onCVClick() {
+        window.open('./assets/jaggy_cv.pdf', 'mywindow');
+    }
+
+    onLinkedInClick() {
+        window.open('https://www.linkedin.com/in/jaggyluis/', 'mywindow');
     }
 
     componentDidMount() {
@@ -41,24 +49,8 @@ class App extends React.Component<AppProps> {
         node.data.label = "Luis Jaggy";
 
         return (
-            <div
-                className='Wrapper'
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    overflow: 'hidden',
-                    position: 'absolute'
-                }}
-            >
-                <div
-                    className="App"
-                    onClick={this.onNodeClick.bind(this)}
-                    style={{
-                        height: 'calc(100% - 50px)',
-                        paddingTop: '10px',
-                        width: '100%',
-                    }}
-                >
+            <div className='Wrapper'>
+                <div className="App" onClick={this.onNodeClick.bind(this)}>
                     <Layout
                         width={this.state.width}
                         height={this.state.height}
@@ -71,36 +63,9 @@ class App extends React.Component<AppProps> {
                         parentState={null}
                     />
                 </div>
-                <div
-                    className='Menu'
-                    style={{
-                        height: '40px',
-                        position: 'absolute',
-                        bottom: '0',
-                        right: '0',
-                        display: 'flex',
-                        padding : '0px 10px'
-                    }}
-                >
-                    <div
-                        onClick={() => { window.open('https://www.linkedin.com/in/jaggyluis/', 'mywindow') }}
-                        style={{
-                            fontWeight: 'bold',
-                            fontSize: '18px',
-                            cursor: 'pointer',
-                            lineHeight: '40px',
-                            margin: 'auto',
-                            paddingRight: '10px',
-                        }}
-                    >in</div>
-                    <div
-                        style={{
-                            fontSize: '18px',
-                            cursor: 'pointer',
-                            lineHeight: '40px',
-                            margin: 'auto'
-                        }}
-                    >resume</div>
+                <div className='Menu'>
+                    <div className='menu-item bold' onClick={this.onLinkedInClick.bind(this)}>in</div>
+                    <div className='menu-item' onClick={this.onCVClick.bind(this)}>resume</div>
                 </div>
             </div>
         );
