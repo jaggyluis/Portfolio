@@ -25,10 +25,12 @@
   text-transform: uppercase;
   /* text-transform: capitalize; */
   /* letter-spacing: -1px; */
+  float: left;
+  letter-spacing: 4px;
   color: black;
   cursor: default;
   margin-top: -1px;
-  border-top: 1px solid rgba(100,100,100,0.05);
+  border-top: 1px solid var(--line-color);
 }
 
 .layout-header .layout-header-node.sibling {

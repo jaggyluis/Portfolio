@@ -27,11 +27,12 @@
   color: #595959;
   /* color: white; */
   /* letter-spacing: -1px; */
+  letter-spacing: 4px;
   mix-blend-mode: difference;
   pointer-events: none;
   padding-left: 10px;
-  /* height: calc(100% - 10px); */
-  /* width: calc(100% - 10px); */
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
   background: black;
   /* background: linear-gradient(170deg, rgb(24, 24, 24) 10%, rgba(255, 255, 255, 0) 100%); */
   /* background: linear-gradient(170deg, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 100%); */

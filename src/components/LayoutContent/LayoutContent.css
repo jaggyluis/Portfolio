@@ -17,6 +17,7 @@
     position: sticky;
     color : #d3d3d366;
     /* letter-spacing: -1px; */
+    letter-spacing: 4px;
     word-break: break-all;
     mix-blend-mode : multiply;
     margin-bottom: -10px;

@@ -10,7 +10,7 @@
 .layout-draw-lines .line {
     position: absolute;
     pointer-events: none;
-    background: rgba(100,100,100,0.05);
+    background: var(--line-color);
 }
 
 .layout-draw-lines .horizontal {

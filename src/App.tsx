@@ -64,7 +64,7 @@ class App extends React.Component<AppProps> {
                     />
                 </div>
                 <div className='Menu'>
-                    <div className='menu-item bold' onClick={this.onLinkedInClick.bind(this)}>in</div>
+                    <div className='menu-item linkedin' onClick={this.onLinkedInClick.bind(this)}>in</div>
                     <div className='menu-item' onClick={this.onCVClick.bind(this)}>resume</div>
                 </div>
             </div>

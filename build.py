@@ -11,11 +11,6 @@ source_path = "src\\data\\root\\"
 target_path = "public/data/"    
 target_src = "data/"
 
-# file_image_pixel_target = 500000
-# file_image_pixel_target_mobile = 250000
-# file_image_pixel_target_icon = 125000 #can possibly go down to 100000
-# file_image_pixel_target_sm = 10
-
 file_image_pixel_target = 1200
 file_image_pixel_target_mobile = 600
 file_image_pixel_target_icon = 300
@@ -23,69 +18,13 @@ file_image_pixel_target_sm = 10
 file_image_quality = 95
 
 def format_path_src(path) :   
-    # return path.replace("\\", "/").replace(source_path, target_path)
-    return path.replace(source_path, target_src).replace("\\", "/")
+    return path.replace(target_path, target_src).replace("\\", "/")
 
 def format_path(path) :
     return path.replace(source_path, target_path).replace("\\", "/")
 
 def load_image(path):
     return Image.open(path)
-
-# def compress_image(im, target_pixel_count) :
-
-#     im_size = im.size
-#     im_pixel_count = im_size[0] * im_size[1] 
-#     im_pixel_factor =  int(math.sqrt(im_pixel_count / target_pixel_count))
-
-#     if (im_pixel_count > target_pixel_count and im_pixel_factor != 1) :
-
-#         im_new_x = im_size[0]/im_pixel_factor
-#         im_new_y = im_size[1]/im_pixel_factor
-
-#         if im_new_x <= 0 : im_new_x = 1
-#         if im_new_y <= 0 : im_new_y = 1
-
-#         im = im.resize((im_new_x,im_new_y),Image.ANTIALIAS)
-
-#         print "--> " , im_size, im_pixel_count, im.size, target_pixel_count, im_pixel_factor
-
-#     return im
-
-# def compress_image(im, target_pixel_width) :
-
-#     im_size = im.size
-#     im_pixel_factor =  im_size[0] / target_pixel_width
-
-#     if (im_pixel_factor > 1) :
-
-#         im_new_x = im_size[0]/im_pixel_factor
-#         im_new_y = im_size[1]/im_pixel_factor
-
-#         if im_new_x <= 0 : im_new_x = 1
-#         if im_new_y <= 0 : im_new_y = 1
-
-#         im = im.resize((im_new_x,im_new_y),Image.ANTIALIAS)
-
-#         print "--> " , im_size[0], im.size[0], target_pixel_width, im_pixel_factor
-
-#     return im
-
-# def compress_image(im, target_pixel_width) :
-
-#     im_size = im.size
-#     im_pixel_factor =  im_size[0] / target_pixel_width
-
-#     if (im_pixel_factor > 1) :
-
-#         im_new_y = im_size[1]/im_pixel_factor
-#         if im_new_y <= 0 : im_new_y = 1
-
-#         im = im.resize((target_pixel_width, im_new_y),Image.ANTIALIAS)
-
-#         print "--> " , im_size, im.size, target_pixel_width, im_pixel_factor
-
-#     return im
 
 def compress_image(im, target_pixel_width) :
 
@@ -116,15 +55,17 @@ def build_dir(directory, target):
     data = {}
     children = []
     images = []
+    count = 0
 
     #iterate through the directory files ---
     for file_ in os.listdir(directory):
 
-        print(directory, file_)
+        print(directory, file_, count)
 
         file_name = os.path.splitext(file_)[0]
         file_path = os.path.join(directory, file_)
-        
+        count+=1
+
         # if the file is a directory ---
         if os.path.isdir(file_path) :
                 
@@ -134,7 +75,7 @@ def build_dir(directory, target):
             if dir_data :
                 children.append(dir_data)
 
-        #if the file is not a directory ---
+        # if the file is not a directory ---
         else :
 
             file_extension = file_.split(".")[-1].lower()
@@ -146,12 +87,12 @@ def build_dir(directory, target):
 
                 elif file_.lower().endswith(".jpg") or file_.lower().endswith(".jpeg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
 
-                    file_image_target_path = format_path(file_path)
+                    file_image_target_path = format_path(directory + "/" + file_name + "." + file_extension)
                     file_image_target_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
                     file_image_target_path_icon = format_path(directory + "/" + file_name + "_i." + file_extension)
                     file_image_target_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
 
-                    file_image_target_src = format_path_src(file_path)
+                    file_image_target_src = format_path_src(file_image_target_path)
                     
                     file_image = load_image(file_path)
                     file_image_aspect = float(file_image.size[0]) / float(file_image.size[1])
@@ -185,12 +126,13 @@ def build_dir(directory, target):
 
                 elif file_.lower().endswith(".jpg") or file_.lower().endswith(".jpeg") or file_.lower().endswith(".png") or file_.lower().endswith(".bmp"):
 
-                    file_image_target_path = format_path(file_path)
-                    file_image_target_path_mobile = format_path(directory + "/" + file_name + "_m." + file_extension)
-                    file_image_target_path_icon = format_path(directory + "/" + file_name + "_i." + file_extension)
-                    file_image_target_path_sm = format_path(directory + "/" + file_name + "_s." + file_extension)
+                    file_image_name = directory_name + "_img_" + str(count)
+                    file_image_target_path = format_path(directory + "/" + file_image_name + "." + file_extension)
+                    file_image_target_path_mobile = format_path(directory + "/" + file_image_name + "_m." + file_extension)
+                    file_image_target_path_icon = format_path(directory + "/" + file_image_name + "_i." + file_extension)
+                    file_image_target_path_sm = format_path(directory + "/" + file_image_name + "_s." + file_extension)
 
-                    file_image_target_src = format_path_src(file_path)
+                    file_image_target_src = format_path_src(file_image_target_path)
                     
                     file_image = load_image(file_path)
                     file_image_aspect = float(file_image.size[0]) / float(file_image.size[1])
