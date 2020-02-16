@@ -8,12 +8,7 @@ export interface LayoutImageProps {
     contain: boolean;
     width: number;
 }
-export interface LayoutImageState {
-    src: string | null;
-}
 export class LayoutImage extends React.Component<LayoutImageProps> {
-
-    state: LayoutImageState = { src: null }
 
     getMobilePath(path: string): string {
         if (path) {
@@ -61,10 +56,8 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         return srcSet;
     }
 
-    shouldComponentUpdate(nxtProps: LayoutImageProps, nxsState: LayoutImageState) {
-        return nxtProps.contain !== this.props.contain ||
-            nxtProps.width !== this.props.width ||
-            nxsState.src !== this.state.src;
+    shouldComponentUpdate(nxtProps: LayoutImageProps) {
+        return nxtProps.contain !== this.props.contain;
     }
 
     getClassName() {
@@ -75,26 +68,13 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
 
     render() {
         return (
-            // <img
-            //     className={this.getClassName()}
-            //     // src={this.getIconPath(this.getPath())}
-            //     sizes="100vw"
-            //     srcSet={this.getSrcSet()}
-            //     alt={this.getPath()}
-            // />
-            <picture>
-                {
-                    this.props.width >= 1200 || (this.props.width > 600 && this.props.contain)
-                    ?  <source srcSet={this.getPath()} media="(min-width: 600px)" />
-                    : undefined
-                }
-                {
-                    this.props.width >= 600 || (this.props.width > 300 && this.props.contain)
-                    ? <source srcSet={this.getMobilePath(this.getPath())} media="(min-width: 300px)" />
-                    : undefined
-                }
-                <img className={this.getClassName()} src={this.getIconPath(this.getPath())} alt={this.getPath()} />
-            </picture>
+            <img
+                className={this.getClassName()}
+                src={this.getPlaceholderPath(this.getPath())}
+                sizes={/*this.props.contain ? "100vw" : */ "50vw" }
+                srcSet={this.getSrcSet()}
+                alt={this.getPath()}
+            />
         )
     }
 }

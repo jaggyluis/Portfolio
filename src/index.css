@@ -1,6 +1,7 @@
 :root {
   /* --line-color: rgba(100,100,100,0.05); */
-  --line-color : rgba(0,0,0,0.2);
+  /* --line-color : rgba(0,0,0,0.1); */
+  --line-color: rgb(225, 225, 225);
 }
 
 body {

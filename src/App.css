@@ -21,7 +21,7 @@
 
 .Menu .menu-item {
     font-size: 30px;
-    line-height: 0.7;
+    line-height: 0.65;
     letter-spacing: 4px;
     cursor: pointer;
     border-bottom: 1px solid var(--line-color);
@@ -38,7 +38,11 @@
 
 @media screen and (max-width: 600px) {
 
+    .App {
+        height: calc(100% - 32px);
+    }
+
     .Menu .menu-item {
-        font-size: 26px;
+        font-size: 22px;
     }
 }
