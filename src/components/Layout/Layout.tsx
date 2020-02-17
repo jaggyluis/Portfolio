@@ -388,6 +388,7 @@ export class Layout extends React.Component<LayoutProps> {
         const className = ['layout'];
         if (this.props.nodeState.selected) className.push('selected');
         if (this.state.transitioning) className.push('transitioning');
+        if (isTextNode(this.props.node)) className.push('content');
         if (isNodeLeaf(this.props.node)) className.push('leaf');
         if (isNodeBranch(this.props.node)) className.push('branch');
         if (this.props.nodeDepth === 0) className.push('root');

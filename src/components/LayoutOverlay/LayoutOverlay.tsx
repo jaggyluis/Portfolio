@@ -58,8 +58,14 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
     getLabel() {
         let label = getNodeLabel(this.props.node);
         label = label.replace(/_/g, ' ');
-
         return <div className='layout-label' style={this.getLabelStyle()} >{label}</div>
+    }
+
+    getIcon() {
+        if (isTextNode(this.props.node)) {
+            return <div className='layout-expand-icon'>{"<>"}</div>
+        }
+        return undefined;
     }
 
     render() {
@@ -68,6 +74,7 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
                 {this.getImage()}
                 {this.getColor()}
                 {this.getLabel()}
+                {/* {this.getIcon()} */}
             </div>
         )
     }

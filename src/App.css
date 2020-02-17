@@ -15,7 +15,7 @@
 .Menu {
     position: absolute;
     z-index: 20;
-    right: 20px;
+    right: 10px;
     display: flex;
 }
 

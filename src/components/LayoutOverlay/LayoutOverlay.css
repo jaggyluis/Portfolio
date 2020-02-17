@@ -43,3 +43,20 @@
   transition: var(--transitionDuration);
   will-change: color;
 }
+
+.layout-overlay .layout-expand-icon {
+  position: absolute;
+  bottom: 0;
+  font-family: monospace;
+  right: 0;
+  font-size: 20px;
+  transform: rotateZ(45deg) scaleY(1.2);
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+    
+  .layout-overlay .layout-expand-icon {
+    display: inline;
+  }
+}
