@@ -13,7 +13,6 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
     shouldComponentUpdate(nxtProps: LayoutHeaderProps) { // NOTE - or pureComponent
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
-        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
         return false;
     }
 

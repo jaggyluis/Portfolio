@@ -29,13 +29,13 @@ export class LayoutHeaderLabel extends React.Component<LayoutHeaderLabelProps> {
     onNodeClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         if (this.props.onNodeClick) {
             this.props.onNodeClick(this.props.node);
-            e.stopPropagation();
         }
+        e.stopPropagation();
     }
 
     getStyle(): React.CSSProperties {
 
-        const s = this.props.small ? 22 : 30;
+        const s = this.props.small ? 22 : 26;
         const c = Math.ceil(s / 7)
         const d = this.props.depth * c
         const h = s - d;

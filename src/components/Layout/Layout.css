@@ -10,6 +10,10 @@
     background: #ffffffde;
 }
 
+.layout.content.selected {
+    /* max-width: 500px; */
+}
+
 .layout.transitioning > * {
     pointer-events: none !important;
 }
@@ -76,6 +80,10 @@
     display: inline;
 }
 
+/* .layout.selected:not(.leaf) > .layout-draw-lines {
+    display: none;
+} */
+
 /* .layout.transitioning > .layout-children .layout-header-node.sibling {
     display: none;
 } */
@@ -88,7 +96,7 @@
     display: none;
 } */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) { */
 
     .layout.transitioning > .layout-children .layout-draw-lines {
         display: none;
@@ -101,4 +109,4 @@
     /* .layout.transitioning > .layout-children .layout-header-node.sibling {
         display: none;
     } */
-}
+/* } */

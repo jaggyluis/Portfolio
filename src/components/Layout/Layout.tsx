@@ -59,8 +59,9 @@ export class Layout extends React.Component<LayoutProps> {
     shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - or pureComponent
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
-        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
-        if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
+        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId &&
+            (this.props.nodeSiblingSelectedId === null || nxtProps.nodeSiblingSelectedId === null)) return true;
+        // if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
         if (this.state.transitioning !== nxtState.transitioning) return true;
         return false;
     }
@@ -109,14 +110,14 @@ export class Layout extends React.Component<LayoutProps> {
                 if (child) {
                     // this.clearSelectedChildren();
                     // setTimeout(() => {
-                        this.setSelectedChild(child as Node);
+                    this.setSelectedChild(child as Node);
                     // }, this.state.transitionDuration + 100)
                 }
             }
         }
     }
 
-    getSelectedChild() : Node | null {
+    getSelectedChild(): Node | null {
         if (this.areNoChildrenSelected() || !this.layout.children) return null;
         return this.layout.children.find(child => child.data.id === this.state.selectedChildId) || null;
     }
@@ -183,7 +184,7 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    getChildClassName(child: Node) : string {
+    getChildClassName(child: Node): string {
         const className = ['layout-child-position'];
         if (this.isChildSelected(child)) className.push('selected');
         else if (!this.areNoChildrenSelected() && !isTextNode(this.getSelectedChild() as Node)) className.push('hidden');
@@ -244,7 +245,7 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getDrawLines() {
-        return <LayoutDrawLines key={this.props.node.data.id + '-lines'}  {...this.props} />
+        return <LayoutDrawLines key={this.props.node.data.id + '-lines'} />
     }
 
     onHeaderNodeClick(node: Node | null) {
@@ -270,21 +271,21 @@ export class Layout extends React.Component<LayoutProps> {
 
     getButtonsStyle(): React.CSSProperties {
         return {
-            display : isLayoutMobile(this.props) 
-                && this.props.nodeState.selected 
+            display: isLayoutMobile(this.props)
+                && this.props.nodeState.selected
                 && this.areNoChildrenSelected() ? undefined : 'none'
         }
     }
 
     getLeftButtonStyle(): React.CSSProperties {
         return {
-            visibility : this.props.parentState !== null ? undefined : 'hidden'
+            visibility: this.props.parentState !== null ? undefined : 'hidden'
         }
     }
 
-    getRightButtonStyle() : React.CSSProperties {
+    getRightButtonStyle(): React.CSSProperties {
         return {
-            visibility : isNodeLeaf(this.props.node) ? undefined : 'hidden'
+            visibility: isNodeLeaf(this.props.node) ? undefined : 'hidden'
         }
     }
 
@@ -300,8 +301,8 @@ export class Layout extends React.Component<LayoutProps> {
     onNodeClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         if (this.props.onNodeClick) {
             this.props.onNodeClick(this.props.node);
-            e.stopPropagation();
         }
+        e.stopPropagation();
     }
 
     onNodeTouch(evt: React.MouseEvent<HTMLDivElement, MouseEvent>, dir: string, phase: string, swipetype: string, distance: number) {
@@ -311,7 +312,7 @@ export class Layout extends React.Component<LayoutProps> {
         // phase: contains "start", "move", or "end"
         // swipetype: contains "none", "left", "right", "top", or "down"
         // distance: distance traveled either horizontally or vertically, depending on dir value
-        
+
         // if (phase === 'end' && (dir == 'right' || dir == 'down')) 
 
         if (phase === 'end' && dir == 'left') {
@@ -327,7 +328,7 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    onKeyUp(evt : React.KeyboardEvent) {
+    onKeyUp(evt: React.KeyboardEvent) {
         if (evt.keyCode === 39) {
             if (this.props.nodeState.selected && isNodeBranch(this.props.node)) {
                 this.nextSelectedChild();
