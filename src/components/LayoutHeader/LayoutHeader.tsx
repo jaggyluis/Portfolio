@@ -3,19 +3,14 @@ import { LayoutProps } from '../Layout/Layout';
 import { LayoutHeaderLabel } from '../LayoutHeaderLabel/LayoutHeaderLabel';
 import { isLayoutMobile } from './../../utils/layout';
 import './LayoutHeader.css';
-import { isNodeBranch } from '../../utils/node';
 
-export interface LayoutHeaderProps extends LayoutProps {
-    expanded?: boolean;
-    onButtonClick?: () => void;
-}
+export interface LayoutHeaderProps extends LayoutProps {}
 export interface LayoutHeaderState {
     transitionDuration: number;
 }
 export class LayoutHeader extends React.Component<LayoutHeaderProps> {
 
     shouldComponentUpdate(nxtProps: LayoutHeaderProps) { // NOTE - or pureComponent
-        if (this.props.expanded !== nxtProps.expanded) return true;
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
         if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
@@ -58,9 +53,7 @@ export class LayoutHeader extends React.Component<LayoutHeaderProps> {
 
     getClassName() {
         const className = ['layout-header'];
-        if (this.props.expanded) className.push('expanded');
         if (this.props.nodeState.selected) className.push('selected');
-        if (isLayoutMobile(this.props)) className.push('small');
         return className.join(' ');
     }
 

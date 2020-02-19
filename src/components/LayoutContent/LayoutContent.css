@@ -5,7 +5,6 @@
     overflow-y : auto;
     overflow-x : hidden;
     font-size : 14px;
-    /* background: white; */
 }
 
 .layout-content .layout-label {
@@ -16,7 +15,6 @@
     top: 0;
     position: sticky;
     color : #d3d3d366;
-    /* letter-spacing: -1px; */
     letter-spacing: 4px;
     word-break: break-all;
     mix-blend-mode : multiply;
@@ -24,7 +22,6 @@
 }
 
 .layout-content .layout-title {
-    /* float: left; */
     font-weight: bold;
     padding-right: 10px;
 }

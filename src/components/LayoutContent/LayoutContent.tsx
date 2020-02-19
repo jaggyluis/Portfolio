@@ -31,12 +31,16 @@ export class LayoutContent extends React.PureComponent<LayoutProps> {
                 let split = txt.split('::');
                 let items: string[] = [];
                 if (split.length > 1) {
-                    items = split[1].split('|');
+                    items = split[1].split('|').filter(s => s.length);
                 }
                 return <div className='layout-text bullet' key={index} >
                     <div className='layout-title'>{split[0]}</div>
                     <div className='layout-items'>
-                        {items.map((s,i) => <div key={i}>{s}</div>)}
+                        {
+                            items.length > 1 
+                            ? items.map((s,i) => <li key={i}>{s}</li>)
+                            : items.map((s,i) => <div key={i}>{s}</div>)   
+                        }
                     </div>
                 </div>
             } else {

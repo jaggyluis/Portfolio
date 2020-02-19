@@ -10,30 +10,28 @@
     height: calc(100% - 40px);
     padding-top: 10px;
     width: 100%;
+    margin: auto;
 }
 
 .Menu {
-    position: absolute;
     z-index: 20;
-    right: 10px;
-    display: flex;
+    width: 100%;
+    margin: auto;
 }
 
 .Menu .menu-item {
     font-size: 30px;
     line-height: 0.65;
     letter-spacing: 4px;
+    padding: 0 10px;
     cursor: pointer;
+    float: right;
     border-bottom: 1px solid var(--line-color);
 }
 
 .Menu .menu-item.linkedin {
     font-weight: bold;
     letter-spacing: unset;
-}
-
-.Menu .menu-item + .menu-item {
-    padding-left: 20px;
 }
 
 @media screen and (max-width: 600px) {

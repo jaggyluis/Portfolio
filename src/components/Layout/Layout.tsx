@@ -28,7 +28,6 @@ export interface LayoutProps {
 }
 export interface LayoutState {
     selectedChildId: string | null;
-    headerExpanded: boolean;
     transitionDuration: number;
     transitioning: boolean;
 }
@@ -39,7 +38,6 @@ export class Layout extends React.Component<LayoutProps> {
 
     state: LayoutState = {
         selectedChildId: null,
-        headerExpanded: false,
         transitionDuration: 400,
         transitioning: false
     }
@@ -64,12 +62,10 @@ export class Layout extends React.Component<LayoutProps> {
         if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId) return true;
         if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
         if (this.state.transitioning !== nxtState.transitioning) return true;
-        if (this.state.headerExpanded !== nxtState.headerExpanded) return true;
         return false;
     }
 
     update(nxtProps: LayoutProps) {
-        this.state.headerExpanded = false;
         if (nxtProps.width !== this.props.width || nxtProps.height !== this.props.height) {
             this.layout = treemap(nxtProps.node.data, nxtProps.width, nxtProps.height);
         }
@@ -126,17 +122,15 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     setSelectedChild(child: Node) {
+        if (this.isChildSelected(child)) return;
         this.setState({ selectedChildId: child.data.id, transitioning: true })
         setTimeout(() => {
             this.setState({ transitioning: false })
         }, this.state.transitionDuration)
     }
 
-    shouldChildrenSlide() : boolean {
-        return !this.areNoChildrenSelected() && (isNodeBranch(this.props.node) || isTextNode(this.getSelectedChild() as Node));
-    }
-
     clearSelectedChildren() {
+        if (this.areNoChildrenSelected()) return;
         this.setState({ selectedChildId: null, transitioning: true });
         setTimeout(() => {
             this.setState({ transitioning: false })
@@ -151,67 +145,49 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    getChildTop(child: Node) {
-        if (this.isChildSelected(child)) return '0%';
-        return (100 * child.y0) + "%";
-    }
-
-    getChildLeft(child: Node) {
-        if (this.isChildSelected(child)) return '0%';
-        return (100 * child.x0) + "%";
-    }
-
-    getChildWidth(child: Node) {
-        if (this.isChildSelected(child)) return '100%';
-        if (this.areNoChildrenSelected()) return (100 * (child.x1 - child.x0)) + "%";
-        if (!this.areNoChildrenSelected() && isTextNode(this.getSelectedChild() as Node)) return (100 * (child.x1 - child.x0)) + "%";
-        return '0%';
-    }
-
-    getChildHeight(child: Node) {
-        if (this.isChildSelected(child)) return '100%';
-        if (this.areNoChildrenSelected()) return (100 * (child.y1 - child.y0)) + "%";
-        if (!this.areNoChildrenSelected() && isTextNode(this.getSelectedChild() as Node)) return (100 * (child.y1 - child.y0)) + "%";
-        return '0%';
-    }
-
-    getChildZIndex(child: Node) {
-        if (this.isChildSelected(child) || this.areNoChildrenSelected()) return 2;
-        return 0;
-    }
-
-    getChildDisplay(child: Node) {
-        if (this.isChildSelected(child) || this.areNoChildrenSelected()) return undefined;
-        return 'none'
-    }
-
     getChildTransform(child: Node) {
-        if (this.isChildSelected(child)) return 'translate3d(0,0,0)';
-        return 'translate3d(0,0,0)';
+
+        let childLeftPerc = child.x0;
+        let childTopPerc = child.y0;
+        let childWidthPerc = child.x1 - child.x0;
+        let childHeightPerc = child.y1 - child.y0;
+
+        let parentWidthPerc = 1 / childWidthPerc;
+        let parentWidthPercM = 100 * parentWidthPerc;
+
+        let parentHeightPerc = 1 / childHeightPerc;
+        let parentHeightPercM = 100 * parentHeightPerc;
+
+        let childLeftTranslate = childLeftPerc * parentWidthPercM;
+        let childTopTranslate = childTopPerc * parentHeightPercM;
+
+        let childYScale = child.y1 - child.y0;
+        let childXScale = child.x1 - child.x0;
+
+        const translate = 'translate(' + childLeftTranslate + '%, ' + childTopTranslate + '%)';
+        const scale = 'scale(' + childXScale + ', ' + childYScale + ')';
+
+        const transform = scale + " " + translate;
+        return transform;
     }
 
     getChildStyle(child: Node): React.CSSProperties {
         return {
-            position: 'absolute',
-            top: this.getChildTop(child),
-            left: this.getChildLeft(child),
-            height: this.getChildHeight(child),
-            width: this.getChildWidth(child),
-            zIndex: this.getChildZIndex(child),
-            transform: this.getChildTransform(child),
-            transition: this.state.transitionDuration + 'ms',
-            willChange: 'top, left, height, width, transform',
+            top: (100 * child.y0) + "%",
+            left: (100 * child.x0) + "%",
+            height: (100 * (child.y1 - child.y0)) + "%",
+            width: (100 * (child.x1 - child.x0)) + "%",
+            // width: '100%',
+            // height: '100%',
+            // transform: this.getChildTransform(child)
         }
     }
 
-    getChildrenStyle(): React.CSSProperties {
-        return {
-            position: 'relative',
-            height: this.state.headerExpanded ? '0' : '100%',
-            overflow: this.state.headerExpanded ? 'hidden' : 'visible',
-            width: '100%',
-            display: this.props.nodeState.selected ? '' : 'none',
-        }
+    getChildClassName(child: Node) : string {
+        const className = ['layout-child-position'];
+        if (this.isChildSelected(child)) className.push('selected');
+        else if (!this.areNoChildrenSelected() && !isTextNode(this.getSelectedChild() as Node)) className.push('hidden');
+        return className.join(' ');
     }
 
     getChildren() {
@@ -219,14 +195,13 @@ export class Layout extends React.Component<LayoutProps> {
             return <div
                 key={this.props.node.data.id + '-children'}
                 className='layout-children'
-                style={this.getChildrenStyle()}
             >
                 {
                     (this.layout.children).map((child) => {
                         return (
                             <div
                                 key={child.data.id}
-                                className='layout-child-position'
+                                className={this.getChildClassName(child)}
                                 style={this.getChildStyle(child)}
                             >
                                 <Layout
@@ -250,20 +225,10 @@ export class Layout extends React.Component<LayoutProps> {
         return undefined;
     }
 
-    getOverlayStyle(): React.CSSProperties {
-        return {
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            pointerEvents: this.props.nodeState.selected ? 'none' : undefined,
-            display: this.props.nodeState.selected ? 'none' : '',
-        }
-    }
-
     getOverlay() {
         if (isDirectoryNode(this.props.node) || isTextNode(this.props.node)) {
             return (
-                <div className='layout-overlay-position' style={this.getOverlayStyle()}>
+                <div className='layout-overlay-position'>
                     <LayoutOverlay key={this.props.node.data.id + '-overlay'} {...this.props} />
                 </div>
             )
@@ -292,18 +257,12 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    onHeaderButtonClick() {
-        this.setState({ headerExpanded: !this.state.headerExpanded })
-    }
-
     getHeader() {
         if (isDirectoryNode(this.props.node)) {
             return <LayoutHeader
                 key={this.props.node.data.id + '-header'}
                 {...this.props}
-                expanded={this.state.headerExpanded}
                 onNodeClick={this.onHeaderNodeClick.bind(this)}
-                onButtonClick={this.onHeaderButtonClick.bind(this)}
             />
         }
         return undefined;
@@ -311,8 +270,6 @@ export class Layout extends React.Component<LayoutProps> {
 
     getButtonsStyle(): React.CSSProperties {
         return {
-            // opacity : this.props.nodeState.selected && this.areNoChildrenSelected() ? 1 : 0,
-            // transition: this.state.transitionDuration + 'ms',
             display : isLayoutMobile(this.props) 
                 && this.props.nodeState.selected 
                 && this.areNoChildrenSelected() ? undefined : 'none'
