@@ -5,7 +5,11 @@ import { getNodeLabel, getTextNodeContent, isImageNode, isTextNode } from './../
 import './LayoutContent.css';
 
 
-export class LayoutContent extends React.PureComponent<LayoutProps> {
+export class LayoutContent extends React.Component<LayoutProps> {
+
+    shouldComponentUpdate() {
+        return false;
+    }
 
     getImage() {
         if (isImageNode(this.props.node)) {

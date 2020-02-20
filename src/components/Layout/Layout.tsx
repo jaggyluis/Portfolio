@@ -38,7 +38,7 @@ export class Layout extends React.Component<LayoutProps> {
 
     state: LayoutState = {
         selectedChildId: null,
-        transitionDuration: 400,
+        transitionDuration: 500,
         transitioning: false
     }
 
@@ -59,15 +59,15 @@ export class Layout extends React.Component<LayoutProps> {
     shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - or pureComponent
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
-        if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId &&
-            (this.props.nodeSiblingSelectedId === null || nxtProps.nodeSiblingSelectedId === null)) return true;
+        // if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId &&
+        //     (this.props.nodeSiblingSelectedId === null || nxtProps.nodeSiblingSelectedId === null)) return true;
         // if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
         if (this.state.transitioning !== nxtState.transitioning) return true;
         return false;
     }
 
     update(nxtProps: LayoutProps) {
-        if (nxtProps.width !== this.props.width || nxtProps.height !== this.props.height) {
+        if ((nxtProps.width !== this.props.width) || (nxtProps.height !== this.props.height)) {
             this.layout = treemap(nxtProps.node.data, nxtProps.width, nxtProps.height);
         }
         if (!nxtProps.nodeState.selected) {
@@ -349,6 +349,7 @@ export class Layout extends React.Component<LayoutProps> {
         if (isTextNode(this.props.node)) className.push('content');
         if (isNodeLeaf(this.props.node)) className.push('leaf');
         if (isNodeBranch(this.props.node)) className.push('branch');
+        // if (this.props.nodeSiblingSelectedId !== null && this.props.nodeSiblingSelectedId !== this.props.node.data.id) className.push('sibling');
         if (this.props.nodeDepth === 0) className.push('root');
         return className.join(' ');
     }
