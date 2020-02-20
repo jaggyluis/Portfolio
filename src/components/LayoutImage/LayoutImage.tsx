@@ -5,7 +5,6 @@ import { getImageNodeSrc } from '../../utils/node';
 
 export interface LayoutImageProps {
     node: Node;
-    contain: boolean;
     width: number;
 }
 export class LayoutImage extends React.Component<LayoutImageProps> {

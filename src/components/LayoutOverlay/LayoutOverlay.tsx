@@ -10,7 +10,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     shouldComponentUpdate(nxtProps: LayoutProps) {
         if (this.props.width !== nxtProps.width) return true;
-        if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
         return false;
     }
 
@@ -19,7 +18,6 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
             return <LayoutImage
                 key={this.props.node.data.id + '-overlay-image'}
                 node={this.props.node}
-                contain={this.props.nodeState.selected}
                 width={this.props.width}
             />
         }

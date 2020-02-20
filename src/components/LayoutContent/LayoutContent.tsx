@@ -11,7 +11,6 @@ export class LayoutContent extends React.PureComponent<LayoutProps> {
         if (isImageNode(this.props.node)) {
             return <LayoutImage 
                 node={this.props.node}
-                contain={this.props.nodeState.selected}
                 width={this.props.width}
                 />
         }
