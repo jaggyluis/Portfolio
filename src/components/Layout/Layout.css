@@ -14,6 +14,13 @@
     /* max-width: 500px; */
 }
 
+.layout.selected > .layout-content > .layout-image {
+    filter: none;
+    pointer-events: none;
+    background-size: contain;
+    object-fit: contain;
+}
+
 .layout.transitioning > * {
     pointer-events: none !important;
 }

@@ -35,17 +35,19 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         const h = t ? 60 : s - d;
         const r = 180 + Math.random() * 40;
 
-        const color =  'lightgrey'; //'rgb(' + r + ',' + r + ',' + r + ')';
-        const separation = 0.05; //Math.round(Math.random() * 5) + 1;
-        const degrees = -45; //[-45, 45][Math.round(Math.random())];
-        const gradient = 'repeating-linear-gradient(' + degrees + 'deg, ' + color + ',' + color + ' 1px, white 1px, white '+ separation + 'em)'
+        // http://stripesgenerator.com/
+        // http://www.patternify.com/
+
+        const color =  'lightgrey';
+        const gradient = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALElEQVQYV2NkwAIuX778nxFdHCSoq6vLiCIBEwQphksgC8Il0AXBEtgEQRIAvF8Xf8iAtVMAAAAASUVORK5CYII=";
+        const background = 'url(' + gradient +') repeat'
 
         return {
             fontSize: h + 'px',
             fontWeight: t ? 'bold' : undefined,
             paddingLeft: t ? 0 : undefined,
             lineHeight : t ? 0.7 : undefined,
-            background : t ? gradient : undefined,
+            background : t ? background : undefined,
             mixBlendMode : t ? 'normal' : undefined,
             color : t ? 'white' : undefined,
             borderBottom: t ? '1px solid ' + color : undefined,

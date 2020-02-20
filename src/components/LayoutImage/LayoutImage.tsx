@@ -57,21 +57,15 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
     }
 
     shouldComponentUpdate(nxtProps: LayoutImageProps) {
-        return nxtProps.contain !== this.props.contain;
-    }
-
-    getClassName() {
-        const className = ['layout-image'];
-        if (this.props.contain) className.push('contain');
-        return className.join(' ');
+        return false;
     }
 
     render() {
         return (
             <img
-                className={this.getClassName()}
+                className='layout-image'
                 src={this.getPlaceholderPath(this.getPath())}
-                sizes={/*this.props.contain ? "100vw" : */ "50vw" }
+                sizes="50vw"
                 srcSet={this.getSrcSet()}
                 alt={this.getPath()}
             />

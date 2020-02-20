@@ -13,10 +13,3 @@
 .layout-image:hover {
     filter: none;
 }
-
-.layout-image.contain {
-    filter: none;
-    pointer-events: none;
-    background-size: contain;
-    object-fit: contain;
-}
