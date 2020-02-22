@@ -64,7 +64,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
             <img
                 className='layout-image'
                 src={this.getPlaceholderPath(this.getPath())}
-                sizes="50vw"
+                sizes="100vw"
                 srcSet={this.getSrcSet()}
                 alt={this.getPath()}
             />
