@@ -20,6 +20,8 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
     }
 
     const value = (nodeData: NodeData) => {
+        if (nodeData.label === 'about') return 0.2;
+        if (nodeData.label === 'computation') return 1.7;
         return 1;
         // return data.weight !== undefined ? data.weight : data.content ? 4 : 1; // 1;
         // return data.weight !== undefined ? data.weight : data.type === 'data' ? data.content ? 2 : 1 : 1;
@@ -34,6 +36,7 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
 
     const compare = (a : d3.HierarchyNode<NodeData>, b : d3.HierarchyNode<NodeData> ) : number => {
         if (a.data.content) return -1;
+        // if (b.data.label === 'computation') return -1;
         return 1;
         // return (b.value || 0) - (a.value || 0);
     }

@@ -21,6 +21,10 @@
     object-fit: contain;
 }
 
+.layout.stem > .layout-overlay-position .layout-image {
+    object-fit: contain;
+}
+
 .layout.transitioning {
     pointer-events: none !important;
 }
@@ -28,12 +32,12 @@
 .layout .layout-buttons {
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: calc(100% + 40px);
     display: flex;
     justify-content: space-between;
     pointer-events: none;
+    margin: 0 -20px;
 }
-
 .layout .layout-buttons .layout-btn {
     margin: auto -1px;
     z-index: 10;

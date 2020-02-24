@@ -26,6 +26,10 @@
   border-top: 1px solid var(--line-color);
 }
 
+.layout-header .layout-header-node:hover {
+  color: dimgrey;
+}
+
 .layout-header .layout-header-node.sibling {
   top: "";
   position: relative;

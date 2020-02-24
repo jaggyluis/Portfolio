@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { isImageNode, isDataNode, isTextNode } from '../../utils/node';
+import { isImageNode, isDataNode, isTextNode, getImageNodeSrc } from '../../utils/node';
 import { LayoutProps } from '../Layout/Layout';
 import { LayoutImage } from '../LayoutImage/LayoutImage';
 import { isLayoutMobile } from './../../utils/layout';
@@ -26,7 +26,8 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
 
     getLabelStyle(): React.CSSProperties {
 
-        const t = isTextNode(this.props.node)
+        const t = isTextNode(this.props.node);
+        const l = getImageNodeSrc(this.props.node) === '';
         const s = isLayoutMobile(this.props) ? 22 : 26;
         const c = Math.ceil(s / 7)
         const d = this.props.nodeDepth * c
@@ -36,20 +37,20 @@ export class LayoutOverlay extends React.Component<LayoutProps> {
         // http://stripesgenerator.com/
         // http://www.patternify.com/
 
-        const color =  'lightgrey';
+        const color = 'lightgrey';
         const gradient = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALElEQVQYV2NkwAIuX778nxFdHCSoq6vLiCIBEwQphksgC8Il0AXBEtgEQRIAvF8Xf8iAtVMAAAAASUVORK5CYII=";
-        const background = 'url(' + gradient +') repeat'
+        const background = 'url(' + gradient + ') repeat'
 
         return {
             fontSize: h + 'px',
             fontWeight: t ? 'bold' : undefined,
             paddingLeft: t ? 0 : undefined,
-            lineHeight : t ? 0.7 : undefined,
-            background : t ? background : undefined,
-            mixBlendMode : t ? 'normal' : undefined,
-            color : t ? 'white' : undefined,
-            borderBottom: t ? '1px solid ' + color : undefined,
-            borderRight: t ? '1px solid ' + color : undefined,
+            lineHeight: t ? 0.7 : undefined,
+            background: t || l ? background : undefined,
+            mixBlendMode: t || l ? 'normal' : undefined,
+            color: t ? 'white' : undefined,
+            borderBottom: t || l ? '1px solid ' + color : undefined,
+            borderRight: t || l ? '1px solid ' + color : undefined,
         }
     }
 
