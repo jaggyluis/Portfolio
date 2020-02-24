@@ -178,7 +178,6 @@ export class Layout extends React.Component<LayoutProps> {
             left: (100 * child.x0) + "%",
             height: (100 * (child.y1 - child.y0)) + "%",
             width: (100 * (child.x1 - child.x0)) + "%",
-            zIndex: child.data.label === 'computation' ? 1  : undefined
             // width: '100%',
             // height: '100%',
             // transform: this.getChildTransform(child)

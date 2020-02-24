@@ -59,3 +59,31 @@
 .layout-draw-lines .right {
     left: 100%;
 }
+
+@media screen and (max-width: 600px) {
+
+    .layout-draw-lines .horizontal {
+        width : 100%;
+        margin-left: -10px !important;
+        padding-left: 10px;
+        margin-right: -10px;
+        padding-right: 10px;
+    }
+    
+    .layout.root > .layout-children > .layout-child-position > .layout > .layout-draw-lines .horizontal {
+        width : 100%;
+        margin-left: -10px !important;
+        padding-left: 10px;
+        margin-right: -10px;
+        padding-right: 10px;
+    }
+    
+    .layout-draw-lines .vertical {
+        height: 100%;
+        margin-left: -1px;
+        margin-top: -10px !important;
+        padding-top: 10px;
+        margin-bottom: -10px;
+        padding-bottom: 10px;
+    }
+ } 
