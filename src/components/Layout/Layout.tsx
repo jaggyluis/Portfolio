@@ -314,6 +314,11 @@ export class Layout extends React.Component<LayoutProps> {
 
     onNodeTouch(evt: React.MouseEvent<HTMLDivElement, MouseEvent>, dir: string, phase: string, swipetype: string, distance: number) {
 
+        if (this.state.transitioning) {
+            evt.stopPropagation();
+            return;
+        }
+
         // evt: contains original Event object
         // dir: contains "none", "left", "right", "top", or "down"
         // phase: contains "start", "move", or "end"
@@ -336,6 +341,12 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     onKeyUp(evt: React.KeyboardEvent) {
+
+        if (this.state.transitioning) {
+            evt.stopPropagation();
+            return;
+        }
+
         if (evt.keyCode === 39) {
             if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
                 this.nextSelectedChild();
