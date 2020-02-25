@@ -8,7 +8,7 @@ import { LayoutDrawLines } from '../LayoutDrawLines/LayoutDrawLines';
 import { LayoutHeader } from '../LayoutHeader/LayoutHeader';
 import { LayoutOverlay } from '../LayoutOverlay/LayoutOverlay';
 import './Layout.css';
-import { isLayoutMobile } from './../../utils/layout';
+import { isLayoutMobile, isLayoutTablet } from './../../utils/layout';
 import { isNodeLeaf } from './../../utils/node';
 import { ontouch } from './../../utils/touch';
 
@@ -42,18 +42,14 @@ export class Layout extends React.Component<LayoutProps> {
         transitioning: false
     }
 
-    componentDidMount() {
-        if (this.container) {
-            ontouch(this.container, this.onNodeTouch.bind(this))
-        }
-    }
-
     componentWillMount() {
         this.update(this.props);
     }
 
-    componentWillUpdate(nxtProps: LayoutProps) {
-        this.update(nxtProps);
+    componentDidMount() {
+        if (this.container) {
+            ontouch(this.container, this.onNodeTouch.bind(this))
+        }
     }
 
     shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - or pureComponent
@@ -64,6 +60,16 @@ export class Layout extends React.Component<LayoutProps> {
         // if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
         if (this.state.transitioning !== nxtState.transitioning) return true;
         return false;
+    }
+
+    componentWillUpdate(nxtProps: LayoutProps) {
+        this.update(nxtProps);
+    }
+
+    componentDidUpdate() {
+        if (this.props.nodeState.selected && this.areNoChildrenSelected() && this.container) {
+            this.container.focus();
+        }
     }
 
     update(nxtProps: LayoutProps) {
@@ -272,7 +278,7 @@ export class Layout extends React.Component<LayoutProps> {
 
     getButtonsStyle(): React.CSSProperties {
         return {
-            display: isLayoutMobile(this.props)
+            display: isLayoutTablet(this.props)
                 && this.props.nodeState.selected
                 && this.areNoChildrenSelected() ? undefined : 'none'
         }
@@ -286,14 +292,14 @@ export class Layout extends React.Component<LayoutProps> {
 
     getRightButtonStyle(): React.CSSProperties {
         return {
-            visibility: isNodeLeaf(this.props.node) ? undefined : 'hidden'
+            visibility: this.props.nodeSiblings.length > 0 ? undefined : 'hidden'
         }
     }
 
     getButtons() {
         return (
             <div className='layout-buttons' style={this.getButtonsStyle()}>
-                <div className='layout-btn' style={this.getLeftButtonStyle()}>{'<'}</div>
+                <div className='layout-btn' style={this.getLeftButtonStyle()}>{'<<'}</div>
                 <div className='layout-btn' style={this.getRightButtonStyle()}>{'>'}</div>
             </div>
         )
@@ -317,7 +323,7 @@ export class Layout extends React.Component<LayoutProps> {
         // if (phase === 'end' && (dir == 'right' || dir == 'down')) 
 
         if (phase === 'end' && dir == 'left') {
-            if (this.props.nodeState.selected && isNodeBranch(this.props.node)) {
+            if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
                 this.nextSelectedChild();
                 evt.stopPropagation();
             }
@@ -331,7 +337,7 @@ export class Layout extends React.Component<LayoutProps> {
 
     onKeyUp(evt: React.KeyboardEvent) {
         if (evt.keyCode === 39) {
-            if (this.props.nodeState.selected && isNodeBranch(this.props.node)) {
+            if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
                 this.nextSelectedChild();
                 evt.stopPropagation();
             }
@@ -350,7 +356,6 @@ export class Layout extends React.Component<LayoutProps> {
         if (isTextNode(this.props.node)) className.push('content');
         if (isNodeLeaf(this.props.node)) className.push('leaf');
         if (isNodeBranch(this.props.node)) className.push('branch');
-        if (this.props.nodeDepth === 1) className.push('stem');
         // if (this.props.nodeSiblingSelectedId !== null && this.props.nodeSiblingSelectedId !== this.props.node.data.id) className.push('sibling');
         if (this.props.nodeDepth === 0) className.push('root');
         return className.join(' ');

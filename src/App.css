@@ -27,16 +27,17 @@
     /* max-width: 1400px; */
     max-width: min(80%, 1600px);
     min-height: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .Menu .menu-item {
     font-size: 26px;
-    line-height: 0.65;
+    line-height: 0.74;
     letter-spacing: 4px;
     padding: 0 10px;
     cursor: pointer;
-    float: right;
-    border-bottom: 1px solid var(--line-color);
+    /* border-bottom: 1px solid var(--line-color); */
 }
 
 .Menu .menu-item.linkedin {
@@ -48,12 +49,13 @@
 
     .App {
         height: calc(100% - 27px);
-        max-width: min(90%, 1600px);
-        max-height: min(90%, 1000px);
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .Menu {
-        max-width: min(90%, 1600px);
+        max-width: 100%;
+        justify-content: center;
     }
 
     .Menu .menu-item {

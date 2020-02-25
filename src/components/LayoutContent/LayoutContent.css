@@ -27,10 +27,20 @@
     padding-right: 10px;
 }
 
+.layout-content .layout-items {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
+
+.layout-content .layout-items li {
+    margin-right: 1em;
+}
+
 .layout-content .layout-text {
-    max-width: 700px;
-    line-height: 1.5;
-    padding: 0px 10px;
+    max-width: max(70%, 700px);
+    /* margin: auto; */
+    line-height: 1.8;
+    padding: 0px 40px;
 }
 
 .layout-content .layout-text.bullet {
@@ -38,7 +48,7 @@
 }
 
 .layout-content .layout-text + .layout-text {
-    margin-top: 14px;
+    margin-top: 5px;
 }
 
 @media screen and (max-width: 600px) {

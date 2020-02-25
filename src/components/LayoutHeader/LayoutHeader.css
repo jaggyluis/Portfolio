@@ -44,9 +44,18 @@
 
 .layout.root > .layout-header .layout-header-node {
   font-weight: bold;
+  border-top: none;
+  position: absolute;
+  transform: translate(-114%, 0px) rotate(-90deg);
+  transform-origin: right top;
 }
 
 @media screen and (max-width: 600px) {
+
+  .layout.root > .layout-header .layout-header-node {
+    position: relative;
+    transform: none
+  }
 
   .layout-header .layout-header-node.sibling {
     display: none;

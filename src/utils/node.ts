@@ -13,7 +13,6 @@ export const isImageNode = (node : Node) => {
 }
 
 export const getImageNodeSrc = (node : Node) : string => {
-    if (node.data.label === 'about') return '';
     return node.data.src || '';
 }
 
