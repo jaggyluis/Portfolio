@@ -11,6 +11,7 @@ import './Layout.css';
 import { isLayoutMobile, isLayoutTablet } from './../../utils/layout';
 import { isNodeLeaf } from './../../utils/node';
 import { ontouch } from './../../utils/touch';
+import { send } from './../../utils/analytics';
 
 const EMPTY_NODE_ARRAY: Node[] = [];
 
@@ -52,7 +53,7 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { // NOTE - or pureComponent
+    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { 
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
         // if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId &&
@@ -78,6 +79,9 @@ export class Layout extends React.Component<LayoutProps> {
         }
         if (!nxtProps.nodeState.selected) {
             this.state.selectedChildId = null;
+        }
+        if (!this.props.nodeState.selected && nxtProps.nodeState.selected /* && isNodeLeaf(this.props.node) */) {
+            send(this.props.node.data.label)
         }
     }
 
