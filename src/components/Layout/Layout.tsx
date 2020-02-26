@@ -80,7 +80,7 @@ export class Layout extends React.Component<LayoutProps> {
         if (!nxtProps.nodeState.selected) {
             this.state.selectedChildId = null;
         }
-        if (!this.props.nodeState.selected && nxtProps.nodeState.selected /* && isNodeLeaf(this.props.node) */) {
+        if (!this.props.nodeState.selected && nxtProps.nodeState.selected  && !isNodeLeaf(this.props.node)) {
             send(this.props.node.data.label)
         }
     }

@@ -6,7 +6,7 @@ ReactGA.initialize(trackingId);
 export const send = (page) => {
     try {
     
-        const pathName = '/' + page + '.html';
+        const pathName = '/' + page;
 
         console.log(pathName);
 
