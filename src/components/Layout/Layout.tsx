@@ -80,9 +80,6 @@ export class Layout extends React.Component<LayoutProps> {
         if (!nxtProps.nodeState.selected) {
             this.state.selectedChildId = null;
         }
-        if (!this.props.nodeState.selected && nxtProps.nodeState.selected  /*&& !isNodeLeaf(this.props.node)*/) {
-            send(this.props.node.data.label)
-        }
     }
 
     getChildState(child: Node): NodeState {
@@ -134,6 +131,9 @@ export class Layout extends React.Component<LayoutProps> {
 
     setSelectedChild(child: Node) {
         if (this.isChildSelected(child)) return;
+        
+        send(child.data.label)
+        
         this.setState({ selectedChildId: child.data.id, transitioning: true })
         setTimeout(() => {
             this.setState({ transitioning: false })
@@ -142,6 +142,9 @@ export class Layout extends React.Component<LayoutProps> {
 
     clearSelectedChildren() {
         if (this.areNoChildrenSelected()) return;
+
+        send(this.props.node.data.label)
+
         this.setState({ selectedChildId: null, transitioning: true });
         setTimeout(() => {
             this.setState({ transitioning: false })
