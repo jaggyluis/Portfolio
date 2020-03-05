@@ -10,8 +10,8 @@ export const send = (page : string ) : void => {
 
         console.log(pathName);
 
-        // ReactGA.set({ page: pathName }); // Update the user's current page
-        // ReactGA.pageview(pathName); // Record a pageview for the given page
+        ReactGA.set({ page: pathName }); // Update the user's current page
+        ReactGA.pageview(pathName); // Record a pageview for the given page
     
     } catch (e) {
 
