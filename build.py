@@ -150,6 +150,8 @@ def build_dir(directory, target):
 
                     # write this to the tree ---
                     file_data["src"] = file_image_target_src   
+                    file_data["label"] = file_image_name
+                    
                     images.append(file_image_target_src)
 
                 elif file_.endswith(".txt") :
