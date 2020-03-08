@@ -31,7 +31,7 @@ class App extends React.Component<AppProps> {
     }
 
     onCVClick() {
-        window.open('./assets/jaggy_cv.pdf', 'mywindow');
+        window.open('./assets/luis_jaggy_resume.pdf', 'mywindow');
     }
 
     onLinkedInClick() {
