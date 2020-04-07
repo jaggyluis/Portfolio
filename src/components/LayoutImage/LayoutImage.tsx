@@ -7,7 +7,20 @@ export interface LayoutImageProps {
     node: Node;
     width: number;
 }
+interface LayoutImageState {
+    loaded : boolean;
+}
 export class LayoutImage extends React.Component<LayoutImageProps> {
+
+    state:LayoutImageState = { loaded: false };
+
+    handleImageLoaded() {
+        this.setState({ loaded: true });
+    }
+
+    handleImageErrored() {
+        // TODO ---
+    }
 
     getMobilePath(path: string): string {
         if (path) {
@@ -45,7 +58,7 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
     }
 
     getSizes() {
-        return "50vw";
+        return "30vw";
     }
 
     getSrcSet(): string {
@@ -59,19 +72,30 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
         return srcSet;
     }
 
-    shouldComponentUpdate(nxtProps: LayoutImageProps) {
-        return false;
+    shouldComponentUpdate(nxtProps: LayoutImageProps, nxtState :LayoutImageState ) {
+        return nxtState.loaded !== this.state.loaded;
     }
 
     render() {
         return (
-            <img
-                className='layout-image'
-                src={this.getPlaceholderPath(this.getPath())}
-                sizes={this.getSizes()}
-                srcSet={this.getSrcSet()}
-                alt={this.getPath()}
-            />
+            <React.Fragment>
+                <img
+                    className='layout-image'
+                    // src={this.getPlaceholderPath(this.getPath())}
+                    sizes={this.getSizes()}
+                    srcSet={this.getSrcSet()}
+                    alt={this.props.node.data.label}
+                    onLoad={this.handleImageLoaded.bind(this)}
+                    onError={this.handleImageErrored.bind(this)}
+                />
+                <img
+                    style={{ display: this.state.loaded ? "none" : undefined }}
+                    className='layout-image'
+                    src={this.getPlaceholderPath(this.getPath())}
+                    alt={this.props.node.data.label}
+                />
+            </React.Fragment>
+
         )
     }
 }
