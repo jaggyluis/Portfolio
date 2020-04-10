@@ -14,6 +14,15 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
 
     state:LayoutImageState = { loaded: false };
 
+    componentDidMount() {
+
+        const img = new Image();
+        img.src = this.getPath();
+        img.srcset = this.getSrcSet();
+
+        img.onload = this.handleImageLoaded.bind(this);
+    }
+
     handleImageLoaded() {
         this.setState({ loaded: true });
     }
@@ -62,6 +71,9 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
     }
 
     getSrcSet(): string {
+
+        if (!this.state.loaded) { return ''; }
+
         const path = this.getPath();
         const srcSets = [
             this.getIconPath(path) + " 300w",
@@ -85,8 +97,8 @@ export class LayoutImage extends React.Component<LayoutImageProps> {
                     sizes={this.getSizes()}
                     srcSet={this.getSrcSet()}
                     alt={this.props.node.data.label}
-                    onLoad={this.handleImageLoaded.bind(this)}
-                    onError={this.handleImageErrored.bind(this)}
+                    // onLoad={this.handleImageLoaded.bind(this)}
+                    // onError={this.handleImageErrored.bind(this)}
                 />
                 <img
                     style={{ display: this.state.loaded ? "none" : undefined }}
