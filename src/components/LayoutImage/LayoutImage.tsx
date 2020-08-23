@@ -16,7 +16,7 @@ export const LayoutImage: React.FC<LayoutImageProps> = (props: LayoutImageProps)
 
     const path = React.useMemo(() => {
 
-        const ext = width < 600 ? '_i' : width < 1200  || !isNodeLeaf(node)  ? '_m' : '';
+        const ext = width <= 300 ? '_i' : width <= 600  || !isNodeLeaf(node)  ? '_m' : '';
 
         if (src) {
             const paths = src.split(".");
