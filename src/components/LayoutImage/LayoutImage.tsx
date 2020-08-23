@@ -1,113 +1,56 @@
 import * as React from 'react';
 import { Node } from './../../model/Node';
 import './LayoutImage.css';
-import { getImageNodeSrc } from '../../utils/node';
+import { getImageNodeSrc, isNodeLeaf } from '../../utils/node';
 
 export interface LayoutImageProps {
     node: Node;
     width: number;
 }
-interface LayoutImageState {
-    loaded : boolean;
-}
-export class LayoutImage extends React.Component<LayoutImageProps> {
 
-    state:LayoutImageState = { loaded: false };
+export const LayoutImage: React.FC<LayoutImageProps> = (props: LayoutImageProps) => {
 
-    componentDidMount() {
+    const { node, width} = props;
 
-        const img = new Image();
-        img.src = this.getPath();
-        img.srcset = this.getSrcSet();
+    const src = React.useMemo(() => { return getImageNodeSrc(props.node) }, [props.node])
 
-        img.onload = this.handleImageLoaded.bind(this);
-    }
+    const path = React.useMemo(() => {
 
-    handleImageLoaded() {
-        this.setState({ loaded: true });
-    }
+        const ext = width < 600 ? '_i' : width < 1200  || !isNodeLeaf(node)  ? '_m' : '';
 
-    handleImageErrored() {
-        // TODO ---
-    }
-
-    getMobilePath(path: string): string {
-        if (path) {
-            const paths = path.split(".");
-            const placeholder = paths[0] + "_m." + paths[1];
+        if (src) {
+            const paths = src.split(".");
+            const placeholder = paths[0] + `${ext}.` + paths[1];
             return placeholder;
         } else {
             return '';
         }
-    }
+    }, [src, width]);
 
-    getIconPath(path: string): string {
-        if (path) {
-            const paths = path.split(".");
-            const placeholder = paths[0] + "_i." + paths[1];
-            return placeholder;
-        } else {
-            return '';
-        }
-    }
-
-    getPlaceholderPath(path: string): string {
-        if (path) {
-            const paths = path.split(".");
+    const placeholder = React.useMemo(() => {
+        if (src) {
+            const paths = src.split(".");
             const placeholder = paths[0] + "_s." + paths[1];
             return placeholder;
         } else {
             return '';
         }
-    }
+    }, [src]);
 
-    getPath() {
-        let src = getImageNodeSrc(this.props.node);
-        return src;
-    }
-
-    getSizes() {
-        return "30vw";
-    }
-
-    getSrcSet(): string {
-
-        if (!this.state.loaded) { return ''; }
-
-        const path = this.getPath();
-        const srcSets = [
-            this.getIconPath(path) + " 300w",
-            this.getMobilePath(path) + " 600w",
-            path + " 1200w"
-        ]
-        const srcSet = srcSets.join(',');
-        return srcSet;
-    }
-
-    shouldComponentUpdate(nxtProps: LayoutImageProps, nxtState :LayoutImageState ) {
-        return nxtState.loaded !== this.state.loaded;
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <img
-                    className='layout-image'
-                    // src={this.getPlaceholderPath(this.getPath())}
-                    sizes={this.getSizes()}
-                    srcSet={this.getSrcSet()}
-                    alt={this.props.node.data.label}
-                    // onLoad={this.handleImageLoaded.bind(this)}
-                    // onError={this.handleImageErrored.bind(this)}
-                />
-                <img
-                    style={{ display: this.state.loaded ? "none" : undefined }}
-                    className='layout-image'
-                    src={this.getPlaceholderPath(this.getPath())}
-                    alt={this.props.node.data.label}
-                />
-            </React.Fragment>
-
-        )
-    }
+    return (
+        <>
+            <div
+                className='layout-image'
+                style={{
+                    backgroundImage: `url(${placeholder})`
+                }}
+            />
+            <div
+                className='layout-image'
+                style={{
+                    backgroundImage: `url(${path})`
+                }}
+            />
+        </>
+    )
 }
