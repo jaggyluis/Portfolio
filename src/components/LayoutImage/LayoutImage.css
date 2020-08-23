@@ -5,6 +5,7 @@
     background-repeat:no-repeat;
     background-size:cover;
     background-position: center;
+    background-color : white;
     filter: contrast(1.4) saturate(0) brightness(1);
     transition: 150ms;
     object-fit: cover;
