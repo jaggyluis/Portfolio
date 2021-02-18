@@ -21,6 +21,10 @@
     object-fit: contain;
 }
 
+.layout.selected > .layout-content > .layout-image.placeholder {
+    display: none;
+}
+
 .layout.transitioning {
     pointer-events: none !important;
 }

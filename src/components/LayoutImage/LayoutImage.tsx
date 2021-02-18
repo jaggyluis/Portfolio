@@ -40,7 +40,7 @@ export const LayoutImage: React.FC<LayoutImageProps> = (props: LayoutImageProps)
     return (
         <>
             <div
-                className='layout-image'
+                className='layout-image placeholder'
                 style={{
                     backgroundImage: `url(${placeholder})`
                 }}
