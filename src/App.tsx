@@ -42,6 +42,18 @@ class App extends React.Component<AppProps> {
         window.addEventListener("resize", debounce(() => {
             this.setState({ width: window.innerWidth, height: window.innerHeight })
         }));
+        // window.addEventListener('mousemove', (ev) => {
+
+        //     const tl = document.getElementById('tl');
+        //     const br = document.getElementById('br');
+
+        //     if (tl && br) {
+        //         tl.style.width = ev.clientX+'px';
+        //         tl.style.height = ev.clientY+'px';
+        //         br.style.width = (window.innerWidth - ev.clientX) + 'px';
+        //         br.style.height = (window.innerHeight - ev.clientY) + 'px';
+        //     }
+        // });
     }
 
     render() {
@@ -50,6 +62,8 @@ class App extends React.Component<AppProps> {
 
         return (
             <div className='Wrapper'>
+                {/* <div id='tl' className='pointer'></div>
+                <div id='br' className='pointer'></div> */}
                 <div className="App" onClick={this.onNodeClick.bind(this)}>
                     <Layout
                         width={this.state.width}

@@ -9,6 +9,8 @@
     filter: contrast(1.4) saturate(0) brightness(1);
     transition: 150ms;
     object-fit: cover;
+    box-shadow: inset -4px -3px 20px 0px #00000017;
+
 }
 
 .layout-image:hover {
@@ -16,6 +18,6 @@
 }
 
 .layout-image.placeholder {
-    filter: blur(5px) contrast(1.4) saturate(0) brightness(0.95);
-    opacity: 0.5;
+    /* box-shadow: 0 0 20px 0px rgb(0 0 0); */
+    opacity: 0.3;
 }

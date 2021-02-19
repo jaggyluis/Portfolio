@@ -12,6 +12,7 @@ import { isLayoutMobile, isLayoutTablet } from './../../utils/layout';
 import { isNodeLeaf } from './../../utils/node';
 import { ontouch } from './../../utils/touch';
 import { send } from './../../utils/analytics';
+import { LayoutShadow } from '../LayoutShadow/LayoutShadow';
 
 const EMPTY_NODE_ARRAY: Node[] = [];
 
@@ -191,7 +192,8 @@ export class Layout extends React.Component<LayoutProps> {
             left: (100 * child.x0) + "%",
             height: (100 * (child.y1 - child.y0)) + "%",
             width: (100 * (child.x1 - child.x0)) + "%",
-            zIndex: child.data.label === 'computation' ? 1  : undefined
+            // zIndex: child.data.label === 'computation' ? 1  : undefined
+            zIndex: isTextNode(child) ? 100 : Math.ceil(Math.random() * (this.layout.children?.length || 1)) + 2
             // width: '100%',
             // height: '100%',
             // transform: this.getChildTransform(child)
@@ -219,6 +221,7 @@ export class Layout extends React.Component<LayoutProps> {
                                 className={this.getChildClassName(child)}
                                 style={this.getChildStyle(child)}
                             >
+                                <LayoutShadow />
                                 <Layout
                                     width={this.props.width}
                                     height={this.props.height}
