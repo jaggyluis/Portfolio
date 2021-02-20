@@ -1,17 +1,19 @@
 
 
 .layout-shadow {
-    top: -1px;
-    left: -1px;
-    width: calc(100% + 11px);
-    height: calc(100% + 11px);
+    /* top: -1px;
+    left: -1px; */
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
     position: absolute;
     /* top: 10px;
     left: 10px; */
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     pointer-events: none;
     /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJElEQVQYV2OcN2/e/6SkJEYGJADmoEvAVSBLoGiDSaAIwowCAAX9Et+twA8HAAAAAElFTkSuQmCC) repeat; */
     /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAALElEQVQYV2OcN2/e/8TERAZkwPj/////8+fPZ0CWAAuCVCFLwAWRJVAEYRIAh6sez3gQ8xUAAAAASUVORK5CYII) repeat; */
-    background: white;
-    box-shadow: 10px 11px 20px 0px #00000017
+    /* background: white;
+    box-shadow: 10px 11px 20px 0px #00000017 */
+    background: black;
+    box-shadow: 3px 3px 5px 0px #00000059;
 }

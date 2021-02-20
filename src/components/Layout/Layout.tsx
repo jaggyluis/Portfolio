@@ -27,6 +27,7 @@ export interface LayoutProps {
     parent: Node | null;
     parentState: NodeState | null;
     onNodeClick?: (node: Node | null) => void;
+    onNodeSelectionChange? : (selectedNode : Node | null) => void;
 }
 export interface LayoutState {
     selectedChildId: string | null;
@@ -36,6 +37,7 @@ export interface LayoutState {
 export class Layout extends React.Component<LayoutProps> {
 
     container: HTMLElement | null = null;
+    
     layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
 
     state: LayoutState = {
@@ -43,6 +45,8 @@ export class Layout extends React.Component<LayoutProps> {
         transitionDuration: 500,
         transitioning: false
     }
+
+    layers = (this.layout.children || []).map(child => Math.ceil(Math.random() * (this.layout.children?.length || 1)) + 2);
 
     componentWillMount() {
         this.update(this.props);
@@ -131,25 +135,35 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     setSelectedChild(child: Node) {
+
+        if (this.props.onNodeSelectionChange) {
+            this.props.onNodeSelectionChange(child);
+        }
+
         if (this.isChildSelected(child)) return;
         
-        send(child.data.label)
+        send(child.data.label);
         
         this.setState({ selectedChildId: child.data.id, transitioning: true })
         setTimeout(() => {
             this.setState({ transitioning: false })
-        }, this.state.transitionDuration)
+        }, this.state.transitionDuration);
     }
 
     clearSelectedChildren() {
+
+        if (this.props.onNodeSelectionChange) {
+            this.props.onNodeSelectionChange(this.props.node);
+        }
+
         if (this.areNoChildrenSelected()) return;
 
-        send(this.props.node.data.label)
+        send(this.props.node.data.label);
 
         this.setState({ selectedChildId: null, transitioning: true });
         setTimeout(() => {
             this.setState({ transitioning: false })
-        }, this.state.transitionDuration)
+        }, this.state.transitionDuration);
     }
 
     onChildClick(child: Node | null) {
@@ -186,14 +200,14 @@ export class Layout extends React.Component<LayoutProps> {
         return transform;
     }
 
-    getChildStyle(child: Node): React.CSSProperties {
+    getChildStyle(child: Node, childIndex : number): React.CSSProperties {
         return {
             top: (100 * child.y0) + "%",
             left: (100 * child.x0) + "%",
             height: (100 * (child.y1 - child.y0)) + "%",
             width: (100 * (child.x1 - child.x0)) + "%",
             // zIndex: child.data.label === 'computation' ? 1  : undefined
-            zIndex: isTextNode(child) ? 100 : Math.ceil(Math.random() * (this.layout.children?.length || 1)) + 2
+            zIndex: isTextNode(child) ? 100 : Math.ceil(Math.random() * (this.layout.children?.length || 1)) + 2, //this.layers[childIndex]
             // width: '100%',
             // height: '100%',
             // transform: this.getChildTransform(child)
@@ -214,12 +228,12 @@ export class Layout extends React.Component<LayoutProps> {
                 className='layout-children'
             >
                 {
-                    (this.layout.children).map((child) => {
+                    (this.layout.children).map((child, i) => {
                         return (
                             <div
                                 key={child.data.id}
                                 className={this.getChildClassName(child)}
-                                style={this.getChildStyle(child)}
+                                style={this.getChildStyle(child, i)}
                             >
                                 <LayoutShadow />
                                 <Layout
@@ -233,6 +247,7 @@ export class Layout extends React.Component<LayoutProps> {
                                     nodeSiblings={this.layout.children || EMPTY_NODE_ARRAY}
                                     nodeSiblingSelectedId={this.state.selectedChildId}
                                     onNodeClick={this.onChildClick.bind(this)}
+                                    onNodeSelectionChange={this.props.onNodeSelectionChange}
                                 />
                             </div>
                         )

@@ -19,5 +19,7 @@
 
 .layout-image.placeholder {
     /* box-shadow: 0 0 20px 0px rgb(0 0 0); */
-    opacity: 0.3;
+    /* opacity: 0.3; */
+    /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALElEQVQYV2NkwAIuX778nxFdHCSoq6vLiCIBEwQphksgC8Il0AXBEtgEQRIAvF8Xf8iAtVMAAAAASUVORK5CYII=) repeat; */
+    background: white;
 }

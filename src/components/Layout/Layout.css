@@ -10,10 +10,6 @@
     background: #ffffffde;
 }
 
-.layout.content.selected {
-    /* max-width: 500px; */
-}
-
 .layout.selected > .layout-content > .layout-image {
     filter: none;
     pointer-events: none;
@@ -102,33 +98,14 @@
     display: inline;
 }
 
-/* .layout.selected:not(.leaf) > .layout-draw-lines {
+.layout.transitioning > .layout-children .layout-draw-lines {
     display: none;
-} */
+}
 
-/* .layout.transitioning > .layout-children .layout-header-node.sibling {
+.layout.transitioning > .layout-children .layout:not(.leaf) .layout-label {
     display: none;
-} */
+}
 
-/* .layout.transitioning > .layout-children .layout-overlay {
+.layout.transitioning > .layout-children .layout-header-node.sibling {
     display: none;
-} */
-
-/* .layout.transitioning > .layout-children .layout-content {
-    display: none;
-} */
-
-/* @media screen and (max-width: 600px) { */
-
-    .layout.transitioning > .layout-children .layout-draw-lines {
-        display: none;
-    }
-
-    .layout.transitioning > .layout-children .layout:not(.leaf) .layout-label {
-        display: none;
-    }
-    
-    .layout.transitioning > .layout-children .layout-header-node.sibling {
-        display: none;
-    }
-/* } */
+}

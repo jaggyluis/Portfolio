@@ -2,10 +2,18 @@ import { NodeData } from "../model/NodeData";
 import { Node } from '../model/Node';
 import * as d3 from "d3";
 
-export const treemap = (data: NodeData, width: number, height: number): Node => {
+export const treemap = (data: NodeData, w: number, h: number): Node => {
 
-    // width = 1;
-    // height = 1;
+    let width = w;
+    let height = h;
+
+    const children = data.children || [];
+
+    if (w <= 600) {
+        height *= Math.ceil(children.length / 6) ;
+    } else {
+        height *= Math.ceil(children.length / 12);
+    }
     
     function tile(node: d3.HierarchyRectangularNode<any>, x0: number, y0: number, x1: number, y1: number) {
         d3.treemapBinary(node, 0, 0, width, height);
@@ -20,12 +28,7 @@ export const treemap = (data: NodeData, width: number, height: number): Node => 
     }
 
     const value = (nodeData: NodeData) => {
-        // if (nodeData.label === 'about') return 0.2;
-        // if (nodeData.label === 'computation') return 1.7;
-        if (nodeData.content && data.children && data.children.length > 6 && width <= 600) return 3;
         return 1;
-        // return data.weight !== undefined ? data.weight : data.content ? 4 : 1; // 1;
-        // return data.weight !== undefined ? data.weight : data.type === 'data' ? data.content ? 2 : 1 : 1;
     }
 
     const accessor = (nodeData : NodeData) => {

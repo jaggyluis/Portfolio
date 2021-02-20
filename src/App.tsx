@@ -22,12 +22,7 @@ class App extends React.Component<AppProps> {
         selected: true,
         width: window.innerWidth,
         height: window.innerHeight,
-    }
-
-    onNodeClick() {
-        // setTimeout(() => {
-        //     this.setState({ selected: true });
-        // }, 300)
+        active : 1
     }
 
     onCVClick() {
@@ -42,29 +37,32 @@ class App extends React.Component<AppProps> {
         window.addEventListener("resize", debounce(() => {
             this.setState({ width: window.innerWidth, height: window.innerHeight })
         }));
-        // window.addEventListener('mousemove', (ev) => {
-
-        //     const tl = document.getElementById('tl');
-        //     const br = document.getElementById('br');
-
-        //     if (tl && br) {
-        //         tl.style.width = ev.clientX+'px';
-        //         tl.style.height = ev.clientY+'px';
-        //         br.style.width = (window.innerWidth - ev.clientX) + 'px';
-        //         br.style.height = (window.innerHeight - ev.clientY) + 'px';
-        //     }
-        // });
     }
 
     render() {
         const node = treemap(this.props.data, this.state.width, this.state.height);
         node.data.label = "Luis Jaggy";
 
+        // window.scrollTo({
+        //     top: 0,
+        //     left: 0,
+        //     // behavior: "smooth"
+        //   });
+
+        let height = 100;
+
+        if (this.state.width <= 600) {
+            height *= Math.ceil(this.state.active / 6) ;
+        } else {
+            height *= Math.ceil(this.state.active / 12);
+        }
+
         return (
-            <div className='Wrapper'>
-                {/* <div id='tl' className='pointer'></div>
-                <div id='br' className='pointer'></div> */}
-                <div className="App" onClick={this.onNodeClick.bind(this)}>
+            <div className='Wrapper' 
+            style={{
+                height : `${height}%`,
+            }}>
+                <div className="App">
                     <Layout
                         width={this.state.width}
                         height={this.state.height}
@@ -75,6 +73,14 @@ class App extends React.Component<AppProps> {
                         nodeSiblingSelectedId={this.state.selected ? node.data.id : null}
                         parent={null}
                         parentState={null}
+                        onNodeSelectionChange={(node) => {
+                            if (node && node.data.children) {
+                                console.log(node.data.children.length);
+                                this.setState({ active : node.data.children.length });
+                            } else {
+                                this.setState({ active : 1 });
+                            }
+                        }}
                     />
                 </div>
                 <div className='Menu'>

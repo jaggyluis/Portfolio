@@ -14,7 +14,6 @@
 .layout-header .layout-header-node {
   top: 0;
   z-index: 4;
-  position: sticky;
   padding-right: 10px;
   line-height: 0.74;
   text-transform: uppercase;
