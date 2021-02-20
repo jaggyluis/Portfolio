@@ -207,7 +207,7 @@ export class Layout extends React.Component<LayoutProps> {
             height: (100 * (child.y1 - child.y0)) + "%",
             width: (100 * (child.x1 - child.x0)) + "%",
             // zIndex: child.data.label === 'computation' ? 1  : undefined
-            zIndex: isTextNode(child) ? 100 : Math.ceil(Math.random() * (this.layout.children?.length || 1)) + 2, //this.layers[childIndex]
+            zIndex: isTextNode(child) ? 100 : this.layers[childIndex]
             // width: '100%',
             // height: '100%',
             // transform: this.getChildTransform(child)
@@ -352,17 +352,18 @@ export class Layout extends React.Component<LayoutProps> {
 
         // if (phase === 'end' && (dir == 'right' || dir == 'down')) 
 
-        if (phase === 'end' && dir == 'left') {
-            if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
-                this.nextSelectedChild();
-                evt.stopPropagation();
-            }
-        } else if (phase === 'end' && dir == 'right') {
-            if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
-                this.clearSelectedChildren();
-                evt.stopPropagation();
-            }
-        }
+        // if (phase === 'end' && dir == 'left') {
+        //     if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
+        //         this.nextSelectedChild();
+        //         evt.stopPropagation();
+        //     }
+        // } else
+        // if (phase === 'end' && dir == 'right') {
+        //     if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
+        //         this.clearSelectedChildren();
+        //         evt.stopPropagation();
+        //     }
+        // }
     }
 
     onKeyUp(evt: React.KeyboardEvent) {
