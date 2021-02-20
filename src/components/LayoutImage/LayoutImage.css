@@ -10,7 +10,7 @@
     transition: 150ms;
     object-fit: cover;
     /* box-shadow: inset -4px -3px 20px 0px #00000017; */
-    box-shadow: -4px -3px 20px 0px #00000017;
+    box-shadow: -4px -3px 20px 0px #00000040;
     /* box-shadow: inset -4px -3px 20px 0 rgb(0 0 0 / 9%); */
 
 }

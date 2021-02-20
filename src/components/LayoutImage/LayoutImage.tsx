@@ -27,24 +27,8 @@ export const LayoutImage: React.FC<LayoutImageProps> = (props: LayoutImageProps)
         }
     }, [src, width]);
 
-    const placeholder = React.useMemo(() => {
-        if (src) {
-            const paths = src.split(".");
-            const placeholder = paths[0] + "_s." + paths[1];
-            return placeholder;
-        } else {
-            return '';
-        }
-    }, [src]);
-
     return (
         <>
-            <div
-                className='layout-image placeholder'
-                style={{
-                    // backgroundImage: `url(${placeholder})`
-                }}
-            />
             <div
                 className='layout-image'
                 style={{

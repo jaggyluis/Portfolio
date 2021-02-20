@@ -15,7 +15,6 @@
     pointer-events: none;
     background-size: contain;
     object-fit: contain;
-    box-shadow: none;
 }
 
 .layout.selected > .layout-content > .layout-image.placeholder {
@@ -73,6 +72,10 @@
     /* opacity: 0; */
 }
 
+.layout > .layout-children > .layout-child-position.hidden * {
+    display: none;
+}
+
 .layout > .layout-children > .layout-child-position.hidden .layout-draw-lines {
     display: none;
 }
@@ -86,7 +89,7 @@
 }
 
 .layout > .layout-children > .layout-child-position.selected > .layout-shadow {
-    display: none;
+    /* display: none; */
 }
 
 .layout.selected > .layout-children {
