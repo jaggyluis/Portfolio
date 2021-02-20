@@ -27,20 +27,15 @@
 }
 
 .layout .layout-buttons {
-    position: absolute;
-    height: 100%;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
 }
 .layout .layout-buttons .layout-btn {
-    position: relative;
-    top: calc(100% + 10px);
     font-size: 23px;
-    line-height: 0.7;
     color: black;
     font-family: monospace;
+    pointer-events: all;
 }
 
 .layout > .layout-overlay-position {

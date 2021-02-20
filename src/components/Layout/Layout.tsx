@@ -27,7 +27,7 @@ export interface LayoutProps {
     parent: Node | null;
     parentState: NodeState | null;
     onNodeClick?: (node: Node | null) => void;
-    onNodeSelectionChange? : (selectedNode : Node | null) => void;
+    onNodeSelectionChange?: (selectedNode: Node | null) => void;
 }
 export interface LayoutState {
     selectedChildId: string | null;
@@ -37,7 +37,7 @@ export interface LayoutState {
 export class Layout extends React.Component<LayoutProps> {
 
     container: HTMLElement | null = null;
-    
+
     layout: Node = treemap(this.props.node.data, this.props.width, this.props.height);
 
     state: LayoutState = {
@@ -58,7 +58,7 @@ export class Layout extends React.Component<LayoutProps> {
         }
     }
 
-    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) { 
+    shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) {
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
         // if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId &&
@@ -141,9 +141,9 @@ export class Layout extends React.Component<LayoutProps> {
         }
 
         if (this.isChildSelected(child)) return;
-        
+
         send(child.data.label);
-        
+
         this.setState({ selectedChildId: child.data.id, transitioning: true })
         setTimeout(() => {
             this.setState({ transitioning: false })
@@ -200,7 +200,7 @@ export class Layout extends React.Component<LayoutProps> {
         return transform;
     }
 
-    getChildStyle(child: Node, childIndex : number): React.CSSProperties {
+    getChildStyle(child: Node, childIndex: number): React.CSSProperties {
         return {
             top: (100 * child.y0) + "%",
             left: (100 * child.x0) + "%",
@@ -277,7 +277,10 @@ export class Layout extends React.Component<LayoutProps> {
     }
 
     getDrawLines() {
-        return <LayoutDrawLines key={this.props.node.data.id + '-lines'} />
+        if (isTextNode(this.props.node)) {
+            return <LayoutDrawLines key={this.props.node.data.id + '-lines'} />
+        }
+        return undefined
     }
 
     onHeaderNodeClick(node: Node | null) {
@@ -324,8 +327,18 @@ export class Layout extends React.Component<LayoutProps> {
     getButtons() {
         return (
             <div className='layout-buttons' style={this.getButtonsStyle()}>
-                <div className='layout-btn' style={this.getLeftButtonStyle()}>{'<<'}</div>
-                <div className='layout-btn' style={this.getRightButtonStyle()}>{'>'}</div>
+                <div className='layout-btn'
+                    style={this.getLeftButtonStyle()}
+                    onClick={(evt) => {
+                        if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
+                            this.nextSelectedChild();
+                            evt.stopPropagation();
+                        }
+                    }}
+                >{'<<'}</div>
+                <div className='layout-btn'
+                    style={this.getRightButtonStyle()}>
+                    {'>'}</div>
             </div>
         )
     }
@@ -410,9 +423,9 @@ export class Layout extends React.Component<LayoutProps> {
                 {this.getHeader()}
                 {this.getChildren()}
                 {this.getContent()}
-                {this.getButtons()}
+                {/* {this.getButtons()} */}
                 {this.getOverlay()}
-                {this.getDrawLines()}
+                {/* {this.getDrawLines()} */}
             </div>
         )
     }

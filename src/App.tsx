@@ -4,6 +4,7 @@ import { treemap } from './utils/treemap';
 import { NodeData } from './model/NodeData';
 import LinkedIn from './assets/images/linkedIn-icon.png';
 import { Layout } from './components/Layout/Layout';
+import { isNodeLeaf } from './utils/node';
 
 function debounce(func: any) {
     var timer: any;
@@ -22,7 +23,7 @@ class App extends React.Component<AppProps> {
         selected: true,
         width: window.innerWidth,
         height: window.innerHeight,
-        active : 1
+        active: 1,
     }
 
     onCVClick() {
@@ -43,51 +44,47 @@ class App extends React.Component<AppProps> {
         const node = treemap(this.props.data, this.state.width, this.state.height);
         node.data.label = "Luis Jaggy";
 
-        // window.scrollTo({
-        //     top: 0,
-        //     left: 0,
-        //     // behavior: "smooth"
-        //   });
-
         let height = 100;
 
         if (this.state.width <= 600) {
-            height *= Math.ceil(this.state.active / 6) ;
+            height *= Math.ceil(this.state.active / 6);
         } else {
             height *= Math.ceil(this.state.active / 12);
         }
 
         return (
-            <div className='Wrapper' 
-            style={{
-                height : `${height}%`,
-            }}>
-                <div className="App">
-                    <Layout
-                        width={this.state.width}
-                        height={this.state.height}
-                        node={node}
-                        nodeState={{ selected: this.state.selected }}
-                        nodeDepth={0}
-                        nodeSiblings={[]}
-                        nodeSiblingSelectedId={this.state.selected ? node.data.id : null}
-                        parent={null}
-                        parentState={null}
-                        onNodeSelectionChange={(node) => {
-                            if (node && node.data.children) {
-                                console.log(node.data.children.length);
-                                this.setState({ active : node.data.children.length });
-                            } else {
-                                this.setState({ active : 1 });
-                            }
-                        }}
-                    />
+            <>
+                <div className='Wrapper'
+                    style={{
+                        height: `${height}%`,
+                    }}>
+                    <div className="App">
+                        <Layout
+                            width={this.state.width}
+                            height={this.state.height}
+                            node={node}
+                            nodeState={{ selected: this.state.selected }}
+                            nodeDepth={0}
+                            nodeSiblings={[]}
+                            nodeSiblingSelectedId={this.state.selected ? node.data.id : null}
+                            parent={null}
+                            parentState={null}
+                            onNodeSelectionChange={(node) => {
+                                if (node && node.data.children) {
+                                    console.log(node.data.children.length);
+                                    this.setState({ active: node.data.children.length,   });
+                                } else {
+                                    this.setState({ active: 1,  });
+                                }
+                            }}
+                        />
+                    </div>
                 </div>
                 <div className='Menu'>
                     <div className='menu-item' onClick={this.onCVClick.bind(this)}>resume</div>
                     <div className='menu-item linkedin' onClick={this.onLinkedInClick.bind(this)}>in</div>
                 </div>
-            </div>
+            </>
         );
     }
 
