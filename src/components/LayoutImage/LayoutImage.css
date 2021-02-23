@@ -7,7 +7,7 @@
     background-position: center;
     /* background-color : white; */
     filter: contrast(1.4) saturate(0) brightness(1);
-    transition: 150ms;
+    /* transition: 150ms; */
     object-fit: cover;
     /* box-shadow: inset -4px -3px 20px 0px #00000017; */
     box-shadow: -4px -3px 20px 0px #00000040;
@@ -17,12 +17,4 @@
 
 .layout-image:hover {
     filter: none;
-}
-
-.layout-image.placeholder {
-    /* box-shadow: 0 0 20px 0px rgb(0 0 0); */
-    /* box-shadow: inset -4px -3px 20px 0 rgb(0 0 0 / 9%); */
-    /* opacity: 0.3; */
-    /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALElEQVQYV2NkwAIuX778nxFdHCSoq6vLiCIBEwQphksgC8Il0AXBEtgEQRIAvF8Xf8iAtVMAAAAASUVORK5CYII=) repeat; */
-    background: white;
 }

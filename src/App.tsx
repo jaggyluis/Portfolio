@@ -40,6 +40,10 @@ class App extends React.Component<AppProps> {
         }));
     }
 
+    componentDidUpdate() {
+        window.scrollTo(0 ,0);
+    }
+
     render() {
         const node = treemap(this.props.data, this.state.width, this.state.height);
         node.data.label = "Luis Jaggy";
@@ -71,7 +75,6 @@ class App extends React.Component<AppProps> {
                             parentState={null}
                             onNodeSelectionChange={(node) => {
                                 if (node && node.data.children) {
-                                    console.log(node.data.children.length);
                                     this.setState({ active: node.data.children.length,   });
                                 } else {
                                     this.setState({ active: 1,  });

@@ -8,14 +8,14 @@
     position: absolute;
     /* top: 10px;
     left: 10px; */
-    /* border: 1px solid lightgray; */
+    box-sizing: border-box;
+    border: 10px solid white;
     pointer-events: none;
     /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAJElEQVQYV2OcN2/e/6SkJEYGJADmoEvAVSBLoGiDSaAIwowCAAX9Et+twA8HAAAAAElFTkSuQmCC) repeat; */
     /* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAALElEQVQYV2OcN2/e/8TERAZkwPj/////8+fPZ0CWAAuCVCFLwAWRJVAEYRIAh6sez3gQ8xUAAAAASUVORK5CYII) repeat; */
     /* background: white;
     box-shadow: 10px 11px 20px 0px #00000017 */
     box-shadow: 10px 11px 20px 0 rgb(0 0 0 / 9%);
-    background: white;
     /* box-shadow: 3px 3px 5px 0px #00000059; */
     /* box-shadow: 0px 0px 20px 2px rgb(0 0 0 / 22%); */
 

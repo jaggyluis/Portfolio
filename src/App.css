@@ -5,13 +5,13 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    transition-duration: 500ms;
+    transition-duration: 300ms;
     /* overflow-y: auto;
     overflow-x: hidden; */
 }
 
 .App {
-    height: calc(100% - 40px);
+    height: 100%;
     padding-top: 10px;
     width: 100%;
     margin: 30px auto 100px;
@@ -45,9 +45,10 @@
 @media screen and (max-width: 600px) {
 
     .App {
-        height: calc(100% - 57px);
         max-width: 90%;
-        max-height: 100%;
+        margin-top: 10px;
+        /* max-height: 100%; */
+        margin: 10px auto 60px;
     }
 
     .Menu {

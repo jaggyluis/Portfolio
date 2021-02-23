@@ -15,7 +15,7 @@
     line-height: 0.7;
     top: 0;
     position: sticky;
-    color : #d3d3d366;
+    color : #0000001c;
     letter-spacing: 4px;
     word-break: break-all;
     mix-blend-mode : multiply;
@@ -24,16 +24,23 @@
 
 .layout-content .layout-title {
     font-weight: bold;
-    padding-right: 10px;
+    padding: 10px;
 }
 
 .layout-content .layout-items {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    flex-direction: row-reverse;
 }
 
 .layout-content .layout-items li {
-    margin-right: 1em;
+    padding: 5px 10px;
+    display: block;
+    box-shadow: 4px 2px 10px #00000029;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background: white;
 }
 
 .layout-content .layout-text {

@@ -28,6 +28,8 @@ export interface LayoutProps {
     parentState: NodeState | null;
     onNodeClick?: (node: Node | null) => void;
     onNodeSelectionChange?: (selectedNode: Node | null) => void;
+    nextSelectedSibling?: () => void
+    unSelect?: () => void;
 }
 export interface LayoutState {
     selectedChildId: string | null;
@@ -61,9 +63,6 @@ export class Layout extends React.Component<LayoutProps> {
     shouldComponentUpdate(nxtProps: LayoutProps, nxtState: LayoutState) {
         if (this.props.width !== nxtProps.width) return true;
         if (this.props.nodeState.selected !== nxtProps.nodeState.selected) return true;
-        // if (this.props.nodeSiblingSelectedId !== nxtProps.nodeSiblingSelectedId &&
-        //     (this.props.nodeSiblingSelectedId === null || nxtProps.nodeSiblingSelectedId === null)) return true;
-        // if (this.state.selectedChildId !== nxtState.selectedChildId) return true;
         if (this.state.transitioning !== nxtState.transitioning) return true;
         return false;
     }
@@ -136,11 +135,11 @@ export class Layout extends React.Component<LayoutProps> {
 
     setSelectedChild(child: Node) {
 
+        if (this.isChildSelected(child)) return;
+
         if (this.props.onNodeSelectionChange) {
             this.props.onNodeSelectionChange(child);
         }
-
-        if (this.isChildSelected(child)) return;
 
         send(child.data.label);
 
@@ -152,11 +151,11 @@ export class Layout extends React.Component<LayoutProps> {
 
     clearSelectedChildren() {
 
+        if (this.areNoChildrenSelected()) return;
+
         if (this.props.onNodeSelectionChange) {
             this.props.onNodeSelectionChange(this.props.node);
         }
-
-        if (this.areNoChildrenSelected()) return;
 
         send(this.props.node.data.label);
 
@@ -248,6 +247,8 @@ export class Layout extends React.Component<LayoutProps> {
                                     nodeSiblingSelectedId={this.state.selectedChildId}
                                     onNodeClick={this.onChildClick.bind(this)}
                                     onNodeSelectionChange={this.props.onNodeSelectionChange}
+                                    nextSelectedSibling={this.nextSelectedChild.bind(this)}
+                                    unSelect={this.clearSelectedChildren.bind(this)}
                                 />
                             </div>
                         )
@@ -306,21 +307,23 @@ export class Layout extends React.Component<LayoutProps> {
 
     getButtonsStyle(): React.CSSProperties {
         return {
-            display: isLayoutTablet(this.props)
-                && this.props.nodeState.selected
-                && this.areNoChildrenSelected() ? undefined : 'none'
+            display: this.props.nodeState.selected && 
+            this.props.nodeDepth !== 0 &&
+            // isLayoutTablet(this.props) &&
+            this.areNoChildrenSelected() 
+            ? undefined : 'none'
         }
     }
 
     getLeftButtonStyle(): React.CSSProperties {
         return {
-            visibility: this.props.parentState !== null ? undefined : 'hidden'
+            display: undefined
         }
     }
 
     getRightButtonStyle(): React.CSSProperties {
         return {
-            visibility: this.props.nodeSiblings.length > 0 ? undefined : 'hidden'
+            display: undefined
         }
     }
 
@@ -330,15 +333,25 @@ export class Layout extends React.Component<LayoutProps> {
                 <div className='layout-btn'
                     style={this.getLeftButtonStyle()}
                     onClick={(evt) => {
-                        if (this.props.nodeState.selected && !this.areNoChildrenSelected()) {
-                            this.nextSelectedChild();
+                        if (this.props.unSelect) {
+                            this.props.unSelect();
                             evt.stopPropagation();
                         }
                     }}
-                >{'<<'}</div>
+                >
+                    {'<<'}
+                </div>
                 <div className='layout-btn'
-                    style={this.getRightButtonStyle()}>
-                    {'>'}</div>
+                    style={this.getRightButtonStyle()}
+                    onClick={(evt) => {
+                        if (this.props.nextSelectedSibling) {
+                            this.props.nextSelectedSibling();
+                            evt.stopPropagation();
+                        }
+                    }}
+                >
+                    {'>'}
+                </div>
             </div>
         )
     }
@@ -423,7 +436,7 @@ export class Layout extends React.Component<LayoutProps> {
                 {this.getHeader()}
                 {this.getChildren()}
                 {this.getContent()}
-                {/* {this.getButtons()} */}
+                {this.getButtons()}
                 {this.getOverlay()}
                 {/* {this.getDrawLines()} */}
             </div>
