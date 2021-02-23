@@ -41,7 +41,7 @@ class App extends React.Component<AppProps> {
     }
 
     componentDidUpdate() {
-        window.scrollTo(0 ,0);
+        window.scrollTo(0, 0);
     }
 
     render() {
@@ -62,6 +62,7 @@ class App extends React.Component<AppProps> {
                     style={{
                         height: `${height}%`,
                     }}>
+
                     <div className="App">
                         <Layout
                             width={this.state.width}
@@ -75,9 +76,9 @@ class App extends React.Component<AppProps> {
                             parentState={null}
                             onNodeSelectionChange={(node) => {
                                 if (node && node.data.children) {
-                                    this.setState({ active: node.data.children.length,   });
+                                    this.setState({ active: node.data.children.length, });
                                 } else {
-                                    this.setState({ active: 1,  });
+                                    this.setState({ active: 1, });
                                 }
                             }}
                         />

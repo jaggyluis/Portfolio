@@ -5,6 +5,7 @@
   position: relative;
   display: none;
   padding-left: 10px;
+  padding-top: 11px;
 }
 
 .layout-header.selected {
@@ -41,11 +42,16 @@
   transition: 150ms;
 }
 
+.layout.root > .layout-header{
+  padding-top: 0;
+}
+
+
 .layout.root > .layout-header .layout-header-node {
   font-weight: bold;
   border-top: none;
   position: absolute;
-  transform: translate(-114%, 0px) rotate(-90deg);
+  transform: translate(-114%, 0) rotate(-90deg);
   transform-origin: right top;
 }
 
